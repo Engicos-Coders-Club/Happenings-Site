@@ -2,17 +2,21 @@ from django.db import models
 from base.models import *
 
 
-class CustomerModel(BaseUser):
-    newsletter = models.BooleanField(default=True)
+class UserModel(BaseUser):
     def __str__(self):
         return self.email
+    class Meta:
+        db_table = 'user'
 
 
-# class SellerModel(BaseUser):
-#     is_verified = models.BooleanField(default=False)
-#     def save(self, *args, **kwargs):
-#         self.is_staff = True
-#         super(SellerModel, self).save(*args, **kwargs) 
-#     def __str__(self):
-#         return self.email
+class CollegeModel(BaseModel):
+    college_name = models.CharField(max_length=50, unique=True)
+    icon = models.ImageField(upload_to="college", height_field=None, width_field=None, max_length=None)
+    points = models.IntegerField(default=0)
+    is_verified = models.BooleanField(default=False)
+    coordinator = models.OneToOneField(UserModel, related_name="college_coordinator", on_delete=models.CASCADE, null=True, blank=True)
+    def __str__(self):
+        return self.college_name
+    class Meta:
+        db_table = 'college'
 
