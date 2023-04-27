@@ -160,6 +160,8 @@ cython_debug/
 #.idea/
 
 .DS_STORE
+Frontend/Admin/node_modules
+Frontend/Site/node_modules
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
