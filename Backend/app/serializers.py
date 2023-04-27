@@ -14,6 +14,12 @@ class SingleEventSerializer(serializers.ModelSerializer):
         exclude = ["created_at", "updated_at"]
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CategoryModel
+        exclude = ["created_at", "updated_at"]
+
+
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventParticipantsModel

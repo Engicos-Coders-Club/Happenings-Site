@@ -8,6 +8,11 @@ from .serializers import *
 from .models import *
 
 
+class AllCategories(ListAPIView):
+    queryset = CategoryModel.objects.all()
+    serializer_class = CategorySerializer
+
+
 class AllEvents(ListAPIView):
     queryset = EventModel.objects.all()
     serializer_class = AllEventSerializer

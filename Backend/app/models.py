@@ -2,9 +2,19 @@ from django.db import models
 from base.models import *
 
 
+class CategoryModel(BaseModel):
+    category_name = models.CharField(max_length=50)
+    category_img = models.ImageField(upload_to="category", height_field=None, width_field=None, max_length=None)
+    def __str__(self):
+        return self.category_name
+    class Meta:
+        db_table = 'category'
+
+
 class EventModel(BaseModel):
     event_name = models.CharField(max_length=50)
     description = models.TextField()
+    category = models.ForeignKey(CategoryModel, related_name="event_category", on_delete=models.CASCADE)
     cover_image = models.ImageField(upload_to="event", height_field=None, width_field=None, max_length=None)
     rules = models.TextField()
     judging_criteria = models.TextField()
