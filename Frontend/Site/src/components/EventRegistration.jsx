@@ -1,11 +1,10 @@
+// ! Event Registration Page => register/event
 import { useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 /*
-TODO:
-1. Put brick image as background
-2. Blur background image when it is front of form
-3. Validation
+TODO: Validation
  */
 
 function EventRegistration() {
@@ -16,11 +15,11 @@ function EventRegistration() {
     }
     return (
         <div className="mx-auto bg-black text-white bg-events-bg">
-            <div className="pt-20">
-                <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-[90%] md:w-[350px]">
+            <div className="py-16">
+                <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-[50%] md:w-[350px]">
                     <h1 className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3" style={{ 'fontFamily': 'MangoGrotesque' }}>Event Registration</h1>
                 </div>
-                <div className="w-[90vw] md:w-[60vw] mx-auto border-orange-700 border-4 mt-10 border-dotted backdrop-blur-3xl">
+                <div className="w-[90vw] md:w-[60vw] mx-auto border-orange-700 border-4 mt-10 py-10 border-dotted backdrop-blur-3xl">
                     <form className="flex flex-col gap-y-5 w-3/4 mx-auto my-10">
                         <div className='leading-8 flex flex-col'>
                             <label className="italic py-2 text-sm" style={{ 'fontFamily': 'Merriweather' }}>Name</label>
@@ -38,8 +37,8 @@ function EventRegistration() {
                             <label className='italic py-2 text-sm' style={{ 'fontFamily': 'Merriweather' }}>ID Card Photo/ ID Proof</label>
                             <input type="file" name="photo"/>
                         </div>
-                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 flex justify-center items-center bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit">Update Team Member <FiArrowUpRight size={20} /></button>
-                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 flex justify-center items-center bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit">Register Team <FiArrowUpRight size={20} /></button>
+                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/update-team-member" className="flex justify-center items-center">Update Team Member <FiArrowUpRight size={20} /></Link></button>
+                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/register-team" className='flex justify-center items-center'>Register Team <FiArrowUpRight size={20} /></Link></button>
                     </form>
                 </div>
             </div>

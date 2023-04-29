@@ -9,6 +9,7 @@ export default {
       backgroundImage:{
         'events-bg': "url('./src/assets/events-bg.jpg')",
         'events-card': "url('./src/assets/events-card.png')",
+        'modal-bg':"url('./src/assets/modalBg.png')"
 
       }
     },

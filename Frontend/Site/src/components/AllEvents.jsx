@@ -1,4 +1,5 @@
 // import React from 'react'
+// ! Events Page Page => /events/all
 import eventsData from '../data/eventsData'
 import EventCard from './EventCard'
 

@@ -5,7 +5,7 @@ function EventCard(props) {
     const { event } = props
 
     return (
-        <div className={`w-[200px] h-[300px] bg-events-card`} onClick={(e) => window.href(event.link)}>
+        <div className={`w-[200px] h-[300px] bg-events-card`}>
             <div className='flex justify-between items-center'>
                 <p className='text-2xl tracking-wider font-semibold text-red-900 py-3 px-6' style={{'fontFamily':'MangoGrotesque'}}>Event</p>
                 <Link to={event.link}><FiArrowUpRight color="black"/></Link>

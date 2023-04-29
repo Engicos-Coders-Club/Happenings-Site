@@ -1,11 +1,10 @@
+// ! College Registration Page => register/college
 import { useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 /*
-TODO:
-1. Put brick image as background
-2. Blur background image when it is front of form
-3. Validation
+TODO: Validation
  */
 
 function CollegeRegistration() {
@@ -16,7 +15,7 @@ function CollegeRegistration() {
     }
     return (
         <div className="mx-auto bg-black min-h-screen text-white bg-events-bg">
-            <div className="pt-20">
+            <div className="py-16">
                 <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-[300px]">
                     <h1 className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3" style={{ 'fontFamily': 'MangoGrotesque' }}>Register College</h1>
                 </div>
@@ -42,7 +41,8 @@ function CollegeRegistration() {
                             <label className='italic py-2 text-sm' style={{ 'fontFamily': 'Merriweather' }}>Phone Number</label>
                             <input type="tel" name="phoneNumber" className="border border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'Merriweather' }}/>
                         </div>
-                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 flex justify-center items-center bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit">Register College <FiArrowUpRight size={20} /></button>
+                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/pay" className='flex justify-center items-center'>Pay Now</Link></button>
+                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/register-college" className='flex justify-center items-center'>Register College <FiArrowUpRight size={20} /></Link></button>
                     </form>
                 </div>
             </div>
