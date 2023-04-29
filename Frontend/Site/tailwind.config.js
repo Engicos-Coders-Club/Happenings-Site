@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'events-bg': "url('./src/assets/events-bg.jpg')",
+        'events-card': "url('./src/assets/events-card.png')",
+
+      }
+    },
   },
   plugins: [],
 }
