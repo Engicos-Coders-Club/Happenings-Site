@@ -6,6 +6,8 @@ import CollegeRegistration from './components/CollegeRegistration'
 import EventRegistration from './components/EventRegistration'
 import './index.css'
 import EventSelection from './components/EventSelection'
+import TicketsSection from './components/TicketsSection'
+import BookTickets from './components/BookTickets'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
           <Route element={<EventRegistration title="Event Registration"/>} path="/event-registration" />
           <Route element={<EventSelection title="Event Selection"/>} path="/event-selection"/>
+          <Route element={<TicketsSection title="Tickets"/>} path="/tickets"/>
+          <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}

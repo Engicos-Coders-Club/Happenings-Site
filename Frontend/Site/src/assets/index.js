@@ -8,6 +8,9 @@ import Frame from './Frame.png'
 import Avatar from './Avatar.png'
 import modalBg from './modalBg.png'
 import LandScape from './Landscape-Color.jpg'
+import ticket1 from './ticket-1.svg'
+import ticket2 from './ticket-2.svg'
+import ticket3 from './ticket-3.svg'
 
 export {
     facebook,
@@ -19,5 +22,8 @@ export {
     Frame,
     Avatar,
     modalBg,
-    LandScape
+    LandScape,
+    ticket1,
+    ticket2,
+    ticket3
 }
