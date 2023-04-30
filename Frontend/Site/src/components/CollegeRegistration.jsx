@@ -1,5 +1,5 @@
 // ! College Registration Page => register/college
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
@@ -7,7 +7,12 @@ import { Link } from 'react-router-dom'
 TODO: Validation
  */
 
-function CollegeRegistration() {
+function CollegeRegistration(props) {
+    const { title } = props
+
+    useEffect(() => {
+        document.title = title
+    }, [])
     const [collegeData, setCollegeData] = useState({ collegeName: '', GSName: "", GSphoneNumber: "", phoneNumber: "", CSName: "", CSPhoneNumber: "", })
 
     const handleChange = (e) => {

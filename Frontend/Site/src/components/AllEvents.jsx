@@ -1,10 +1,17 @@
 // import React from 'react'
 // ! Events Page Page => /events/all
+import { useEffect } from 'react'
 import eventsData from '../data/eventsData'
 import EventCard from './EventCard'
 
-function Events() {
-    const { onStageEvents, offStageEvents } = eventsData
+function Events(props) {
+    const { onStageEvents, offStageEvents } =  eventsData
+    const { title } = props
+
+    useEffect(() => {
+        document.title = title
+    }, [])
+
 
     return (
         <div>

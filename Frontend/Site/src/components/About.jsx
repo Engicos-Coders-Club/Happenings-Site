@@ -1,9 +1,15 @@
 // ! About Section Page => /about
+import { useEffect } from 'react'
 import { socials } from '../data/socials'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
-function About() {
+function About(props) {
+    const { title } = props
+
+    useEffect(() => {
+        document.title = title
+    }, [])
     return (
         <>
             <main className='bg-black text-white min-h-screen'>

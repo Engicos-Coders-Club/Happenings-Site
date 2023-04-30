@@ -1,11 +1,15 @@
 // ! Events Page Page => /events/event
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import eventsData from '../data/eventsData'
 import EventCard from './EventCard'
-function Events() {
+function Events(props) {
     const { onStageEvents } = eventsData
+    const { title } = props
     const [showEventModal, setShowEventModal] = useState(false)
 
+    useEffect(() => {
+        document.title = title
+    }, [])
     return (
         <div className=''>
             <div className='bg-events-bg min-h-screen'>

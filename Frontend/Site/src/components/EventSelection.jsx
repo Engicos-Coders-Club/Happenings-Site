@@ -1,10 +1,16 @@
 //! Event Selection Page => register/events
 
+import { useEffect } from "react"
 import eventsData from "../data/eventsData"
 import EventSelectionCard from "./EventSelectionCard"
 
-function EventSelection() {
+function EventSelection(props) {
     const {onStageEvents} = eventsData
+    const { title } = props
+
+    useEffect(() => {
+        document.title = title
+    }, [])
     return (
         <div className="mx-auto bg-black text-white min-h-screen">
             <div className="py-16">

@@ -11,12 +11,12 @@ function App() {
   return (
     <>
         <Routes>
-          <Route element={<About />} path="/" />
-          <Route path="/all-events" element={<AllEvents />} />
-          <Route path="/events" element={<Events />} />
-          <Route element={<CollegeRegistration />} path="/college-registration" />
-          <Route element={<EventRegistration />} path="/event-registration" />
-          <Route element={<EventSelection />} path="/event-selection" />
+          <Route element={<About title="About"/>} path="/" />
+          <Route path="/all-events" element={<AllEvents title="All Events"/>} />
+          <Route path="/events" element={<Events title="Events"/>} />
+          <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
+          <Route element={<EventRegistration title="Event Registration"/>} path="/event-registration" />
+          <Route element={<EventSelection title="Event Selection"/>} path="/event-selection"/>
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}
