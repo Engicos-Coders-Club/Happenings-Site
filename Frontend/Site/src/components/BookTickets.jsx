@@ -2,26 +2,31 @@
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowUpRight } from "react-icons/fi";
 import { useNavigate, Link } from "react-router-dom";
+import TicketsSchema from "../schema/TicketsSchema";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 
 function BookTickets(props) {
     const { title } = props;
-    const [paymentData, setPaymentData] = useState("")
     const navigate = useNavigate()
 
     // Variable for testing
     const quantity = 1, ticket = "ticket1", day = "Day 1", date = "19 May 2023 , 9:00 AM", price = 300
 
+    useEffect(() => {
+        document.title = title || "Book Tickets"
+    }, [])
+
     const goBack = () => {
         navigate("/tickets")
     }
 
-    const handleChange = (e) => {
-        setPaymentData({ ...paymentData, [e.target.name]: e.target.value })
+    const handleSubmit = (values) => {
+        // Send to backend
+        console.log(values)
+        // navigate("/pay")
     }
+    
 
-    useEffect(() => {
-        document.title = title || "Book Tickets"
-    }, [])
     return (
         <div className="bg-black text-white min-h-screen">
             <div className="bg-black text-white pb-20">
@@ -55,21 +60,40 @@ function BookTickets(props) {
                     {/* Form */}
                     <div className='mx-auto mt-8'>
                         <h3 className='uppercase text-3xl md:text-5xl text-center text-orange-600' style={{ 'fontFamily': 'MangoGrotesque' }}>Enter your details</h3>
-                        <form className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6">
-                            <div className='leading-8 flex flex-col w-11/12 md:w-3/5 mx-auto'>
-                                <label className="py-2 text-2xl" style={{ 'fontFamily': 'MangoGrotesque' }}>Name</label>
-                                <input type="text" name="name" className="border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'MangoGrotesque' }} />
-                            </div>
-                            <div className='flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2'>
-                                <label className="py-2 text-2xl" style={{ 'fontFamily': 'MangoGrotesque' }}>Email</label>
-                                <input type="email" name="email" className="border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'MangoGrotesque' }} />
-                            </div>
-                            <div className='flex flex-col leading-8 mx-auto w-11/12 md:w-3/5 mt-2'>
-                                <label className='py-2 text-2xl' style={{ 'fontFamily': 'MangoGrotesque' }}>Phone Number</label>
-                                <input type="tel" name="phoneNumber" className="border border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'MangoGrotesque' }} />
-                            </div>
-                            <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><Link to="/pay" className='flex justify-center items-center'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Pay Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></Link></button>
-                        </form>
+                        <Formik initialValues={{ name: "", email: "", phoneNumber: "", }} validationSchema={TicketsSchema} onSubmit={(values) => handleSubmit(values)}>
+                            {({ touched, errors, isSubmitting, values }) => (
+                                <Form className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6">
+                                    <div className='leading-8 flex flex-col w-11/12 md:w-3/5 mx-auto'>
+                                        <label className="py-2 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}>Name</label>
+                                        <Field type="text" name="name" className="border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                        <ErrorMessage 
+                                            component="div"
+                                            name="name"
+                                            className="text-red-500 text-sm mt-2"
+                                        />
+                                    </div>
+                                    <div className='flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2'>
+                                        <label className="py-2 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}>Email</label>
+                                        <Field type="email" name="email" className="border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                        <ErrorMessage 
+                                            component="div"
+                                            name="email"
+                                            className="text-red-500 text-sm mt-2"
+                                        />
+                                    </div>
+                                    <div className='flex flex-col leading-8 mx-auto w-11/12 md:w-3/5 mt-2'>
+                                        <label className='py-2 text-2xl tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>Phone Number</label>
+                                        <Field type="tel" name="phoneNumber" className="border border-white px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                        <ErrorMessage 
+                                            component="div"
+                                            name="phoneNumber"
+                                            className="text-red-500 text-sm mt-2"
+                                        />
+                                    </div>
+                                    <button type="submit" className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Pay Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button>
+                                </Form>
+                            )}
+                        </Formik>
                     </div>
                 </div>
             </div>

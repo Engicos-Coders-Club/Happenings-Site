@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { Link, useNavigate } from 'react-router-dom'
+import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 
 /*
 TODO: 
@@ -11,7 +13,6 @@ TODO:
 
 function EventRegistration(props) {
     const { title } = props
-    const [eventData, setEventData] = useState({ name: '', email: "", phoneNumber: "", photo: "" })
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -27,8 +28,8 @@ function EventRegistration(props) {
 
     }
 
-    const handleChange = (e) => {
-        setEventData({ ...eventData, [e.target.name]: e.target.value })
+    const handleSubmit = (values) => {
+        console.log(values)
     }
     return (
         <div className="mx-auto bg-black text-white bg-events-bg">
@@ -47,27 +48,51 @@ function EventRegistration(props) {
                 <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-11/12 md:w-[350px] mt-4">
                     <h1 className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3" style={{ 'fontFamily': 'MangoGrotesque' }}>Event Registration</h1>
                 </div>
-                <div className="w-[90vw] md:w-[60vw] mx-auto border-orange-700 border-4 mt-10 py-10 border-dotted backdrop-blur-3xl">
-                    <form className="flex flex-col gap-y-5 w-3/4 mx-auto my-10">
-                        <div className='leading-8 flex flex-col'>
-                            <label className="italic py-2 text-sm" style={{ 'fontFamily': 'Merriweather' }}>Name</label>
-                            <input type="text" name="name" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'Merriweather' }} />
-                        </div>
-                        <div className='flex flex-col leading-8'>
-                            <label className="italic py-2 text-sm" style={{ 'fontFamily': 'Merriweather' }}>Email</label>
-                            <input type="email" name="email" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'Merriweather' }} />
-                        </div>
-                        <div className='flex flex-col leading-8'>
-                            <label className='italic py-2 text-sm' style={{ 'fontFamily': 'Merriweather' }}>Phone Number</label>
-                            <input type="tel" name="phoneNumber" className="border border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent" onChange={handleChange} style={{ 'fontFamily': 'Merriweather' }} />
-                        </div>
-                        <div className='flex flex-col leading-8'>
-                            <label className='italic py-2 text-sm' style={{ 'fontFamily': 'Merriweather' }}>ID Card Photo/ ID Proof</label>
-                            <input type="file" name="photo" />
-                        </div>
-                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/update-team-member" className="flex justify-center items-center">Update Team Member <FiArrowUpRight size={20} /></Link></button>
-                        <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white font-bold py-1 bg-black hover:scale-125 hover:bg-red-600 text-sm" style={{ 'fontFamily': 'Merriweather' }} type="submit"><Link to="/register-team" className='flex justify-center items-center'>Register Team <FiArrowUpRight size={20} /></Link></button>
-                    </form>
+                <div className="w-[90vw] md:w-[60vw] mx-auto border-orange-700 border-4 mt-10 py-10 border-dotted backdrop-blur-3xl  rounded-tl-3xl rounded-br-3xl">
+                    <Formik initialValues={{ name: '', phoneNumber: '', email: '', photo: '' }} validationSchema={EventRegistrationSchema} onSubmit={(values) => handleSubmit(values)}>
+                        {({ touched, errors, isSubmitting, values }) =>
+                            <Form className="flex flex-col gap-y-5 w-3/4 mx-auto my-10">
+                                <div className='leading-8 flex flex-col'>
+                                    <label className="py-2 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}>Name</label>
+                                    <Field type="text" name="name" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                    <ErrorMessage
+                                        name="name"
+                                        component="div"
+                                        className="text-red-500 text-sm"
+                                    />
+                                </div>
+                                <div className='flex flex-col leading-8'>
+                                    <label className="py-2 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}>Email</label>
+                                    <Field type="email" name="email" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                    <ErrorMessage
+                                        name="email"
+                                        component="div"
+                                        className="text-red-500 text-sm"
+                                    />
+                                </div>
+                                <div className='flex flex-col leading-8'>
+                                    <label className='py-2 text-2xl tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>Phone Number</label>
+                                    <Field type="tel" name="phoneNumber" className="border border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
+                                    <ErrorMessage
+                                        name="phoneNumber"
+                                        component="div"
+                                        className="text-red-500 text-sm"
+                                    />
+                                </div>
+                                <div className='flex flex-col leading-8'>
+                                    <label className='py-2 text-2xl tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>ID Card Photo/ ID Proof</label>
+                                    <Field type="file" name="photo" />
+                                    <ErrorMessage
+                                        name="photo"
+                                        component="div"
+                                        className="text-red-500 text-sm"
+                                    />
+                                </div>
+                                <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}><Link to="/update-team-member" className="flex justify-center items-center">Update Team Member <FiArrowUpRight size={20} /></Link></button>
+                                <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Register Team <FiArrowUpRight size={20} /></button>
+                            </Form>
+                        }
+                    </Formik>
                 </div>
             </div>
         </div >
