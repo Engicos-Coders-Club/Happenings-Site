@@ -3,7 +3,7 @@ const onStageEvents = [
         id:1,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",
@@ -19,7 +19,7 @@ const onStageEvents = [
         id:2,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",
@@ -35,7 +35,7 @@ const onStageEvents = [
         id:3,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",
@@ -55,7 +55,7 @@ const offStageEvents = [
         id:1,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",
@@ -71,7 +71,7 @@ const offStageEvents = [
         id:2,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",
@@ -87,7 +87,7 @@ const offStageEvents = [
         id:3,
         name:"Armageddon Affair",
         "title":"Rap Battle",
-        link:"/rap-battle",
+        link:"/event-registration",
         coordinators:[
             {
                 name:"Karan",

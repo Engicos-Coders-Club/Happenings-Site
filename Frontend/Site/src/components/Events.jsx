@@ -1,4 +1,6 @@
 // ! Events Page Page => /events/event
+// TODO: Integrate event details (Modal) with each event card
+
 import { useState,useEffect } from 'react'
 import eventsData from '../data/eventsData'
 import EventCard from './EventCard'

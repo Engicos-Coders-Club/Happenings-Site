@@ -26,11 +26,11 @@ function BookTickets(props) {
         <div className="bg-black text-white min-h-screen">
             <div className="bg-black text-white pb-20">
 
-                <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
+                <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
                     {/* Back to Tickets Button */}
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-start">
                         <FiArrowLeft size={40} onClick={goBack} className="cursor-pointer border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-125" />
-                        <p className="px-5 text-4xl" style={{ 'fontFamily': "Mangogrotesque" }}>Back to Tickets</p>
+                        <p className="px-3 md:px-5 text-3xl md:text-4xl" style={{ 'fontFamily': "Mangogrotesque" }}>Back to Tickets</p>
                     </div>
                     <div className="flex justify-around mt-8 flex-col md:flex-row w-5/6 mx-auto">
                         {/* Tickets */}
@@ -40,21 +40,21 @@ function BookTickets(props) {
                             <p className="text-[22px] font-bold mt-2 px-12 uppercase" style={{ 'fontFamily': "Mangogrotesque" }}>Date: {date}</p>
                         </div>
                         {/* Checkout details */}
-                        <div className="flex flex-col items-center justify-center">
-                            <p className='uppercase text-4xl md:text-5xl font-bold text-center tracking-wider text-orange-600' style={{ 'fontFamily': 'MangoGrotesque' }}>Checkout details</p>
-                            <div className="flex justify-between w-11/12 text-3xl uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>
+                        <div className="flex flex-col items-center justify-center mt-8">
+                            <p className='uppercase text-3xl md:text-5xl font-bold text-center tracking-wider text-orange-600' style={{ 'fontFamily': 'MangoGrotesque' }}>Checkout details</p>
+                            <div className="flex justify-between w-11/12 text-2xl md:text-3xl uppercase pt-4" style={{ 'fontFamily': 'MangoGrotesque' }}>
                                 <p>Quantity</p>
-                                <p className="text-red-500 text-2xl">{quantity >= 10 ? quantity : `0${quantity}`}</p>
+                                <p className="text-red-500 text-xl">{quantity >= 10 ? quantity : `0${quantity}`}</p>
                             </div>
-                            <div className="flex justify-between w-11/12 text-3xl uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>
+                            <div className="flex justify-between w-11/12 text-2xl md:text-3xl uppercase pt-4" style={{ 'fontFamily': 'MangoGrotesque' }}>
                                 <p>Total Amount</p>
                                 <p className="text-red-500">Rs. {quantity * price}</p>
                             </div>
                         </div>
                     </div>
                     {/* Form */}
-                    <div className='mx-auto mt-4'>
-                        <h3 className='uppercase text-4xl md:text-5xl text-center text-orange-600' style={{ 'fontFamily': 'MangoGrotesque' }}>Enter your details</h3>
+                    <div className='mx-auto mt-8'>
+                        <h3 className='uppercase text-3xl md:text-5xl text-center text-orange-600' style={{ 'fontFamily': 'MangoGrotesque' }}>Enter your details</h3>
                         <form className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6">
                             <div className='leading-8 flex flex-col w-11/12 md:w-3/5 mx-auto'>
                                 <label className="py-2 text-2xl" style={{ 'fontFamily': 'MangoGrotesque' }}>Name</label>

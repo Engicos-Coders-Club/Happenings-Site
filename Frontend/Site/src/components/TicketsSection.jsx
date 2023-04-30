@@ -12,7 +12,7 @@ function TicketsSection(props) {
         <div className="mx-auto bg-black text-white min-h-screen">
             <div className="py-16">
                 <div className="w-[80vw] md:w-[60vw] mx-auto">
-                <h1 className='uppercase text-7xl' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-red-500'>Tickets</span> Now</h1>
+                <h1 className='uppercase text-5xl md:text-7xl' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-red-500'>Tickets</span> Now</h1>
                 </div>
                 <div className='flex flex-wrap w-[80vw] md:w-[60vw] justify-center gap-5 mx-auto mt-12'>
                     <Tickets price={300} ticket="ticket1" day="Day 1" date="19 May 2023 , 9:00 AM"/>

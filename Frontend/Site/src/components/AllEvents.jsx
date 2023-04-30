@@ -1,4 +1,3 @@
-// import React from 'react'
 // ! Events Page Page => /events/all
 import { useEffect } from 'react'
 import eventsData from '../data/eventsData'
