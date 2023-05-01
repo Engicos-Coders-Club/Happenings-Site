@@ -15,6 +15,7 @@ import Teams from './Pagesections/Teams'
 import Schedule from './components/Schedule'
 import EventSection from './components/EventSection'
 import Sponsor from './components/Sponsor'
+import Clouds from './components/Clouds'
 
 
 function App() {
@@ -50,8 +51,10 @@ function App() {
 
         {/* <Teams/> */}
         
-        <Hero></Hero>
-        <About s={''} animation={'will-change-auto section-2'} ></About>
+        {/* <Hero></Hero>
+        <About s={''} animation={'will-change-auto section-2'} ></About> */}
+
+        <Clouds/>
 
 
     </>
