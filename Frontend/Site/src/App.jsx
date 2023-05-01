@@ -8,6 +8,8 @@ import './index.css'
 import EventSelection from './components/EventSelection'
 import TicketsSection from './components/TicketsSection'
 import BookTickets from './components/BookTickets'
+import Auth from './components/Auth'
+import FogotPassword from './components/ForgotPassword'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route element={<EventSelection title="Event Selection"/>} path="/event-selection"/>
           <Route element={<TicketsSection title="Tickets"/>} path="/tickets"/>
           <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
+          <Route element={<Auth title="Authentication"/>} path="/auth"/>
+          <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}

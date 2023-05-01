@@ -12,7 +12,8 @@ export default {
         'modal-bg':"url('./src/assets/modalBg.png')",
         'ticket1':"url('./src/assets/ticket-1.svg')",
         'ticket2':"url('./src/assets/ticket-2.svg')",
-        'ticket3':"url('./src/assets/ticket-3.svg')"
+        'ticket3':"url('./src/assets/ticket-3.svg')",
+        'login-bg':"url('./src/assets/login-bg.png')",
 
       }
     },
