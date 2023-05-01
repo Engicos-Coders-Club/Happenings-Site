@@ -5,7 +5,6 @@ from django.template.loader import render_to_string
 from django.core.cache import cache
 
 context = {}
-context["site_url"] = settings.FRONTEND_URL
 
 class remove_admin_email(threading.Thread):
     def __init__(self):

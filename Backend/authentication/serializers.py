@@ -5,22 +5,6 @@ from django.conf import settings
 from .models import *
 
 
-class CollegeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CollegeModel
-        fields = ["id", "college_name", "icon"]
-
-class CollegePointsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CollegeModel
-        fields = ["id", "college_name", "icon", "points"]
-
-class CollegeRegistrationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CollegeModel
-        fields = ["college_name", "icon"]
-
-
 class loginSerializer(serializers.Serializer):
     email = serializers.EmailField(required = True)
     password = serializers.CharField(required = True)

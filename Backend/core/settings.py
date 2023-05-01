@@ -170,5 +170,8 @@ GOOGLE_CLIENT_SECRET = str(config("GOOGLE_CLIENT_SECRET"))
 SOCIAL_SECRET = str(config("SOCIAL_SECRET"))
 
 # Utils
-FRONTEND_URL = str(config("FRONTEND_URL"))
 ADMIN_EMAIL = str(config("ADMIN_EMAIL"))
+
+# Razorpay
+PUBLIC_KEY = str(config("PUBLIC_KEY"))
+PRIVATE_KEY = str(config("PRIVATE_KEY"))
