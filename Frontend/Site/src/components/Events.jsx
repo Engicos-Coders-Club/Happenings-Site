@@ -130,15 +130,10 @@ function Events() {
             {
               eventsData.map((event)=>{
                   return(
-                    <EventTab img={event.img} link={event.link} eventName={event.eventName}/>
+                    <EventTab img={event.img} eventName={event.eventName}/>
                   )
               })
             }
-            
-            
-
-            
-        
             
           </div>
               
@@ -146,7 +141,8 @@ function Events() {
 
     </section>
 
-    <section className='h-screen bg-blue-100'></section>
+    <section className='h-[100vh] bg-blue-100'></section>
+    <section className='h-[100vh] bg-blue-100'></section>
     </>
   );
 }
