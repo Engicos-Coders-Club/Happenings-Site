@@ -33,12 +33,12 @@ function App() {
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
           <Route element={<Hero title="Teams"/>} path="/Teams" /> */}
-          <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
+          {/* <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
           
           
-        </Routes>
+        </Routes> */}
   
           {/* <About />  */}
           {/* <Events/> */}
