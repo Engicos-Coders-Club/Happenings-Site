@@ -18,6 +18,7 @@ import Sponsor from './components/Sponsor'
 
 
 function App() {
+  
   return (
     <>
         {/* <Routes>
@@ -49,7 +50,7 @@ function App() {
 
 
         {/* <Teams/> */}
-        
+
         <Hero></Hero>
         <About s={''} animation={'will-change-auto section-2'} ></About>
 
