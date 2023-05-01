@@ -22,5 +22,8 @@ urlpatterns = [
 
 # Event Registration
     path('event-registration/<event_id>/', views.event_registration, name="event-registration"),
+    path('view-registration-status/', views.view_registration_status, name="view-registration-status"),
+    path('view-event-participants/<event_id>/', views.view_individual_event_participants, name="view-event-participants"),
+    path('update-participant-details/<participant_id>/', views.update_individual_event_participants, name="update-participant-details"),
 
 ]

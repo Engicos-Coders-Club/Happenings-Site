@@ -17,6 +17,7 @@ class CollegeModel(BaseModel):
     payment_signature = models.CharField(max_length=100, null=True, blank=True)
     coordinator = models.OneToOneField(UserModel, related_name="college_coordinator", on_delete=models.CASCADE, null=True, blank=True)
     is_verified = models.BooleanField(default=False)
+    # all_registered = models.BooleanField(default=False)
     def __str__(self):
         return self.college_name
     class Meta:

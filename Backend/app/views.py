@@ -13,7 +13,6 @@ import razorpay
 client = razorpay.Client(auth=(settings.PUBLIC_KEY, settings.PRIVATE_KEY))
 
 
-
 class AllCollegesView(ListAPIView):
     queryset = CollegeModel.objects.all()
     serializer_class = CollegeSerializer
@@ -109,16 +108,80 @@ def event_registration(request, event_id):
         user = UserModel.objects.get(email=request.user.email)
         if not CollegeModel.objects.filter(coordinator=user).exists():
             return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
-        college = CollegeModel.objects.get(coordinator=user)
+        college_obj = CollegeModel.objects.get(coordinator=user)
         if not EventModel.objects.filter(id=event_id).exists():
             return Response({"message": "Invalid Event ID"}, status=status.HTTP_406_NOT_ACCEPTABLE)
-        event = EventModel.objects.get(id=event_id)
+        event_obj = EventModel.objects.get(id=event_id)
         ser = ParticipantSerializer(data=request.data)
         if ser.is_valid():
-            ser.save(event = event)
-            return Response({"message":"Registration Accepted"}, status=status.HTTP_200_OK)
+            num = event_obj.event_participation.all().count()
+            if num < event_obj.no_of_participants:
+                ser.save(event=event_obj, college=college_obj)
+                return Response({"message":"Registration Accepted"}, status=status.HTTP_200_OK)
+            else:
+                return Response({"message":"Max Participants count Reached, Edit the Participant List"}, status=status.HTTP_412_PRECONDITION_FAILED)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        print(e)
+        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def view_registration_status(request):
+    try:
+        user = UserModel.objects.get(email=request.user.email)
+        if not CollegeModel.objects.filter(coordinator=user).exists():
+            return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
+        li = []
+        for event_obj in EventModel.objects.all():
+            event_data = {}
+            event_data["id"] = event_obj.id
+            event_data["event"] = event_obj.event_name
+            event_data["no_of_participants"] = event_obj.no_of_participants
+            event_data["registered_participants"] = event_obj.event_participation.all().count()
+            if event_obj.event_participation.all().count() == event_obj.no_of_participants:
+                event_data["status"] = True
+            else:
+                event_data["status"] = False
+            li.append(event_data)
+        return Response(li, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def view_individual_event_participants(request, event_id):
+    try:
+        user = UserModel.objects.get(email=request.user.email)
+        if not CollegeModel.objects.filter(coordinator=user).exists():
+            return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
+        if not EventModel.objects.filter(id=event_id).exists():
+            return Response({"message": "Invalid Event ID"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+        event_obj = EventModel.objects.get(id=event_id)
+        ser = ParticipantSerializer(event_obj.event_participation.all(), many=True)
+        return Response(ser.data, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+@api_view(["PATCH"])
+@permission_classes([IsAuthenticated])
+def update_individual_event_participants(request, participant_id):
+    try:
+        user = UserModel.objects.get(email=request.user.email)
+        if not CollegeModel.objects.filter(coordinator=user).exists():
+            return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
+        if not EventParticipantsModel.objects.filter(id=participant_id).exists():
+            return Response({"message": "Invalid Participant ID"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+        participant_obj = EventParticipantsModel.objects.get(id=participant_id)
+        ser = ParticipantSerializer(participant_obj, data=request.data, partial=True)
+        if ser.is_valid():
+            ser.save()
+            return Response({"message": "Participant detials updated", "data":ser.data}, status=status.HTTP_200_OK)
+        return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

@@ -51,7 +51,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventParticipantsModel
-        fields = "__all__"
+        exclude = ["created_at", "updated_at", "event", "college"]
 
 class PaymentCredentials(serializers.Serializer):
     razorpay_payment_id  = serializers.CharField(required = False)
