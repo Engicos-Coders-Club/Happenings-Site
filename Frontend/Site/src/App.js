@@ -1,12 +1,12 @@
 import './App.css';
-import Events from './components/Events'
+import EventSection from './components/EventSection'
 import Modal from './components/Modal'
 import Sponsor from './components/Sponsor'
 import Schedule from './components/Schedule'
 function App() {
   return (
     <>
-    <Events/>
+    <EventSection/>
     {/* <Modal/> */}
     {/* <Sponsor/> */}
     {/* <Schedule/> */}
