@@ -10,11 +10,14 @@ import TicketsSection from './components/TicketsSection'
 import BookTickets from './components/BookTickets'
 import Auth from './components/Auth'
 import FogotPassword from './components/ForgotPassword'
+import Hero from './Pagesections/HeroSection'
+import Teams from './Pagesections/Teams'
 
 function App() {
   return (
     <>
-        <Routes>
+        {/* <Routes>
+          <Route element={<Hero title="Hero"/>} path="/" />
           <Route element={<About title="About"/>} path="/" />
           <Route path="/all-events" element={<AllEvents title="All Events"/>} />
           <Route path="/events" element={<Events title="Events"/>} />
@@ -25,12 +28,21 @@ function App() {
           <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
+          <Route element={<Hero title="Teams"/>} path="/Teams" /> */}
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}
           {/* <EventRegistration /> */}
           
-        </Routes>
+        {/* </Routes> */}
+
+
+        {/* <Teams/> */}
+        
+        <Hero></Hero>
+        <About s={''} animation={'will-change-auto section-2'} ></About>
+
+
     </>
   )
 }

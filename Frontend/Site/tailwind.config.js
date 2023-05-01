@@ -15,7 +15,10 @@ export default {
         'ticket3':"url('./src/assets/ticket-3.svg')",
         'login-bg':"url('./src/assets/login-bg.png')",
 
-      }
+      },
+      fontFamily: {
+        MANGO: ["MANGO", "sans-serif"],
+      },
     },
   },
   plugins: [],

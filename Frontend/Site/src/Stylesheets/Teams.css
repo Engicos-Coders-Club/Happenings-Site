@@ -1,0 +1,27 @@
+.active-tab{
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color:#171717ff;
+}
+
+.non-active-tab{
+    background-color: #171717ff;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color:white;
+}
+
+.active-content{
+    display:block
+}
+
+.non-active-content{
+    display:none
+}
