@@ -20,7 +20,7 @@ function About(props) {
                     <div className='pt-8 flex justify-end'>
                         <img src={gecLogo} alt="GEC Logo" width={50} />
                     </div>
-                    <h1 className={`font-bold text-6xl md:text-8xl pt-8 uppercase tracking-widest`} style={{ 'fontFamily': 'MangoGrotesque' }}>About</h1>
+                    <h1 className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`} style={{ 'fontFamily': 'MangoGrotesque' }}>About</h1>
                     <div className='flex gap-x-4 pt-5'>
                         {
                             socials.map((social) => {
@@ -34,8 +34,10 @@ function About(props) {
                     </div>
                     <div className='mt-4 flex flex-col md:flex md:flex-row'>
                         <div className="flex flex-col md:w-2/3">
-                            <p className={`text-[12px] md:text-sm py-3 md:py-0`} style={{ 'fontFamily': 'Merriweather' }}>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum beatae, non odio mollitia asperiores maxime quia debitis ad nihil animi ea laboriosam provident quibusdam tempora velit reprehenderit eos architecto consequatur ipsum fugiat. Laborum quos consequuntur exercitationem. Ex magnam, ab nesciunt assumenda inventore odit? Fuga sit quam et harum sed autem velit in ea quisquam quas nulla eveniet sequi ex, perferendis quos nobis voluptatum? In ut molestiae facere debitis sint quod reprehenderit labore inventore? Deleniti, aliquid, nihil adipisci reiciendis ratione dignissimos eius animi nostrum cupiditate sapiente voluptas saepe magnam culpa ea minima veniam eaque. Nam consequatur praesentium possimus maxime velit.
+                            <p className={`py-3 md:py-0 md:text-xl`} style={{ 'fontFamily': 'Merriweather' }}>
+                                "Happenings" was first started in 1981, making it the oldest and most popular college fest amongst the
+                                youth of Goa. It is one of Goa's largest cultural festival, that provides the perfect platform for youngsters to demonstrate their talents. This is a one stop destination for unleashing the creative monster inside us.
+                                This year we celebrate "Happenings 2023 " which will mark the 39th year celebration of the event.
                             </p>
                         </div>
                         <div className="my-3 md:my-0 md:mx-auto">
@@ -46,7 +48,7 @@ function About(props) {
                     </div>
                     <div className='mx-auto border-orange-500 border-2 border-dotted p-3 w-full md:w-3/4 mt-8 rounded-tl-3xl rounded-br-3xl'>
                         <h3 className='uppercase text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-red-500'>Tickets</span> Now</h3>
-                        <p className='text-xl text-center mx-auto my-4' style={{ 'fontFamily': 'MangoGrotesque' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam voluptate a recusandae nam, animi similique?</p>
+                        <p className='text-xl text-center mx-auto my-4 tracking-wide' style={{ 'fontFamily': 'MangoGrotesque' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam voluptate a recusandae nam, animi similique?</p>
                         <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/register" className='flex justify-center items-center'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View All Tickets</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></Link></button>
                     </div>
                 </div>
