@@ -12,6 +12,10 @@ import Auth from './components/Auth'
 import FogotPassword from './components/ForgotPassword'
 import Hero from './Pagesections/HeroSection'
 import Teams from './Pagesections/Teams'
+import Schedule from './components/Schedule'
+import EventSection from './components/EventSection'
+import Sponsor from './components/Sponsor'
+
 
 function App() {
   return (
@@ -29,6 +33,13 @@ function App() {
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
           <Route element={<Hero title="Teams"/>} path="/Teams" /> */}
+          <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
+          <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
+          <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
+          
+          
+        </Routes>
+  
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}
