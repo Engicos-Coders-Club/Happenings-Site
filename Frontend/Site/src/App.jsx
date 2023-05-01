@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route} from 'react-router-dom'
+import About from './components/About'
+import AllEvents from './components/AllEvents'
+import Events from './components/Events'
+import CollegeRegistration from './components/CollegeRegistration'
+import EventRegistration from './components/EventRegistration'
+import './index.css'
+import EventSelection from './components/EventSelection'
+import TicketsSection from './components/TicketsSection'
+import BookTickets from './components/BookTickets'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <Routes>
+          <Route element={<About title="About"/>} path="/" />
+          <Route path="/all-events" element={<AllEvents title="All Events"/>} />
+          <Route path="/events" element={<Events title="Events"/>} />
+          <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
+          <Route element={<EventRegistration title="Event Registration"/>} path="/event-registration" />
+          <Route element={<EventSelection title="Event Selection"/>} path="/event-selection"/>
+          <Route element={<TicketsSection title="Tickets"/>} path="/tickets"/>
+          <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
+          {/* <About />  */}
+          {/* <Events/> */}
+          {/* <CollegeRegistration /> */}
+          {/* <EventRegistration /> */}
+          
+        </Routes>
     </>
   )
 }
