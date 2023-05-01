@@ -49,8 +49,12 @@ return () => {
 
 });
   return (
+  <>
     <Hero />
+  
+  </>
   )
+   
 }
 
 export default HeroSec
