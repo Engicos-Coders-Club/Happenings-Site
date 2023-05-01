@@ -1,10 +1,11 @@
 import React, { Component} from 'react'
-
+import Navbar from '../components/navbar'
 
 export class Hero extends Component {
   render() {
     return (
         <>
+        <Navbar/>
             <section className="w-full h-screen overflow-x-hidden  section-1 m-0 p-0">
             <div className='w-full h-full flex justify-center items-center z-10 '>  
             <div class="h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
