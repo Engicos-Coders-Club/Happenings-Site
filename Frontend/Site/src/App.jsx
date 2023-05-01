@@ -10,6 +10,8 @@ import TicketsSection from './components/TicketsSection'
 import BookTickets from './components/BookTickets'
 import Auth from './components/Auth'
 import FogotPassword from './components/ForgotPassword'
+import Hero from './Pagesections/HeroSection'
+import Teams from './Pagesections/Teams'
 import Schedule from './components/Schedule'
 import EventSection from './components/EventSection'
 import Sponsor from './components/Sponsor'
@@ -18,7 +20,8 @@ import Sponsor from './components/Sponsor'
 function App() {
   return (
     <>
-        <Routes>
+        {/* <Routes>
+          <Route element={<Hero title="Hero"/>} path="/" />
           <Route element={<About title="About"/>} path="/" />
           <Route path="/all-events" element={<AllEvents title="All Events"/>} />
           <Route path="/events" element={<Events title="Events"/>} />
@@ -29,6 +32,7 @@ function App() {
           <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
+          <Route element={<Hero title="Teams"/>} path="/Teams" /> */}
           <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
@@ -40,6 +44,16 @@ function App() {
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}
           {/* <EventRegistration /> */}
+          
+        {/* </Routes> */}
+
+
+        {/* <Teams/> */}
+        
+        <Hero></Hero>
+        <About s={''} animation={'will-change-auto section-2'} ></About>
+
+
     </>
   )
 }

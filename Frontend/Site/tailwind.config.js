@@ -23,6 +23,11 @@ export default {
         'ticket2':"url('./src/assets/ticket-2.svg')",
         'ticket3':"url('./src/assets/ticket-3.svg')",
         'login-bg':"url('./src/assets/login-bg.png')",
+
+      },
+      fontFamily: {
+        MANGO: ["MANGO", "sans-serif"],
+      },
         'event-sec-bg':"url('./src/assets/h1.png')",
         
       }

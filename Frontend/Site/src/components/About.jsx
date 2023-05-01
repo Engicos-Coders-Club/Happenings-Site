@@ -4,21 +4,25 @@ import { socials } from '../data/socials'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { gecLogo } from '../assets'
+import Navbar from '../components/navbar'
+import SideBar from '../components/SideBar'
 
 // TODO: Change GEC LOGO
 
 function About(props) {
-    const { title } = props
+    const { title,animation } = props
 
     useEffect(() => {
         document.title = title
     }, [])
     return (
         <>
-            <main className='bg-black text-white min-h-screen'>
+            <main className={'bg-[#171717ff] text-white min-h-screen '+animation}>
+            <Navbar />
+            <SideBar />
                 <div className='w-4/5 mx-auto pb-16'>
                     <div className='pt-8 flex justify-end'>
-                        <img src={gecLogo} alt="GEC Logo" width={50} />
+                        {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}
                     </div>
                     <h1 className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`} style={{ 'fontFamily': 'MangoGrotesque' }}>About</h1>
                     <div className='flex gap-x-4 pt-5'>
