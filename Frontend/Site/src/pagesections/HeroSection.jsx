@@ -25,9 +25,9 @@ function HeroSec() {
       .to('.section-2',{opacity:'100%',y:0})
       .to('.section-1',{y:0});
       
-      return () => {
-        ScrollTrigger.killAll();
-      };
+      // return () => {
+      //   ScrollTrigger.killAll();
+      // };
       
     });
     
