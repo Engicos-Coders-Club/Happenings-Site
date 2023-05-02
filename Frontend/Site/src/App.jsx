@@ -22,7 +22,8 @@ function App() {
   
   return (
     <>
-        {/* <Routes>
+        {/* 
+        <Routes>
           <Route element={<Hero title="Hero"/>} path="/" />
           <Route element={<About title="About"/>} path="/" />
           <Route path="/all-events" element={<AllEvents title="All Events"/>} />
@@ -34,13 +35,13 @@ function App() {
           <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
-          <Route element={<Hero title="Teams"/>} path="/Teams" /> */}
-          {/* <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
+          <Route element={<Hero title="Teams"/>} path="/Teams" />
+          <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
           
           
-        </Routes> */}
+        </Routes>
   
           {/* <About />  */}
           {/* <Events/> */}
@@ -52,8 +53,11 @@ function App() {
 
         {/* <Teams/> */}
 
-        <Hero></Hero>
-        <About s={''} animation={'will-change-auto section-2'} ></About>
+        <Hero />
+        <About s={''} animation={'will-change-auto section-2'} />
+        <EventSection />
+        <Schedule />
+        <Sponsor />
 
 
     </>
