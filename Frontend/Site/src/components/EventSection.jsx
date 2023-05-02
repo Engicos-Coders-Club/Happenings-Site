@@ -25,7 +25,7 @@ function Events(props) {
             // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
             scrollTrigger: {
               trigger: "#Eventsec",
-              // markers: true,
+              markers: true,
               start: "top top",
               end: "bottom+=297 bottom",
               pin: true,
@@ -38,7 +38,7 @@ function Events(props) {
             duration: 25,
             scrollTrigger: {
               trigger: "#Eventsec",
-              // markers: true,
+              markers: true,
               toggleActions: "restart none none none",
               start: "+=20% 20%",
               end: "bottom+=130 80%",
@@ -107,7 +107,7 @@ function Events(props) {
 
   return (
     <>
-      <section className='h-screen bg-blue-100'></section>
+
 
       <section id="Eventsec" className="h-[85%] md:h-screen bg-event-sec-bg bg-cover" style={{'fontFamily':'MangoGrotesque'}}>
 
@@ -140,9 +140,7 @@ function Events(props) {
         </div>
 
     </section>
-
-    <section className='h-[100vh] bg-blue-100'></section>
-    <section className='h-[100vh] bg-blue-100'></section>
+    <section className='h-[80vh]' />
     </>
   );
 }
