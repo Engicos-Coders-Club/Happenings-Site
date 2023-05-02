@@ -7,7 +7,6 @@ import WebTeam from '/public/Teams_Info/WebDevs.json'
 import Coordinators from '/public/Teams_Info/Coordinators.json'
 import Advisors from '/public/Teams_Info/Advisors.json'
 import Navbar from '../components/navbar'
-import side from '../components/SideBar'
 import SideBar from '../components/SideBar'
 function Teams() {
   const [toggleState,setToggleState]=useState(1);

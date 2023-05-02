@@ -29,7 +29,9 @@ export default {
       fontFamily: {
         MANGO: ["MANGO", "sans-serif"],
       },
+        'event-sec-bg':"url('./src/assets/h1.png')",
+        
+      }
     },
-  },
   plugins: [],
 }
