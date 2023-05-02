@@ -23,7 +23,7 @@ function navbar() {
 
   return (
     <>
-   <nav className='absolute top-0 w-full bg-transparent flex justify-between  pr-4 z-40'>
+   <nav className='absolute top-0 left-0 w-full bg-transparent flex justify-between  pr-4 z-40'>
         <div className='relative p-5 flex justify-center items-center cursor-pointer' onClick={handleClick}>
             <FaBars size={30} color="white"/>
 

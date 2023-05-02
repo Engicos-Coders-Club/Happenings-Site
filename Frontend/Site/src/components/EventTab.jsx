@@ -21,7 +21,7 @@ function EventTab(props) {
             {/* Text Button */}
             <div className='flex justify-between mt-10'>
               <p className="text-white text-3xl md:text-4xl lg:text-5xl" style={{'fontFamily':'MangoGrotesque'}}>{props.eventName}</p>
-                <Link to="/"><button className='h-3/4 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-[12px] md:text-sm'>View all</button></Link>
+                <Link to="/"><button className='h-3/4 text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-[12px] md:text-sm'>View all</button></Link>
             </div>
         </div>
             

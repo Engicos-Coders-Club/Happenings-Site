@@ -1,9 +1,13 @@
 import Red from '../assets/Red.png'
 import Orange from '../assets/Orange.png'
+import { FiArrowUpRight } from 'react-icons/fi'
+import { Link } from "react-router-dom";
 import { gsap } from 'gsap'
 import React, { useEffect } from 'react'
 import SponsorCard from './SponsorCard'
 import {sponsors} from '../data/sponsorsData'
+import Navbar from '../components/navbar'
+import SideBar from '../components/SideBar'
 
 function Sponsor() {
     
@@ -65,32 +69,37 @@ function Sponsor() {
 
     }, []);
   return (
-    <section className="w-full h-auto relative bg-black  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
+    // <div className='relative'>
+        
+        <section className="w-full h-auto md:pl-16 relative bg-[#171717ff]  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
+        <Navbar />
+        <SideBar />
+            <div className="moveR absolute">
+                <img src={Red} width={600} alt="" />
+            </div>
+            <div className="moveO absolute">
+                <img src={Orange} alt="" />
+            </div>
+            <div className="h-auto relative z-1">
 
-        <div className="moveR absolute">
-            <img src={Red} width={600} alt="" />
-        </div>
-        <div className="moveO absolute">
-            <img src={Orange} alt="" />
-        </div>
-        <div className="h-auto relative z-1">
+                <div className="flex justify-between items-center px-5 py-10">
+                    <p className="text-4xl sm:text-6xl md:text-7xl font-extrabold">OUR SPONSORS</p>
+                    <div className='pr-16'><Link to="/register"><button className='flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-sm lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
+                </div>
 
-            <div className="flex justify-center items-center py-10">
-                <p className="text-4xl sm:text-6xl md:text-7xl">OUR SPONSORS</p>
+                {
+                    sponsors.map((sponsor,id)=>{
+                        return(
+                            <SponsorCard title={sponsor.title} data={sponsor.collection} key={id}/>
+                        )
+                    })
+                }
+                            
+
             </div>
 
-            {
-                sponsors.map((sponsor,id)=>{
-                    return(
-                        <SponsorCard title={sponsor.title} data={sponsor.collection} key={id}/>
-                    )
-                })
-            }
-                        
-
-        </div>
-
-    </section>
+        </section>
+    // </div>
   );
 }
 
