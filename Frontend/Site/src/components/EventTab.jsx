@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 
 function EventTab(props) {
-  const clip={'clip-path': 'polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%)', 'transition':'transform 0.4s'}
+  const clip={'clipPath': 'polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%)', 'transition':'transform 0.4s'}
   
   return (
     <>

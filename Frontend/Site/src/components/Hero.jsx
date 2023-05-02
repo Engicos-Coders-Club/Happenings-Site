@@ -9,7 +9,7 @@ export class Hero extends Component {
             <section className="w-full h-screen overflow-x-hidden  section-1 m-0 p-0">
             <Navbar/>
             <div className='w-full h-full flex justify-center items-center z-10 '>  
-            <div class="h-[35%] sm:h-[40%] md:h-[45%] lg:h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
+            <div className="h-[35%] sm:h-[40%] md:h-[45%] lg:h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
 
                 <div className='w-full h-[50%] relative flex justify-center z-10 '>
                   <img src="/assets/Rectangle.svg" className='h-[100%] w-[50%] z-10'></img>
