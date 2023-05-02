@@ -16,13 +16,15 @@ import Schedule from './components/Schedule'
 import EventSection from './components/EventSection'
 import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
+import Venue from './components/Venue'
+import Footer from './components/Footer'
 
 
 function App() {
   
   return (
     <>
-        {/* 
+        
         <Routes>
           <Route element={<Hero title="Hero"/>} path="/" />
           <Route element={<About title="About"/>} path="/" />
@@ -42,7 +44,7 @@ function App() {
           
           
         </Routes>
-  
+  {/* 
           {/* <About />  */}
           {/* <Events/> */}
           {/* <CollegeRegistration /> */}
@@ -58,6 +60,8 @@ function App() {
         <EventSection />
         <Schedule />
         <Sponsor />
+        <Venue/>
+        <Footer/>
 
 
     </>
