@@ -65,7 +65,7 @@ function Sponsor() {
 
     }, []);
   return (
-    <section className="w-full h-auto absolute bg-black  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
+    <section className="w-full h-auto relative bg-black  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
 
         <div className="moveR absolute">
             <img src={Red} width={600} alt="" />
