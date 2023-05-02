@@ -30,8 +30,8 @@ export class Hero extends Component {
             </div>
             </div>
             <img src="/assets/heroBGN.svg" className='object-cover w-full h-screen top-0 absolute z-0'></img>
-            <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud1 left-[-27%]' ></img>
-            <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud2 right-[-27%]'></img>
+            {/* <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud1 left-[-27%]' ></img>
+            <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud2 right-[-27%]'></img> */}
             </section>
         </>
    
