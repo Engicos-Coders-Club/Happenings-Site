@@ -52,6 +52,7 @@ function App() {
 
 
         {/* <Teams/> */}
+        <Clouds/>
 
         <Hero />
         <About s={''} animation={'will-change-auto section-2'} />
