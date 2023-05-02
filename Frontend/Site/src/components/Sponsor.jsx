@@ -80,9 +80,9 @@ function Sponsor() {
             </div>
 
             {
-                sponsors.map((sponsor)=>{
+                sponsors.map((sponsor,id)=>{
                     return(
-                        <SponsorCard title={sponsor.title} data={sponsor.collection}/>
+                        <SponsorCard title={sponsor.title} data={sponsor.collection} key={id}/>
                     )
                 })
             }

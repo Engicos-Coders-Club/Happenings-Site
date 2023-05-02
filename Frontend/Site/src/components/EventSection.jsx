@@ -25,7 +25,7 @@ function Events(props) {
             // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
             scrollTrigger: {
               trigger: "#Eventsec",
-              markers: true,
+              // markers: true,
               start: "top top",
               end: "bottom+=297 bottom",
               pin: true,
@@ -38,7 +38,7 @@ function Events(props) {
             duration: 25,
             scrollTrigger: {
               trigger: "#Eventsec",
-              markers: true,
+              // markers: true,
               toggleActions: "restart none none none",
               start: "+=20% 20%",
               end: "bottom+=130 80%",
@@ -128,9 +128,9 @@ function Events(props) {
           <div id="Slider" className='box-content flex w-[300%] h-3/4'>
 
             {
-              eventsData.map((event)=>{
+              eventsData.map((event,id)=>{
                   return(
-                    <EventTab img={event.img} eventName={event.eventName}/>
+                    <EventTab img={event.img} eventName={event.eventName} key={id}/>
                   )
               })
             }
@@ -140,7 +140,7 @@ function Events(props) {
         </div>
 
     </section>
-    <section className='h-[80vh]' />
+    <section className='h-[40vh]' />
     </>
   );
 }

@@ -11,7 +11,7 @@ function Schedule(props) {
     }, [])
 
   return (
-    <section className='bg-black h-[60vh] relative' style={{'fontFamily':'MangoGrotesque', 'display':'grid','grid-template-rows':'22% 55% 25%'}}>
+    <section className='bg-black min-h-screen relative' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
 
         <div className='flex justify-center items-center'>
             <p className="text-3xl xs:text-4xl sm:text-5xl text-white font-extrabold">SCHEDULE</p>
