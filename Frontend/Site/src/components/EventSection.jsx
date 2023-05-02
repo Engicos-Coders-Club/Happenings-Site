@@ -25,7 +25,7 @@ function Events(props) {
             // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
             scrollTrigger: {
               trigger: "#Eventsec",
-              markers: true,
+              // markers: true,
               start: "top top",
               end: "bottom+=297 bottom",
               pin: true,
@@ -38,7 +38,7 @@ function Events(props) {
             duration: 25,
             scrollTrigger: {
               trigger: "#Eventsec",
-              markers: true,
+              // markers: true,
               toggleActions: "restart none none none",
               start: "+=20% 20%",
               end: "bottom+=130 80%",
