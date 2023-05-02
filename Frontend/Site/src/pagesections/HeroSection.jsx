@@ -7,24 +7,24 @@ function HeroSec() {
 
 useEffect(() => {
   gsap.registerPlugin(ScrollTrigger)
-  gsap.to('.smokeCloud1', {
-    x:'+=150%',
-    repeat:-1,
-    duration:60,
-    opacity:0,
-      ease: "sine.inOut",
-      toggleActions:"play pause resume reset"
-  });
+  // gsap.to('.smokeCloud1', {
+  //   x:'+=150%',
+  //   repeat:-1,
+  //   duration:60,
+  //   opacity:0,
+  //     ease: "sine.inOut",
+  //     toggleActions:"play pause resume reset"
+  // });
 
-  gsap.to('.smokeCloud2', {
-    x:'-=150%',
-    y:'+=10%',
-    repeat:-1,
-    duration:60,
-    opacity:0,
-      ease: "sine.inOut",
-      toggleActions:"play pause resume reset",
-  });
+  // gsap.to('.smokeCloud2', {
+  //   x:'-=150%',
+  //   y:'+=10%',
+  //   repeat:-1,
+  //   duration:60,
+  //   opacity:0,
+  //     ease: "sine.inOut",
+  //     toggleActions:"play pause resume reset",
+  // });
 
   gsap.timeline({
     defaults:{ease:'none',duration:5},

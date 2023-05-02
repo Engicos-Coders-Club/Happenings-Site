@@ -9,7 +9,7 @@ export class Hero extends Component {
             <section className="w-full h-screen overflow-x-hidden  section-1 m-0 p-0">
             <Navbar/>
             <div className='w-full h-full flex justify-center items-center z-10 '>  
-            <div class="h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
+            <div class="h-[35%] sm:h-[40%] md:h-[45%] lg:h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
 
                 <div className='w-full h-[50%] relative flex justify-center z-10 '>
                   <img src="/assets/Rectangle.svg" className='h-[100%] w-[50%] z-10'></img>
@@ -21,7 +21,7 @@ export class Hero extends Component {
 
                 <div className='w-full relative flex justify-center items-center z-10 h-[50%]'>
                    <div >
-                   <h1 className="font-MANGO font-extrawide bg-gradient-to-b from-white to-[#4F0C0C] text-transparent bg-clip-text MainText" style={{fontSize:'10vw',}}>HAPPENINGS 2023</h1>
+                   <h1 className="font-MANGO font-extrawide bg-gradient-to-b from-white to-[#4F0C0C] text-transparent bg-clip-text MainText text-[3.8rem] lg:text-9xl">HAPPENINGS 2023</h1>
                    </div>
        
                 </div>

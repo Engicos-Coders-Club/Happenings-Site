@@ -19,6 +19,7 @@ import Clouds from './components/Clouds'
 
 
 function App() {
+  
   return (
     <>
         {/* <Routes>
@@ -50,11 +51,9 @@ function App() {
 
 
         {/* <Teams/> */}
-        
-        {/* <Hero></Hero>
-        <About s={''} animation={'will-change-auto section-2'} ></About> */}
 
-        <Clouds/>
+        <Hero></Hero>
+        <About s={''} animation={'will-change-auto section-2'} ></About>
 
 
     </>
