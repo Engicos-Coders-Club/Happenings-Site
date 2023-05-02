@@ -11,7 +11,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', "https://happenings2023.com"]
 # ALLOWED_HOSTS = ['192.168.0.1']
 
 INSTALLED_APPS = [
