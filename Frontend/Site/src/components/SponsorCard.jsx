@@ -40,9 +40,9 @@ function SponsorCard(props) {
         <div className="flex justify-center my-3">
             <div className="block w-full h-full sm:flex sm:justify-around">
                 {
-                    props.data.map((item)=>{
+                    props.data.map((item,id)=>{
                         return(
-                            <a href={item.link}><img className='hover:scale-105 w-1/2 m-auto my-5 sm:w-3/4 md:w-full md:m-0' src={item.img} /></a>
+                            <a href={item.link} key={id}><img className='hover:scale-105 w-1/2 m-auto my-5 sm:w-3/4 md:w-full md:m-0' src={item.img} /></a>
                         )
                     })
                 }
