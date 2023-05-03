@@ -1,25 +1,24 @@
 
-import {React, useEffect,useRef} from 'react'
+import {React, useEffect,useState} from 'react'
 
 import { gsap } from "gsap";
 
 function Clouds() {
+  const [isVisible, setIsVisible] = useState(true);
   useEffect(() => {
-
-    window.onload = function() {
-      // Trigger the animation after the page has loaded
       gsap.to('.sC', {
-        delay: 1,
         duration: 2,
         opacity: 0,
         ease: 'sine.inOut',
+        onComplete: () => {
+          setIsVisible(false);
+        }
       });
-    };
-  
+
   });
 
   return (
-    <div className='h-screen w-full overflow-hidden absolute top-0 bg-transparent z-50'>
+    <div className={`h-screen w-full overflow-hidden absolute top-0 bg-transparent z-50 ${isVisible ? '' : 'hidden'} will-change-auto`}>
       <img src='./assets/smoke.png' className='right-0 w-[50vw] absolute sC'></img>
       <img src='./assets/smoke.png' className='left-0 w-[50vw] absolute sC'></img>
       <img src='./assets/smoke.png' className='left-[30%] w-[50vw] absolute rotate-45 sC'></img>
