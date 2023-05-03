@@ -15,6 +15,7 @@ import Hero from './components/HeroSection'
 import Teams from './components/Teams'
 import Schedule from './components/Schedule'
 import EventSection from './components/EventSection'
+import GeneralRulePage from  './components/GeneralRulePage'
 import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
@@ -46,13 +47,14 @@ function App() {
           
         </Routes>
 
-        {/* <Hero />
+        <Hero />
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
+        <GeneralRulePage/>
         <Sponsor />
         <Venue/>
-        <Footer/> */}
+        <Footer/>
 
 
     </>
