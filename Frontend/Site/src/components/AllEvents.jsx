@@ -2,15 +2,24 @@
 import { useEffect } from 'react'
 import eventsData from '../data/eventsData'
 import EventCard from './EventCard'
+import { useParams } from 'react-router-dom'
+import {getEvents} from '../actions/events' 
+import { useDispatch,useSelector } from 'react-redux'
 
 function Events(props) {
     const { onStageEvents, offStageEvents } =  eventsData
     const { title } = props
+    const {id} = useParams()
+    const dispatch = useDispatch()
+
+
+    // RENDER THIS EVENTS
+    const {loading,events} = useSelector((state)=>state.event)
 
     useEffect(() => {
         document.title = title
+        dispatch(getEvents(id))
     }, [])
-
 
     return (
         <div>
@@ -22,11 +31,12 @@ function Events(props) {
                 <div className='w-[80vw] mx-auto py-16'>
                     <h1 className="uppercase text-[#F8E0B7] text-center text-5xl font-bold" style={{ 'fontFamily': 'MangoGrotesque' }}>On-Stage Events</h1>
                     <div className="flex flex-wrap justify-center gap-5 md:gap-x-10 mt-14">
-                        {onStageEvents.map((event) => {
+                        {events ? 
+                        events.map((event) => {
                             return (
                                 <EventCard key={event.id} event={event} />
                             )
-                        })}
+                        }):null }
                     </div>
                 </div>
                 <div className='bg-events-bg'>

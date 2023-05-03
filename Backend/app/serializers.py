@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import *
 
 
-
 class CollegeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CollegeModel
@@ -23,10 +22,27 @@ class CoordinatorModelSerializer(serializers.ModelSerializer):
         model = EventCoordinatorModel
         fields = ["name", "phone", "photo"]
 
+class CoordinatorModelSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = EventCoordinatorModel
+        fields = ["name", "phone"]
+
+
 class AllEventSerializer(serializers.ModelSerializer):
+    coordinators = serializers.SerializerMethodField()
     class Meta:
         model = EventModel
-        fields = ["id", "event_name", "cover_image"]
+        fields = ["id", "event_name", "coordinators"]
+    def get_coordinators(self, obj):
+        coo = []
+        try:
+            event_obj = EventModel.objects.get(id = obj.id)
+            ser = CoordinatorModelSerializer2(event_obj.event_coordinator.all(), many=True)
+            coo = ser.data
+        except Exception as e:
+            print(e)
+        return coo
+
 
 class SingleEventSerializer(serializers.ModelSerializer):
     coordinators = serializers.SerializerMethodField()
