@@ -8,14 +8,23 @@ function GeneralRuleModal(props) {
             <div className="bg-[#222222] w-[90vw] h-auto md:w-[60vw] border-orange-700 border-4  py-10 border-dashed backdrop-blur-3xl rounded-tl-3xl rounded-br-3xl">
                 <div className="flex  items-start mx-auto w-[90%]">
                     <div className="text-white">
-                        <p className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4'>GENERAL RULES</p>
-                        <ul className='px-3 my-10 text-xs sm:text-sm lg:text-base'>
-                            <li>Each performance should be an original rap verse and should not exceed 5 mins.</li>
-                            <li>participants should have their own beat to rap to</li>
-                            <li>The participants need to bring their own track and handover the pendrive to the registration counter.</li>
-                            <li>The decisions made by the organisers and judges will be final and abiding.</li>
-                            <li>The participant must not employ any explicit words in his/her lyrics.</li>
-                            <li>Usage of offensive language, slurs, naming a particular person or a defined group of people (religions, Caste etc), any socially objectionable language, is strictly prohibited. Non compliance os these rules is grounds for disqualification.</li>
+                        <p className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2'>GENERAL RULES</p>
+                        <ul className='pb-3 my-10 text-xs sm:text-sm lg:text-base'>
+
+                            <li>Passouts of 2023, are allowed to participate for Happenings 2023.</li>
+                            <li>Colleges are requested to send their registration entries on or before 14th  May 2023, 11.59 pm by filling the registration form.</li>
+                            <li>The (Joker) needs to be submitted along with the registration form</li>
+                            <li>College ID card is mandatory at the time of registration.</li>
+                            <li>No multiple entries, one participant per event</li>
+                            <li>Any vulgarity or obscenity (ON/OFF Stage), display of violence or rude behaviour will lead to disqualification of the entire college team.</li>
+                            <li>The organising team will not be responsible if any participant is in multiple events which are going on simultaneously. There will be no negotiation and rescheduling of competitions.</li>
+                            <li>Damage to any property or abusive attacks on other participating teams shall not be tolerated and can lead to fine, legal action and disqualification from the entire event.</li>
+                            <li>No TA/DA will be provided. </li>
+                            <li>Participants are solely responsible for their property/belongings. </li>
+                            <li>The decision of the judges and organisers in any competition will be final and binding and will not be contestable.</li>
+                            <li>If the participants are late for any competition, points will be deducted.</li>
+                            <li>Exceeding the said time limit for any event will lead to deduction of points.</li>
+                            <li>The participants must report for every event 30 minutes prior to the event as mentioned in the schedule.</li>
                         </ul>
                         <div className='flex justify-center my-12'>
                             {/* <Link to='/'> */}
