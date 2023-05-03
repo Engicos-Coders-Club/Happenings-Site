@@ -1,18 +1,42 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from "react-router-dom";
 import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from '../components/navbar'
 import SideBar from '../components/SideBar'
 
 function Schedule(props) {
   const { title } = props
 
-    useEffect(() => {
-        document.title = title
-    }, [])
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      
+      if(window.innerWidth>=640){
+        gsap.to(".schedule", {
+          opacity:"200%",   
+          
+          scrollTrigger: {
+            trigger: ".schedule",
+            markers: true,
+            start: "top center+=50",
+            end: "bottom",
+            scrub:1
+          }
+        });
+        
+      }
+
+      
+    });
+    
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className='bg-[#171717ff] min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
+    <section className='schedule opacity-0 bg-[#171717ff] min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
 
       <Navbar />
       <SideBar />
