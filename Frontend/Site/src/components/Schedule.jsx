@@ -36,7 +36,7 @@ function Schedule(props) {
   }, []);
 
   return (
-    <section className='bg-[#171717ff] min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
+    <section className='bg-[#171717ff] schedule opacity-0 min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
 
       <Navbar />
       <SideBar />
