@@ -8,7 +8,7 @@ import SideBar from '../components/SideBar'
 function GeneralRuleModal(props) {
     return (
         <>
-        <section className='bg-[#171717ff] relative pb-9 md:pl-16'>
+        <section className='bg-[#171717ff] relative py-9 md:pl-16'>
         <Navbar />
         <SideBar />
 

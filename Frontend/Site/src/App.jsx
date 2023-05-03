@@ -43,6 +43,7 @@ function App() {
           <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
+          <Route element={<GeneralRulePage title="GeneralRulePage"/>} path="/GeneralRule"/>
           
           
         </Routes>
@@ -51,7 +52,6 @@ function App() {
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
-        <GeneralRulePage/>
         <Sponsor />
         <Venue/>
         <Footer/>
