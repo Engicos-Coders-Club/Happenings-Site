@@ -64,7 +64,7 @@ function App() {
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
-        <Sponsor />
+        {/* <Sponsor /> */}
         <Venue/>
         <Footer/>
 
