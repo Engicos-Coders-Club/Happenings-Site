@@ -101,11 +101,12 @@ function Events(props) {
             }
           });
         }
+      });
 
       return () => ctx.revert();
     }, []);
 
-  // }, []);
+
 
   return (
     <>
@@ -147,6 +148,6 @@ function Events(props) {
     {/* <section className='h-0 lg:h-[40vh]' /> */}
     </>
   );
-}
+          }
 
 export default Events;
