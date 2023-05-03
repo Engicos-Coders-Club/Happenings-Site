@@ -15,8 +15,8 @@ export class Hero extends Component {
                   <img src="/assets/Rectangle.svg" className='h-[100%] w-[50%] z-10'></img>
                 </div>
 
-                <div className='w-full relative flex justify-center items-center z-10 pt-4 h-[10%]'>
-                    <h1 className="text-2xl text-white">19 & 20 May</h1>
+                <div className='w-full relative flex justify-center items-center z-10 pt-8 h-[10%]'>
+                    <h1 className="text-[3rem] text-white font-BEBAS">19 & 20 May</h1>
                 </div>
 
                 <div className='w-full relative flex justify-center items-center z-10 h-[50%]'>

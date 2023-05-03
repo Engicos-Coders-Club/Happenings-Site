@@ -1,4 +1,5 @@
-import { Routes, Route} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import About from './components/About'
 import AllEvents from './components/AllEvents'
 import Events from './components/Events'
@@ -18,12 +19,13 @@ import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
+
 import GeneralRuleModal from './components/GeneralRuleModal'
 
-
 function App() {
-  
+ 
   return (
+
     <>
         
         <Routes>
@@ -68,7 +70,7 @@ function App() {
 
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;

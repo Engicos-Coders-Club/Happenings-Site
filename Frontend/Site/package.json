@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/material": "^5.12.3",
     "formik": "^2.2.9",
     "gsap": "^3.11.5",
     "react": "^18.2.0",
