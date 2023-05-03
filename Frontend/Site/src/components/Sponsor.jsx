@@ -71,7 +71,7 @@ function Sponsor() {
   return (
     // <div className='relative'>
         
-        <section className="w-full h-auto md:pl-16 relative bg-[#171717ff]  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
+        <section className="w-full min-h-screen md:pl-16 relative bg-[#171717ff]  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
         <Navbar />
         <SideBar />
             <div className="moveR absolute">
