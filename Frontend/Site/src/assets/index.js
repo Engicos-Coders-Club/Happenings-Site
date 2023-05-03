@@ -13,6 +13,8 @@ import ticket2 from './ticket-2.svg'
 import ticket3 from './ticket-3.svg'
 import gecLogo from "./gec_logo.png"
 import authbg from "./login-bg.png"
+import footerleft from './footer-left.png'
+import footerright from './footer-right.png'
 
 export {
     facebook,
@@ -30,4 +32,6 @@ export {
     ticket3,
     gecLogo,
     authbg,
+    footerleft,
+    footerright
 }
