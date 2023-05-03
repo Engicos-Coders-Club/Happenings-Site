@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +12,11 @@
 @font-face {
     font-family: "MANGO";
     src: url("../public/font/MangoGrotesqueSemiBold.otf");
+}
+
+@font-face {
+  font-family: "BEBAS";
+  src: url("../public/font/BebasNeue-Regular.ttf");
 }
 /* Css For Schedule Section */
 #Shine {

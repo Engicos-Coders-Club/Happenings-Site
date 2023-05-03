@@ -28,6 +28,7 @@ export default {
       },
       fontFamily: {
         MANGO: ["MANGO", "sans-serif"],
+        BEBAS: ["BEBAS", "sans-serif"],
       },
         'event-sec-bg':"url('./src/assets/h1.png')",
         
