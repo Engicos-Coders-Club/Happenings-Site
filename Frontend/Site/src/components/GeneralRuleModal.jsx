@@ -8,23 +8,21 @@ function GeneralRuleModal(props) {
             <div className="bg-[#222222] w-[90vw] h-auto md:w-[60vw] border-orange-700 border-4  py-10 border-dashed backdrop-blur-3xl rounded-tl-3xl rounded-br-3xl">
                 <div className="flex  items-start mx-auto w-[90%]">
                     <div className="text-white">
-                        <p className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2'>GENERAL RULES</p>
-                        <ul className='pb-3 my-10 text-xs sm:text-sm lg:text-base'>
+                        <p className='text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2' style={{fontFamily: 'Merriweather'}}>GENERAL RULES</p>
+                        <ul className='pb-3 my-10 text-xs sm:text-sm lg:text-base list-disc' style={{fontFamily: 'Merriweather'}}>
 
-                            <li>Passouts of 2023, are allowed to participate for Happenings 2023.</li>
-                            <li>Colleges are requested to send their registration entries on or before 14th  May 2023, 11.59 pm by filling the registration form.</li>
-                            <li>The (Joker) needs to be submitted along with the registration form</li>
-                            <li>College ID card is mandatory at the time of registration.</li>
-                            <li>No multiple entries, one participant per event</li>
-                            <li>Any vulgarity or obscenity (ON/OFF Stage), display of violence or rude behaviour will lead to disqualification of the entire college team.</li>
-                            <li>The organising team will not be responsible if any participant is in multiple events which are going on simultaneously. There will be no negotiation and rescheduling of competitions.</li>
-                            <li>Damage to any property or abusive attacks on other participating teams shall not be tolerated and can lead to fine, legal action and disqualification from the entire event.</li>
-                            <li>No TA/DA will be provided. </li>
-                            <li>Participants are solely responsible for their property/belongings. </li>
-                            <li>The decision of the judges and organisers in any competition will be final and binding and will not be contestable.</li>
-                            <li>If the participants are late for any competition, points will be deducted.</li>
-                            <li>Exceeding the said time limit for any event will lead to deduction of points.</li>
-                            <li>The participants must report for every event 30 minutes prior to the event as mentioned in the schedule.</li>
+                            <li className="pt-1">Passouts of 2023 can participate in Happenings 2023.</li>
+                            <li className="pt-1">Colleges must submit registration entries by filling the form before May 14th, 2023, 11.59 pm.</li>
+                            <li className="pt-1">The (Joker) needs to be submitted with the registration form</li>
+                            <li className="pt-1">College ID card is mandatory during registration.</li>
+                            <li className="pt-1">Each participant can only participate in one event.</li>
+                            <li className="pt-1">Only single team per college per event is allowed.</li>
+                            <li className="pt-1">Vulgarity, obscenity, violence, or rude behavior will lead to disqualification of the entire college team.</li>
+                            <li className="pt-1">The organizing team is not responsible for participants in multiple events simultaneously.</li>
+                            <li>Damage to property or abusive attacks can lead to fine, legal action, and disqualification from the entire event.</li>
+                            <li className="pt-1">No TA/DA will be provided, and participants are responsible for their belongings.</li>
+                            <li className="pt-1">The decision of judges and organizers will be final and binding, and lateness or exceeding time limit will lead to deduction of points.</li>
+                            <li className="pt-1">The participants must report for every event 30 minutes prior to the event as mentioned in the schedule.</li>
                         </ul>
                         <div className='flex justify-center my-12'>
                             {/* <Link to='/'> */}
