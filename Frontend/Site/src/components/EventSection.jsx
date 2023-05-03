@@ -16,7 +16,8 @@ import axios from "axios";
 function Events(props) {
   const dispatch = useDispatch()
   const { title } = props;
-  //const [categories, setcategory] = useState([]);
+  const [categories, setcategory] = useState([]);
+  
 
     useEffect(() => {
       let ctx = gsap.context(() => {
@@ -102,8 +103,14 @@ function Events(props) {
               scrub: 1,
               onComplete:function(){
 
-  const {loading,categories} = useSelector((state)=>state.category)
+                  const {loading,categories} = useSelector((state)=>state.category)}
+              }})}
+      })
+    })
 
+    
+
+  
 
   useEffect(() => {
     // axios.get(`http://192.168.1.149:5000/api/all-categories/`).then((res) => {
