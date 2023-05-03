@@ -18,6 +18,7 @@ import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
+import GeneralRuleModal from './components/GeneralRuleModal'
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
+          <Route element={<GeneralRuleModal title="GeneralRuleModal"/>} path="/GeneralRuleModal"/>
           
           
         </Routes>

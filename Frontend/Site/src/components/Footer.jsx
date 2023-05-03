@@ -7,7 +7,7 @@ import { FaWhatsapp, FaMailBulk, FaInstagramSquare, FaLinkedin } from "react-ico
 function Footer() {
     return (
         <>
-        <div className="bg-black h-screen">
+        <div className="bg-black h-fit">
         <div className="container mx-auto py-10">
             <h1 className="text-center text-white text-3xl font-bold mb-6 uppercase">REACH OUT TO US AT email@email.com</h1>
             <div className="flex flex-col md:flex-row md:justify-between">
