@@ -82,9 +82,9 @@ function Sponsor() {
             </div>
             <div className="h-auto relative z-1">
 
-                <div className="flex justify-between items-center px-5 py-10">
-                    <p className="text-4xl sm:text-6xl md:text-7xl font-extrabold">OUR SPONSORS</p>
-                    <div className='pr-16'><Link to="/register"><button className='flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-sm lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
+                <div className="pl-16 xs:pl-0 xs:flex justify-around md:justify-between items-center px-5 py-10">
+                    <p className="text-5xl sm:text-6xl md:text-7xl pt-5 md:pt-0 font-extrabold">OUR SPONSORS</p>
+                    <div className='pr-0 md:pr-20'><Link to="/register"><button className='flex bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-base lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
                 </div>
 
                 {
