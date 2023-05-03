@@ -20,6 +20,7 @@ import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
+import Modal from './components/Modal'
 import { CircularProgress, Typography  } from '@mui/material';
 function App() {
  
@@ -44,6 +45,7 @@ function App() {
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
           <Route element={<GeneralRulePage title="GeneralRulePage"/>} path="/GeneralRule"/>
+          <Route element={<Modal title="Modal"/>} path="/Modal"/>
           
           
         </Routes>
