@@ -1,5 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 function EventTab(props) {
   const clip = {
@@ -16,7 +16,7 @@ function EventTab(props) {
       <div className="min-w-[27%] xs:min-w-[24%] sm:min-w-[11%] md:min-w-[14%] lg:min-w-[18%] h-3/4 m-4 md:m-10">
         {/* Image */}
         <div className="w-full h-full cursor hover:scale-105" style={clip}>
-          <Link to="/">
+          <Link to={`/all-events/${props.id}`}>
             <img
               src={props.img}
               alt=""

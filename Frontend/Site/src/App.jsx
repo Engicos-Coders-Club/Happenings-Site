@@ -29,7 +29,7 @@ function App() {
         <Routes>
           {/* <Route element={<Hero title="Hero"/>} path="/" /> */}
           <Route element={<About title="About"/>} path="/About/" s={''} animation={'will-change-auto section-2'} />
-          <Route path="/all-events" element={<AllEvents title="All Events"/>} />
+          <Route path="/all-events/:id" element={<AllEvents title="All Events"/>} />
           <Route path="/events" element={<Events title="Events"/>} />
           <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
           <Route element={<EventRegistration title="Event Registration"/>} path="/event-registration" />

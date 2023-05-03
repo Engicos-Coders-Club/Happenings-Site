@@ -7,18 +7,25 @@ import EventTab from "./EventTab";
 import { eventsData } from "../data/EventTabData";
 import Navbar from "../components/navbar";
 import SideBar from "../components/SideBar";
+import { getCategories } from "../actions/categories";
+import {useDispatch,useSelector} from 'react-redux'
 
 import axios from "axios";
 // require("dotenv").config();
 
 function Events(props) {
+  const dispatch = useDispatch()
   const { title } = props;
-  const [categories, setcategory] = useState([]);
+  //const [categories, setcategory] = useState([]);
+
+  const {loading,categories} = useSelector((state)=>state.category)
 
   useEffect(() => {
-    axios.get(`http://192.168.1.149:5000/api/all-categories/`).then((res) => {
-      setcategory(res.data);
-    });
+    // axios.get(`http://192.168.1.149:5000/api/all-categories/`).then((res) => {
+    //   setcategory(res.data);
+    
+    // });
+    dispatch(getCategories())
   }, []);
 
   useEffect(() => {
@@ -166,22 +173,20 @@ function Events(props) {
         <div className="overflow-x-hidden mt-12 md:pl-16">
           {/* Slider Area */}
           <div id="Slider" className="box-content flex w-[300%] h-3/4">
-            {categories.map((data) => {
-              // console.log(data.id);
-
-              // <EventTab
-              //   img={data.category_img}
-              //   eventName={data.category_name}
-              //   key={data.id}
-              // />;
-              return (
-                <EventTab
-                  img={data.category_img}
-                  eventName={data.category_name}
-                  key={data.id}
-                />
-              );
-            })}
+            {
+              categories ? 
+                categories.map((data) => {
+                  return (
+                        <EventTab
+                          img={data.category_img}
+                          eventName={data.category_name}
+                          id={data.id}
+                          key={data.id}
+                        />
+                );
+              })
+              :null 
+            }
             {/* {eventsData.map((event, id) => {
               return (
                 <EventTab
