@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import About from './components/About'
 import AllEvents from './components/AllEvents'
 import Events from './components/Events'
@@ -11,17 +11,15 @@ import TicketsSection from './components/TicketsSection'
 import BookTickets from './components/BookTickets'
 import Auth from './components/Auth'
 import FogotPassword from './components/ForgotPassword'
-import Hero from './Pagesections/HeroSection'
-import Teams from './Pagesections/Teams'
+import Hero from './components/HeroSection'
+import Teams from './components/Teams'
 import Schedule from './components/Schedule'
 import EventSection from './components/EventSection'
 import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
-
-import GeneralRuleModal from './components/GeneralRuleModal'
-
+import { CircularProgress, Typography  } from '@mui/material';
 function App() {
  
   return (
@@ -29,8 +27,8 @@ function App() {
     <>
         
         <Routes>
-          <Route element={<Hero title="Hero"/>} path="/" />
-          <Route element={<About title="About"/>} path="/" />
+          {/* <Route element={<Hero title="Hero"/>} path="/" /> */}
+          <Route element={<About title="About"/>} path="/About/" s={''} animation={'will-change-auto section-2'} />
           <Route path="/all-events" element={<AllEvents title="All Events"/>} />
           <Route path="/events" element={<Events title="Events"/>} />
           <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
@@ -40,37 +38,25 @@ function App() {
           <Route element={<BookTickets title="Buy Tickets"/>} path="/buy"/>
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
-          <Route element={<Hero title="Teams"/>} path="/Teams" />
+          <Route element={<Teams title="Teams"/>} path="/Teams/" />
           <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
-          <Route element={<GeneralRuleModal title="GeneralRuleModal"/>} path="/GeneralRuleModal"/>
           
           
         </Routes>
-  {/* 
-          {/* <About />  */}
-          {/* <Events/> */}
-          {/* <CollegeRegistration /> */}
-          {/* <EventRegistration /> */}
-          
-        {/* </Routes> */}
-
-
-        {/* <Teams/> */}
-        <Clouds/>
 
         <Hero />
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
-        {/* <Sponsor /> */}
+        <Sponsor />
         <Venue/>
         <Footer/>
 
 
     </>
-  );
+  )
 }
 
-export default App;
+export default App

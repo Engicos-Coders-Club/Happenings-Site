@@ -82,7 +82,10 @@ function Events(props) {
               end: "bottom+=607 top",
               pin: true,
               pinSpacing: false,
-              scrub: 1
+              scrub: 1,
+              onComplete:function(){
+
+              }
             }
           });
           gsap.to("#Slider", {
@@ -99,11 +102,11 @@ function Events(props) {
           });
         }
       });
-      
+
       return () => ctx.revert();
     }, []);
 
-  // }, []);
+
 
   return (
     <>
@@ -145,6 +148,6 @@ function Events(props) {
     {/* <section className='h-0 lg:h-[40vh]' /> */}
     </>
   );
-}
+          }
 
 export default Events;

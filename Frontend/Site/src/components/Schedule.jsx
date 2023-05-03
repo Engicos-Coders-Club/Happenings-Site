@@ -20,7 +20,7 @@ function Schedule(props) {
           
           scrollTrigger: {
             trigger: ".schedule",
-            markers: true,
+            // markers: true,
             start: "top center+=50",
             end: "bottom",
             scrub:1
@@ -36,7 +36,7 @@ function Schedule(props) {
   }, []);
 
   return (
-    <section className='schedule opacity-0 bg-[#171717ff] min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
+    <section className='bg-[#171717ff] schedule opacity-0 min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
 
       <Navbar />
       <SideBar />
