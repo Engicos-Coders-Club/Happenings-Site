@@ -11,8 +11,8 @@ function EventCard(props) {
                 <Link to={event.link}><FiArrowUpRight color="black"/></Link>
             </div>
             <div className='border border-red-950 w-5/6 mx-auto h-[125px] flex flex-col justify-center'>
-                <p className='text-center text-red-900 text-5xl font-bold' style={{'fontFamily':'MangoGrotesque'}}>{event.name}</p>
-                <p className='text-center text-red-900 text-xl font-bold' style={{'fontFamily':'MangoGrotesque'}}>{event.title}</p>
+                <p className='text-center text-red-900 text-5xl font-bold' style={{'fontFamily':'MangoGrotesque'}}>{event?.event_name}</p>
+                {/* <p className='text-center text-red-900 text-xl font-bold' style={{'fontFamily':'MangoGrotesque'}}>{event.title}</p> */}
             </div>
             <div className="w-5/6 bg-red-950 mx-auto mt-5">
                 <p className='text-white mx-4 uppercase font-bold py-1 text-sm' style={{'fontFamily':'Merriweather'}}>Coordinators</p>
@@ -20,8 +20,8 @@ function EventCard(props) {
                     {event.coordinators.map((coordinator,index) => {
                         return (
                             <div className='flex items-center gap-x-2' key={index}>
-                                <p className='text-center text-white text-[10px] uppercase' style={{'fontFamily':'Merriweather'}}>{coordinator.name}</p>
-                                <p className='text-center text-white text-[10px]' style={{'fontFamily':'Merriweather'}}>({coordinator.phone})</p>
+                                <p className='text-center text-white text-[10px] uppercase' style={{'fontFamily':'Merriweather'}}>{coordinator?.name}</p>
+                                <p className='text-center text-white text-[10px]' style={{'fontFamily':'Merriweather'}}>({coordinator?.phone})</p>
                             </div>
                         )
                     })}

@@ -46,13 +46,13 @@ function App() {
           
         </Routes>
 
-        <Hero />
+        {/* <Hero />
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
         <Sponsor />
         <Venue/>
-        <Footer/>
+        <Footer/> */}
 
 
     </>
