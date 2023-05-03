@@ -22,7 +22,7 @@ function Venue() {
                 VENUE 
             </div>
             <div className="font-merriweather leading-relaxed flex items-center text-base font-normal max-w-xs text-white m-10">
-            Lorem ipsum dolor sit amet consectetur. Enim in arcu nec id non ornare aliquam convallis. Enim fames eget blandit quam integer tortor. Eget aenean sit ultricies sit in urna porttitor. Tortor aliquam diam natoque sollicitudin amet vitae ac sem nisi. Nec dolor dapibus sit semper amet fermentum volutpat placerat. Porttitor quis nibh neque pellentesque. Pharetra vestibulum consectetur faucibus at malesuada aliquam placerat platea duis. Neque nibh viverra amet libero facilisi augue.
+            The Manohar Parrikar Stadium, located in the town of Navelim in South Goa, is a multi-purpose sports facility that serves as the home ground of the Goa Professional League football team, Sporting Clube de Goa. The stadium was built in 1989 and has a seating capacity of 8,000 spectators. It was named after the former Chief Minister of Goa, Manohar Parrikar, who played an instrumental role in the development of sports infrastructure in the state. The Manohar Parrikar Stadium is a popular venue for sports enthusiasts in Goa and is known for its lively atmosphere during matches.
             </div>
             </div>
         </div>  
