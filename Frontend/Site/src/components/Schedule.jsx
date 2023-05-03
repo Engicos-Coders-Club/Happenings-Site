@@ -20,7 +20,7 @@ function Schedule(props) {
           
           scrollTrigger: {
             trigger: ".schedule",
-            markers: true,
+            // markers: true,
             start: "top center+=50",
             end: "bottom",
             scrub:1
