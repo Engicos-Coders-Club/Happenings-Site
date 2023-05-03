@@ -15,7 +15,7 @@ function GeneralRuleModal(props) {
                             <li className="pt-1">Colleges must submit registration entries by filling the form before May 14th, 2023, 11.59 pm.</li>
                             <li className="pt-1">The (Joker) needs to be submitted with the registration form</li>
                             <li className="pt-1">College ID card is mandatory during registration.</li>
-                            <li className="pt-1">Each participant can only participate in one event.</li>
+                            {/* <li className="pt-1">Each participant can only participate in one event.</li> */}
                             <li className="pt-1">Only single team per college per event is allowed.</li>
                             <li className="pt-1">Vulgarity, obscenity, violence, or rude behavior will lead to disqualification of the entire college team.</li>
                             <li className="pt-1">The organizing team is not responsible for participants in multiple events simultaneously.</li>
