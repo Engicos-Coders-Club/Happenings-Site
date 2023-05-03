@@ -16,8 +16,8 @@ function About(props) {
         document.title = title
     }, [])
     return (
-        <>
-            <main className={'bg-[#171717ff] text-white min-h-screen '+animation}>
+        
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen '+animation}>
             <Navbar />
             <SideBar />
                 <div className='w-4/5 mx-auto pb-16'>
@@ -63,8 +63,8 @@ function About(props) {
                         <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/general-rules"><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View <FiArrowUpRight size={25} className="py-0.5"/></span></Link></button>
                     </div>
                 </div>
-            </main >
-        </>
+            </section>
+
     )
 }
 export default About

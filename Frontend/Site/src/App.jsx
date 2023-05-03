@@ -19,18 +19,24 @@ import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
-import { CircularProgress, Typography  } from '@mui/material';
+import { useLocation } from "react-router-dom";
 function App() {
- 
+  const location = useLocation();
+  console.log(location);
+  
   return (
 
     <>
         
         <Routes>
-          {/* <Route element={<Hero title="Hero"/>} path="/" /> */}
-          <Route element={<About title="About"/>} path="/About/" s={''} animation={'will-change-auto section-2'} />
+          {/* <Route element={<Hero title="Hero"/>} path="/" />
+          <Route element={<About title="About"/>} path="/About" s={''} animation={'will-change-auto section-2'} />
           <Route path="/all-events" element={<AllEvents title="All Events"/>} />
           <Route path="/events" element={<Events title="Events"/>} />
+          <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
+          <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
+          <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/> */}
+
           <Route element={<CollegeRegistration  title="College Registration"/>} path="/college-registration"/>
           <Route element={<EventRegistration title="Event Registration"/>} path="/event-registration" />
           <Route element={<EventSelection title="Event Selection"/>} path="/event-selection"/>
@@ -39,11 +45,8 @@ function App() {
           <Route element={<Auth title="Authentication"/>} path="/auth"/>
           <Route element={<FogotPassword title="Fogot Password"/>} path="/resetpass"/>
           <Route element={<Teams title="Teams"/>} path="/Teams/" />
-          <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
-          <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
-          <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
           
-          
+        
         </Routes>
 
         <Hero />

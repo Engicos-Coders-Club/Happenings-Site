@@ -45,6 +45,22 @@ function Events(props) {
               scrub: true
             }
           });
+
+          gsap.timeline({
+            defaults:{ease:'none',duration:5},
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=297 bottom",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1
+            }
+          })
+          .to('#Eventsec',{y:0})
+          // .to('#schedule',{y:0})
+          
         }
         else if(window.innerWidth>=500){
           gsap.to("#Eventsec", {
@@ -114,7 +130,7 @@ function Events(props) {
 
       <section id="Eventsec" className="h-[85%] md:h-screen bg-event-sec-bg bg-cover" style={{'fontFamily':'MangoGrotesque'}}>
       <Navbar />
-      <SideBar />
+      <SideBar/>
 
         <div id="Eventsectop" className='block md:flex md:justify-between md:items-center px-6 py-4 pl-16 md:pl-20'>
           <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">EVENTS</p>
