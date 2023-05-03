@@ -1,4 +1,5 @@
-import { Routes, Route} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import About from './components/About'
 import AllEvents from './components/AllEvents'
 import Events from './components/Events'
@@ -19,10 +20,12 @@ import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
 
+import GeneralRuleModal from './components/GeneralRuleModal'
 
 function App() {
-  
+ 
   return (
+
     <>
         
         <Routes>
@@ -41,6 +44,7 @@ function App() {
           <Route element={<Schedule title="Schedule"/>} path="/schedule"/>
           <Route element={<EventSection title="Event Section"/>} path="/event-section"/>
           <Route element={<Sponsor title="Sponsor"/>} path="/sponsor"/>
+          <Route element={<GeneralRuleModal title="GeneralRuleModal"/>} path="/GeneralRuleModal"/>
           
           
         </Routes>
@@ -66,7 +70,7 @@ function App() {
 
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;

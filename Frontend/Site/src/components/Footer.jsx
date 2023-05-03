@@ -8,6 +8,7 @@ import { footerleft, footerright } from '../assets'
 function Footer() {
     return (
         <>
+
             <div className="bg-black">
                 <div className="container mx-auto py-10">
                     <h1 className="text-center text-white text-3xl font-bold mb-6 uppercase">REACH OUT TO US AT gecstudentscouncil2022@gmail.com</h1>
@@ -17,6 +18,7 @@ function Footer() {
                                 <img src={GecLogo} alt="Logo 1" className="h-16 w-16 mr-4" />
                                 <img src={HappeningLogo} alt="Logo 2" className="h-16 w-16" />
                             </div>
+
 
                             <div className="flex items-center mt-4">
                                 <img src={PersonPic} className="h-24/3 mr-4" />
