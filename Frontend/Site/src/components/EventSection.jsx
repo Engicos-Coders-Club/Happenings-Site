@@ -18,7 +18,92 @@ function Events(props) {
   const { title } = props;
   //const [categories, setcategory] = useState([]);
 
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        
+        if(window.innerWidth>=640){
+          gsap.to("#Eventsec", {
+            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=297 bottom",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1
+            }
+          });
+          gsap.to("#Slider", {
+            xPercent: -67,
+            duration: 25,
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              toggleActions: "restart none none none",
+              start: "+=20% 20%",
+              end: "bottom+=130 80%",
+              scrub: true
+            }
+          });
+
+          gsap.timeline({
+            defaults:{ease:'none',duration:5},
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=297 bottom",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1
+            }
+          })
+          .to('#Eventsec',{y:0})
+          // .to('#schedule',{y:0})
+          
+        }
+        else if(window.innerWidth>=500){
+          gsap.to("#Eventsec", {
+            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=357 25%",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1
+            }
+          });
+          gsap.to("#Slider", {
+            xPercent: -72,
+            duration: 25,
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              toggleActions: "restart none none none",
+              start: "+=19% 10%",
+              end: "bottom+=290 25%",
+              scrub: true
+            }
+          });
+        }
+        else{
+          gsap.to("#Eventsec", {
+            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=607 top",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1,
+              onComplete:function(){
+
   const {loading,categories} = useSelector((state)=>state.category)
+
 
   useEffect(() => {
     // axios.get(`http://192.168.1.149:5000/api/all-categories/`).then((res) => {
@@ -120,6 +205,7 @@ function Events(props) {
 
   return (
     <>
+
       <section
         id="Eventsec"
         className="h-[85%] md:h-screen bg-event-sec-bg bg-cover"
@@ -166,6 +252,7 @@ function Events(props) {
                 />
               </button>
             </Link>
+
           </div>
         </div>
 
