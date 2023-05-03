@@ -16,7 +16,7 @@ function Schedule(props) {
       
       if(window.innerWidth>=640){
         gsap.to(".schedule", {
-          opacity:"200%",   
+          opacity:"300%",   
           
           scrollTrigger: {
             trigger: ".schedule",
@@ -36,7 +36,7 @@ function Schedule(props) {
   }, []);
 
   return (
-    <section className='bg-[#171717ff] schedule opacity-0 min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
+    <section id='schedule' className='bg-[#171717ff] schedule opacity-0 min-h-screen relative md:pl-16' style={{'fontFamily':'MangoGrotesque', 'display':'grid','gridTemplateRows':'22% 55% 25%'}}>
 
       <Navbar />
       <SideBar />

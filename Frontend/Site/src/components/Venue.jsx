@@ -13,7 +13,7 @@ function Venue() {
     };
 
     return (
-        <div className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
+        <div id="venue" className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
             <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
                 <div className="font-satoshi text-center md:text-left mr-5 w-3/5">
                     <div className="mb-10">
