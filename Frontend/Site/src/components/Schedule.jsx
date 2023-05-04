@@ -21,7 +21,7 @@ function Schedule(props) {
       
       if(window.innerWidth>=640){
         gsap.to(".schedule", {
-          opacity:"200%",   
+          opacity:"300%",   
           
           scrollTrigger: {
             trigger: ".schedule",
@@ -39,6 +39,7 @@ function Schedule(props) {
     
     return () => ctx.revert();
   }, []);
+
 
 
   const [showDay1, setShowDay1] = useState(false)

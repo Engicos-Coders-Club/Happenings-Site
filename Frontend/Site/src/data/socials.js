@@ -2,19 +2,11 @@ import { facebook,mail,instagram,linkedin } from "../assets"
 const socials = [
     {
         "img":mail,
-        "link":"geccouncil@gmail.com",
+        "link":"mailto:gecstudentscouncil2022@gmail.com",
     },
     {
         "img":instagram,
-        "link":"https://instagram.com",
-    },
-    {
-        "img":linkedin,
-        "link":"https://linkedin.com",
-    },
-    {
-        "img":facebook,
-        "link":"https://facebook.com",
+        "link":"https://instagram.com/happenings2023?igshid=YmMyMTA2M2Y=",
     },
 ]
 export {socials}

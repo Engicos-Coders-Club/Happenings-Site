@@ -1,0 +1,35 @@
+[
+  {
+    "Name": "Atharva Parkhe",
+    "Designation": "Backend Developer",
+    "Contact":"8007609672",
+    "Email":"patharv777@gmail.com",
+     "Github":" https://github.com/atharvparkhe",
+      "linkedin":"https://www.linkedin.com/in/atharvparkhe"
+  },
+    {
+      "Name": "Lloyd Alrich Costa",
+      "Designation": "Frontend Developer",
+      "Contact":"9527509048",
+      "Email":"llloydcosta23@gmail.com",
+       "Github":" https://github.com/lloyd04costa06",
+        "linkedin":"https://www.linkedin.com/in/lloyd-alrich-costa-482509176"
+    },
+  {
+      "Name": "Jayden Viegas",
+      "Designation": "Developer",
+      "Contact":"8379025762",
+      "Email":"jaydenviegas57@gmail.com",
+       "Github":" https://github.com/Jayden0228",
+        "linkedin":"https://www.linkedin.com/in/jayden-viegas-313141267/"
+    },
+  {
+      "Name": "Puneet Patil",
+      "Designation": "Developer",
+      "Contact":"9403044925",
+      "Email":"patilpuneet01@gmail.com",
+       "Github":" https://github.com/puneetmpatil",
+        "linkedin":"https://www.linkedin.com/in/puneetpatil"
+    }
+  ]
+  
