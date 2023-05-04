@@ -21,6 +21,8 @@ import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
 import Modal from './components/Modal'
+import ScheduleModal from './components/ScheduleModal';
+
 import { CircularProgress, Typography  } from '@mui/material';
 function App() {
  
@@ -47,6 +49,8 @@ function App() {
           <Route element={<GeneralRulePage title="GeneralRulePage"/>} path="/GeneralRule"/>
           <Route element={<Modal title="Modal"/>} path="/Modal"/>
           
+          <Route element={<ScheduleModal title="ScheduleModal"/>} path="/ScheduleModal"/>
+          
           
         </Routes>
 
@@ -54,7 +58,7 @@ function App() {
         <About s={''} animation={'will-change-auto section-2'} />
         <EventSection />
         <Schedule />
-        <Sponsor />
+        {/* <Sponsor /> */}
         <Venue/>
         <Footer/>
 
