@@ -1,24 +1,23 @@
-import landscape from '../assets/Landscape-Color.jpg'
 
 const eventsData =[
     {
-        'img': landscape,
+        // 'img': landscape,
         'eventName': 'E-Sport'
     },
     {
-        'img': landscape,
+        // 'img': landscape,
         'eventName': 'Online'
     },
     {
-        'img': landscape,
+        // 'img': landscape,
         'eventName': 'Event'
     },
     {
-        'img': landscape,
+        // 'img': landscape,
         'eventName': 'Event'
     },
     {
-        'img': landscape,
+        // 'img': landscape,
         'eventName': 'Event'
     },
 ]
