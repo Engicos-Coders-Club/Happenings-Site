@@ -17,10 +17,17 @@ import GeneralRulePage from './components/GeneralRulePage'
 import { useLocation } from "react-router-dom";
 import Modal from './components/Modal'
 import Layout from './Layout'
+import { loadUser } from './actions/auth'
+import { useDispatch } from 'react-redux'
 
 function App() {
   // const location = useLocation();
   // console.log(location);
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(loadUser())
+  },[])
 
   return (
 
@@ -32,6 +39,7 @@ function App() {
                 <Route element={<EventRegistration title="Event Registration" />} path="/event-registration" />
                 <Route element={<EventSelection title="Event Selection" />} path="/event-selection" />
                 <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
+                <Route element={<AllEvents title="All Events" />} path="/all-events/:id" />
                 <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
                 <Route element={<Auth title="Authentication" />} path="/auth" />
                 <Route element={<FogotPassword title="Fogot Password" />} path="/resetpass" />

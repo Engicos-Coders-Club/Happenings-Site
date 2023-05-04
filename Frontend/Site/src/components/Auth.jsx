@@ -4,11 +4,50 @@ import SignUpSchema from "../schema/SignUpSchema";
 import SignInSchema from "../schema/SignInSchema";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import ImageAuth from "../assets/auth-line.svg"
+import { login,register } from "../actions/auth";
+import { useDispatch } from "react-redux";
+import { GoogleLogin } from "react-google-login";
+import { gapi } from "gapi-script";
+import { googleLogin } from "../actions/auth";
 
 function Auth(props) {
     const { title } = props;
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [isSignup, setIsSignup] = useState(false);
+    const [GoogleAuth, setGoogleAuth] = useState(null);
+  const clientId =
+    "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
+
+    useEffect(() => {
+        function start() {
+          gapi.auth2
+            .init({
+              clientId: clientId,
+              scope: "",
+            })
+            .then((obj) => {
+              setGoogleAuth(obj);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+        gapi.load("client:auth2", start);
+      });
+
+      const onSuccessLogin = async (res) => {
+        const profile = res.profileObj;
+        const access_token = gapi.auth.getToken().access_token;
+        setGoogleAuth(gapi.auth2.getAuthInstance());
+        const tokenId = GoogleAuth.currentUser.le.tokenId;
+        console.log(tokenId)
+        dispatch(googleLogin(tokenId, profile));
+        navigate("/buy");
+      };
+      const onFailureLogin = (res) => {
+        console.log(res);
+      };
 
     useEffect(() => {
         document.title = title || "Auth"
@@ -19,7 +58,13 @@ function Auth(props) {
       };
 
     const handleSubmit = (values) => {        
-        console.log(values)        
+        console.log(values)  
+        const {email,name,password,phoneNumber} = values
+        //console.log(email,name,password,phoneNumber)
+        if(isSignup)
+            dispatch(register(name,email,password,phoneNumber))
+        else
+            dispatch(login(email,password))     
     }    
 
     return (
@@ -112,8 +157,17 @@ function Auth(props) {
                                         className="object-contain"
                                     />
                                     </div>      
-
-                                    <button type="submit" className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Google</span></button>                              
+                                    <GoogleLogin
+                                        clientId={clientId}
+                                        render={(renderProps) => (
+                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled}type="submit" className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Google</span></button>                              
+                                        )}
+                                        buttonText="Login"
+                                        onSuccess={onSuccessLogin}
+                                        onFailure={onFailureLogin}
+                                        cookiePolicy={"single_host_origin"}
+                                    />
+                                    
                                 </Form>
                         )}
                         </Formik>
