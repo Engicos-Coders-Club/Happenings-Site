@@ -9,7 +9,6 @@ from .threads import *
 from .models import *
 
 
-
 @api_view(["POST"])
 def google_authentication(request):
     try:
@@ -34,6 +33,31 @@ def google_authentication(request):
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
         return Response({"message": "Invalid or Expired toiken"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+
+# @api_view(["POST"])
+# def google_authentication(request):
+#     try:
+#         ser = GoogleSocialAuthSerializer(data=request.data)
+#         if ser.is_valid():
+#             user_info = id_token.verify_oauth2_token(ser.data["token_id"], requests.Request(), settings.GOOGLE_CLIENT_ID)
+#             if not UserModel.objects.filter(email=user_info["email"]).exists():
+#                 customer_obj = UserModel.objects.create(
+#                     profile_pic_url=user_info["picture"],
+#                     email=user_info["email"],
+#                     name=user_info["name"],
+#                     auth_provider="google"
+#                 )
+#                 customer_obj.set_password(settings.SOCIAL_SECRET)
+#                 customer_obj.save()
+#             customer_obj = UserModel.objects.get(email=user_info["email"])
+#             user = authenticate(email=customer_obj.email, password=settings.SOCIAL_SECRET)
+#             if not user:
+#                 return Response({"message":"Incorrect password"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+#             jwt_token = RefreshToken.for_user(user)
+#             return Response({"message":"Login successfull", "token":str(jwt_token.access_token)}, status=status.HTTP_202_ACCEPTED)
+#         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
+#     except Exception as e:
+#         return Response({"message": "Invalid or Expired toiken"}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
 @api_view(["GET"])
