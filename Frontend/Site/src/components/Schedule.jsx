@@ -18,23 +18,34 @@ function Schedule(props) {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      
-      if(window.innerWidth>=640){
-        gsap.to(".schedule", {
-          opacity:"300%",   
-          
-          scrollTrigger: {
-            trigger: ".schedule",
-            // markers: true,
-            start: "top center+=50",
-            end: "bottom",
-            scrub:1
-          }
-        });
+
+      ScrollTrigger.matchMedia({
+
+        "(max-width: 767px)": function() {
+
         
+        },
+
+      "(min-width: 768px) and (max-width: 1024px)": function() {
+         
+        
+      },
+      
+      "(min-width: 1024px)": function() {
+
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: ".schedule",
+              markers: true,
+              start: "top top+=100",
+              end: "bottom",
+              scrub:1
+            }
+          })
+          .to(".schedule", {  opacity:"1250%" });
       }
 
-      
+      })
     });
     
     return () => ctx.revert();
