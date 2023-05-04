@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import { googleLogin } from "../actions/auth";
+import { useSelector } from "react-redux";
 
 function Auth(props) {
     const { title } = props;
@@ -18,6 +19,13 @@ function Auth(props) {
     const [GoogleAuth, setGoogleAuth] = useState(null);
   const clientId =
     "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
+
+    const {message,loading} = useSelector((state)=>state.auth)
+
+    useEffect(()=>{
+        if(message)
+            navigate('/')
+    },[message])
 
     useEffect(() => {
         function start() {

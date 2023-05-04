@@ -111,48 +111,48 @@ export const loadUser = ()=>async(dispatch)=>{
     }    
 }
 
-// export const forgot = (email)=>async(dispatch)=>{
-//     try {
-//         dispatch({
-//             type:"ForgotPassRequest"
-//         })
-//         const {data} = await axios.post(`/api/forgot/`,{email},{
-//             headers:{
-//                 "Content-Type":"application/json"
-//             }
-//         })
-//         dispatch({
-//             type:"ForgotPassSuccess",
-//             payload:data.message
-//         })
-//     } catch (error) {
-//         console.log(error.response.data,error.response.status)
-//         dispatch({
-//             type:"ForgotPassFailure",
-//             payload:error.response.data
-//         })
-//     }    
-// }
+export const forgot = (email)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"ForgotPassRequest"
+        })
+        const {data} = await axios.post(`/api/forgot/`,{email},{
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        dispatch({
+            type:"ForgotPassSuccess",
+            payload:data.message
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"ForgotPassFailure",
+            payload:error.response.data
+        })
+    }    
+}
 
-// export const reset = (otp,pw)=>async(dispatch)=>{
-//     try {
-//         dispatch({
-//             type:"ChangePassRequest"
-//         })
-//         const {data} = await axios.post(`/api/reset/`,{otp,pw},{
-//             headers:{
-//                 "Content-Type":"application/json"
-//             }
-//         })
-//         dispatch({
-//             type:"ChangePassSuccess",
-//             payload:data.message
-//         })
-//     } catch (error) {
-//         console.log(error.response.data,error.response.status)
-//         dispatch({
-//             type:"ChangePassFailure",
-//             payload:error.response.data
-//         })
-//     }    
-// }
+export const reset = (otp,pw)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"ChangePassRequest"
+        })
+        const {data} = await axios.post(`/api/reset/`,{otp,pw},{
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        dispatch({
+            type:"ChangePassSuccess",
+            payload:data.message
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"ChangePassFailure",
+            payload:error.response.data
+        })
+    }    
+}

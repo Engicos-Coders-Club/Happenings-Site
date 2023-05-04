@@ -30,6 +30,7 @@ class send_otp_to_seller(threading.Thread):
         threading.Thread.__init__(self)
     def run(self):
         try:
+            print(str(self.otp))
             send_mail("OTP" , str(self.otp) ,settings.EMAIL_HOST_USER ,[settings.SELLER_EMAIL])
         except Exception as e:
             print(e)
@@ -47,6 +48,7 @@ class send_login_otp(threading.Thread):
             subject = "OTP to login into your account"
             message = f"The OTP to log in into your email is {otp} \nIts valid only for 2 mins."
             email_from = settings.EMAIL_HOST_USER
+            print(str(otp))
             send_mail(subject , message ,email_from ,[self.email])
         except Exception as e:
             print(e)
@@ -60,15 +62,15 @@ class send_forgot_link(threading.Thread):
         try:
             otp = random.randint(100001, 999999)
             cache.set(otp, self.email, timeout=350)
-            context["otp"] = otp
-            html_template = 'forgot.html'
-            html_message = render_to_string(html_template, context)
-            subject = 'OTP to Verify your Account.'
-            email_from = settings.EMAIL_HOST_USER
-            msg = EmailMessage(subject, html_message, email_from, [self.email])
-            msg.content_subtype = 'html'
+            # context["otp"] = otp
+            # html_template = 'forgot.html'
+            # html_message = render_to_string(html_template, context)
+            # subject = 'OTP to Verify your Account.'
+            # email_from = settings.EMAIL_HOST_USER
+            # msg = EmailMessage(subject, html_message, email_from, [self.email])
+            # msg.content_subtype = 'html'
             print(otp)
-            msg.send()
+            # msg.send()
         except Exception as e:
                 print(e)
 

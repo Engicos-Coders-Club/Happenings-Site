@@ -57,6 +57,30 @@ export const authReducer = createReducer(initialState,{
         state.loading = false  
     },
 
+    ForgotPassRequest: (state,action)=>{
+        state.loading = true;
+    },
+    ForgotPassSuccess: (state,action)=>{
+        state.message = action.payload
+        state.loading = false
+    },
+    ForgotPassFailure: (state,action)=>{
+        state.error = action.payload
+        state.loading = false; 
+    },
+
+    ChangePassRequest: (state,action)=>{
+        state.loading = true;
+    },
+    ChangePassSuccess: (state,action)=>{
+        state.message = action.payload
+        state.loading = false
+    },
+    ChangePassFailure: (state,action)=>{
+        state.error = action.payload
+        state.loading = false;     
+    },
+    
     clearError:(state,action)=>{
         state.error = null
     },
