@@ -8,7 +8,7 @@ export class Hero extends Component {
        
             <section id="home" className="w-full h-screen overflow-x-hidden  section-1 m-0 p-0">
             <Navbar/>
-            <div className='w-full h-full flex justify-center items-center z-10 bg-hero-bg'>  
+            <div className='w-full h-full flex justify-center items-center z-10'>  
               <div className="h-[35%] sm:h-[40%] md:h-[45%] lg:h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
 
                   <div className='w-full h-[50%] relative flex justify-center z-10 '>
@@ -29,7 +29,7 @@ export class Hero extends Component {
 
               </div>
             </div>
-            {/* <img src="/assets/heroBGN.png" className='object-cover w-full h-screen top-0 absolute z-0' lazy></img> */}
+            <img src="/assets/heroBGN.png" className='object-cover w-full h-screen top-0 absolute z-0' lazy></img>
             {/* <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud1 left-[-27%]' ></img>
             <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud2 right-[-27%]'></img> */}
             </section>
