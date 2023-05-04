@@ -42,26 +42,26 @@ function Teams() {
 
 
       <div className={toggleState == 1 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
-        {council.map((item) => (
-          <TeamCards data={item} />
+        {council.map((item,index) => (
+          <TeamCards data={item} key={index}/>
         ))}
       </div>
 
       <div className={toggleState == 2 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
-        {Coordinators.map((item) => (
-          <TeamCards data={item} />
+        {Coordinators.map((item,index) => (
+          <TeamCards data={item} key={index}/>
         ))}
       </div>
 
       <div className={toggleState == 3 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
-        {Advisors.map((item) => (
-          <TeamCards data={item} />
+        {Advisors.map((item,index) => (
+          <TeamCards data={item} key={index}/>
         ))}
       </div>
 
       <div className={toggleState == 4 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
-        {WebTeam.map((item) => (
-          <TeamCards data={item} />
+        {WebTeam.map((item,index) => (
+          <TeamCards data={item} key={index}/>
         ))}
       </div>
 
