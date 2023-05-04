@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 import { gsap } from "gsap";
+import { HashLink } from 'react-router-hash-link';
 function hamBurg(props) {
     let hamClass="w-[95%] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic"
     let hamClassLast="w-[95%] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
@@ -23,41 +24,36 @@ useEffect(() => {
   
 
   return (
-    <div className='h-screen w-full absolute z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden'>
+    <div className='h-screen w-full absolute z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0'>
     <div className=' relative flex flex-wrap text-white text-5xl pt-5 pb-5  font-MANGO'>
     
         <div className={hamClass}>
-          <div className='pl-9 '>HOME</div>
+          <div className='pl-9 ' onClick={ReverseAnimation}><HashLink smooth to="/#about">ABOUT</HashLink></div>
           <div className='pr-9 '><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
         <div className={hamClass}>
-        <div className='pl-9'>ABOUT</div>
+        <div className='pl-9' onClick={ReverseAnimation}>BUY PASSES</div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
         <div className={hamClass}>
-        <div className='pl-9'>BUY PASSES</div>
+        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#Eventsec">EVENTS</HashLink></div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
         <div className={hamClass}>
-        <div className='pl-9'>EVENTS</div>
+        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#sponsor">SPONSORS</HashLink></div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
         <div className={hamClass}>
-        <div className='pl-9'>OUR SPONSORS</div>
-          <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
-        </div>
-
-        <div className={hamClass}>
-        <div className='pl-9'>SCHEDULE</div>
+        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#schedule">SCHEDULE</HashLink></div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
         <div className={hamClassLast}>
-        <div className='pl-9'>TIME</div>
+        <div className='pl-9' onClick={ReverseAnimation}>TIME</div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
         

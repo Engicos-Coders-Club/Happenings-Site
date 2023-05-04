@@ -1,16 +1,18 @@
 import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
-import GeneralRuleModal from "./GeneralRuleModal";
+// import GeneralRuleModal from "./GeneralRuleModal";
 
 
 
 function Venue() {
-    const [rulesModal, showRulesModal] = useState(false);
+    // const [rulesModal, showRulesModal] = useState(false);
 
-    const toggleRule = () => {
-        showRulesModal(!rulesModal);
-    };
+    // const toggleRule = () => {
+    //     showRulesModal(!rulesModal);
+    // };
 
     return (
         <div id="venue" className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
@@ -40,7 +42,7 @@ function Venue() {
                 </div>
             </div>
 
-            {rulesModal && <GeneralRuleModal toggleRule={toggleRule} />}
+            {/* {rulesModal && <GeneralRuleModal toggleRule={toggleRule} />} */}
 
 
 
@@ -56,7 +58,9 @@ function Venue() {
                                     Join in and register your college for the biggest college fests in Goa!
                                 </div>
                                 <div className="mt-4 flex justify-center">
-                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }} onClick={toggleRule}>Register Now <FiArrowUpRight size={20} /></button>
+                                    <Link to="/GeneralRule">
+                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Register Now <FiArrowUpRight size={20} /></button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

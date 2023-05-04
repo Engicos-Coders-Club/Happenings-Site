@@ -12,7 +12,7 @@ export class Hero extends Component {
               <div className="h-[35%] sm:h-[40%] md:h-[45%] lg:h-[50%] w-[80%] relative flex flex-wrap justify-evenly">
 
                   <div className='w-full h-[50%] relative flex justify-center z-10 '>
-                    <img src="/assets/Rectangle.png" className='relative h-[90%] lg:w-[20%] w-[50%] md:w-[30%]'></img>
+                    <img src="/assets/Rectangle.png" className='relative h-[90%] w-[55%] xs:w-[48%] sm:w-[39%] md:w-[28%] lg:w-[20%]'></img>
                   </div>
 
                   <div className='w-full relative flex justify-center items-center z-10 lg:pt-8 md:p-5 sm:p-3 h-[10%]'>
