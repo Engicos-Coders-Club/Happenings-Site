@@ -13,15 +13,16 @@ function Venue() {
     };
 
     return (
-        <div className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
+        <div id="venue" className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
             <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
-                <div className="font-satoshi text-center md:text-left mr-5 w-3/5">
+                <div className="font-satoshi md:text-left md:mr-5 md:w-3/5">
                     <div className="mb-10">
-                        <div className={"text-white font-MANGO tracking-wider text-7xl font-bold mb-8 md:ml-8"}>
+                        <div className={"text-white font-MANGO tracking-wider text-5xl md:text-7xl font-bold mb-8 md:ml-8"}>
                             VENUE
                         </div>
-                        <div className="font-Merriweather leading-relaxed flex items-center text-lg tracking-wider font-normal text-white m-10">
-                            The Manohar Parrikar Stadium, located in the town of Navelim in South Goa, is a multi-purpose sports facility that serves as the home ground of the Goa Professional League football team, Sporting Clube de Goa. The stadium was built in 1989 and has a seating capacity of 8,000 spectators. It was named after the former Chief Minister of Goa, Manohar Parrikar, who played an instrumental role in the development of sports infrastructure in the state. The Manohar Parrikar Stadium is a popular venue for sports enthusiasts in Goa and is known for its lively atmosphere during matches.
+                        <div className="font-Merriweather leading-relaxed flex items-center nd:text-lg tracking-wider font-normal text-white md:m-10">
+                            {window.innerWidth > 500 ? 'The Manohar Parrikar Stadium, located in the town of Navelim in South Goa, is a multi-purpose sports facility that serves as the home ground of the Goa Professional League football team, Sporting Clube de Goa. The stadium was built in 1989 and has a seating capacity of 8,000 spectators. It was named after the former Chief Minister of Goa, Manohar Parrikar, who played an instrumental role in the development of sports infrastructure in the state. The Manohar Parrikar Stadium is a popular venue for sports enthusiasts in Goa and is known for its lively atmosphere during matches.' :
+                            'Manohar Parrikar Stadium in Navelim, South Goa is a sports facility, home ground of Sporting Clube de Goa with a seating capacity of 8,000 spectators. It was named after former Goa Chief Minister, who played a vital role in state\'s sports infrastructure development. The stadium is a popular sports venue in Goa known for its lively atmosphere during matches.'}
                         </div>
                     </div>
                 </div>
