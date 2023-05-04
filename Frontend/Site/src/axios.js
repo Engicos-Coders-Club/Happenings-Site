@@ -3,7 +3,7 @@ import axios from "axios";
 export const productionUrl = "http://192.168.1.149:5000"
 export const developmentUrl = "http://localhost:8000"
 
-axios.defaults.baseURL = productionUrl
+axios.defaults.baseURL = developmentUrl
 
 // axios.interceptors.request.use(function (req) {
 //     const user = localStorage.getItem('user');

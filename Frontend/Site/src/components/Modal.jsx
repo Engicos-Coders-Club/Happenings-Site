@@ -1,15 +1,30 @@
 import Frame from '../assets/Frame.png'
 import Avatar from '../assets/Avatar.png'
 import { FiX } from 'react-icons/fi'
+import { getSingleEvent } from '../actions/events'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
-function Modal() {
+function Modal({event_id,setShowEventModal}) {
+    const dispatch = useDispatch()
+    const {event,loading} = useSelector((state)=>state.event)
+
+    useEffect(()=>{
+        dispatch(getSingleEvent(event_id))
+    },[])
+
+    const closeModal = () =>{
+        setShowEventModal(false)
+    }
+    
   return (
-    <div className="absolute z-50 bg-[rgba(0,0,0,0.5)] w-full h-auto flex items-center justify-center">
-        <div className="bg-modal-bg bg-cover  h-[90%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%]" >
+    <div className="absolute left-0 z-50 bg-[rgba(0,0,0,0.5)] w-full h-auto flex items-center justify-center">
+        <div className=" bg-white h-[90%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%]" > 
+        {/* bg-modal-bg bg-cover */}
 
             <div className='flex justify-between items-center px-10 my-5'>
-                <p className='text-lg sm:text-xl md:text-2xl'>Events Deatils</p>
-                <button className='flex border-2 border-dashed border-black py-[1.3%] px-[2.4%] text-base sm:text-lg md:text-xl'>Close<FiX className='m-[0.4rem]'/></button>
+                <p className='text-lg sm:text-xl md:text-2xl'>Events Details</p>
+                <button onClick={closeModal} className='flex border-2 border-dashed border-black py-[1.3%] px-[2.4%] text-base sm:text-lg md:text-xl'>Close<FiX className='m-[0.4rem]'/></button>
             </div>
             
             <div className='px-10 my-5'>

@@ -200,7 +200,7 @@ function Events(props) {
         <div className="overflow-x-hidden mt-12 md:pl-16">
           {/* Slider Area */}
           <div id="Slider" className="box-content flex w-[300%] h-3/4">
-            {/* {
+            {
               categories ? 
                 categories.map((data) => {
                   return (
@@ -213,7 +213,7 @@ function Events(props) {
                 );
               })
               :null 
-            } */}
+            }
             {eventsData.map((event, id) => {
               return (
                 <EventTab
