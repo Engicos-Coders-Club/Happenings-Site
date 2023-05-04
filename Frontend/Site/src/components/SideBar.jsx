@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import SideButton from '../components//SideBarButton'
 function SideBar(props) {
@@ -19,9 +20,9 @@ function SideBar(props) {
                     <li className='rotate-[-90deg] p-3 hover:underline tracking-wide'><HashLink smooth to="/#about">ABOUT</HashLink></li>
                     <li className='rotate-[-90deg] p-5 hover:underline tracking-wide'><HashLink smooth to="/#Eventsec">EVENTS</HashLink></li>
                     <li className='rotate-[-90deg] p-5 hover:underline tracking-wide'><HashLink smooth to="/#schedule">SCHEDULE</HashLink></li>
-                    <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#sponsor">SPONSORS</HashLink></li>
+                    {/* <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#sponsor">SPONSORS</HashLink></li> */}
                     <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#venue">VENUE</HashLink></li>
-                    <li className='rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500'><HashLink smooth to="/#home">HOME</HashLink></li>
+                    <li className='rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500'><Link smooth to="/tickets">TICKETS</Link></li>
                 </ul>
 
             </div>

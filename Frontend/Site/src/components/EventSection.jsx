@@ -102,11 +102,13 @@ function Events(props) {
               pinSpacing: false,
               scrub: 1,
               onComplete:function(){
-
                   const {loading,categories} = useSelector((state)=>state.category)}
               }})}
       })
-    })
+      
+      return () => ctx.revert();
+      
+       })
 
     
 
@@ -124,91 +126,7 @@ function Events(props) {
   //   document.title = title;
   // }, []);
 
-  gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      if (window.innerWidth >= 640) {
-        gsap.to("#Eventsec", {
-          // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            start: "top top",
-            end: "bottom+=297 bottom",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-          },
-        });
-        gsap.to("#Slider", {
-          xPercent: -67,
-          duration: 25,
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            toggleActions: "restart none none none",
-            start: "+=20% 20%",
-            end: "bottom+=130 80%",
-            scrub: true,
-          },
-        });
-      } else if (window.innerWidth >= 500) {
-        gsap.to("#Eventsec", {
-          // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            start: "top top",
-            end: "bottom+=357 25%",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-          },
-        });
-        gsap.to("#Slider", {
-          xPercent: -72,
-          duration: 25,
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            toggleActions: "restart none none none",
-            start: "+=19% 10%",
-            end: "bottom+=290 25%",
-            scrub: true,
-          },
-        });
-      } else {
-        gsap.to("#Eventsec", {
-          // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            start: "top top",
-            end: "bottom+=607 top",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-            onComplete: function () {},
-          },
-        });
-        gsap.to("#Slider", {
-          xPercent: -127,
-          duration: 25,
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            toggleActions: "restart none none none",
-            start: "+=19% 9%",
-            end: "bottom+=590 25%",
-            scrub: true,
-          },
-        });
-      }
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <>
@@ -267,7 +185,7 @@ function Events(props) {
         <div className="overflow-x-hidden mt-12 md:pl-16">
           {/* Slider Area */}
           <div id="Slider" className="box-content flex w-[300%] h-3/4">
-            {
+            {/* {
               categories ? 
                 categories.map((data) => {
                   return (
@@ -280,8 +198,8 @@ function Events(props) {
                 );
               })
               :null 
-            }
-            {/* {eventsData.map((event, id) => {
+            } */}
+            {eventsData.map((event, id) => {
               return (
                 <EventTab
                   img={event.img}
@@ -289,7 +207,7 @@ function Events(props) {
                   key={id}
                 />
               );
-            })} */}
+            })}
           </div>
         </div>
       </section>
