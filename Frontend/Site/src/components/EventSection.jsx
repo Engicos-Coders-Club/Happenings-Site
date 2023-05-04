@@ -120,9 +120,9 @@ function Events(props) {
     dispatch(getCategories())
   }, []);
 
-  useEffect(() => {
-    document.title = title;
-  }, []);
+  // useEffect(() => {
+  //   document.title = title;
+  // }, []);
 
   gsap.registerPlugin(ScrollTrigger);
 

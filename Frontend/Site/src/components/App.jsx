@@ -20,12 +20,12 @@ import Sponsor from './components/Sponsor'
 import Clouds from './components/Clouds'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import Modal from './components/Modal'
 
 function App() {
-  const location = useLocation();
-  console.log(location);
+  // const location = useLocation();
+  // console.log(location);
 
   return (
 
@@ -39,7 +39,7 @@ function App() {
               <About s={''} animation={'will-change-auto section-2'} />
               <EventSection />
               <Schedule />
-              {/* <Sponsor /> */}
+              <Sponsor />
               <Venue />
               <Footer />
 
@@ -65,6 +65,7 @@ function App() {
         <Route element={<Teams title="Teams" />} path="/Teams/" />
         <Route element={<GeneralRulePage title="GeneralRulePage" />} path="/GeneralRule" />
         <Route element={<Modal title="Modal" />} path="/Modal" />
+
 
       </Routes>
 

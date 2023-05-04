@@ -12,9 +12,9 @@ import SideBar from '../components/SideBar'
 function About(props) {
     const { title,animation } = props
 
-    useEffect(() => {
-        document.title = title
-    }, [])
+    // useEffect(() => {
+    //     document.title = title
+    // }, [])
     return (
         
             <section id="about" className={'bg-[#171717ff] text-white min-h-screen '+animation}>
