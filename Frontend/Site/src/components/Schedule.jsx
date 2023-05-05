@@ -22,7 +22,16 @@ function Schedule(props) {
       ScrollTrigger.matchMedia({
 
         "(max-width: 767px)": function() {
-
+            gsap.timeline({
+              scrollTrigger: {
+                trigger: ".schedule",
+                markers: true,
+                start: "center+=10500 top+=100",
+                end: "bottom",
+                scrub:1
+              }
+            })
+            .to(".schedule", {  opacity:"1250%" });
         
         },
 
@@ -36,7 +45,7 @@ function Schedule(props) {
           gsap.timeline({
             scrollTrigger: {
               trigger: ".schedule",
-              markers: true,
+              // markers: true,
               start: "top top+=100",
               end: "bottom",
               scrub:1
@@ -58,7 +67,7 @@ function Schedule(props) {
 
 
   return (
-    <section className='bg-[#171717ff] schedule opacity-0 h-auto relative md:pl-16' style={{'fontFamily':'MangoGrotesque'}}>
+    <section className='bg-[#171717ff] schedule opacity-0 h-auto relative md:pl-16  mt-[3000px] xs:mt-0' style={{'fontFamily':'MangoGrotesque'}}>
 {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       <Navbar />
       <SideBar />
