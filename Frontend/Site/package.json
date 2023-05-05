@@ -29,6 +29,7 @@
     "react-scroll": "^1.8.9",
     "react-tilt": "^1.0.2",
     "react-vanilla-tilt": "^1.0.0",
+    "spinners-react": "^1.0.7",
     "yup": "^1.1.1"
   },
   "devDependencies": {

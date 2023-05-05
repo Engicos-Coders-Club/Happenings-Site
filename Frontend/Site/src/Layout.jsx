@@ -14,7 +14,7 @@ function Layout() {
 
     <div>
       <Hero />
-      <About s={''} animation={'will-change-auto section-2'} />
+      <About s={''} animation={'section-2'} />
       <EventSection />
       <Schedule />
       {/* <Sponsor /> */}

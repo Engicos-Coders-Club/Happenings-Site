@@ -21,7 +21,7 @@ export class Hero extends Component {
 
                   <div className='w-full relative flex justify-center items-center z-10 h-[50%]'>
                     <div >
-                    <h1 className="font-MANGO font-extrawide bg-gradient-to-b from-white to-[#4F0C0C] text-transparent bg-clip-text MainText text-[3.8rem] lg:text-9xl tracking-wide will-change-transform ">HAPPENINGS 2023</h1>
+                    <p className="font-MANGO font-extrawide bg-gradient-to-b from-white to-[#4F0C0C] text-transparent bg-clip-text MainText text-[3.8rem] lg:text-9xl tracking-wide will-change-transform " >HAPPENINGS 2023</p>
                     </div>
         
                   </div>
