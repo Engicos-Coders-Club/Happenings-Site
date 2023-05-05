@@ -47,10 +47,10 @@ function Footer() {
                             <div className="flex items-center mt-2">
                                 {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
                                 <div className="flex flex-col justify-center">
-                                    <h2 className="text-sm md:text-lg text-white font-bold uppercase">Akash Gauns (Sports Secretary)</h2>
+                                    <h2 className="text-sm md:text-lg text-white font-bold uppercase">Ruthvik Desai (Chairman)</h2>
                                     <div className="flex items-center">
                                         <FaWhatsapp className="text-white mr-2" />
-                                        <p className="text-sm text-white"><a href="https://wa.me/917768804271">+91 7768804271</a></p>
+                                        <p className="text-sm text-white"><a href="https://wa.me/9193099 81749">+91 93099 81749</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,8 @@ function Footer() {
                                     {/* <li className="mb-2"><a href="#" className="text-gray-600 hover:text-blue-500">Sponsors</a></li> */}
                                     <li className="mb-2"><HashLink smooth to="#schedule" className="text-gray-600 hover:text-blue-500">Schedule</HashLink></li>
                                     <li className="mb-2"><Link to="/Teams/" className="text-gray-600 hover:text-blue-500">Team</Link></li>
-                                    {/* <li className="mb-2"><a href="#" className="text-gray-600 hover:text-blue-500">Passes</a></li> */}
+                                    <li className="mb-2"><Link to="/college-registration" className="text-gray-600 hover:text-blue-500">College Registration</Link></li>
+                                    <li className="mb-2"><Link to="/tickets" className="text-gray-600 hover:text-blue-500">Tickets</Link></li>
                                 </ul>
                             </div>
                             <div className="mt-5 mb-4 flex justify-center md:justify-start">

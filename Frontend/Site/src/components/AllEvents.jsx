@@ -54,7 +54,7 @@ function Events(props) {
                                     <EventCard key={event.id} event={event} />
                                 )
                             })}
-                        </div> */}
+                        </div> 
                     </div>
                 </div> */}
             </div>
