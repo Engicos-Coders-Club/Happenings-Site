@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const productionUrl = "http://35.171.19.185"
+export const productionUrl = "https://www.greeshmamedam.tech/"
 
 export const developmentUrl = "http://localhost:8000"
 
