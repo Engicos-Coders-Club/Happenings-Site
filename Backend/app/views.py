@@ -6,6 +6,7 @@ from rest_framework import status
 from django.conf import settings
 from authentication.models import *
 from .serializers import *
+from .threads import *
 from .models import *
 import razorpay
 
@@ -13,14 +14,14 @@ import razorpay
 client = razorpay.Client(auth=(settings.PUBLIC_KEY, settings.PRIVATE_KEY))
 
 
-class AllCollegesView(ListAPIView):
-    queryset = CollegeModel.objects.all()
-    serializer_class = CollegeSerializer
+# class AllCollegesView(ListAPIView):
+#     queryset = CollegeModel.objects.all()
+#     serializer_class = CollegeSerializer
 
 
-class CollegePointsSerializer(ListAPIView):
-    queryset = CollegeModel.objects.all()
-    serializer_class = CollegePointsSerializer
+# class CollegePointsSerializer(ListAPIView):
+#     queryset = CollegeModel.objects.all()
+#     serializer_class = CollegePointsSerializer
 
 
 @api_view(["POST"])
@@ -33,13 +34,7 @@ def college_registration(request):
         ser = CollegeRegistrationSerializer(data=request.data)
         if ser.is_valid():
             cart_obj = ser.save(coordinator=user)
-            payment = client.order.create({
-                'amount' :  400000,
-                'currency' : 'INR' ,
-                'payment_capture' : 1
-            })
-            cart_obj.order_id = payment['id']
-            cart_obj.save()
+            thread_obj = send_notif()
             return Response({"message": "Registration Done", "data":ser.data}, status=status.HTTP_200_OK)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:

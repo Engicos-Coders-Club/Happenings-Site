@@ -1,6 +1,5 @@
 from django.db import models
 from base.models import *
-from authentication.models import UserModel
 
 
 class CollegeModel(BaseModel):
@@ -11,13 +10,8 @@ class CollegeModel(BaseModel):
     gs_number = models.CharField( max_length=14)
     cs_name = models.CharField(max_length=50)
     cs_number = models.CharField( max_length=14)
+    scrennshot = models.ImageField(upload_to="payment", height_field=None, width_field=None, max_length=None)
     is_paid = models.BooleanField(default=False)
-    order_id = models.CharField(max_length=100, null=True, blank=True)
-    payment_id = models.CharField(max_length=100, null=True, blank=True)
-    payment_signature = models.CharField(max_length=100, null=True, blank=True)
-    coordinator = models.OneToOneField(UserModel, related_name="college_coordinator", on_delete=models.CASCADE, null=True, blank=True)
-    is_verified = models.BooleanField(default=False)
-    # all_registered = models.BooleanField(default=False)
     def __str__(self):
         return self.college_name
     class Meta:
@@ -40,8 +34,8 @@ class EventModel(BaseModel):
     cover_image = models.ImageField(upload_to="event", height_field=None, width_field=None, max_length=None)
     rules = models.TextField()
     judging_criteria = models.TextField()
-    timing = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
-    venue = models.CharField(max_length=50, null=True, blank=True)
+    timing = models.DateTimeField(auto_now=False, auto_now_add=False)
+    venue = models.CharField(max_length=50)
     no_of_participants = models.PositiveSmallIntegerField(default=1)
     def __str__(self):
         return self.event_name

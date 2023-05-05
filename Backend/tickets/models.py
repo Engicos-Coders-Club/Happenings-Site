@@ -16,6 +16,7 @@ class TicketModel(BaseModel):
 class PassesModel(BaseModel):
     user = models.ForeignKey(UserModel, related_name="user_pass", on_delete=models.CASCADE)
     ticket = models.ForeignKey(TicketModel, related_name="buy_ticket", on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField(default=1)
     is_paid = models.BooleanField(default=False)
     order_id = models.CharField(max_length=100, null=True, blank=True)
     payment_id = models.CharField(max_length=100, null=True, blank=True)

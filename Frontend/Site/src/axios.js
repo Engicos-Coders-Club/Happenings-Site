@@ -1,7 +1,10 @@
 import axios from "axios";
 
-export const productionUrl = "http://192.168.1.149:5000"
+
+export const productionUrl = "http://35.171.19.185"
+
 export const developmentUrl = "http://localhost:8000"
+
 
 axios.defaults.baseURL = productionUrl
 
@@ -12,5 +15,6 @@ axios.defaults.baseURL = productionUrl
 //       req.headers.authorization = `Bearer ${token}`;
 //       return req;
 //     }
+//     req.headers.authorization = null
 //     return req;
 // });
