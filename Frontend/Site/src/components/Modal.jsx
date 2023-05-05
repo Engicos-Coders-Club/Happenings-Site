@@ -23,8 +23,7 @@ function Modal({event_id,setShowEventModal}) {
     else
     return (
         <div className="absolute left-0 top-0 z-50 bg-[rgba(0,0,0,0.5)] w-full h-auto flex items-center justify-center">
-        <div className=" bg-white h-[90%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%]" > 
-        {/* bg-modal-bg bg-cover */}
+        <div id="modal" className="bg-modal-bg bg-cover h-[91vh] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"style={{ 'fontFamily': 'Merriweather' }} > 
 
             <div className='flex justify-between items-center px-10 my-5'>
                 <p className='text-lg sm:text-xl md:text-2xl'>Events Details</p>
@@ -44,7 +43,7 @@ function Modal({event_id,setShowEventModal}) {
                         <p className='my-2 md:my-0'>{event?.description}</p>
                         {/* <p className='border-2 border-black p-2 my-2 md:my-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nam eaque voluptas perferendis consequatur rem laboriosam. Temporibus, iusto id. Quidem nemo natus corporis.</p> */}
                     </div>
-                    <img src={Frame} width="85%" alt=""  className='my-2 md:my-0 mx-auto'/>
+                    <img src={event?.cover_image} width="55%" alt=""  className='my-2 md:my-0 mx-auto'/>
                 </div>
             </div>
 
@@ -59,9 +58,8 @@ function Modal({event_id,setShowEventModal}) {
 
             <div className='px-10 my-5'>
                 <hr className='border-black my-1'/>
-                <div className='flex justify-between my-3 text-lg sm:text-xl md:text-2xl' >
+                <div className='my-3 text-lg sm:text-xl md:text-2xl' >
                 <p className='font-extrabold'>RULES</p>
-                <p>THEME: OPEN</p>
                 </div>
                 <hr className='border-black my-1' />
             </div>
@@ -120,20 +118,18 @@ function Modal({event_id,setShowEventModal}) {
 
             <div className='mx-10 my-6 px-4 border-2 border-black'>
                 <p className='font-extrabold my-2 text-lg sm:text-xl md:text-2xl'>COORDINATORS</p>
-                <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
-                    <img src={Avatar}  alt="" />
-                    <div>
-                        <p>Karan Ghivari</p>
-                        <p>wa.link/11</p>
+                {
+                    event && event.coordinators.map((ele)=>
+                    <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
+                        {/* <img src={ele.photo}  alt="image" /> */}
+                        <div className='w-1/2'>
+                            <p>{ele.name}</p>
+                            <p>{ele.phone}</p>
+                        </div>
                     </div>
-                </div>
-                <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
-                    <img src={Avatar}  alt="" />
-                    <div>
-                        <p>Karan Ghivari</p>
-                        <p>wa.link/11</p>
-                    </div>
-                </div>
+                    )
+                }
+                
                 
             </div>
 
