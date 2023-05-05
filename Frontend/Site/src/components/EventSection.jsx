@@ -30,42 +30,62 @@ function Events(props) {
       ScrollTrigger.matchMedia({
 
         "(max-width: 767px)": function() {
-
+            gsap.defaults({ease: "SteppedEase.config(12)"})
+            gsap.timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                start: "top top",
+                end: "bottom+=3097 bottom",
+                pin: true,
+                pinSpacing: false,
+                scrub: 1
+              }
+            })
+            
+            gsap.timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                toggleActions: "restart none none none",
+                start: "+=20% 18%",
+                end: "bottom+=2530 80%",
+                scrub: true
+              }
+            })
+            .to("#Eventsec",{y:0})
+            .to("#Slider", { xPercent: -153, duration: 50, ease: "in" })
+            // .to('#schedule',{y:100000})
         
         },
 
       "(min-width: 768px) and (max-width: 1024px)": function() {
-          // gsap.timeline({
-          //     defaults:{duration:2,ease:'none'},
-          //     scrollTrigger:{
-          //         trigger:'.HRO',
-          //         start:"+=1% top",
-          //         end:"+80% bottom",
-          //         // markers:true,
-          //         scrub:1,
-          //         pin:true,
-          //         pinSpacing:false,
-                
-          //     }
-          // })
-          // .fromTo(heroT.current,{opacity:1},{scale:0,opacity:0})
-          // .fromTo(T.current,{scale:0,opacity:0},{scale:1,opacity:1})
-
-          // gsap.timeline({
-          //     defaults:{duration:3,ease:'none'},
-          //     scrollTrigger:{
-          //         trigger:'.HRO',
-          //         start:"+=1% top",
-          //         end:"+=70% bottom",
-          //         // markers:true,
-          //         pinSpacing:false,
-          //         scrub:1,
-          //         pin:levs.current,
-          //         snap:2,
-          //     }
-          // })
-          // .fromTo(levs.current,{scale:1},{scale:1.2})
-          // .to(levs.current,{opacity:0, display:'block'})
+        gsap.defaults({ease: "SteppedEase.config(12)"})
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            start: "top top",
+            end: "bottom+=2097 bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 1
+          }
+        })
+        
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            toggleActions: "restart none none none",
+            start: "+=20% 18%",
+            end: "bottom+=1530 80%",
+            scrub: true
+          }
+        })
+        .to("#Eventsec",{y:0})
+        .to("#Slider", { xPercent: -79, duration: 50, ease: "in" })
+        // .to('#schedule',{y:100000})
         
       },
 
@@ -99,24 +119,6 @@ function Events(props) {
           })
           .to("#Slider", { xPercent: -67, duration: 45, ease: "in" });
 
-          // gsap.timeline({
-          //   defaults:{ease:'none',duration:5},
-          //   scrollTrigger: {
-          //     trigger: "#Eventsec",
-          //     // markers: true,
-          //     start: "top top",
-          //     end: "bottom+=297 bottom",
-          //     pin: true,
-          //     pinSpacing: false,
-          //     scrub: 1
-          //   }
-          // })
-          // .to('#Eventsec',{y:0})
-          // .to('#schedule',{y:'10%'})
-        
-
-          
-          
           
       }
 
@@ -156,7 +158,7 @@ function Events(props) {
 
         <div
           id="Eventsectop"
-          className="block md:flex md:justify-between md:items-center px-6 py-4 pl-16 md:pl-20"
+          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20"
         >
           <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             EVENTS
@@ -197,7 +199,9 @@ function Events(props) {
         </div>
 
         {/* Slider Section */}
-        <div className="overflow-x-hidden mt-12 md:pl-16">
+        {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
+        <div className="overflow-x-hidden mt-12 md:pl-16 sm:py-7 lg:py-0">
+
           {/* Slider Area */}
           <div id="Slider" className="box-content flex w-[300%] h-3/4">
             {

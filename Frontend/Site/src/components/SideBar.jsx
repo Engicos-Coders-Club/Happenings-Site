@@ -12,7 +12,7 @@ function SideBar(props) {
             </div>
 
             <div className='h-[20%] w-full relative'>
-                <img src="/assets/logo2.svg" className='p-2 h-full w-full'></img>
+                <HashLink smooth to="/#home"><img src="/assets/logo2.svg" className='p-2 h-full w-full'/></HashLink>                
             </div>
 
             <div className='relative h-[120%] w-full flex justify-center items-center'>
