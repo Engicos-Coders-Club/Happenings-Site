@@ -46,7 +46,7 @@ function App() {
                 <Route element={<Teams title="Teams" />} exact matches path="/Teams/" />
                 <Route element={<GeneralRulePage title="GeneralRulePage" />} path="/GeneralRule" />
                 <Route element={<Modal title="Modal" />} path="/Modal" />
-                <Route element={<AllEvents title="AllEvents" />} path="/allevents" />
+               
             </Routes>
       {/* </BrowserRouter> */}
       
