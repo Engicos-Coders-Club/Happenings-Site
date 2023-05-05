@@ -37,3 +37,12 @@
       background-position: 500%;
     }
   }
+
+  #modal::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #modal {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
