@@ -84,7 +84,7 @@ function Events(props) {
           }
         })
         .to("#Eventsec",{y:0})
-        .to("#Slider", { xPercent: -80, duration: 50, ease: "in" })
+        .to("#Slider", { xPercent: -79, duration: 50, ease: "in" })
         // .to('#schedule',{y:100000})
         
       },

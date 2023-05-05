@@ -39,7 +39,7 @@ function Schedule(props) {
           gsap.timeline({
             scrollTrigger: {
               trigger: ".schedule",
-              markers: true,
+              // markers: true,
               start: "top top+=100",
               end: "bottom",
               scrub:1
@@ -76,7 +76,7 @@ function Schedule(props) {
 
 
   return (
-    <section className='bg-[#171717ff] schedule opacity-0 h-auto relative md:pl-16  mt-[2500px] xs:mt-0' style={{'fontFamily':'MangoGrotesque'}}>
+    <section className='bg-[#171717ff] schedule opacity-0 h-auto relative md:pl-16  mt-[2500px] xs:mt-0 sm:mt-[1000px] lg:mt-0' style={{'fontFamily':'MangoGrotesque'}}>
 {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       <Navbar />
       <SideBar />
