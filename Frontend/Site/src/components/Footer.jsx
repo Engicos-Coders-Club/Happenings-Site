@@ -55,10 +55,10 @@ function Footer() {
                                 </div>
                             </div>
 
-                            <div className="mt-4 flex justify-center">
                                 {/* <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Buy Passes Now <FiArrowUpRight size={20} /></button> */}
+                            {/* <div className="mt-4 flex justify-center">
                                 <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Coming soon ...</button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="md:w-1/6">
                             <div className="hidden md:block">
