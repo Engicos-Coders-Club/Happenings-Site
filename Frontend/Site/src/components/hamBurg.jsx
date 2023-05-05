@@ -3,6 +3,8 @@ import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 import { gsap } from "gsap";
 import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom";
+
 function hamBurg(props) {
     let hamClass="w-[95%] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic"
     let hamClassLast="w-[95%] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
@@ -33,7 +35,7 @@ useEffect(() => {
         </div>
 
         <div className={hamClass}>
-        <div className='pl-9' onClick={ReverseAnimation}>BUY PASSES</div>
+        <div className='pl-9' onClick={ReverseAnimation}><Link to="/tickets">BUY PASSES</Link></div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
@@ -42,18 +44,22 @@ useEffect(() => {
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
-        <div className={hamClass}>
-        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#sponsor">SPONSORS</HashLink></div>
-          <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
-        </div>
+        
 
         <div className={hamClass}>
         <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#schedule">SCHEDULE</HashLink></div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
 
+        <div className={hamClass}>
+        <div className='pl-9' onClick={ReverseAnimation}></div>
+        {/* <HashLink smooth to="/#sponsor">SPONSORS</HashLink> */}
+          <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
+        </div>
+
         <div className={hamClassLast}>
-        <div className='pl-9' onClick={ReverseAnimation}>TIME</div>
+        {/* <div className='pl-9' onClick={ReverseAnimation}>TIME</div> */}
+        <div className='pl-9' onClick={ReverseAnimation}> </div>
           <div className='pr-9'><BsBoxArrowUpRight size={30} color="#171717ff"  /></div>
         </div>
         
