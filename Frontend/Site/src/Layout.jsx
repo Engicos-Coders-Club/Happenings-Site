@@ -10,7 +10,7 @@ import About from './components/About'
 
 function Layout() {
   return (
-    <>
+    <div>
     <Hero />
     <About s={''} animation={'will-change-auto section-2'} />
     <EventSection />
@@ -18,8 +18,7 @@ function Layout() {
     {/* <Sponsor /> */}
     <Venue />
     <Footer />
-
-  </>
+  </div>
   )
 }
 
