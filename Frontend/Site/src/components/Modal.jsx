@@ -43,11 +43,9 @@ function Modal({event_id,setShowEventModal}) {
                         <p className='my-2 md:my-0'>{event?.description}</p>
                         {/* <p className='border-2 border-black p-2 my-2 md:my-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nam eaque voluptas perferendis consequatur rem laboriosam. Temporibus, iusto id. Quidem nemo natus corporis.</p> */}
                     </div>
-<<<<<<< Updated upstream
+
                     <img src={event?.cover_image} width="55%" alt=""  className='my-2 md:my-0 mx-auto'/>
-=======
-                    <img src={event?.cover_image} width="85%" alt=""  className='my-2 md:my-0 mx-auto'/>
->>>>>>> Stashed changes
+
                 </div>
             </div>
 
@@ -125,7 +123,6 @@ function Modal({event_id,setShowEventModal}) {
                 {
                     event && event.coordinators.map((ele)=>
                     <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
-<<<<<<< Updated upstream
                         {/* <img src={ele.photo}  alt="image" /> */}
                         <div className='w-1/2'>
                             <p>{ele.name}</p>
@@ -133,33 +130,7 @@ function Modal({event_id,setShowEventModal}) {
                         </div>
                     </div>
                     )
-                }
-                
-=======
-                        <img src={ele.photo}  alt="image" />
-                        <div>
-                            <p>{ele.name}</p>
-                            <p>{ele.phone}</p>
-                        </div>
-                    </div>
-                    )
-                }
-                {/* <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
-                    <img src={Avatar}  alt="" />
-                    <div>
-                        <p>Karan Ghivari</p>
-                        <p>wa.link/11</p>
-                    </div>
-                </div>
-                <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
-                    <img src={Avatar}  alt="" />
-                    <div>
-                        <p>Karan Ghivari</p>
-                        <p>wa.link/11</p>
-                    </div>
-                </div> */}
->>>>>>> Stashed changes
-                
+                }                
             </div>
 
         </div>
