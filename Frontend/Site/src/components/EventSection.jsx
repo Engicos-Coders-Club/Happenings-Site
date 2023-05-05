@@ -180,7 +180,7 @@ function Events(props) {
               </button>
             </Link>
 
-            <Link to="/">
+            <Link to="/all-events">
               <button className="flex mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}

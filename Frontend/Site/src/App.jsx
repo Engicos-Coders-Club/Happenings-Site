@@ -37,7 +37,7 @@ function App() {
         loading ? (
           <> <div style={{ height: '100vh', width: '100wh', backgroundColor: 'black', display: 'grid', placeItems: 'center' }}>
             <SpinnerRoundOutlined size={80} thickness={50} speed={100} color="rgba(172, 57, 59, 1)" />
-          </div>
+
 
           </>
 
@@ -56,6 +56,7 @@ function App() {
               <Route element={<EventSelection title="Event Selection" />} path="/event-selection" />
               <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
               <Route element={<AllEvents title="All Events" />} path="/all-events/:id" />
+              <Route element={<Events title="Events" />} path="/all-events/" />
               <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
               <Route element={<Auth title="Authentication" />} path="/auth" />
               <Route element={<FogotPassword title="Fogot Password" />} path="/resetpass" />
