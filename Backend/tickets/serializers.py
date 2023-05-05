@@ -9,4 +9,10 @@ class TicketModelSerializer(serializers.ModelSerializer):
 
 
 class BuyTicketSerializer(serializers.Serializer):
-    pass
+    ticket = serializers.CharField(required = True)
+    quantity = serializers.IntegerField(required = True)
+
+class PaymentCredentials(serializers.Serializer):
+    razorpay_payment_id  = serializers.CharField(required = False)
+    razorpay_signature  = serializers.CharField(required = False)
+
