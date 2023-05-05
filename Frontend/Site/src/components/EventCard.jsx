@@ -3,6 +3,7 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import Modal from './Modal'
 import { useState } from 'react'
+
 function EventCard(props) {
     const { event } = props
 

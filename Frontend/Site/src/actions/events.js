@@ -38,3 +38,22 @@ export const getSingleEvent = (id)=>async(dispatch)=>{
         })
     }    
 }
+
+export const getAllEvents = ()=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"GetAllEventsRequest"
+        })
+        const {data} = await axios.get(`/api/events-by-category/`)
+        dispatch({
+            type:"GetAllEventsSuccess",
+            payload:data
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"GetAllEventsFailure",
+            payload:error.response.data
+        })
+    }    
+}
