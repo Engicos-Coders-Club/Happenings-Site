@@ -49,12 +49,12 @@ function Events(props) {
                 markers: true,
                 toggleActions: "restart none none none",
                 start: "+=20% 18%",
-                end: "bottom+=3030 80%",
+                end: "bottom+=2530 80%",
                 scrub: true
               }
             })
             .to("#Eventsec",{y:0})
-            .to("#Slider", { xPercent: -100, duration: 45, ease: "in" })
+            .to("#Slider", { xPercent: -153, duration: 50, ease: "in" })
             // .to('#schedule',{y:100000})
         
         },
