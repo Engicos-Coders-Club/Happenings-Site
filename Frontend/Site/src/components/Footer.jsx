@@ -47,10 +47,10 @@ function Footer() {
                             <div className="flex items-center mt-2">
                                 {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
                                 <div className="flex flex-col justify-center">
-                                    <h2 className="text-sm md:text-lg text-white font-bold uppercase">Akash Gauns (Sports Secretary)</h2>
+                                    <h2 className="text-sm md:text-lg text-white font-bold uppercase">Ruthvik Desai (Chairman)</h2>
                                     <div className="flex items-center">
                                         <FaWhatsapp className="text-white mr-2" />
-                                        <p className="text-sm text-white"><a href="https://wa.me/917768804271">+91 7768804271</a></p>
+                                        <p className="text-sm text-white"><a href="https://wa.me/9193099 81749">+91 93099 81749</a></p>
                                     </div>
                                 </div>
                             </div>

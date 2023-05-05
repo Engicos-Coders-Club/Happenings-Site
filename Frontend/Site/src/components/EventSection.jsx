@@ -165,8 +165,8 @@ function Events(props) {
           </p>
 
           <div className="flex items-center space-around w-auto pr-14">
-            <Link to="/register">
-              <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white ">
+            <Link to="/auth">
+              <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide`}
                   style={{ fontFamily: "MangoGrotesque" }}
@@ -180,8 +180,8 @@ function Events(props) {
               </button>
             </Link>
 
-            <Link to="/all-events">
-              <button className="flex mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase">
+            <Link to="/all-events/">
+              <button className="flex mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}
                   style={{ fontFamily: "MangoGrotesque" }}
