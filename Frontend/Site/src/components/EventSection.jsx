@@ -20,97 +20,116 @@ function Events(props) {
   const {categories} = useSelector((state)=>state.category)
   
 
-    useEffect(() => {
-      let ctx = gsap.context(() => {
-        
-        if(window.innerWidth>=640){
-          gsap.to("#Eventsec", {
-            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              start: "top top",
-              end: "bottom+=297 bottom",
-              pin: true,
-              pinSpacing: false,
-              scrub: 1
-            }
-          });
-          gsap.to("#Slider", {
-            xPercent: -67,
-            duration: 25,
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              toggleActions: "restart none none none",
-              start: "+=20% 20%",
-              end: "bottom+=130 80%",
-              scrub: true
-            }
-          });
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    let ctx = gsap.context(()=>{
 
+
+      gsap.defaults({ ease: "none" });
+
+      ScrollTrigger.matchMedia({
+
+        "(max-width: 767px)": function() {
+
+        
+        },
+
+      "(min-width: 768px) and (max-width: 1024px)": function() {
+          // gsap.timeline({
+          //     defaults:{duration:2,ease:'none'},
+          //     scrollTrigger:{
+          //         trigger:'.HRO',
+          //         start:"+=1% top",
+          //         end:"+80% bottom",
+          //         // markers:true,
+          //         scrub:1,
+          //         pin:true,
+          //         pinSpacing:false,
+                
+          //     }
+          // })
+          // .fromTo(heroT.current,{opacity:1},{scale:0,opacity:0})
+          // .fromTo(T.current,{scale:0,opacity:0},{scale:1,opacity:1})
+
+          // gsap.timeline({
+          //     defaults:{duration:3,ease:'none'},
+          //     scrollTrigger:{
+          //         trigger:'.HRO',
+          //         start:"+=1% top",
+          //         end:"+=70% bottom",
+          //         // markers:true,
+          //         pinSpacing:false,
+          //         scrub:1,
+          //         pin:levs.current,
+          //         snap:2,
+          //     }
+          // })
+          // .fromTo(levs.current,{scale:1},{scale:1.2})
+          // .to(levs.current,{opacity:0, display:'block'})
+        
+      },
+
+      
+      "(min-width: 1024px)": function() {
+          gsap.defaults({ease: "SteppedEase.config(12)"})
           gsap.timeline({
-            defaults:{ease:'none',duration:5},
             scrollTrigger: {
               trigger: "#Eventsec",
               // markers: true,
               start: "top top",
-              end: "bottom+=297 bottom",
+              end: "bottom+=1097 bottom",
               pin: true,
               pinSpacing: false,
               scrub: 1
             }
           })
-          .to('#Eventsec',{y:0})
-          // .to('#schedule',{y:0})
-          
-        }
-        else if(window.innerWidth>=500){
-          gsap.to("#Eventsec", {
-            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              start: "top top",
-              end: "bottom+=357 25%",
-              pin: true,
-              pinSpacing: false,
-              scrub: 1
-            }
-          });
-          gsap.to("#Slider", {
-            xPercent: -72,
-            duration: 25,
+          .to('#schedule',{y:0})
+          .to("#Eventsec",{y:0})
+        
+
+          gsap.timeline({
             scrollTrigger: {
               trigger: "#Eventsec",
               // markers: true,
               toggleActions: "restart none none none",
-              start: "+=19% 10%",
-              end: "bottom+=290 25%",
+              start: "+=20% 20%",
+              end: "bottom+=430 80%",
               scrub: true
             }
-          });
-        }
-        else{
-          gsap.to("#Eventsec", {
-            // onComplete: () => { document.getElementById('Eventsec').classList.add('smooth') },
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              start: "top top",
-              end: "bottom+=607 top",
-              pin: true,
-              pinSpacing: false,
-              scrub: 1,
-              onComplete:function(){
-                  const {loading,categories} = useSelector((state)=>state.category)}
-              }})}
-      })
-      
-      return () => ctx.revert();
-      
-       })
+          })
+          .to("#Slider", { xPercent: -67, duration: 45, ease: "in" });
 
+          // gsap.timeline({
+          //   defaults:{ease:'none',duration:5},
+          //   scrollTrigger: {
+          //     trigger: "#Eventsec",
+          //     // markers: true,
+          //     start: "top top",
+          //     end: "bottom+=297 bottom",
+          //     pin: true,
+          //     pinSpacing: false,
+          //     scrub: 1
+          //   }
+          // })
+          // .to('#Eventsec',{y:0})
+          // .to('#schedule',{y:'10%'})
+        
+
+          
+          
+          
+      }
+
+      })
+
+      // return () => {
+      //     ScrollTrigger.killAll();
+      // };
+    })
+    // return () => {
+    //   ctx.revert()
+    // };
+  }, []);
     
 
   
@@ -122,11 +141,6 @@ function Events(props) {
     // });
     dispatch(getCategories())
   }, []);
-
-  // useEffect(() => {
-  //   document.title = title;
-  // }, []);
-
 
 
   return (
