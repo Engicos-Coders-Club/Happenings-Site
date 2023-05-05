@@ -23,7 +23,7 @@ function Footer() {
 
 
                             <div className="flex items-center mt-4">
-                                <img src={PersonPic} className="h-24/3 mr-4" />
+                                {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
                                 <div className="flex flex-col justify-center">
                                     <h2 className="text-sm md:text-lg text-white font-bold uppercase">Sumit komarpant (General Secretary)</h2>
                                     <div className="flex items-center">
@@ -34,7 +34,7 @@ function Footer() {
                             </div>
 
                             <div className="flex items-center mt-2">
-                                <img src={PersonPic} className="h-24/3 mr-4" />
+                                {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
                                 <div className="flex flex-col justify-center">
                                     <h2 className="text-sm md:text-lg text-white font-bold uppercase">Sarthak Bandodkar (Cultural Secretary)</h2>
                                     <div className="flex items-center">
@@ -45,7 +45,7 @@ function Footer() {
                             </div>
 
                             <div className="flex items-center mt-2">
-                                <img src={PersonPic} className="h-24/3 mr-4" />
+                                {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
                                 <div className="flex flex-col justify-center">
                                     <h2 className="text-sm md:text-lg text-white font-bold uppercase">Akash Gauns (Sports Secretary)</h2>
                                     <div className="flex items-center">
