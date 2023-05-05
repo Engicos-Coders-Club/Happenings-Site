@@ -69,7 +69,8 @@ function Footer() {
                                     {/* <li className="mb-2"><a href="#" className="text-gray-600 hover:text-blue-500">Sponsors</a></li> */}
                                     <li className="mb-2"><HashLink smooth to="#schedule" className="text-gray-600 hover:text-blue-500">Schedule</HashLink></li>
                                     <li className="mb-2"><Link to="/Teams/" className="text-gray-600 hover:text-blue-500">Team</Link></li>
-                                    {/* <li className="mb-2"><a href="#" className="text-gray-600 hover:text-blue-500">Passes</a></li> */}
+                                    <li className="mb-2"><Link to="/college-registration" className="text-gray-600 hover:text-blue-500">College Registration</Link></li>
+                                    <li className="mb-2"><Link to="/tickets" className="text-gray-600 hover:text-blue-500">Tickets</Link></li>
                                 </ul>
                             </div>
                             <div className="mt-5 mb-4 flex justify-center md:justify-start">
