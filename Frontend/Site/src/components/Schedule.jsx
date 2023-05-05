@@ -36,7 +36,16 @@ function Schedule(props) {
         },
 
       "(min-width: 768px) and (max-width: 1024px)": function() {
-         
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: ".schedule",
+              markers: true,
+              start: "top top+=100",
+              end: "bottom",
+              scrub:1
+            }
+          })
+          .to(".schedule", {  opacity:"1250%" });
         
       },
       

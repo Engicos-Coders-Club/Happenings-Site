@@ -60,7 +60,32 @@ function Events(props) {
         },
 
       "(min-width: 768px) and (max-width: 1024px)": function() {
-      
+        gsap.defaults({ease: "SteppedEase.config(12)"})
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            start: "top top",
+            end: "bottom+=2097 bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 1
+          }
+        })
+        
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            toggleActions: "restart none none none",
+            start: "+=20% 18%",
+            end: "bottom+=1530 80%",
+            scrub: true
+          }
+        })
+        .to("#Eventsec",{y:0})
+        .to("#Slider", { xPercent: -80, duration: 50, ease: "in" })
+        // .to('#schedule',{y:100000})
         
       },
 
