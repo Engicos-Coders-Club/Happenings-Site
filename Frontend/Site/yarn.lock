@@ -2378,7 +2378,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-vanilla-tilt@*:
+react-vanilla-tilt@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/react-vanilla-tilt/-/react-vanilla-tilt-1.0.0.tgz"
   integrity sha512-AuFFvbudpQIdzPeci9kP4p4Mo3QVIEtFVNu+iskMzNT0Efhi1fH5wzmdfMqWX8g82ypVgjAlwgdBWL9opnL2ow==
@@ -2555,6 +2555,11 @@ source-map@^0.5.7:
   version "0.5.7"
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   integrity sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==
+
+spinners-react@*:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/spinners-react/-/spinners-react-1.0.7.tgz"
+  integrity sha512-Xcgpc7Ybm6HOrpCVJjbH1G/NV852HaV4Zc9T1sJ2+S2hn05lGiBZS1dBOKGLc1kp8wv2sd3wtt94I/NNqDjs3Q==
 
 string.prototype.matchall@^4.0.8:
   version "4.0.8"

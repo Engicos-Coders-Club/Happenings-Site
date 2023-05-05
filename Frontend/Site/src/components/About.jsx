@@ -17,7 +17,7 @@ function About(props) {
     // }, [])
     return (
         
-            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform '+animation}>
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }}>
             <Navbar />
             <SideBar />
                 <div className='w-4/5 mx-auto pb-16'>
