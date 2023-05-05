@@ -17,7 +17,7 @@ function About(props) {
     // }, [])
     return (
         
-            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform '+animation}>
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }}>
             <Navbar />
             <SideBar />
                 <div className='w-4/5 mx-auto pb-16'>
@@ -45,7 +45,7 @@ function About(props) {
                             </p>
                         </div>
                         <div className="my-3 md:my-0 md:mx-auto">
-                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline pb-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>3K+ Attendes</p>
+                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline pb-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>3K+ EVENTS</p>
                             <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>20+ Events</p>
                             <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider  text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>DJ Night</p>
                         </div>

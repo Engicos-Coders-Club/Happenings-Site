@@ -2,7 +2,6 @@ import {React, useEffect,useRef} from 'react'
 import Hero from '../components/Hero'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import VanillaTilt from 'vanilla-tilt';
 
 function HeroSec() {
 
