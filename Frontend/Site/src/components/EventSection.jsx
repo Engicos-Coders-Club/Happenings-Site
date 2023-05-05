@@ -199,7 +199,9 @@ function Events(props) {
         </div>
 
         {/* Slider Section */}
-        <div className="overflow-x-hidden mt-12 md:pl-16">
+        {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
+        <div className="overflow-x-hidden mt-12 md:pl-16 sm:py-7 lg:py-0">
+
           {/* Slider Area */}
           <div id="Slider" className="box-content flex w-[300%] h-3/4">
             {/* {
