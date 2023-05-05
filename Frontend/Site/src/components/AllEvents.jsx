@@ -5,13 +5,14 @@ import EventCard from './EventCard'
 import { useParams } from 'react-router-dom'
 import {getEvents} from '../actions/events' 
 import { useDispatch,useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 function Events(props) {
     const { onStageEvents, offStageEvents } =  eventsData
     const { title } = props
     const {id} = useParams()
     const dispatch = useDispatch()
-
+    const location = useLocation()
 
     // RENDER THIS EVENTS
     const {loading,events} = useSelector((state)=>state.event)
@@ -29,7 +30,7 @@ function Events(props) {
                 </div>
 
                 <div className='w-[80vw] mx-auto py-16'>
-                    <h1 className="uppercase text-[#F8E0B7] text-center text-5xl font-bold" style={{ 'fontFamily': 'MangoGrotesque' }}>On-Stage Events</h1>
+                    <h1 className="uppercase text-[#F8E0B7] text-center text-5xl font-bold" style={{ 'fontFamily': 'MangoGrotesque' }}>{location.state.event}</h1>
                     <div className="flex flex-wrap justify-center gap-5 md:gap-x-10 mt-14">
                         {events ? 
                         events.map((event) => {

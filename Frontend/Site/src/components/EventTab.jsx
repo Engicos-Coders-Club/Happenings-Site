@@ -10,13 +10,15 @@ function EventTab(props) {
     width: "700px",
   };
 
+  const data = {'event':props.eventName}
+
   return (
     <>
       {/* Event Tab */}
       <div className="min-w-[27%] xs:min-w-[24%] sm:min-w-[11%] md:min-w-[14%] lg:min-w-[18%] h-3/4 m-4 md:m-10">
         {/* Image */}
         <div className="w-full h-full cursor hover:scale-105" style={clip}>
-          <Link to={`/all-events/${props.id}`}>
+        <Link to={`/all-events/${props.id}`} state={data}>
             <img
               src={props.img}
               alt=""

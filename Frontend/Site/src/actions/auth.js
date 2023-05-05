@@ -88,17 +88,15 @@ export const loadUser = ()=>async(dispatch)=>{
             type:"LoadUserRequest"
         })
 
-        axios.interceptors.request.use(function (req) {
+       
         const user = localStorage.getItem('user');
+        let tokens = ''
         if (user) {
             const { token } = JSON.parse(localStorage.getItem('user'));
-            req.headers.authorization = `Bearer ${token}`;
-            return req;
+            tokens = `Bearer ${token}`;
         }
-        return req;
-        });
 
-        await axios.get("/api/verify-jwt/")
+        await axios.get("/api/verify-jwt/",{headers:{'Authorization':tokens}})
         dispatch({
             type:"LoadUserSuccess",
         })
