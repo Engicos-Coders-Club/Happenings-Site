@@ -43,10 +43,10 @@ function App() {
                 <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
                 <Route element={<Auth title="Authentication" />} path="/auth" />
                 <Route element={<FogotPassword title="Fogot Password" />} path="/resetpass" />
-                <Route element={<Teams title="Teams" />} path="/Teams/" />
+                <Route element={<Teams title="Teams" />} exact matches path="/Teams/" />
                 <Route element={<GeneralRulePage title="GeneralRulePage" />} path="/GeneralRule" />
                 <Route element={<Modal title="Modal" />} path="/Modal" />
-                <Route element={<AllEvents title="AllEvents" />} path="/allevents" />
+               
             </Routes>
       {/* </BrowserRouter> */}
       
