@@ -40,6 +40,7 @@ function App() {
                 <Route element={<EventSelection title="Event Selection" />} path="/event-selection" />
                 <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
                 <Route element={<AllEvents title="All Events" />} path="/all-events/:id" />
+                <Route element={<Events title="Events" />} path="/all-events/" />
                 <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
                 <Route element={<Auth title="Authentication" />} path="/auth" />
                 <Route element={<FogotPassword title="Fogot Password" />} path="/resetpass" />

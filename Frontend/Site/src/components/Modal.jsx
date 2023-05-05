@@ -43,7 +43,9 @@ function Modal({event_id,setShowEventModal}) {
                         <p className='my-2 md:my-0'>{event?.description}</p>
                         {/* <p className='border-2 border-black p-2 my-2 md:my-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nam eaque voluptas perferendis consequatur rem laboriosam. Temporibus, iusto id. Quidem nemo natus corporis.</p> */}
                     </div>
+
                     <img src={event?.cover_image} width="55%" alt=""  className='my-2 md:my-0 mx-auto'/>
+
                 </div>
             </div>
 
@@ -128,9 +130,7 @@ function Modal({event_id,setShowEventModal}) {
                         </div>
                     </div>
                     )
-                }
-                
-                
+                }                
             </div>
 
         </div>
