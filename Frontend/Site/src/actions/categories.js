@@ -7,7 +7,7 @@ export const getCategories = ()=>async(dispatch)=>{
             type:"GetCategoriesRequest"
         })
         
-        const {data} = await axios.get(`/api/all-categories/`)
+        const {data} = await axios.get(`/api/all-categories`)
         dispatch({
             type:"GetCategoriesSuccess",
             payload:data

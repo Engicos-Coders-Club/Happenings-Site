@@ -11,14 +11,15 @@ import About from './components/About'
 function Layout() {
   return (
     <>
-    <Hero />
-    <About s={''} animation={'will-change-auto section-2'} />
-    <EventSection />
-    <Schedule />
-    {/* <Sponsor /> */}
-    <Venue />
-    <Footer />
-
+    <div>
+      <Hero />
+      <About s={''} animation={'will-change-auto section-2'} />
+      <EventSection />
+      <Schedule />
+      {/* <Sponsor /> */}
+      <Venue />
+      <Footer />
+    </div>
   </>
   )
 }
