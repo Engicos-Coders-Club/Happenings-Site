@@ -15,7 +15,7 @@ function Venue() {
     // };
 
     return (
-        <div id="venue" className="h-fit" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
+        <div id="venue" className="h-fit relative z-5" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
             <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
                 <div className="font-satoshi md:text-left md:mr-5 md:w-3/5">
                     <div className="mb-10">
@@ -58,7 +58,7 @@ function Venue() {
                                     Join in and register your college for the biggest college fests in Goa!
                                 </div>
                                 <div className="mt-4 flex justify-center">
-                                    <Link to="/GeneralRule">
+                                    <Link to="/college-registration">
                                     <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Register Now <FiArrowUpRight size={20} /></button>
                                     </Link>
                                 </div>
