@@ -23,7 +23,7 @@ function Modal({event_id,setShowEventModal}) {
     else
     return (
         <div className="absolute left-0 top-0 z-50 bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
-        <div id="modal" className="bg-modal-bg bg-cover h-[96%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"style={{ 'fontFamily': 'Merriweather' }} > 
+        <div id="modal" className="bg-modal-bg bg-cover h-[96%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"style={{ 'fontFamily': 'Merriweather', backgroundColor:"white" }} > 
 
             <div className='flex justify-between items-center px-10 my-5'>
                 <p className='text-lg sm:text-xl md:text-2xl'>Events Details</p>
