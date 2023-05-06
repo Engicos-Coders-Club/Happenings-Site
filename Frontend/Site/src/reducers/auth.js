@@ -18,6 +18,15 @@ export const authReducer = createReducer(initialState,{
           state.loading = false
     },
 
+    LogoutRequest: (state,action)=>{
+        state.loading = true;
+    },
+    LogoutSuccess: (state,action)=>{
+        state.message = action.payload;
+        state.isAuthenticated = false
+        state.loading = false
+    },
+
     SignUpRequest: (state,action)=>{
         state.loading = true;
     },

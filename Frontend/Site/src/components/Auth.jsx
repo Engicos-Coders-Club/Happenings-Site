@@ -51,7 +51,7 @@ function Auth(props) {
         const tokenId = GoogleAuth.currentUser.le.tokenId;
         console.log(tokenId)
         dispatch(googleLogin(tokenId, profile));
-        navigate("/buy");
+        //navigate("/buy");
       };
       const onFailureLogin = (res) => {
         console.log(res);
