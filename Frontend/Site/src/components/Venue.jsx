@@ -58,7 +58,7 @@ function Venue() {
                                     Join in and register your college for the biggest college fests in Goa!
                                 </div>
                                 <div className="mt-4 flex justify-center">
-                                    <Link to="/GeneralRule">
+                                    <Link to="/college-registration">
                                     <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Register Now <FiArrowUpRight size={20} /></button>
                                     </Link>
                                 </div>

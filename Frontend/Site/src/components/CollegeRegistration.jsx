@@ -21,6 +21,7 @@ function CollegeRegistration(props) {
 
         // Send to backend
         console.log(values)
+        const {CSName,GSName,CSphoneNumber,GSphoneNumber,collegeName,payment} = values
 
         toast('Form succesfully submitted! Your application is under review', {
             position: "bottom-center",

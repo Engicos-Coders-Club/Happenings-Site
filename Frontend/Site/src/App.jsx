@@ -18,20 +18,21 @@ import { useLocation } from "react-router-dom";
 import Modal from "./components/Modal";
 import Layout from "./Layout";
 import { loadUser } from "./actions/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 function App() {
   // const location = useLocation();
   // console.log(location);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+  const {isAuthenticated,loading:serverLoading} = useSelector((state)=>state.auth)
 
   useEffect(() => {
     dispatch(loadUser());
     setLoading(false);
   }, []);
 
-  return loading ? (
+  return loading || serverLoading ? (
     <div
       style={{
         height: "100vh",
@@ -74,11 +75,17 @@ function App() {
         <Routes>
           <Route element={<Layout title="Happenings" />} path="/" />
           <Route
-            element={<CollegeRegistration title="College Registration" />}
+            element={isAuthenticated ? 
+              <CollegeRegistration title="College Registration" />
+              :<Auth title="Authentication" />
+            }
             path="/college-registration"
           />
           <Route
-            element={<EventRegistration title="Event Registration" />}
+            element={isAuthenticated?
+              <EventRegistration title="Event Registration" />
+              :<Auth title="Authentication" />
+            }
             path="/event-registration"
           />
           <Route

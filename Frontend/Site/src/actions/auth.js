@@ -154,3 +154,13 @@ export const reset = (otp,pw)=>async(dispatch)=>{
         })
     }    
 }
+export const logout = ()=>async(dispatch)=>{
+    dispatch({
+        type:"LogoutRequest"
+    })
+    localStorage.removeItem("user");
+    dispatch({
+        type:"LogoutSuccess",
+        payload:"Logout Successfull"
+    }) 
+}

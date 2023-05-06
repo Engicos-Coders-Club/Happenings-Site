@@ -4,6 +4,8 @@ import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { Link, useNavigate } from 'react-router-dom'
 import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
+import { logout } from '../actions/auth'
+import { useDispatch } from 'react-redux'
 
 /*
 TODO: 
@@ -14,6 +16,7 @@ TODO:
 function EventRegistration(props) {
     const { title } = props
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         document.title = title
@@ -21,11 +24,12 @@ function EventRegistration(props) {
 
 
     const goBack = () => {
-        navigate("/events")
+        navigate("/event-selection")
     }
 
-    const logout = () => {
-
+    const handleLogout = () => {
+        dispatch(logout())
+        navigate('/')
     }
 
     const handleSubmit = (values) => {
@@ -40,7 +44,7 @@ function EventRegistration(props) {
                         <p className="px-3 md:px-5 text-xl md:text-3xl" style={{ 'fontFamily': "Mangogrotesque" }}>Back to Events</p>
                     </div>
                     <div className="flex items-center">
-                        <FiArrowRight size={40} onClick={logout} className="cursor-pointer border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-125" />
+                        <FiArrowRight size={40} onClick={handleLogout} className="cursor-pointer border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-125" />
                         <p className="px-3 md:px-5 text-xl md:text-3xl" style={{ 'fontFamily': "Mangogrotesque" }}>Logout</p>
                     </div>
                 </div>
