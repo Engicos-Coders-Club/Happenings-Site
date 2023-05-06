@@ -15,7 +15,7 @@ function EventTab(props) {
   return (
     <>
       {/* Event Tab */}
-      <div className="min-w-[27%] xs:min-w-[24%] sm:min-w-[11%] md:min-w-[14%] lg:min-w-[18%] h-3/4 m-4 md:m-10">
+      <div className="min-w-[57%] xs:min-w-[50%] sm:min-w-[38%] md:min-w-[19%] lg:min-w-[16%] h-3/4 my-[68px] mx-10 sm:my-[40px] md:my-14 md:mx-22">
         {/* Image */}
         <div className="w-full h-full cursor hover:scale-105" style={clip}>
         <Link to={`/all-events/${props.id}`} state={data}>
@@ -42,7 +42,7 @@ function EventTab(props) {
             {props.eventName}
           </p>
           <Link to="/">
-            <button className="h-3/4 text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-[12px] md:text-sm">
+            <button className="h-3/4 text-white bg-orange-600 px-4 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-sm md:text-base">
               View all
             </button>
           </Link>

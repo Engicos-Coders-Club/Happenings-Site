@@ -14,7 +14,7 @@ function ScheduleModal(props) {
                 <AiOutlineClose size={30}  color="white" className='cursor-pointer' onClick={props.close}/>
             </div>
             <div className="overflow-x-scroll bg-white">
-                <img className="relative z-[1] max-w-[310%]" src={props.img} alt="schedule" width="800" height="400"/>
+                <img className="relative z-[1] max-w-[310%]" src={props.img} alt="schedule" width="1000" height="400"/>
           </div>
         </div>
     </div>   
