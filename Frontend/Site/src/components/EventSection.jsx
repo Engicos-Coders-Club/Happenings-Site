@@ -36,7 +36,7 @@ function Events(props) {
               trigger: "#Eventsec",
               // markers: true,
               start: "top top",
-              end: "bottom+=9597 bottom",
+              end: "bottom+=9697 bottom",
               pin: true,
               pinSpacing: false,
               scrub: 1
@@ -51,11 +51,11 @@ function Events(props) {
               // markers: true,
               toggleActions: "restart none none none",
               start: "top+=18% 18%",
-              end: "bottom+=8530 80%",
+              end: "bottom+=8630 80%",
               scrub: true
             }
           })
-          .to("#Slider", { xPercent: -289, duration: 50, ease: "in" })
+          .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
       
       },
 
@@ -188,7 +188,7 @@ function Events(props) {
 
         <div
           id="Eventsectop"
-          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20"
+          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16"
         >
           <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             EVENTS
@@ -211,7 +211,7 @@ function Events(props) {
             </Link>
 
             <Link to="/all-events/">
-              <button className="flex mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
+              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}
                   style={{ fontFamily: "MangoGrotesque" }}
@@ -260,7 +260,6 @@ function Events(props) {
           </div>
         </div>
       </section>
-      {/* <section className='h-0 lg:h-[40vh]' /> */}
     </>
   );
 }
