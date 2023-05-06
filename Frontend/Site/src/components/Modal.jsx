@@ -22,8 +22,8 @@ function Modal({event_id,setShowEventModal}) {
     )
     else
     return (
-        <div className="absolute left-0 top-0 z-50 bg-[rgba(0,0,0,0.5)] w-full h-auto flex items-center justify-center">
-        <div id="modal" className="bg-modal-bg bg-cover h-[91vh] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"style={{ 'fontFamily': 'Merriweather' }} > 
+        <div className="absolute left-0 top-0 z-50 bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
+        <div id="modal" className="bg-modal-bg bg-cover h-[96%] rounded-lg my-8 w-[78%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"style={{ 'fontFamily': 'Merriweather' }} > 
 
             <div className='flex justify-between items-center px-10 my-5'>
                 <p className='text-lg sm:text-xl md:text-2xl'>Events Details</p>
@@ -41,7 +41,6 @@ function Modal({event_id,setShowEventModal}) {
                 <div className='px-10 my-5 text-base flex flex-col-reverse md:flex-row' style={{'grid-template-columns':'60% 36%', 'gap':'4%'}}>
                     <div>
                         <p className='my-2 md:my-0'>{event?.description}</p>
-                        {/* <p className='border-2 border-black p-2 my-2 md:my-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nam eaque voluptas perferendis consequatur rem laboriosam. Temporibus, iusto id. Quidem nemo natus corporis.</p> */}
                     </div>
 
                     <img src={event?.cover_image} width="55%" alt=""  className='my-2 md:my-0 mx-auto'/>
@@ -68,16 +67,6 @@ function Modal({event_id,setShowEventModal}) {
             
             <div className='px-10 my-5 text-[9px]  sm:text-xs md:text-sm lg:text-base list-disc'>
                 <p className='my-2 md:my-0'>{event?.rules}</p>
-                {/* <ul>
-                    <li>Each performance should be an original rap verse and should not exceed 5 mins.</li>
-                    <li>participants should have their own beat to rap to</li>
-                    <li>The participants need to bring their own track and handover the pendrive to the registration counter. </li>
-                    <li>The decisions made by the organisers and judges will be final and abiding.</li>
-                    <li>The participant must not employ any explicit words in his/her lyrics.</li>
-                    <li>Usage of offensive language, slurs, naming a particular person or a defined group of people (religions, Caste etc), any socially objectionable language, is strictly prohibited. Non compliance os these rules is grounds for disqualification.</li>
-                    <li>Obscenity, at the discretion of judges is not allowed and may lead to disqualification.</li>
-                    <li>The rap can be in any language</li>                   
-                </ul> */}
             </div>
 
             <div className='px-10 my-5'>
@@ -87,15 +76,6 @@ function Modal({event_id,setShowEventModal}) {
                 <p className='my-2 md:my-0'>{event?.judging_criteria}</p>
             </div>
 
-            {/* <div className='px-10 my-5 text-[9px]  sm:text-xs md:text-sm lg:text-base'>
-                <ul>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>             
-                </ul>
-            </div> */}
 
             <div className='px-10 my-5'>
                 <hr className='border-black my-1'/>
@@ -121,10 +101,11 @@ function Modal({event_id,setShowEventModal}) {
             <div className='mx-10 my-6 px-4 border-2 border-black'>
                 <p className='font-extrabold my-2 text-lg sm:text-xl md:text-2xl'>COORDINATORS</p>
                 {
+                    
                     event && event.coordinators.map((ele)=>
-                    <div className='my-2' style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}}>
+                    <div className='my-2'> {/* style={{'display':'grid','grid-template-columns':'8% 92%', 'gap':'3%'}} */}
                         {/* <img src={ele.photo}  alt="image" /> */}
-                        <div className='w-1/2'>
+                        <div className='w-full'>
                             <p>{ele.name}</p>
                             <p>{ele.phone}</p>
                         </div>
