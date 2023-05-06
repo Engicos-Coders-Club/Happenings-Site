@@ -11,7 +11,7 @@ function Events(props) {
     const { onStageEvents } = eventsData
     const { title } = props
     const dispatch = useDispatch()
-    const [showEventModal, setShowEventModal] = useState(false)
+    // const [showEventModal, setShowEventModal] = useState(false)
 
     useEffect(() => {
         document.title = title

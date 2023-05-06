@@ -2,23 +2,23 @@
 const eventsData =[
     {
         // 'img': landscape,
-        'eventName': 'E-Sport'
+        // 'eventName': 'E-Sport'
     },
     {
         // 'img': landscape,
-        'eventName': 'Online'
+        // 'eventName': 'Online'
     },
     {
         // 'img': landscape,
-        'eventName': 'Event'
+        // 'eventName': 'Event'
     },
     {
         // 'img': landscape,
-        'eventName': 'Event'
+        // 'eventName': 'Event'
     },
     {
         // 'img': landscape,
-        'eventName': 'Event'
+        // 'eventName': 'Event'
     },
 ]
 
