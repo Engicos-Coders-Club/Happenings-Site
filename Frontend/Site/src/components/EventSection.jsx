@@ -181,7 +181,7 @@ function Events(props) {
       <section
         id="Eventsec"
         className="h-screen bg-event-sec-bg bg-cover"
-        style={{ fontFamily: "MangoGrotesque" }}
+        style={{ fontFamily: "MangoGrotesque", display:"grid", gridTemplateRows:"15% 75%" }}
       >
         <Navbar />
         <SideBar />
@@ -230,10 +230,10 @@ function Events(props) {
 
         {/* Slider Section */}
         {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
-        <div className="overflow-x-hidden mt-12 md:pl-16 sm:py-7 lg:py-0">
+        <div className="overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
 
           {/* Slider Area */}
-          <div id="Slider" className="box-content flex h-1/2 w-[300%] md:h-3/4">
+          <div id="Slider" className="box-content flex h-1/2 w-[300%] md:h-1/2">
             {
               categories ? 
                 categories.map((data) => {
