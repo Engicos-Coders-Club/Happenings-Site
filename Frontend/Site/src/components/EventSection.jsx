@@ -48,7 +48,7 @@ function Events(props) {
           gsap.timeline({
             scrollTrigger: {
               trigger: "#Eventsec",
-              markers: true,
+              // markers: true,
               toggleActions: "restart none none none",
               start: "top+=18% 18%",
               end: "bottom+=8530 80%",
