@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 import EventTab from "./EventTab";
-import { eventsData } from "../data/EventTabData";
+// import { eventsData } from "../data/EventTabData";
 import Navbar from "../components/navbar";
 import SideBar from "../components/SideBar";
 import { getCategories } from "../actions/categories";
@@ -248,7 +248,7 @@ function Events(props) {
               })
               :null 
             }
-            {eventsData.map((event, id) => {
+            {/* {eventsData.map((event, id) => {
               return (
                 <EventTab
                   img={event.img}
@@ -256,7 +256,7 @@ function Events(props) {
                   key={id}
                 />
               );
-            })}
+            })} */}
           </div>
         </div>
       </section>
