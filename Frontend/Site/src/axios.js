@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const productionUrl = "https://www.greeshmamedam.tech/"
+export const productionUrl = "https://backend.happenings2023.com/"
 
 export const developmentUrl = "http://localhost:8000"
 
