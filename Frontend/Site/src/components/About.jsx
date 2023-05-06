@@ -45,8 +45,8 @@ function About(props) {
                             </p>
                         </div>
                         <div className="my-3 md:my-0 md:mx-auto">
-                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline pb-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>3K+ EVENTS</p>
-                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>20+ Events</p>
+                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline pb-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>8K+ Attendees</p>
+                            <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>30+ Events</p>
                             <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider  text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>DJ Night</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ function About(props) {
                         <h3 className='uppercase text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-red-500'>Tickets</span> Now</h3>
                         {/* <p className='text-xl text-center mx-auto my-4 tracking-wide' style={{ 'fontFamily': 'MangoGrotesque' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam voluptate a recusandae nam, animi similique?</p> */}
                         {/* <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/register" className='flex justify-center items-center'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View All Tickets</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></Link></button> */}
-                        <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Coming soon ...</span></button>
+                        <button disabled = {true} className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Coming soon ...</span></button>
                     </div>
                     <div className='mx-auto border-orange-500 border-2 border-dotted p-3 w-full md:w-3/4 mt-8 rounded-tl-3xl rounded-br-3xl'>
                         <h3 className='uppercase text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Rules <span className='text-red-500'>&</span> Points System</h3>
