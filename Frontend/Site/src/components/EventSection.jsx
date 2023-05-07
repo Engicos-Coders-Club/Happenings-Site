@@ -154,13 +154,10 @@ function Events(props) {
 
       })
 
-      // return () => {
-      //     ScrollTrigger.killAll();
-      // };
     })
-    // return () => {
-    //   ctx.revert()
-    // };
+    return () => {
+    ctx.revert()
+    };
   }, []);
     
 
@@ -180,7 +177,7 @@ function Events(props) {
 
       <section
         id="Eventsec"
-        className="h-screen bg-event-sec-bg bg-cover"
+        className="h-screen bg-event-sec-bg bg-cover "
         style={{ fontFamily: "MangoGrotesque", display:"grid", gridTemplateRows:"15% 75%" }}
       >
         <Navbar />
