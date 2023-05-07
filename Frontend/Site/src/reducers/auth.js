@@ -22,7 +22,7 @@ export const authReducer = createReducer(initialState,{
         state.loading = true;
     },
     LogoutSuccess: (state,action)=>{
-        state.message = action.payload;
+        state.message = null;
         state.isAuthenticated = false
         state.loading = false
     },

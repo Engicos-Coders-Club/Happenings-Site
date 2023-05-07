@@ -90,6 +90,9 @@ export const collegeReducer = createReducer(initialState,{
           state.loading = false
     },
 
+    clearCoordinator:(state,action)=>{
+        state.is_Coordinator = false
+    },
     clearError:(state,action)=>{
         state.error = null
     },
