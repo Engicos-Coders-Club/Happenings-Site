@@ -5,21 +5,22 @@ import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 import {
   FaWhatsapp,
   FaMailBulk,
-  FaInstagramSquare,
   FaLinkedin,
   FaFacebook,
 } from "react-icons/fa";
+import {  BsInstagram } from 'react-icons/bs'
+import {HiOutlineMail} from 'react-icons/hi'
 import { footerleft, footerright } from "../assets";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="bg-black">
+    <div className="bg-black px-4">
       <div className="container mx-auto py-10">
         <h1
           id="footer-email"
-          className="text-center md:text-6xl tracking-wide   mb-6 uppercase font-MANGO"
+          className="text-center font-MANGO text-[1.6rem] md:text-6xl tracking-widest mb-6 uppercase"
         >
           REACH OUT TO US AT <span>gecstudentscouncil2022@gmail.com</span>
         </h1>
@@ -33,7 +34,7 @@ function Footer() {
             <div className="flex items-center mt-6">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
               <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-xl md:text-2xl tracking-wide text-white font-bold uppercase">
+                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
                   Sumit komarpant (General Secretary)
                 </h2>
                 <div className="flex items-center">
@@ -48,7 +49,7 @@ function Footer() {
             <div className="flex items-center mt-4">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
               <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-xl md:text-2xl tracking-wide text-white font-bold uppercase">
+                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
                   Sarthak Bandodkar (Cultural Secretary)
                 </h2>
                 <div className="flex items-center">
@@ -63,7 +64,7 @@ function Footer() {
             <div className="flex items-center mt-4">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
               <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-xl md:text-2xl tracking-wide text-white font-bold uppercase">
+                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
                   Ruthvik Desai (Chairman)
                 </h2>
                 <div className="flex items-center">
@@ -82,13 +83,13 @@ function Footer() {
           </div>
           <div className="md:w-1/6">
             <div className="hidden md:block">
-              <h2 className="text-lg font-bold mb-4">Website Title</h2>
+              <h2 className="text-4xl uppercase mt-4 font-bold mb-4 text-gray-400 font-MANGO">Website links</h2>
               <ul className="list-none">
                 <li className="mb-2">
                   <HashLink
                     smooth
                     to="#home"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     Home
                   </HashLink>
@@ -97,17 +98,17 @@ function Footer() {
                   <HashLink
                     smooth
                     to="#events"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     Events
                   </HashLink>
                 </li>
-                {/* <li className="mb-2"><a href="#" className="text-gray-600 hover:text-blue-500">Sponsors</a></li> */}
+                {/* <li className="mb-2"><a href="#" className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange">Sponsors</a></li> */}
                 <li className="mb-2">
                   <HashLink
                     smooth
                     to="#schedule"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     Schedule
                   </HashLink>
@@ -115,7 +116,7 @@ function Footer() {
                 {/* <li className="mb-2">
                   <Link
                     to="/Teams/"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-600 hover:text-cus-orange"
                   >
                     Team
                   </Link>
@@ -123,7 +124,7 @@ function Footer() {
                 <li className="mb-2">
                   <Link
                     to="/college-registration"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     College Registration
                   </Link>
@@ -131,38 +132,38 @@ function Footer() {
                 <li className="mb-2">
                   <Link
                     to="/tickets"
-                    className="text-gray-600 hover:text-blue-500"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     Tickets
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="mt-5 mb-4 flex justify-center md:justify-start">
+            <div className="mt-5 mb-4 flex justify-center items-center md:justify-start">
               <a
                 href="mailto:gecstudentscouncil2022@gmail.com"
                 target="_blank"
                 rel="noreferrer"
-                className="text-gray-600 text-xl hover:text-blue-500 mr-4"
+                className="text-3xl text-cus-orange hover:text-cus-bright-orange mr-4"
               >
-                <FaMailBulk />
+                <HiOutlineMail />
               </a>
               <a
                 href="https://instagram.com/happenings2023?igshid=YmMyMTA2M2Y="
                 target="_blank"
                 rel="noreferrer"
-                className="text-gray-600 text-xl hover:text-blue-500 mr-4"
+                className="text-2xl text-cus-orange hover:text-cus-bright-orange mr-4"
               >
-                <FaInstagramSquare />
+                <BsInstagram />
               </a>
             </div>
           </div>
         </div>
         <div className="mt-4 flex justify-center">
           <button
-            className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center"
+            className="border-red-500 border w-fit rounded-full p-3 mx-auto text-white bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center"
             style={{ fontFamily: "MangoGrotesque" }}
-            type="submit"
+            title="scroll to top"
           >
             <HashLink smooth to="/#home">
               <FiArrowUp />
@@ -185,8 +186,8 @@ function Footer() {
         </div>
       </div>
       <div className="flex justify-between py-3 px-2">
-        <img src={footerleft} className="bottom-0 left-2" width={200} />
-        <img src={footerright} className="bottom-0 right-2" width={200} />
+        <img src={footerleft} className="bottom-0 left-2" width={150} />
+        <img src={footerright} className="bottom-0 right-2" width={150} />
         {/* <img src = {footerright} className="relative bottom-0 right-0" width={30}/> */}
       </div>
     </div>

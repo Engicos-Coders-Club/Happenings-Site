@@ -9,8 +9,6 @@ function GeneralRuleModal(props) {
     return (
         <>
         <section className='bg-[#171717ff] relative py-12 md:pl-16'>
-        <Navbar />
-        <SideBar />
 
         <div className="text-white w-3/4 mx-auto pt-5 xs:pt-0">
             <p className='text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>GENERAL <span className='text-red-500'>RULES</span></p>

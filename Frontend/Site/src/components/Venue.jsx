@@ -26,12 +26,12 @@ function Venue() {
           <div className="mb-10">
             <div
               className={
-                "text-white font-MANGO tracking-wider text-5xl md:text-7xl font-bold mb-8 md:ml-8"
+                "font-bold text-white text-7xl md:text-8xl uppercase tracking-widest font-MANGO md:mb-10"
               }
             >
               VENUE
             </div>
-            <div className="font-Merriweather leading-relaxed flex items-center text-sm font-normal text-white md:m-10">
+            <div className="font-Merriweather leading-relaxed flex items-center text-sm font-normal text-white md:mr-10">
               {window.innerWidth > 500
                 ? "The Manohar Parrikar Stadium, located in the town of Navelim in South Goa, is a multi-purpose sports facility that serves as the home ground of the Goa Professional League football team, Sporting Clube de Goa. The stadium was built in 1989 and has a seating capacity of 8,000 spectators. It was named after the former Chief Minister of Goa, Manohar Parrikar, who played an instrumental role in the development of sports infrastructure in the state. The Manohar Parrikar Stadium is a popular venue for sports enthusiasts in Goa and is known for its lively atmosphere during matches."
                 : "Manohar Parrikar Stadium in Navelim, South Goa is a sports facility, home ground of Sporting Clube de Goa with a seating capacity of 8,000 spectators. It was named after former Goa Chief Minister, who played a vital role in state's sports infrastructure development. The stadium is a popular sports venue in Goa known for its lively atmosphere during matches."}
@@ -50,14 +50,10 @@ function Venue() {
             href="https://www.google.com/maps/place/Manohar+Parrikar+Indoor+Stadium/@15.261121,73.968611,16z/data=!4m6!3m5!1s0x3bbfb39d51852b17:0xa706b3fadb014ec0!8m2!3d15.2611209!4d73.9686107!16s%2Fg%2F11kw8dk977?hl=en"
             target="_blank"
             rel="noreferrer"
+            className="border-red-500 border w-fit rounded-md p-3 my-7 mx-auto text-white py-1 bg-black hover:scale-105 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase font-MANGO"
           >
-            <button
-              className="border-red-500 border w-fit rounded-xl p-3 my-7 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase"
-              style={{ fontFamily: "MangoGrotesque" }}
-            >
-              Navigate
-              <FiArrowUpRight size={20} />
-            </button>
+            Navigate
+            <FiArrowUpRight size={20} />
           </a>
 
           {/* </div> */}
@@ -73,7 +69,7 @@ function Venue() {
             <div className="mx-auto mt-8">
               <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg py-10">
                 <h3
-                  className="text-3xl md:text-8xl font-bold text-center text-orange-600 uppercase"
+                  className="text-3xl md:text-8xl font-bold text-center text-cus-orange uppercase tracking-widest"
                   style={{ fontFamily: "MangoGrotesque" }}
                 >
                   Registration
@@ -85,7 +81,7 @@ function Venue() {
                 <div className="mt-8 flex justify-center">
                   <Link to="/college-registration">
                     <button
-                      className="border-red-500 border w-fit rounded-md px-5 mx-auto text-white py-1 bg-black hover:scale-110 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between uppercase"
+                      className="border-red-500 border w-fit rounded-md px-5 mx-auto text-white py-1 bg-black hover:scale-110 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
                       style={{ fontFamily: "MangoGrotesque" }}
                     >
                       College Registration

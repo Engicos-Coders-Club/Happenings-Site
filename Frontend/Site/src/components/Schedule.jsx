@@ -78,8 +78,8 @@ function Schedule(props) {
   return (
     <section id="schedule" className='bg-[#171717ff] schedule opacity-0 h-auto relative md:pl-16  mt-[8400px] sm:mt-[5400px] md:mt-[3700px] lg:mt-[2550px]' style={{'fontFamily':'MangoGrotesque'}}>
 {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
-      <Navbar />
-      <SideBar />
+      {/* <Navbar />
+      <SideBar /> */}
 
         {showDay1 && <ScheduleModal img={Day1} close={()=>setShowDay1(false)}/>}
         {showDay2 && <ScheduleModal img={Day2} close={()=>setShowDay2(false)}/>}

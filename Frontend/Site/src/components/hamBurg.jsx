@@ -36,7 +36,7 @@ function hamBurg(props) {
   });
 
   return (
-    <div className="h-screen w-full fixed z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0">
+    <div className="h-screen w-full fixed z-[1000] bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0">
       <div className=" relative flex flex-wrap text-white text-5xl font-MANGO grow">
         <div className={hamClass}>
           <div className="pl-9 " onClick={ReverseAnimation}>

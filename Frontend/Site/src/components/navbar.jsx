@@ -7,6 +7,8 @@ import { createPortal } from "react-dom";
 
 function navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -20,11 +22,32 @@ function navbar() {
     }
   }, [isOpen]);
 
+  // sticky navbar ------------>
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 400) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // clean up
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <nav className="absolute top-0 left-0 w-full bg-transparent flex justify-between  pr-4 z-40">
         <div
-          className="relative p-5 flex justify-center items-center cursor-pointer"
+          className={`relative rounded-md p-5 flex justify-center items-center cursor-pointer ${
+            scrolled ? "bg-slate-900 bg-opacity-40" : "transparent"
+          } md:bg-transparent`}
           onClick={handleClick}
         >
           <FaBars size={30} color="white" />

@@ -29,10 +29,6 @@ function Events(props) {
     </div>
   ) : (
     <div className="">
-      <div className="fixed">
-        <Navbar />
-        <SideBar />
-      </div>
       <div
         className="min-h-screen"
         style={{
@@ -57,7 +53,7 @@ function Events(props) {
                   className="w-[80vw] mx-auto py-16"
                 >
                   <h1
-                    className="uppercase text-[#F8E0B7] text-center text-5xl font-bold"
+                    className="uppercase text-[#F8E0B7] text-center text-6xl tracking-wide font-bold"
                     style={{ fontFamily: "MangoGrotesque" }}
                   >
                     {event.category_name}

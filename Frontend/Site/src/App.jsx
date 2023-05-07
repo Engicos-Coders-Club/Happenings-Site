@@ -20,6 +20,8 @@ import Layout from "./Layout";
 import { loadUser } from "./actions/auth";
 import { useDispatch, useSelector } from "react-redux";
 import ScrollTop from "./helpers/ScrollTop";
+import SideBar from "./components/SideBar";
+import NotFound from "./components/NotFound";
 
 function App() {
   // const location = useLocation();
@@ -76,6 +78,7 @@ function App() {
         }
       >
         <ScrollTop>
+          <SideBar />
           <Routes>
             <Route element={<Layout title="Happenings" />} path="/" />
             <Route
@@ -129,6 +132,7 @@ function App() {
             />
             <Route element={<Modal title="Modal" />} path="/Modal" />
             {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollTop>
         {/* </BrowserRouter> */}

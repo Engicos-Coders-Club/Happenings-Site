@@ -36,9 +36,6 @@ function Events(props) {
           backgroundPosition: "center",
         }}
       >
-        <Navbar />
-        <SideBar />
-
         {/* <div className="border-l border-r border-t border-red-600 mx-auto w-[300px]" >
                     <h1 className="uppercase text-red-600 text-center font-extrabold text-6xl py-2" style={{ 'fontFamily': 'MangoGrotesque' }}>All Events</h1>
                 </div> */}
