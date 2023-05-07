@@ -26,7 +26,7 @@ useEffect(() => {
   
 
   return (
-    <div className='h-screen w-full absolute z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0'>
+    <div className='h-screen w-full fixed z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0 '>
     <div className=' relative flex flex-wrap text-white text-5xl pt-5 pb-5  font-MANGO'>
     
         <div className={hamClass}>
