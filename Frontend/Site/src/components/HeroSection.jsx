@@ -51,25 +51,28 @@ function HeroSec() {
           duration: 2,
           y: "-=12",
           z: 16,
-          rotateX:'20deg'
+          rotateX:'20deg',
+          x:1
          
         }).to(".HapT", {
           duration: 3,
           y: "+=15",
           z: 10,
-          rotate:'0.5deg'
+          rotate:'0.1deg',
+          x:-1
          
         }).to(".HapT", {
           duration: 3,
           y: "-=10",
           z: 15,
-          rotate:'-0.8deg'
+          rotate:'-0.5deg',
+          x:0
         })
         .to(".HapT", {
           duration: 3,
           y: "+=15",
           z: 15,
-          rotate:'-0.9deg'
+          rotate:'-1deg'
         })
     });
 
