@@ -37,7 +37,7 @@ function App() {
     setLoading(false);
   }, []);
 
-  return loading || serverLoading ? (
+  return loading || serverLoading? (
     <div
       style={{
         height: "100vh",

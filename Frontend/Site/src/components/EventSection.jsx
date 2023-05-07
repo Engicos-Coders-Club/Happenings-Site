@@ -9,8 +9,9 @@ import Navbar from "../components/navbar";
 import SideBar from "../components/SideBar";
 import { getCategories } from "../actions/categories";
 import { useDispatch, useSelector } from "react-redux";
-
+import eventSecBg from "../assets/h1.png";
 import axios from "axios";
+import { useLayoutEffect } from "react";
 // require("dotenv").config();
 
 function Events(props) {
@@ -19,42 +20,41 @@ function Events(props) {
 
   const { categories } = useSelector((state) => state.category);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
       gsap.defaults({ ease: "none" });
 
       ScrollTrigger.matchMedia({
-        "(max-width: 449px)": function () {
-          gsap.defaults({ ease: "SteppedEase.config(12)" });
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                start: "top top",
-                end: "bottom+=9697 bottom",
-                pin: true,
-                pinSpacing: false,
-                scrub: 1,
-              },
-            })
-            .to("#Eventsec", { y: 0 })
-            .to("#schedule", { y: 0 });
+        //   "(max-width: 449px)": function() {
+        //     gsap.defaults({ease: "SteppedEase.config(12)"})
+        //     gsap.timeline({
+        //       scrollTrigger: {
+        //         trigger: "#Eventsec",
+        //         // markers: true,
+        //         start: "top top",
+        //         end: "bottom+=9697 bottom",
+        //         pin: true,
+        //         pinSpacing: false,
+        //         scrub: 1
+        //       }
+        //     })
+        //     .to("#Eventsec",{y:0})
+        //     .to('#schedule',{y:0})
 
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                toggleActions: "restart none none none",
-                start: "top+=18% 18%",
-                end: "bottom+=8630 80%",
-                scrub: true,
-              },
-            })
-            .to("#Slider", { xPercent: -300, duration: 50, ease: "in" });
-        },
+        //     gsap.timeline({
+        //       scrollTrigger: {
+        //         trigger: "#Eventsec",
+        //         // markers: true,
+        //         toggleActions: "restart none none none",
+        //         start: "top+=18% 18%",
+        //         end: "bottom+=8630 80%",
+        //         scrub: true
+        //       }
+        //     })
+        //     .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
+
+        // },
 
         "(min-width: 450px) and (max-width: 767px)": function () {
           gsap.defaults({ ease: "SteppedEase.config(12)" });
@@ -171,21 +171,23 @@ function Events(props) {
     <>
       <section
         id="Eventsec"
-        className="h-screen bg-event-sec-bg bg-cover md:mx-8"
+        className="h-screen bg-event-sec-bg bg-cover"
         style={{
           fontFamily: "MangoGrotesque",
           display: "grid",
           gridTemplateRows: "15% 75%",
+          background: `url(${eventSecBg}) no-repeat`,
+          backgroundSize: "cover",
         }}
       >
-        {/* <Navbar />
-        <SideBar /> */}
+        <Navbar />
+        <SideBar />
 
         <div
           id="Eventsectop"
           className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16"
         >
-          <p className="font-bold text-white text-7xl md:text-8xl uppercase tracking-widest">
+          <p className="font-bold text-white text-7xl md:text-8xl ml-4 pt-8 uppercase tracking-widest">
             EVENTS
           </p>
 
@@ -206,7 +208,7 @@ function Events(props) {
             </Link>
 
             <Link to="/all-events/">
-              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer font-MANGO">
+              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}
                   style={{ fontFamily: "MangoGrotesque" }}
@@ -224,9 +226,12 @@ function Events(props) {
 
         {/* Slider Section */}
         {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
-        <div className="overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
+        <div className="overflow-y-scroll xs:overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
           {/* Slider Area */}
-          <div id="Slider" className="box-content flex h-1/2 w-[300%] md:h-1/2">
+          <div
+            id="Slider"
+            className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2"
+          >
             {categories
               ? categories.map((data) => {
                   return (

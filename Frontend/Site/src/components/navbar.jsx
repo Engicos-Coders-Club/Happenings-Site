@@ -13,14 +13,15 @@ function navbar() {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    // add or remove the 'overflow-hidden' class from the body element
-    if (isOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [isOpen]);
+  
+  // useEffect(() => {
+  //   // add or remove the 'overflow-hidden' class from the body element
+  //   if (isOpen) {
+  //     document.body.classList.add('overflow-hidden');
+  //   } else {
+  //     document.body.classList.remove('overflow-hidden');
+  //   }
+  // }, [isOpen]);
 
   // sticky navbar ------------>
   const handleScroll = () => {

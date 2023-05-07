@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import footerImg from "../assets/footer.png";
 // import GeneralRuleModal from "./GeneralRuleModal";
 
 function Venue() {
@@ -17,8 +18,8 @@ function Venue() {
       id="venue"
       className="h-fit relative z-5"
       style={{
-        background:
-          "linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)",
+        background: `url(${footerImg}) no-repeat`,
+        backgroundSize: "cover",
       }}
     >
       <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
@@ -64,32 +65,32 @@ function Venue() {
 
       <div className=" text-white ">
         {/* put the bg */}
-        <div className="text-white pb-20">
-          <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
-            <div className="mx-auto mt-8">
-              <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg py-10">
-                <h3
-                  className="text-3xl md:text-8xl font-bold text-center text-cus-orange uppercase tracking-widest"
-                  style={{ fontFamily: "MangoGrotesque" }}
-                >
-                  Registration
-                </h3>
-                <div className="text-center font-Merriweather text-sm">
-                  Join in and register your college for the biggest college
-                  fests in Goa!
-                </div>
-                <div className="mt-8 flex justify-center">
-                  <Link to="/college-registration">
-                    <button
-                      className="border-red-500 border w-fit rounded-md px-5 mx-auto text-white py-1 bg-black hover:scale-110 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
-                      style={{ fontFamily: "MangoGrotesque" }}
-                    >
-                      College Registration
-                      <FiArrowUpRight size={20} />
-                    </button>
-                  </Link>
-                </div>
+        {/* <div className="text-white pb-20"> */}
+        <div className="w-11/12 md:w-[70vw] mx-auto pt-8 pb-8">
+          <div className="mx-auto mt-8">
+            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg py-10">
+              <h3
+                className="text-5xl my-3 md:text-8xl font-bold text-center text-cus-orange uppercase tracking-widest"
+                style={{ fontFamily: "MangoGrotesque" }}
+              >
+                Registration
+              </h3>
+              <div className="text-center font-Merriweather w-4/5 mx-auto text-xs md:text-sm">
+                Join in and register your college for the biggest college fests
+                in Goa!
               </div>
+              <div className="mt-8 flex justify-center">
+                <Link to="/college-registration">
+                  <button
+                    className="border-red-500 border w-fit rounded-md px-5 mx-auto text-white py-1 bg-black hover:scale-110 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
+                    style={{ fontFamily: "MangoGrotesque" }}
+                  >
+                    College Registration
+                    <FiArrowUpRight size={20} />
+                  </button>
+                </Link>
+              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>

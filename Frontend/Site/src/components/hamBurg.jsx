@@ -7,11 +7,9 @@ import { Link } from "react-router-dom";
 import { useLayoutEffect } from "react";
 
 function hamBurg(props) {
-  let hamClass =
-    "w-[95%] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic";
-  let hamClassLast =
-    "w-[95%] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic";
-
+    let hamClass="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic"
+    let hamClassLast="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
+  
   const ReverseAnimation = () => {
     const screenHeight = window.innerHeight;
     gsap.to(".Ham", {
@@ -39,63 +37,35 @@ function hamBurg(props) {
     <div className="h-screen w-full fixed z-[1000] bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0">
       <div className=" relative flex flex-wrap text-white text-5xl font-MANGO grow">
         <div className={hamClass}>
-          <div className="pl-9 " onClick={ReverseAnimation}>
-            <HashLink smooth to="/#about">
-              ABOUT
-            </HashLink>
-          </div>
-          <div className="pr-9 ">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+          <div className='pl-9 ' onClick={ReverseAnimation}><HashLink smooth to="/#about">ABOUT</HashLink></div>
+          <div className='pr-9 ' onClick={ReverseAnimation}><HashLink smooth to="/#about"><BsBoxArrowUpRight size={30} color="#171717ff"  /></HashLink></div>
         </div>
 
         <div className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
-            <Link to="/tickets">BUY PASSES</Link>
-          </div>
-          <div className="pr-9">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+        <div className='pl-9' onClick={ReverseAnimation}><Link to="/tickets">BUY PASSES</Link></div>
+          <div className='pr-9' onClick={ReverseAnimation}><Link to="/tickets"><BsBoxArrowUpRight size={30} color="#171717ff"  /></Link></div>
         </div>
 
         <div className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
-            <HashLink smooth to="/#Eventsec">
-              EVENTS
-            </HashLink>
-          </div>
-          <div className="pr-9">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#Eventsec">EVENTS</HashLink></div>
+          <div className='pr-9' onClick={ReverseAnimation}><HashLink smooth to="/#Eventsec"><BsBoxArrowUpRight size={30} color="#171717ff"  /></HashLink></div>
         </div>
 
         <div className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
-            <HashLink smooth to="/#schedule">
-              SCHEDULE
-            </HashLink>
-          </div>
-          <div className="pr-9">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+        <div className='pl-9' onClick={ReverseAnimation}><HashLink smooth to="/#schedule">SCHEDULE</HashLink></div>
+          <div className='pr-9' onClick={ReverseAnimation}><HashLink smooth to="/#schedule"><BsBoxArrowUpRight size={30} color="#171717ff"  /></HashLink></div>
         </div>
 
         <div className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}></div>
-          {/* <HashLink smooth to="/#sponsor">SPONSORS</HashLink> */}
-          <div className="pr-9">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+        <div className='pl-9' onClick={ReverseAnimation}></div>
+        {/* <HashLink smooth to="/#sponsor">SPONSORS</HashLink> */}
+          <div className='pr-9' onClick={ReverseAnimation}><HashLink smooth to="/#sponsor"><BsBoxArrowUpRight size={30} color="#171717ff"  /></HashLink></div>
         </div>
 
         <div className={hamClassLast}>
-          {/* <div className='pl-9' onClick={ReverseAnimation}>TIME</div> */}
-          <div className="pl-9" onClick={ReverseAnimation}>
-            {" "}
-          </div>
-          <div className="pr-9">
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
+        {/* <div className='pl-9' onClick={ReverseAnimation}>TIME</div> */}
+        <div className='pl-9' onClick={ReverseAnimation}> </div>
+          <div className='pr-9' onClick={ReverseAnimation}><div className='pl-9' onClick={ReverseAnimation}><BsBoxArrowUpRight size={30} color="#171717ff"  /></div></div>
         </div>
       </div>
 
