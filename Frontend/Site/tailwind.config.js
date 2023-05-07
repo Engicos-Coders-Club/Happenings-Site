@@ -25,8 +25,8 @@ export default {
         "hero-bg": "url('./src/assets/heroBGN.png')",
       },
       fontFamily: {
-        MANGO: ["MANGO", "sans-serif"],
-        BEBAS: ["BEBAS", "sans-serif"],
+        MANGO: ["MANGO", "Bebas Neue", 'Oswald', "Inter", "sans-serif"],
+        BEBAS: ["Bebas Neue", "Inter", "sans-serif"],
         Merriweather: ["Merriweather", "Old Standard TT", "serif"],
       },
       "event-sec-bg": "url('./src/assets/h1.png')",
