@@ -1,5 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function EventTab(props) {
   const clip = {
@@ -11,7 +11,7 @@ function EventTab(props) {
     // width: "700px",
   };
 
-  const data = {'event':props.eventName}
+  const data = { event: props.eventName };
 
   return (
     <>
@@ -43,8 +43,8 @@ function EventTab(props) {
               {props.eventName}
             </p>
             <Link to={`/all-events/${props.id}`} state={data}>
-              <button className="h-3/4 text-white bg-orange-600 px-4 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-sm md:text-base">
-                View all
+              <button className="h-3/4 text-white bg-orange-600 px-4 md:px-5 pb-2 pt-1 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-sm md:text-xl leading-[1]">
+                View
               </button>
             </Link>
           </div>

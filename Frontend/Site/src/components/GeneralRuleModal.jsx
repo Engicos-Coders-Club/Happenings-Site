@@ -26,15 +26,15 @@ function GeneralRuleModal(props) {
                         </ul>
                         <div className='flex justify-center my-12'>
                             {/* <Link to='/'> */}
-                            <div className='border-orange-500 rounded-[20px] text-white  w-[25%] h-[10%] border-2 cursor-pointer absolute'>
-                                <div className='border-orange-500 rounded-[20px] text-white text-xs sm:text-sm lg:text-base  w-full h-full border-2 flex justify-center items-center cursor-pointer absolute top-[-3px] px-4 md:px-0 uppercase font-BEBAS'>Register Now</div>
+                            <div className='border-orange-500 rounded-[20px] text-white  w-[25%] h-[10%] border-2 cursor-poMerriweather absolute'>
+                                <div className='border-orange-500 rounded-[20px] text-white text-xs sm:text-sm lg:text-base  w-full h-full border-2 flex justify-center items-center cursor-poMerriweather absolute top-[-3px] px-4 md:px-0 uppercase font-BEBAS'>Register Now</div>
                             </div>
                             {/* </Link> */}
                             
                         </div>
                     </div>
                     <div>
-                        <AiOutlineClose size={30} onClick={props.toggleRule} color="white" className='cursor-pointer' />
+                        <AiOutlineClose size={30} onClick={props.toggleRule} color="white" className='cursor-poMerriweather' />
                     </div>
                 </div>
             </div>

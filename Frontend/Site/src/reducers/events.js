@@ -16,15 +16,15 @@ export const eventsReducer = createReducer(initialState,{
     },
 
     GetEventRequest: (state,action)=>{
-        state.loading = true;
+        state.eventLoading = true;
     },
     GetEventSuccess: (state,action)=>{
         state.event = action.payload;
-        state.loading = false
+        state.eventLoading = false
     },
     GetEventFailure: (state,action)=>{     
           state.error = action.payload
-          state.loading = false
+          state.eventLoading = false
     },
 
     GetAllEventsRequest: (state,action)=>{

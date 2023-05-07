@@ -31,9 +31,9 @@ function About(props) {
   
     return (
         
-            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }} ref={myRef1}>
-            <Navbar />
-            <SideBar select={isTrue? "about":""}/>
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }}>
+            {/* <Navbar />
+            <SideBar /> */}
                 <div className='w-4/5 mx-auto pb-16'>
                     <div className='pt-8 flex justify-end'>
                         {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}
@@ -64,17 +64,16 @@ function About(props) {
                             <p className={`uppercase font-bold text-4xl md:text-5xl italic decoration-8 0-underline-offset-8 decoration-red-500 underline py-2 tracking-wider  text-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>DJ Night</p>
                         </div>
                     </div>
-                    <div className='mx-auto border-orange-500 border-2 border-dotted p-3 w-full md:w-3/4 mt-8 rounded-tl-3xl rounded-br-3xl'>
-                        <h3 className='uppercase text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-red-500'>Tickets</span> Now</h3>
+                    <div className='mx-auto border-orange-500 border-2 border-dotted py-10 w-full md:w-3/4 my-10 rounded-tl-3xl rounded-br-3xl'>
+                        <h3 className='uppercase text-5xl md:text-6xl text-center font-bold' style={{ 'fontFamily': 'MangoGrotesque' }}>Get your <span className='text-cus-bright-orange'>Tickets</span> Now</h3>
                         {/* <p className='text-xl text-center mx-auto my-4 tracking-wide' style={{ 'fontFamily': 'MangoGrotesque' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam voluptate a recusandae nam, animi similique?</p> */}
                         {/* <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/register" className='flex justify-center items-center'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View All Tickets</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></Link></button> */}
-                        <button disabled = {true} className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Coming soon ...</span></button>
+                        <button disabled = {true} className='flex border-white border px-5 py-2 rounded-md hover:bg-cus-orange hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Coming soon ...</span></button>
                     </div>
-                    <div className='mx-auto border-orange-500 border-2 border-dotted p-3 w-full md:w-3/4 mt-8 rounded-tl-3xl rounded-br-3xl'>
-                        <h3 className='uppercase text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Rules <span className='text-red-500'>&</span> Points System</h3>
+                    <div className='mx-auto border-orange-500 border-2 border-dotted py-10 w-full md:w-3/4 my-10 rounded-tl-3xl rounded-br-3xl'>
+                        <h3 className='uppercase font-bold text-5xl md:text-6xl text-center' style={{ 'fontFamily': 'MangoGrotesque' }}>Rules <span className='text-cus-bright-orange'>&</span> Points System</h3>
                         {/* <p className='text-xl text-center mx-auto my-4 tracking-wide' style={{ 'fontFamily': 'MangoGrotesque' }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam voluptate a recusandae nam, animi similique?</p> */}
-                        {/* <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/register" className='flex justify-center items-center'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View All Tickets</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></Link></button> */}
-                        <button className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/GeneralRule"><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View <FiArrowUpRight size={25} className="py-0.5"/></span></Link></button>
+                        <button className='flex border-white border px-5 py-2 rounded-md hover:bg-cus-orange hover:border-0 hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4'><Link to="/GeneralRule"><span className={`text-2xl font-semibold tracking-wide flex justify-between gap-2   items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>View <FiArrowUpRight size={25} className="py-0.5"/></span></Link></button>
                     </div>
                 </div>
             </section>

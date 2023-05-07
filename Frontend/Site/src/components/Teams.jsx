@@ -15,8 +15,8 @@ function Teams() {
   }
   return (
     <>
-    <Navbar />
-    <SideBar/>
+    {/* <Navbar />
+    <SideBar/> */}
     <section className='w-screen relative  bg-[#171717ff] flex flex-wrap overflow-hidden'>
 
       <div className='flex justify-center w-full relative h-[10%]'>

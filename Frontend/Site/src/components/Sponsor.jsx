@@ -72,8 +72,8 @@ function Sponsor() {
     // <div className='relative'>
         
         <section id='sponsor' className="w-full min-h-screen md:pl-16 relative bg-[#171717ff]  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
-        <Navbar />
-        <SideBar />
+        {/* <Navbar />
+        <SideBar /> */}
             <div className="moveR absolute">
                 <img src={Red} width={600} alt="" />
             </div>

@@ -19,22 +19,26 @@ import { useLocation } from "react-router-dom";
 import Modal from "./components/Modal";
 import Layout from "./Layout";
 import { loadUser } from "./actions/auth";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import ScrollTop from "./helpers/ScrollTop";
+import SideBar from "./components/SideBar";
+import NotFound from "./components/NotFound";
 
 function App() {
   // const location = useLocation();
   // console.log(location);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  const {isAuthenticated,loading:serverLoading} = useSelector((state)=>state.auth)
+  const { isAuthenticated, loading: serverLoading } = useSelector(
+    (state) => state.auth
+  );
 
   useEffect(() => {
     dispatch(loadUser());
     setLoading(false);
-    
   }, []);
 
-  return loading || serverLoading? (
+  return loading || serverLoading ? (
     <div
       style={{
         height: "100vh",
@@ -74,55 +78,73 @@ function App() {
           </div>
         }
       >
-        <Routes>
-          <Route element={<Layout title="Happenings" />} path="/" />
-          <Route
-            element={isAuthenticated ? 
-              <CollegeRegistration title="College Registration" />
-              :<Auth title="Authentication" />
-            }
-            path="/college-registration"
-          />
-          <Route
-            element={isAuthenticated?
-              <EventRegistration title="Event Registration" />
-              :<Auth title="Authentication" />
-            }
-            path="/event-registration"
-          />
-          <Route
-            element={isAuthenticated ?
-              <EventSelection title="Event Selection" />
-              :<Auth title="Authentication" />
-            }
-            path="/event-selection"
-          />
-          <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
-          <Route element={<Participants title="Participants" />} path="/participants/:id" />
-          <Route
-            element={<AllEvents title="All Events" />}
-            path="/all-events/:id"
-          />
-          <Route element={<Events title="Events" />} path="/all-events/" />
-          <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
-          <Route element={<Auth title="Authentication" />} path="/auth" />
-          <Route
-            element={<FogotPassword title="Fogot Password" />}
-            path="/resetpass"
-          />
-          <Route
-            element={<Teams title="Teams" />}
-            exact
-            matches
-            path="/Teams/"
-          />
-          <Route
-            element={<GeneralRulePage title="GeneralRulePage" />}
-            path="/GeneralRule"
-          />
-          <Route element={<Modal title="Modal" />} path="/Modal" />
-          {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
-        </Routes>
+        <ScrollTop>
+          <SideBar />
+          <Routes>
+            <Route element={<Layout title="Happenings" />} path="/" />
+            <Route
+              element={
+                isAuthenticated ? (
+                  <CollegeRegistration title="College Registration" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
+              path="/college-registration"
+            />
+            <Route
+              element={
+                isAuthenticated ? (
+                  <EventRegistration title="Event Registration" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
+              path="/event-registration"
+            />
+            <Route
+              element={
+                isAuthenticated ? (
+                  <EventSelection title="Event Selection" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
+              path="/event-selection"
+            />
+            <Route
+              element={<TicketsSection title="Tickets" />}
+              path="/tickets"
+            />
+            <Route
+              element={<Participants title="Participants" />}
+              path="/participants/:id"
+            />
+            <Route
+              element={<AllEvents title="All Events" />}
+              path="/all-events/:id"
+            />
+            <Route element={<Events title="Events" />} path="/all-events/" />
+            <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
+            <Route element={<Auth title="Authentication" />} path="/auth" />
+            <Route
+              element={<FogotPassword title="Fogot Password" />}
+              path="/resetpass"
+            />
+            <Route
+              element={<Teams title="Teams" />}
+              exact
+              matches
+              path="/Teams/"
+            />
+            <Route
+              element={<GeneralRulePage title="GeneralRulePage" />}
+              path="/GeneralRule"
+            />
+            <Route element={<Modal title="Modal" />} path="/Modal" />
+            {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
+          </Routes>
+        </ScrollTop>
         {/* </BrowserRouter> */}
       </Suspense>
     </React.Fragment>
