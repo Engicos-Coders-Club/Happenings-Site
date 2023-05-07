@@ -1,5 +1,5 @@
 // ! About Section Page => /about
-import { useEffect } from 'react'
+import { useEffect,useRef,useState } from 'react'
 import { socials } from '../data/socials'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
@@ -11,15 +11,29 @@ import SideBar from '../components/SideBar'
 
 function About(props) {
     const { title,animation } = props
+    const myRef1 = useRef();
+    const [isTrue, setIt] = useState(0);
+    
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        setIt(!isTrue)
+      });
+  
+      if (myRef1.current) {
+        observer.observe(myRef1.current);
+      }
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
 
-    // useEffect(() => {
-    //     document.title = title
-    // }, [])
+  
     return (
         
-            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }}>
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }} ref={myRef1}>
             <Navbar />
-            <SideBar />
+            <SideBar select={isTrue? "about":""}/>
                 <div className='w-4/5 mx-auto pb-16'>
                     <div className='pt-8 flex justify-end'>
                         {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}
@@ -66,7 +80,7 @@ function About(props) {
             </section>
 
     )
-}
+                    }
 export default About
 
 

@@ -10,15 +10,28 @@ function hamBurg(props) {
     let hamClassLast="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
   
   const ReverseAnimation = () => {
+    let ctx = gsap.context(()=>{
     const screenHeight = window.innerHeight;
     gsap.to('.Ham', {y: -screenHeight,ease:"ease-out", durtaion:1,onComplete: () => {
         props.handleClick()}});
+      })
+
+      return () => {
+        ctx.revert()
+      };
+        
 
 };
 
 useEffect(() => {
     const screenHeight = window.innerHeight;
-    gsap.fromTo('.Ham', {y: -screenHeight}, {y: 0,ease:"back", durtaion:1});
+    let ctx = gsap.context(()=>{
+    gsap.from('.Ham', {y: -screenHeight,ease:"back", durtaion:1});
+  })
+
+  return () => {
+    ctx.revert()
+  };
     
 
   });
@@ -26,7 +39,7 @@ useEffect(() => {
   
 
   return (
-    <div className='h-screen w-full absolute z-50 bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0'>
+    <div className='h-screen w-full fixed z-50 bg-[#171717ff] flex flex-start gap-0 Ham overflow-hidden inset-y-0 left-0'>
     <div className=' relative flex flex-wrap text-white text-5xl pt-5 pb-5  font-MANGO'>
     
         <div className={hamClass}>
