@@ -29,35 +29,35 @@ function Events(props) {
 
       ScrollTrigger.matchMedia({
 
-        "(max-width: 449px)": function() {
-          gsap.defaults({ease: "SteppedEase.config(12)"})
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              start: "top top",
-              end: "bottom+=9697 bottom",
-              pin: true,
-              pinSpacing: false,
-              scrub: 1
-            }
-          })
-          .to("#Eventsec",{y:0})
-          .to('#schedule',{y:0})
+      //   "(max-width: 449px)": function() {
+      //     gsap.defaults({ease: "SteppedEase.config(12)"})
+      //     gsap.timeline({
+      //       scrollTrigger: {
+      //         trigger: "#Eventsec",
+      //         // markers: true,
+      //         start: "top top",
+      //         end: "bottom+=9697 bottom",
+      //         pin: true,
+      //         pinSpacing: false,
+      //         scrub: 1
+      //       }
+      //     })
+      //     .to("#Eventsec",{y:0})
+      //     .to('#schedule',{y:0})
           
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              toggleActions: "restart none none none",
-              start: "top+=18% 18%",
-              end: "bottom+=8630 80%",
-              scrub: true
-            }
-          })
-          .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
+      //     gsap.timeline({
+      //       scrollTrigger: {
+      //         trigger: "#Eventsec",
+      //         // markers: true,
+      //         toggleActions: "restart none none none",
+      //         start: "top+=18% 18%",
+      //         end: "bottom+=8630 80%",
+      //         scrub: true
+      //       }
+      //     })
+      //     .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
       
-      },
+      // },
 
         "(min-width: 450px) and (max-width: 767px)": function() {
             gsap.defaults({ease: "SteppedEase.config(12)"})
@@ -188,7 +188,7 @@ function Events(props) {
 
         <div
           id="Eventsectop"
-          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16"
+          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
         >
           <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             EVENTS
@@ -230,10 +230,10 @@ function Events(props) {
 
         {/* Slider Section */}
         {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
-        <div className="overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
+        <div className="overflow-y-scroll xs:overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
 
           {/* Slider Area */}
-          <div id="Slider" className="box-content flex h-1/2 w-[300%] md:h-1/2">
+          <div id="Slider" className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2 xs:will-change-transform">
             {
               categories ? 
                 categories.map((data) => {

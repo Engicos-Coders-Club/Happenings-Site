@@ -13,6 +13,7 @@ import FogotPassword from "./components/ForgotPassword";
 import Teams from "./components/Teams";
 import { SpinnerRoundOutlined } from "spinners-react";
 import GeneralRulePage from "./components/GeneralRulePage";
+import Participants from "./components/Participants";
 
 import { useLocation } from "react-router-dom";
 import Modal from "./components/Modal";
@@ -32,7 +33,7 @@ function App() {
     setLoading(false);
   }, []);
 
-  return loading || serverLoading ? (
+  return loading || serverLoading? (
     <div
       style={{
         height: "100vh",
@@ -89,10 +90,14 @@ function App() {
             path="/event-registration"
           />
           <Route
-            element={<EventSelection title="Event Selection" />}
+            element={isAuthenticated ?
+              <EventSelection title="Event Selection" />
+              :<Auth title="Authentication" />
+            }
             path="/event-selection"
           />
           <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
+          <Route element={<Participants title="Participants" />} path="/participants" />
           <Route
             element={<AllEvents title="All Events" />}
             path="/all-events/:id"

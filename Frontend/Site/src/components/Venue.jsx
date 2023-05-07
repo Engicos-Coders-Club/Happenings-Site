@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
 // import GeneralRuleModal from "./GeneralRuleModal";
-
+import Navbar from '../components/navbar'
+import SideBar from '../components/SideBar'
 
 
 function Venue() {
@@ -16,10 +17,12 @@ function Venue() {
 
     return (
         <div id="venue" className="h-fit relative z-5" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
+        <Navbar />
+            <SideBar />
             <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
                 <div className="font-satoshi md:text-left md:mr-5 md:w-3/5">
                     <div className="mb-10">
-                        <div className={"text-white font-MANGO tracking-wider text-5xl md:text-7xl font-bold mb-8 md:ml-8"}>
+                        <div className={"text-white font-MANGO tracking-wider text-5xl md:text-7xl font-bold mb-8 md:ml-8 mt-10"}>
                             VENUE
                         </div>
                         <div className="font-Merriweather leading-relaxed flex items-center nd:text-lg tracking-wider font-normal text-white md:m-10">
