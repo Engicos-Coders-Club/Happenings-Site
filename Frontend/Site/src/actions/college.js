@@ -114,7 +114,7 @@ export const registerEvent = (id,name,phone,idcard) => async (dispatch) => {
         }
 
       const { data } = await axios.post(
-        `/api/event-registration/${id}`,
+        `/api/event-registration/${id}/`,
         bodyFormData,
         {
           headers: { "Content-Type": "multipart/form-data","Authorization":tokens },
@@ -133,3 +133,96 @@ export const registerEvent = (id,name,phone,idcard) => async (dispatch) => {
       });
     }
   };
+
+  export const viewEventParticipants = (id)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"ViewEventParticipantsRequest"
+        })
+
+        const user = localStorage.getItem('user');
+        let tokens = ''
+        if (user) {
+            const { token } = JSON.parse(localStorage.getItem('user'));
+            tokens = `Bearer ${token}`;
+        }
+
+        const {data} = await axios.get(`/api/view-event-participants/${id}`,{headers:{'Authorization':tokens}})
+        dispatch({
+            type:"ViewEventParticipantsSuccess",
+            payload:data
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"ViewEventParticipantsFailure",
+            payload:error.response.data.detail
+        })
+    }    
+}
+
+export const editParticipant = (id,name,phone,idcard)=>async(dispatch)=>{
+    try {
+        dispatch({
+          type: "UpdateParticipantRequest",
+        });
+        let bodyFormData = new FormData();
+        bodyFormData.append("name", name);
+        bodyFormData.append("phone", phone);
+        if(idcard)
+          bodyFormData.append("id_card", idcard);
+  
+        const user = localStorage.getItem('user');
+          let tokens = ''
+          if (user) {
+              const { token } = JSON.parse(localStorage.getItem('user'));
+              tokens = `Bearer ${token}`;
+          }
+  
+        const { data } = await axios.patch(
+          `/api/update-participant-details/${id}/`,
+          bodyFormData,
+          {
+            headers: { "Content-Type": "multipart/form-data","Authorization":tokens },
+          }
+        );
+  
+        dispatch({
+          type: "UpdateParticipantSuccess",
+          payload: "participant updated",
+        });
+      } catch (error) {
+        console.log(error.response.data, error.response.status);
+        dispatch({
+          type: "UpdateParticipantFailure",
+          payload: error.response.data,
+        });
+      }   
+}
+
+export const removeParticipant = (id)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"RemoveParticipantRequest"
+        })
+
+        const user = localStorage.getItem('user');
+        let tokens = ''
+        if (user) {
+            const { token } = JSON.parse(localStorage.getItem('user'));
+            tokens = `Bearer ${token}`;
+        }
+
+        await axios.delete(`/api/delete-participant/${id}`,{headers:{'Authorization':tokens}})
+        dispatch({
+            type:"RemoveParticipantSuccess",
+            payload:"Participant removed"
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"RemoveParticipantFailure",
+            payload:error.response.data.detail
+        })
+    }    
+}

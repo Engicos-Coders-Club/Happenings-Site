@@ -93,7 +93,7 @@ function EventSelection(props) {
                 <EventSelectionCard
                   key={event.id}
                   event={event}
-                  isSelected={event.status == 1 ? true : false}
+                  isSelected={event.registered_participants > 0 ? true : false}
                 />
               );
             })}

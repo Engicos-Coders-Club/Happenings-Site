@@ -97,7 +97,7 @@ function App() {
             path="/event-selection"
           />
           <Route element={<TicketsSection title="Tickets" />} path="/tickets" />
-          <Route element={<Participants title="Participants" />} path="/participants" />
+          <Route element={<Participants title="Participants" />} path="/participants/:id" />
           <Route
             element={<AllEvents title="All Events" />}
             path="/all-events/:id"

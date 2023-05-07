@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { logout } from '../actions/auth'
+import { registerEvent,editParticipant } from '../actions/college'
 import { useDispatch } from 'react-redux'
 
 /*
@@ -18,13 +19,12 @@ function EventRegistration(props) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const location = useLocation()
-    const {event_id,applied} = location.state
-    console.log(event_id)
+    const [photo,setPhoto] = useState(null)
+    const {event_id,applied,participant} = location.state
 
     useEffect(() => {
         document.title = title
     }, [])
-
 
     const goBack = () => {
         navigate("/event-selection")
@@ -36,7 +36,15 @@ function EventRegistration(props) {
     }
 
     const handleSubmit = (values) => {
-        console.log(values)
+        //console.log(values)
+        const {name,phoneNumber} = values
+        if(!participant){
+            dispatch(registerEvent(event_id,name,phoneNumber,photo))
+        }
+            
+        else
+            dispatch(editParticipant(participant.id,name,phoneNumber,photo));
+        navigate('/event-selection')
     }
     return (
         <div className="mx-auto bg-black text-white bg-events-bg">
@@ -56,7 +64,7 @@ function EventRegistration(props) {
                     <h1 className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3" style={{ 'fontFamily': 'MangoGrotesque' }}>Event Registration</h1>
                 </div>
                 <div className="w-[90vw] md:w-[60vw] mx-auto border-orange-700 border-4 mt-10 py-10 border-dotted backdrop-blur-3xl  rounded-tl-3xl rounded-br-3xl">
-                    <Formik initialValues={{ name: '', phoneNumber: '', email: '', photo: '' }} validationSchema={EventRegistrationSchema} onSubmit={(values) => handleSubmit(values)}>
+                    <Formik initialValues={{ name: `${participant?participant.name:''}`, phoneNumber: `${participant?participant.phone:''}`,photo:`${participant?participant.photo:''}`}} validationSchema={EventRegistrationSchema} onSubmit={(values) => handleSubmit(values)}>
                         {({ touched, errors, isSubmitting, values }) =>
                             <Form className="flex flex-col gap-y-5 w-3/4 mx-auto my-10">
                                 <div className='leading-8 flex flex-col'>
@@ -64,15 +72,6 @@ function EventRegistration(props) {
                                     <Field type="text" name="name" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
                                     <ErrorMessage
                                         name="name"
-                                        component="div"
-                                        className="text-red-500 text-sm"
-                                    />
-                                </div>
-                                <div className='flex flex-col leading-8'>
-                                    <label className="py-2 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}>Email</label>
-                                    <Field type="email" name="email" className="border-red-500 px-2 py-1 text-white h-9 leading-10 border-l-0 border-r-0 border-t-0 border-b bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
-                                    <ErrorMessage
-                                        name="email"
                                         component="div"
                                         className="text-red-500 text-sm"
                                     />
@@ -88,12 +87,18 @@ function EventRegistration(props) {
                                 </div>
                                 <div className='flex flex-col leading-8'>
                                     <label className='py-2 text-2xl tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>ID Card Photo/ ID Proof</label>
-                                    <Field type="file" name="photo" />
-                                    <ErrorMessage
+                                    {/* <Field type="file" name="photo" /> */}
+                                    {
+                                        !participant
+                                        ?<input type="file" name='photo' accept="image/*" required onChange={(e)=>setPhoto(e.target.files[0])} />
+                                        : <input type="file" name='photo' accept="image/*" onChange={(e)=>setPhoto(e.target.files[0])} />
+                                    }
+                                    
+                                    {/* <ErrorMessage
                                         name="photo"
                                         component="div"
                                         className="text-red-500 text-sm"
-                                    />
+                                    /> */}
                                 </div>
                                 {applied ? 
                                 <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Update Participant<FiArrowUpRight size={20} /></button>
