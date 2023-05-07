@@ -9,15 +9,32 @@ import Navbar from "../components/navbar";
 import SideBar from "../components/SideBar";
 import { getCategories } from "../actions/categories";
 import {useDispatch,useSelector} from 'react-redux'
-
+import { useRef } from 'react'
 import axios from "axios";
 // require("dotenv").config();
 
 function Events(props) {
   const dispatch = useDispatch()
   const { title } = props;
+  const [isTrue, setIt] = useState(0);
 
   const {categories} = useSelector((state)=>state.category)
+
+  const myRef2 = useRef();
+    
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        setIt(!isTrue)
+      });
+  
+      if (myRef2.current) {
+        observer.observe(myRef2.current);
+      }
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
   
 
   useEffect(() => {
@@ -179,9 +196,10 @@ function Events(props) {
         id="Eventsec"
         className="h-screen bg-event-sec-bg bg-cover "
         style={{ fontFamily: "MangoGrotesque", display:"grid", gridTemplateRows:"15% 75%" }}
+        ref={myRef2}
       >
         <Navbar />
-        <SideBar />
+        <SideBar select={isTrue? "event":""}/>
 
         <div
           id="Eventsectop"

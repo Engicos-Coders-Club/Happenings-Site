@@ -17,12 +17,12 @@ function SideBar(props) {
 
             <div className='relative h-[120%] w-full flex justify-center items-center'>
                 <ul className='font-MANGO sm:text-1.5xl lg:text-2xl text-sm text-white list-none flex flex-col p-2 cursor-pointer gap-4'>
-                    <li className={`rotate-[-90deg] p-3 hover:underline tracking-wide min ${props.select? "underline":"" }`}><HashLink smooth to="/#about">ABOUT</HashLink></li>
-                    <li className={`rotate-[-90deg] p-5 hover:underline tracking-wide ${props.select? "underline":"" }`}><HashLink smooth to="/#Eventsec">EVENTS</HashLink></li>
-                    <li className={`rotate-[-90deg] p-2 hover:underline tracking-wide ${props.select? "underline":"" }`}><HashLink smooth to="/#schedule">SCHEDULE</HashLink></li>
+                    <li className={`rotate-[-90deg] p-3 hover:underline tracking-wide min ${props.select=="about"? "underline":"" }`}><HashLink smooth to="/#about">ABOUT</HashLink></li>
+                    <li className={`rotate-[-90deg] p-5 hover:underline tracking-wide ${props.select=="event"? "underline":"" }`}><HashLink smooth to="/#Eventsec">EVENTS</HashLink></li>
+                    <li className={`rotate-[-90deg] p-2 hover:underline tracking-wide ${props.select=="schedule"? "underline":"" }`}><HashLink smooth to="/#schedule">SCHEDULE</HashLink></li>
                     {/* <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#sponsor">SPONSORS</HashLink></li> */}
-                    <li className={`rotate-[-90deg] p-3 hover:underline tracking-wide ${props.select? "underline":"" }`}><HashLink smooth to="/#venue">VENUE</HashLink></li>
-                    <li className={`rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500 ${props.select? "underline":"" }`}><Link smooth to="/tickets">TICKETS</Link></li>
+                    <li className={`rotate-[-90deg] p-3 hover:underline tracking-wide ${props.select=="venue"? "underline":"" }`}><HashLink smooth to="/#venue">VENUE</HashLink></li>
+                    <li className={`rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500 ${false? "underline":"" }`}><Link smooth to="/tickets">TICKETS</Link></li>
                 </ul>
 
             </div>
