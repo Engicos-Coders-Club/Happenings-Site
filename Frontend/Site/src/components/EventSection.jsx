@@ -102,7 +102,7 @@ function Events(props) {
                 scrub: true
               }
             })
-            .to("#Slider", { xPercent: -180, duration: 50, ease: "in" })
+            .to("#Slider", { xPercent: -148, duration: 50, ease: "in" })
         
         },
 
@@ -132,7 +132,7 @@ function Events(props) {
             scrub: true
           }
         })
-        .to("#Slider", { xPercent: -99, duration: 50, ease: "in" })
+        .to("#Slider", { xPercent: -91, duration: 50, ease: "in" })
         
       },
 
@@ -164,7 +164,7 @@ function Events(props) {
               scrub: true
             }
           })
-          .to("#Slider", { xPercent: -56, duration: 55, ease: "in" });
+          .to("#Slider", { xPercent: -80, duration: 55, ease: "in" });
 
           
       }

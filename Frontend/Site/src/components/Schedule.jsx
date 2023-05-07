@@ -94,7 +94,7 @@ function Schedule(props) {
 
 
   return (
-    <section id="schedule" className='bg-[#171717ff] schedule xs:opacity-0 h-auto relative md:pl-16  mt-0 sm:mt-[5400px] md:mt-[3700px] lg:mt-[2550px]' style={{'fontFamily':'MangoGrotesque'} } ref={myRef4}>
+    <section id="schedule" className='bg-[#171717ff] schedule xs:opacity-0 h-auto relative md:pl-16  mt-0 xs:mt-[5400px] sm:mt-[4200px] md:mt-[3100px] lg:mt-[2550px]' style={{'fontFamily':'MangoGrotesque'}}>
 {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       <Navbar />
       <SideBar select={isTrue? "schedule":""}/>

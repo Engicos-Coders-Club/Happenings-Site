@@ -11,7 +11,7 @@ function Footer() {
     return (
         <>
 
-            <div className="bg-black">
+            <div className="bg-black relative z-10">
                 <div className="container mx-auto py-10">
                     <h1 className="text-center text-white md:text-3xl font-bold mb-6 uppercase">REACH OUT TO US AT gecstudentscouncil2022@gmail.com</h1>
                     <div className="flex flex-col md:flex-row md:justify-between md:w-3/5 md:mx-auto">
