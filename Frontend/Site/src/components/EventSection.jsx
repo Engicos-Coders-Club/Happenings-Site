@@ -195,8 +195,6 @@ function Events(props) {
           backgroundSize: "cover",
         }}
       >
-        <Navbar />
-        <SideBar />
 
         <div
           id="Eventsectop"

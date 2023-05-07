@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { VscMenu } from "react-icons/vsc";
 import { useEffect, useRef } from "react";
 import HamBurg from "../components/hamBurg";
 import { createPortal } from "react-dom";
@@ -13,7 +13,6 @@ function navbar() {
     setIsOpen(!isOpen);
   };
 
-  
   // useEffect(() => {
   //   // add or remove the 'overflow-hidden' class from the body element
   //   if (isOpen) {
@@ -51,13 +50,13 @@ function navbar() {
           } md:bg-transparent`}
           onClick={handleClick}
         >
-          <FaBars size={30} color="white" />
+          <VscMenu size={40} color="white" />
         </div>
 
         <div className="relative flex justify-center items-center  lg:p-6 md:p-5  p-1">
           <img
             src="/assets/GEClogo.svg"
-            className="lg:h-[3rem] lg:w-[3rem] md:h-[3rem] md:w-[3rem] h-[2.5rem] w-[2.5rem]"
+            className="lg:h-[5rem] lg:w-[5rem] md:h-[3rem] md:w-[3rem] h-[2.5rem] w-[2.5rem]"
           ></img>
         </div>
       </nav>
