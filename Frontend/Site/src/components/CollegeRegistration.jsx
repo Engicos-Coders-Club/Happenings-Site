@@ -5,11 +5,14 @@ import { useNavigate } from 'react-router-dom'
 import { CollegeRegistrationSchema } from '../schema/CollegeRegistrationSchema'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { ToastContainer, toast } from 'react-toastify';
+import { registerCollege } from '../actions/college'
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux'
 
 function CollegeRegistration(props) {
     const { title } = props
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     
     // Check if user is coordinator and if he has registered then navigate to /event-selection
 
@@ -20,8 +23,10 @@ function CollegeRegistration(props) {
     const handleSubmit = (values) => {
 
         // Send to backend
-        console.log(values)
+        //console.log(values)
         const {CSName,GSName,CSphoneNumber,GSphoneNumber,collegeName,payment} = values
+        dispatch(registerCollege(collegeName,GSName,GSphoneNumber,CSName,CSphoneNumber,payment))
+
 
         toast('Form succesfully submitted! Your application is under review', {
             position: "bottom-center",
