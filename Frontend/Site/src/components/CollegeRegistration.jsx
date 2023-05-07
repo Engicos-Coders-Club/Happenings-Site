@@ -13,6 +13,7 @@ function CollegeRegistration(props) {
     const { title } = props
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [photo,setPhoto] = useState(null)
     
     // Check if user is coordinator and if he has registered then navigate to /event-selection
 
@@ -24,8 +25,8 @@ function CollegeRegistration(props) {
 
         // Send to backend
         //console.log(values)
-        const {CSName,GSName,CSphoneNumber,GSphoneNumber,collegeName,payment} = values
-        dispatch(registerCollege(collegeName,GSName,GSphoneNumber,CSName,CSphoneNumber,payment))
+        const {CSName,GSName,CSphoneNumber,GSphoneNumber,collegeName} = values
+        dispatch(registerCollege(collegeName,GSName,GSphoneNumber,CSName,CSphoneNumber,photo))
 
 
         toast('Form succesfully submitted! Your application is under review', {
@@ -102,12 +103,13 @@ function CollegeRegistration(props) {
                                 </div>
                                 <div className='flex flex-col leading-8'>
                                     <label className='py-2 text-2xl tracking-wider' style={{ 'fontFamily': 'MangoGrotesque' }}>Payment Slip</label>
-                                    <Field type="file" name="payment" className="text-white h-9 leading-10 bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} />
-                                    <ErrorMessage
+                                    {/* <Field type="file" name="payment" className="text-white h-9 leading-10 bg-transparent text-sm" style={{ 'fontFamily': 'Merriweather' }} /> */}
+                                    <input type="file" name='payment' accept="image/*" required onChange={(e)=>setPhoto(e.target.files[0])} />
+                                    {/* <ErrorMessage
                                         name="payment"
                                         component="div"
                                         className="text-red-500 text-sm"
-                                    />
+                                    /> */}
                                 </div>
                                 <div className="mx-auto flex flex-col items-center justify-center">
                                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" width={200} className="my-4 bg-white"/>
