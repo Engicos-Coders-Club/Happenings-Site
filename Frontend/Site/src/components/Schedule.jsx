@@ -56,6 +56,19 @@ function Schedule(props) {
               },
             })
             .to(".schedule", { opacity: "1400%" });
+
+            gsap
+            .timeline({
+              defaults: { ease: "none" },
+              scrollTrigger: {
+                trigger: ".schedule",
+                start: "top top",
+                end: "bottom bottom",
+                scrub:1,
+              
+              },
+            })
+            .to("#ScheduleSide", {textDecoration:"underline", onComplete: () => {gsap.to("#ScheduleSide",{textDecoration:"none"})}})
         },
       });
     });
@@ -67,21 +80,6 @@ function Schedule(props) {
   const [showDay2, setShowDay2] = useState(false);
   const [isTrue, setIt] = useState(0);
 
-  const myRef4 = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      setIt(!isTrue);
-    });
-
-    if (myRef4.current) {
-      observer.observe(myRef4.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   return (
     <section

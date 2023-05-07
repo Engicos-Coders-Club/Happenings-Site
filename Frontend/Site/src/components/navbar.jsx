@@ -45,7 +45,7 @@ function navbar() {
     <>
       <nav className="absolute top-0 left-0 w-full bg-transparent flex justify-between  pr-4 z-40">
         <div
-          className={`relative rounded-md p-5 flex justify-center items-center cursor-pointer ${
+          className={`relative rounded-md p-[0.9rem] pb-[2rem] flex justify-center items-center cursor-pointer ${
             scrolled ? "bg-slate-900 bg-opacity-40" : "transparent"
           } md:bg-transparent`}
           onClick={handleClick}

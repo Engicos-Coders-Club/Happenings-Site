@@ -4,36 +4,37 @@ import { socials } from '../data/socials'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { gecLogo } from '../assets'
-import Navbar from '../components/navbar'
-import SideBar from '../components/SideBar'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // TODO: Change GEC LOGO
 
 function About(props) {
-    const { title,animation } = props
-    const myRef1 = useRef();
-    const [isTrue, setIt] = useState(0);
+   useEffect(() => {
+//   gsap.registerPlugin(ScrollTrigger);
+  let ctx = gsap.context(() => {
+    gsap
+    .timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top top",
+        end: "bottom bottom",
+        scrub:1,
+        
+      },
+    })
+    .to("#AboutSide", {textDecoration:"underline", onComplete: () => {gsap.to("#AboutSide",{textDecoration:"none"})}})
+  });
+  return () => ctx.revert();
+}, []);
     
-    useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        setIt(!isTrue)
-      });
-  
-      if (myRef1.current) {
-        observer.observe(myRef1.current);
-      }
-  
-      return () => {
-        observer.disconnect();
-      };
-    }, []);
-
   
     return (
         
-            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+animation}  style={{ willChange: 'opacity' }}>
-            {/* <Navbar />
-            <SideBar /> */}
+            <section id="about" className={'bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 '+props.animation}  style={{ willChange: 'opacity' }} ref={props.ref}>
+            {/* {<SideBar select={isTrue? "about":""}/>} */}
+          
                 <div className='w-4/5 mx-auto pb-16'>
                     <div className='pt-8 flex justify-end'>
                         {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}

@@ -11,13 +11,13 @@ import { getCategories } from "../actions/categories";
 import { useDispatch, useSelector } from "react-redux";
 import eventSecBg from "../assets/h1.png";
 import axios from "axios";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect,useRef } from "react";
 // require("dotenv").config();
 
 function Events(props) {
   const dispatch = useDispatch();
   const { title } = props;
-  const [isTrue, setIt] = useState(0);
+  
 
   const { categories } = useSelector((state) => state.category);
 
@@ -100,79 +100,91 @@ function Events(props) {
                 scrub: true,
               },
             })
-            .to("#Slider", { xPercent: -148, duration: 50, ease: "in" })
-        
+            .to("#Slider", { xPercent: -180, duration: 50, ease: "in" });
         },
 
-      "(min-width: 768px) and (max-width: 1024px)": function() {
-        gsap.defaults({ease: "SteppedEase.config(12)"})
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            start: "top top",
-            end: "bottom+=4797 bottom",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1
-          }
-        })
-        .to("#Eventsec",{y:0})
-        .to('#schedule',{y:0})
-        
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: "#Eventsec",
-            // markers: true,
-            toggleActions: "restart none none none",
-            start: "top+=18% 18%",
-            end: "bottom+=3930 80%",
-            scrub: true
-          }
-        })
-        .to("#Slider", { xPercent: -91, duration: 50, ease: "in" })
-        
-      },
+        "(min-width: 768px) and (max-width: 1024px)": function () {
+          gsap.defaults({ ease: "SteppedEase.config(12)" });
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                start: "top top",
+                end: "bottom+=4797 bottom",
+                pin: true,
+                pinSpacing: false,
+                scrub: 1,
+              },
+            })
+            .to("#Eventsec", { y: 0 })
+            .to("#schedule", { y: 0 });
 
-      
-      "(min-width: 1024px)": function() {
-          gsap.defaults({ease: "SteppedEase.config(12)"})
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              start: "top top",
-              end: "bottom+=3397 bottom",
-              pin: true,
-              pinSpacing: false,
-              scrub: 1
-            }
-          })
-          .to("#Eventsec",{y:0})
-          .to('#schedule',{y:0})
-        
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                toggleActions: "restart none none none",
+                start: "top+=18% 18%",
+                end: "bottom+=3930 80%",
+                scrub: true,
+              },
+            })
+            .to("#Slider", { xPercent: -99, duration: 50, ease: "in" });
+        },
 
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: "#Eventsec",
-              // markers: true,
-              toggleActions: "restart none none none",
-              start: "+=20% 20%",
-              end: "bottom+=2930 80%",
-              scrub: true
-            }
-          })
-          .to("#Slider", { xPercent: -80, duration: 55, ease: "in" });
+        "(min-width: 1024px)": function () {
+          gsap.defaults({ ease: "SteppedEase.config(12)" });
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                start: "top top",
+                end: "bottom+=3397 bottom",
+                pin: true,
+                pinSpacing: false,
+                scrub: 1,
+              },
+            })
+            .to("#Eventsec", { y: 0 })
+            .to("#schedule", { y: 0 });
 
-          
-      }
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                // markers: true,
+                toggleActions: "restart none none none",
+                start: "+=20% 20%",
+                end: "bottom+=2930 80%",
+                scrub: true,
+              },
+            })
+            .to("#Slider", { xPercent: -56, duration: 55, ease: "in" })
+            
 
-      })
+            gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#Eventsec",
+                start: "+=20% 20%",
+                end: "bottom+=2930 80%",
+                scrub: 1,
+              },
+            })
+            .to("#EventSide", {textDecoration:"underline", onComplete: () => {gsap.to("#EventSide",{textDecoration:"none"})}})
+        },
+      });
 
-    })
-    return () => {
-    ctx.revert()
-    };
+      // return () => {
+      //     ScrollTrigger.killAll();
+      // };
+    });
+    // return () => {
+    //   ctx.revert()
+    // };
   }, []);
 
   useEffect(() => {
@@ -182,6 +194,7 @@ function Events(props) {
     // });
     dispatch(getCategories());
   }, []);
+
 
   return (
     <>
@@ -195,6 +208,7 @@ function Events(props) {
           background: `url(${eventSecBg}) no-repeat`,
           backgroundSize: "cover",
         }}
+        ref={props.ref}
       >
 
         <div
