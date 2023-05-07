@@ -12,18 +12,18 @@ function GeneralRuleModal(props) {
   return (
     <>
       <section className="bg-[#171717ff] relative py-12 md:pl-16">
-        <div className="wrapper w-3/4 mx-auto">
-          <ul className="text-white font-MANGO uppercase tracking-wide text-2xl">
-            <p className="text-cus-orange">go to</p>
-            <li className="flex gap-3">
+        <div className="wrapper w-3/4 mx-auto mt-5">
+          <ul className="text-white  font-MANGO uppercase tracking-wide text-2xl">
+            <p className="text-cus-bright-orange">go to</p>
+            <li className="flex gap-3 hover:text-gray-400">
               {" "}
               <RiArrowRightFill /> <a href="#general-rules">general rules</a>
             </li>
-            <li className="flex gap-3">
+            <li className="flex gap-3 hover:text-gray-400">
               {" "}
               <RiArrowRightFill /> <a href="#joker-rules">joker rules</a>
             </li>
-            <li className="flex gap-3">
+            <li className="flex gap-3 hover:text-gray-400">
               {" "}
               <RiArrowRightFill /> <a href="#point-system">point system</a>
             </li>
