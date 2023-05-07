@@ -50,17 +50,26 @@ function HeroSec() {
         }).to(".HapT", {
           duration: 2,
           y: "-=12",
-          z: 10,
+          z: 16,
+          rotateX:'20deg'
          
         }).to(".HapT", {
           duration: 3,
-          y: "+=12",
-          z: 20,
+          y: "+=15",
+          z: 10,
+          rotate:'0.5deg'
          
         }).to(".HapT", {
           duration: 3,
           y: "-=10",
-          z: 20,
+          z: 15,
+          rotate:'-0.8deg'
+        })
+        .to(".HapT", {
+          duration: 3,
+          y: "+=15",
+          z: 15,
+          rotate:'-0.9deg'
         })
     });
 
