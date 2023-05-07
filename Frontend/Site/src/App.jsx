@@ -31,6 +31,7 @@ function App() {
   useEffect(() => {
     dispatch(loadUser());
     setLoading(false);
+    
   }, []);
 
   return loading || serverLoading? (

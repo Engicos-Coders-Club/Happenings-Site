@@ -8,7 +8,7 @@ import Venue from './components/Venue'
 import Footer from './components/Footer'
 import About from './components/About'
 
-function Layout() {
+function Layout(props) {
   return (
 
 

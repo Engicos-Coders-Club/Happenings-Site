@@ -2,7 +2,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import { AiOutlineClose } from 'react-icons/ai';
-import { useState } from "react";
+import { useState,useRef,useEffect } from "react";
 // import GeneralRuleModal from "./GeneralRuleModal";
 import Navbar from '../components/navbar'
 import SideBar from '../components/SideBar'
@@ -15,10 +15,27 @@ function Venue() {
     //     showRulesModal(!rulesModal);
     // };
 
+    const myRef = useRef();
+    const [isTrue, setIt] = useState(0);
+    
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        setIt(!isTrue)
+      });
+  
+      if (myRef.current) {
+        observer.observe(myRef.current);
+      }
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+
     return (
-        <div id="venue" className="h-fit relative z-5" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }}>
+        <div id="venue" className="h-fit relative z-5" style={{ background: 'linear-gradient(269.39deg, #430D0B -0.69%, #010D10 28.48%)' }} ref={myRef}>
         <Navbar />
-            <SideBar />
+            <SideBar select={isTrue? "venue":""}/>
             <div className="flex gap-12 flex-col md:flex-row items-center justify-center relative z-20 py-12 w-4/5 mx-auto">
                 <div className="font-satoshi md:text-left md:mr-5 md:w-3/5">
                     <div className="mb-10">
