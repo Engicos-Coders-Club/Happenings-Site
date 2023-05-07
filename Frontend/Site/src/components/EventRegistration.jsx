@@ -1,7 +1,7 @@
 // ! Event Registration Page => register/event
 import { useState, useEffect } from 'react'
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { logout } from '../actions/auth'
@@ -17,6 +17,9 @@ function EventRegistration(props) {
     const { title } = props
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const location = useLocation()
+    const {event_id,applied} = location.state
+    console.log(event_id)
 
     useEffect(() => {
         document.title = title
@@ -92,8 +95,12 @@ function EventRegistration(props) {
                                         className="text-red-500 text-sm"
                                     />
                                 </div>
-                                <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider" style={{ 'fontFamily': 'MangoGrotesque' }}><Link to="/update-team-member" className="flex justify-center items-center">Update Team Member <FiArrowUpRight size={20} /></Link></button>
-                                <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Register Team <FiArrowUpRight size={20} /></button>
+                                {applied ? 
+                                <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Update Participant<FiArrowUpRight size={20} /></button>
+                                :<button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Register Participant<FiArrowUpRight size={20} /></button>
+                                }
+                                
+                                
                             </Form>
                         }
                     </Formik>
