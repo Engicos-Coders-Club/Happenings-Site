@@ -30,10 +30,10 @@ function EventRegistration(props) {
         navigate("/event-selection")
     }
 
-    const handleLogout = () => {
-        dispatch(logout())
-        navigate('/')
-    }
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
 
     const handleSubmit = (values) => {
         //console.log(values)
@@ -115,4 +115,4 @@ function EventRegistration(props) {
     )
 }
 
-export default EventRegistration
+export default EventRegistration;

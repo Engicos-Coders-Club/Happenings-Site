@@ -8,43 +8,40 @@ import EventTab from "./EventTab";
 import Navbar from "../components/navbar";
 import SideBar from "../components/SideBar";
 import { getCategories } from "../actions/categories";
-import {useDispatch,useSelector} from 'react-redux'
-import { useRef } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import eventSecBg from "../assets/h1.png";
 import axios from "axios";
+import { useLayoutEffect } from "react";
 // require("dotenv").config();
 
 function Events(props) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { title } = props;
   const [isTrue, setIt] = useState(0);
 
-  const {categories} = useSelector((state)=>state.category)
+  const { categories } = useSelector((state) => state.category);
 
-  const myRef2 = useRef();
-    
-    useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        setIt(!isTrue)
-      });
-  
-      if (myRef2.current) {
-        observer.observe(myRef2.current);
-      }
-  
-      return () => {
-        observer.disconnect();
-      };
-    }, []);
-  
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    let ctx = gsap.context(()=>{
-
-
+    let ctx = gsap.context(() => {
       gsap.defaults({ ease: "none" });
 
       ScrollTrigger.matchMedia({
+        //   "(max-width: 449px)": function() {
+        //     gsap.defaults({ease: "SteppedEase.config(12)"})
+        //     gsap.timeline({
+        //       scrollTrigger: {
+        //         trigger: "#Eventsec",
+        //         // markers: true,
+        //         start: "top top",
+        //         end: "bottom+=9697 bottom",
+        //         pin: true,
+        //         pinSpacing: false,
+        //         scrub: 1
+        //       }
+        //     })
+        //     .to("#Eventsec",{y:0})
+        //     .to('#schedule',{y:0})
 
       //   "(max-width: 449px)": function() {
       //     gsap.defaults({ease: "SteppedEase.config(12)"})
@@ -86,23 +83,24 @@ function Events(props) {
                 end: "bottom+=6597 bottom",
                 pin: true,
                 pinSpacing: false,
-                scrub: 1
-              }
+                scrub: 1,
+              },
             })
-            .to("#Eventsec",{y:0})
-            .to('#schedule',{y:0})
-            
-            gsap.timeline({
+            .to("#Eventsec", { y: 0 })
+            .to("#schedule", { y: 0 });
+
+          gsap
+            .timeline({
               scrollTrigger: {
                 trigger: "#Eventsec",
                 // markers: true,
                 toggleActions: "restart none none none",
                 start: "top+=18% 18%",
                 end: "bottom+=5530 80%",
-                scrub: true
-              }
+                scrub: true,
+              },
             })
-            .to("#Slider", { xPercent: -180, duration: 50, ease: "in" })
+            .to("#Slider", { xPercent: -148, duration: 50, ease: "in" })
         
         },
 
@@ -132,7 +130,7 @@ function Events(props) {
             scrub: true
           }
         })
-        .to("#Slider", { xPercent: -99, duration: 50, ease: "in" })
+        .to("#Slider", { xPercent: -91, duration: 50, ease: "in" })
         
       },
 
@@ -164,7 +162,7 @@ function Events(props) {
               scrub: true
             }
           })
-          .to("#Slider", { xPercent: -56, duration: 55, ease: "in" });
+          .to("#Slider", { xPercent: -80, duration: 55, ease: "in" });
 
           
       }
@@ -176,36 +174,34 @@ function Events(props) {
     ctx.revert()
     };
   }, []);
-    
-
-  
 
   useEffect(() => {
     // axios.get(`http://192.168.1.149:5000/api/all-categories/`).then((res) => {
     //   setcategory(res.data);
-    
-    // });
-    dispatch(getCategories())
-  }, []);
 
+    // });
+    dispatch(getCategories());
+  }, []);
 
   return (
     <>
-
       <section
         id="Eventsec"
-        className="h-screen bg-event-sec-bg bg-cover "
-        style={{ fontFamily: "MangoGrotesque", display:"grid", gridTemplateRows:"15% 75%" }}
-        ref={myRef2}
+        className="h-screen bg-event-sec-bg bg-cover"
+        style={{
+          fontFamily: "MangoGrotesque",
+          display: "grid",
+          gridTemplateRows: "15% 75%",
+          background: `url(${eventSecBg}) no-repeat`,
+          backgroundSize: "cover",
+        }}
       >
-        <Navbar />
-        <SideBar select={isTrue? "event":""}/>
 
         <div
           id="Eventsectop"
           className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
         >
-          <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          <p className="font-bold text-white text-7xl md:text-8xl ml-4 pt-8 uppercase tracking-widest">
             EVENTS
           </p>
 
@@ -239,7 +235,6 @@ function Events(props) {
                 />
               </button>
             </Link>
-
           </div>
         </div>
 
@@ -253,16 +248,15 @@ function Events(props) {
               categories ? 
                 categories.map((data) => {
                   return (
-                        <EventTab
-                          img={data.category_img}
-                          eventName={data.category_name}
-                          id={data.id}
-                          key={data.id}
-                        />
-                );
-              })
-              :null 
-            }
+                    <EventTab
+                      img={data.category_img}
+                      eventName={data.category_name}
+                      id={data.id}
+                      key={data.id}
+                    />
+                  );
+                })
+              : null}
             {/* {eventsData.map((event, id) => {
               return (
                 <EventTab

@@ -1,5 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function EventTab(props) {
   const clip = {
@@ -11,12 +11,12 @@ function EventTab(props) {
     // width: "700px",
   };
 
-  const data = {'event':props.eventName}
+  const data = { event: props.eventName };
 
   return (
     <>
       {/* Event Tab */}
-      <div className="min-w-[57%] xs:min-w-[25x%] sm:min-w-[38%] md:min-w-[19%] lg:min-w-[15%] h-3/4 my-[68px] mx-12 sm:my-[40px] md:my-14 md:mx-22">
+      <div className="min-w-[57%] xs:min-w-[29%] sm:min-w-[21%] md:min-w-[19%] lg:min-w-[15%] h-3/4 my-[68px] mx-12 sm:my-[40px] md:my-14 md:mx-22">
           {/* Image */}
           <div className="w-full  cursor hover:scale-105 h-[25vh] xs:h-[50vh]" style={clip}>
           <Link to={`/all-events/${props.id}`} state={data}>
@@ -29,7 +29,7 @@ function EventTab(props) {
                   // width: "110%",
                   height: "100%",
                 }}
-                className="bg-cover hover:scale-125 w-full xs:w-[110%]"
+                className="bg-cover hover:scale-125 w-full xs:w-[120%]"
               />
             </Link>
           </div>
@@ -43,8 +43,8 @@ function EventTab(props) {
               {props.eventName}
             </p>
             <Link to={`/all-events/${props.id}`} state={data}>
-              <button className="h-3/4 text-white bg-orange-600 px-4 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-sm md:text-base">
-                View all
+              <button className="h-3/4 text-white bg-orange-600 px-4 md:px-5 pb-2 pt-1 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0 text-sm md:text-xl leading-[1]">
+                View
               </button>
             </Link>
           </div>
