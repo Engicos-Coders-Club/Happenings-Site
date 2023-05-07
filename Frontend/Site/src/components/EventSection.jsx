@@ -17,6 +17,7 @@ import { useLayoutEffect } from "react";
 function Events(props) {
   const dispatch = useDispatch();
   const { title } = props;
+  const [isTrue, setIt] = useState(0);
 
   const { categories } = useSelector((state) => state.category);
 

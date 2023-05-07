@@ -11,25 +11,29 @@ function hamBurg(props) {
     let hamClassLast="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
   
   const ReverseAnimation = () => {
+    let ctx = gsap.context(()=>{
     const screenHeight = window.innerHeight;
-    gsap.to(".Ham", {
-      y: -screenHeight,
-      ease: "ease-out",
-      durtaion: 1,
-      onComplete: () => {
-        props.handleClick();
-      },
-    });
-  };
+    gsap.to('.Ham', {y: -screenHeight,ease:"ease-out", durtaion:1,onComplete: () => {
+        props.handleClick()}});
+      })
+
+      return () => {
+        ctx.revert()
+      };
+        
+
+};
 
   useLayoutEffect(() => {
     const screenHeight = window.innerHeight;
-    gsap.fromTo(
-      ".Ham",
-      { y: -screenHeight },
-      { y: 0, ease: "back", durtaion: 1 }
-    );
+    let ctx = gsap.context(()=>{
+    gsap.from('.Ham', {y: -screenHeight,ease:"back", durtaion:1});
+  })
 
+  return () => {
+    ctx.revert()
+  };
+    
 
   });
 

@@ -38,7 +38,7 @@ function App() {
     setLoading(false);
   }, []);
 
-  return loading || serverLoading? (
+  return loading || serverLoading ? (
     <div
       style={{
         height: "100vh",
@@ -103,17 +103,23 @@ function App() {
               path="/event-registration"
             />
             <Route
-              element={isAuthenticated ?
-              <EventSelection title="Event Selection" />
-              :<Auth title="Authentication" />
-            }
+              element={
+                isAuthenticated ? (
+                  <EventSelection title="Event Selection" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
               path="/event-selection"
             />
             <Route
               element={<TicketsSection title="Tickets" />}
               path="/tickets"
             />
-          <Route element={<Participants title="Participants" />} path="/participants" />
+            <Route
+              element={<Participants title="Participants" />}
+              path="/participants/:id"
+            />
             <Route
               element={<AllEvents title="All Events" />}
               path="/all-events/:id"
@@ -137,7 +143,6 @@ function App() {
             />
             <Route element={<Modal title="Modal" />} path="/Modal" />
             {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollTop>
         {/* </BrowserRouter> */}

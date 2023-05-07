@@ -8,7 +8,7 @@ import SideBar from '../components/SideBar'
 import ScheduleModal from './ScheduleModal';
 import Day1 from '../assets/day 1.svg'
 import Day2 from '../assets/day 2.svg'
-
+import { useRef } from 'react'
 
 
 
@@ -73,10 +73,28 @@ function Schedule(props) {
 
   const [showDay1, setShowDay1] = useState(false)
   const [showDay2, setShowDay2] = useState(false)
+    const [isTrue, setIt] = useState(0);
+
+  const myRef4 = useRef();
+    
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        setIt(!isTrue)
+      });
+  
+      if (myRef4.current) {
+        observer.observe(myRef4.current);
+      }
+  
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+  
 
 
   return (
-    <section id="schedule" className='bg-[#171717ff] schedule xs:opacity-0 h-auto relative md:pl-16  mt-0 sm:mt-[5400px] md:mt-[3700px] lg:mt-[2550px]' style={{'fontFamily':'MangoGrotesque'}}>
+    <section id="schedule" className='bg-[#171717ff] schedule xs:opacity-0 h-auto relative md:pl-16  mt-0 sm:mt-[5400px] md:mt-[3700px] lg:mt-[2550px]' style={{'fontFamily':'MangoGrotesque'} } ref={myRef4}>
 {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       {/* <Navbar />
       <SideBar /> */}
