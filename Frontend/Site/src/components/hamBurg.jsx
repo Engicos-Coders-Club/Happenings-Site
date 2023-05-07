@@ -6,8 +6,8 @@ import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 
 function hamBurg(props) {
-    let hamClass="w-[95%] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic"
-    let hamClassLast="w-[95%] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
+    let hamClass="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-0 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black italic"
+    let hamClassLast="lg:w-[90vw] w-[80vw] relative flex items-center justify-between border-b-2 border-t-2 border-x-2 border-orange-500 hover:bg-white hover:text-black  italic"
   
   const ReverseAnimation = () => {
     const screenHeight = window.innerHeight;
