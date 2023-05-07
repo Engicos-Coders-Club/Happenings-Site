@@ -5,23 +5,38 @@ import { getSingleEvent } from "../actions/events";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import modalBg from "../assets/modalBg.png";
+import { SpinnerRoundOutlined } from "spinners-react";
+import { BsArrowRightShort } from "react-icons/bs";
 
-function Modal({ event_id, setShowEventModal }) {
-  const dispatch = useDispatch();
-  const { event, loading } = useSelector((state) => state.event);
+// format Date
+const dateFormatter = (value) => {
+  const newVal = new Date(value);
 
-  useEffect(() => {
-    dispatch(getSingleEvent(event_id));
-  }, []);
+  const formatted = newVal
+    .toLocaleString("en-GB", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    })
+    .split(", ");
+  return formatted;
+};
 
-  const closeModal = () => {
-    setShowEventModal(false);
+function Modal({ event_id, closeModal }) {
+  const { event, eventLoading } = useSelector((state) => state.event);
+
+  const closeModalHandler = () => {
+    closeModal(false);
   };
 
   return (
     <div className="fixed overflow-hidden left-0 top-0 bottom-0 z-[1000] bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
-      {!event ? (
-        <div className="text-white">loading ...</div>
+      {eventLoading ? (
+        <SpinnerRoundOutlined
+          size={80}
+          thickness={50}
+          speed={100}
+          color="rgba(172, 57, 59, 1)"
+        />
       ) : (
         <div
           id="modal"
@@ -32,11 +47,13 @@ function Modal({ event_id, setShowEventModal }) {
             backgroundSize: "cover",
           }}
         >
-          <div className="flex justify-between items-center px-10 my-5">
-            <p className="text-lg sm:text-xl md:text-2xl">Events Details</p>
+          <div className="flex justify-between items-end px-10 my-5">
+            <p className="text-lg sm:text-xl md:text-4xl font-MANGO uppercase border-2 border-dashed p-2">
+              Events Details
+            </p>
             <button
-              onClick={closeModal}
-              className="flex border-2 border-dashed border-black py-[1.3%] px-[2.4%] text-base sm:text-lg md:text-xl"
+              onClick={closeModalHandler}
+              className="flex items-center border-2 border-dashed border-black py-[1.3%] px-[2.4%] text-base sm:text-lg md:text-2xl font-MANGO uppercase"
             >
               Close
               <FiX className="m-[0.4rem]" />
@@ -46,8 +63,8 @@ function Modal({ event_id, setShowEventModal }) {
           <div className="px-10 my-5">
             <hr className="border-black my-1" />
             <hr className="border-black my-1" />
-            <p className="text-center my-2 text-lg sm:text-2xl md:text-3xl">
-              <span className="font-extrabold">{event?.event_name}</span>
+            <p className="text-center my-2 text-2xl sm:text-4xl md:text-7xl">
+              <span className="font-bold font-MANGO">{event?.event_name}</span>
             </p>
             <hr className="border-black my-1" />
             <hr className="border-black my-1" />
@@ -60,7 +77,7 @@ function Modal({ event_id, setShowEventModal }) {
               style={{ gridTemplateColumns: "60% 36%", gap: "4%" }}
             >
               <div>
-                <p className="my-2 md:my-0">{event?.description}</p>
+                <p className="my-2 md:my-0 font-bold">{event?.description}</p>
               </div>
 
               <img
@@ -70,6 +87,47 @@ function Modal({ event_id, setShowEventModal }) {
                 className="my-2 md:my-0 mx-auto"
               />
             </div>
+          </div>
+
+          {/* timing */}
+          <div className="mx-10 my-6 px-4 border-2 border-black">
+            <p className="my-2 text-lg capitalize flex items-end gap-1">
+              Date :{" "}
+              <strong className="font-extrabold text-xl">
+                {dateFormatter(event?.timing)[0]}
+              </strong>
+            </p>
+            <p className="my-2 text-lg capitalize flex items-center gap-1">
+              Time :{" "}
+              <strong className="font-extrabold text-xl">
+                {dateFormatter(event?.timing)[1]}
+              </strong>
+            </p>
+          </div>
+
+          {/* venue */}
+          <div className="px-10 my-5">
+            <hr className="border-black my-1" />{" "}
+            <hr className="border-black my-1" />
+            <p className="my-2 text-lg capitalize flex items-end gap-3">
+              Venue:{" "}
+              <strong className="font-extrabold text-2xl">
+                {event?.venue}
+              </strong>
+            </p>
+          </div>
+
+          <div className="px-10 my-5">
+            <hr className="border-black my-1" />{" "}
+            <hr className="border-black my-1" />
+            <p className="my-2 text-lg capitalize flex items-end gap-1">
+              No of participants:{" "}
+              <strong className="font-extrabold text-3xl">
+                {event?.no_of_participants}
+              </strong>
+            </p>
+            <hr className="border-black my-1" />{" "}
+            <hr className="border-black my-1" />{" "}
           </div>
 
           {/* Display this for Screen less than 1024px */}
@@ -89,8 +147,19 @@ function Modal({ event_id, setShowEventModal }) {
             <hr className="border-black my-1" />
           </div>
 
+          {/* rules */}
           <div className="px-10 my-5 text-[9px]  sm:text-xs md:text-sm lg:text-base list-disc">
-            <p className="my-2 md:my-0">{event?.rules}</p>
+            <p className="my-2 md:my-0">
+              {event?.rules.split("\n").map((rule, index) => (
+                <div
+                  key={index}
+                  className="mt-1 flex items-top justify-start gap-2"
+                >
+                  <BsArrowRightShort className="text-lg" />
+                  <p className="basis-[90%]">{rule}</p>
+                </div>
+              ))}
+            </p>
           </div>
 
           <div className="px-10 my-5">
@@ -99,34 +168,15 @@ function Modal({ event_id, setShowEventModal }) {
               JUDGING CRITERIA
             </p>
             <hr className="border-black my-1" />
-            <p className="my-2 md:my-0">{event?.judging_criteria}</p>
-          </div>
-
-          <div className="px-10 my-5">
-            <hr className="border-black my-1" />
-            <p className="my-3 font-extrabold text-lg sm:text-xl md:text-2xl">
-              TIMING
-            </p>
-            <hr className="border-black my-1" />
-            <p className="my-2 md:my-0">{event?.timing}</p>
-          </div>
-
-          <div className="px-10 my-5">
-            <hr className="border-black my-1" />
-            <p className="my-3 font-extrabold text-lg sm:text-xl md:text-2xl">
-              VENUE
-            </p>
-            <hr className="border-black my-1" />
-            <p className="my-2 md:my-0">{event?.venue}</p>
-          </div>
-
-          <div className="px-10 my-5">
-            <hr className="border-black my-1" />
-            <p className="my-3 font-extrabold text-lg sm:text-xl md:text-2xl">
-              NO OF PARTICIPANTS
-            </p>
-            <hr className="border-black my-1" />
-            <p className="my-2 md:my-0">{event?.no_of_participants}</p>
+            {event?.judging_criteria.split("\n").map((rule, index) => (
+              <div
+                key={index}
+                className="mt-1 flex items-top justify-start gap-2"
+              >
+                <BsArrowRightShort className="text-lg" />
+                <p className="basis-[90%]">{rule}</p>
+              </div>
+            ))}
           </div>
 
           <div className="mx-10 my-6 px-4 border-2 border-black">
@@ -140,7 +190,7 @@ function Modal({ event_id, setShowEventModal }) {
                   {/* style={{'display':'grid','gridTemplateColumns':'8% 92%', 'gap':'3%'}} */}
                   {/* <img src={ele.photo}  alt="image" /> */}
                   <div className="w-full">
-                    <p>{ele.name}</p>
+                    <p className="font-bold">{ele.name}</p>
                     <p>{ele.phone}</p>
                   </div>
                 </div>

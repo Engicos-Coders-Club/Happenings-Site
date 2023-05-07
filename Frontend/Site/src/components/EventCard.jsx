@@ -6,17 +6,24 @@ import { useEffect, useState } from "react";
 import eventsCardBg from "../assets/events-card.png";
 import { TiChevronRight } from "react-icons/ti";
 import { createPortal } from "react-dom";
+import { useDispatch } from "react-redux";
+import { getSingleEvent } from "../actions/events";
 
 function EventCard(props) {
   const { event } = props;
+  const dispatch = useDispatch()
 
   const [showEventModal, setShowEventModal] = useState(false);
+
+  const showEventModalHandler = () => {
+    dispatch(getSingleEvent(event.id));
+    setShowEventModal(true);
+  };
 
   useEffect(() => {
     if (showEventModal === true) {
       document.body.style.overflow = "hidden";
-    }
-    else {
+    } else {
       document.body.style.overflow = "visible";
     }
   }, [showEventModal]);
@@ -31,7 +38,7 @@ function EventCard(props) {
     >
       {showEventModal &&
         createPortal(
-          <Modal event_id={event.id} setShowEventModal={setShowEventModal} />,
+          <Modal event_id={event.id} closeModal={setShowEventModal} />,
           document.getElementById("modal")
         )}
       <div className="flex justify-between items-center mx-5">
@@ -41,13 +48,13 @@ function EventCard(props) {
         >
           Event
         </p>
-        <button onClick={() => setShowEventModal(true)}>
+        <button onClick={showEventModalHandler}>
           <RiArrowRightUpLine className="text-xl text-red-900" />
         </button>
       </div>
 
       <button
-        onClick={() => setShowEventModal(true)}
+        onClick={showEventModalHandler}
         className="self-center w-[85%] h-[45%] border border-red-950 border-2"
       >
         <div className=" mx-auto flex flex-col justify-center p-4">

@@ -6,10 +6,8 @@ import { useParams } from "react-router-dom";
 import { getEvents } from "../actions/events";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import Navbar from "../components/navbar";
-import SideBar from "../components/SideBar";
+import { SpinnerRoundOutlined } from "spinners-react";
 import eventsBg from "../assets/events-bg.jpg";
-import { SpinnerRoundOutlined } from 'spinners-react'
 
 function Events(props) {
   const { onStageEvents, offStageEvents } = eventsData;
@@ -26,25 +24,24 @@ function Events(props) {
     dispatch(getEvents(id));
   }, []);
 
-  return loading? (
-        <div
-          style={{
-            height: "100vh",
-            width: "100wh",
-            backgroundColor: "black",
-            display: "grid",
-            placeItems: "center",
-          }}
-        >
-          <SpinnerRoundOutlined
-            size={80}
-            thickness={50}
-            speed={100}
-            color="rgba(172, 57, 59, 1)"
-          />
-        </div>
-      ) :
-        (
+  return loading ? (
+    <div
+      style={{
+        height: "100vh",
+        width: "100wh",
+        backgroundColor: "black",
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <SpinnerRoundOutlined
+        size={80}
+        thickness={50}
+        speed={100}
+        color="rgba(172, 57, 59, 1)"
+      />
+    </div>
+  ) : (
     <div>
       <div
         className="pt-20 min-h-screen pl-0 md:pl-16"

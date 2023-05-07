@@ -1,11 +1,11 @@
 // ! Event Registration Page => register/event
-import { useState, useEffect } from "react";
-import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
-import { EventRegistrationSchema } from "../schema/EventRegistrationSchema";
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { logout } from "../actions/auth";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from 'react'
+import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
+import { logout } from '../actions/auth'
+import { useDispatch } from 'react-redux'
 
 /*
 TODO: 
@@ -19,7 +19,6 @@ function EventRegistration(props) {
     const dispatch = useDispatch()
     const location = useLocation()
     const {event_id,applied} = location.state
-    console.log(event_id)
 
   useEffect(() => {
     document.title = title;
