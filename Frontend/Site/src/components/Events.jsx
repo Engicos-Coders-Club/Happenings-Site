@@ -7,6 +7,8 @@ import EventCard from "./EventCard";
 import { getAllEvents } from "../actions/events";
 import { useDispatch, useSelector } from "react-redux";
 import eventsBg from "../assets/events-bg.jpg";
+import SideBar from "./SideBar";
+import Navbar from "./navbar";
 
 function Events(props) {
   const { onStageEvents } = eventsData;
@@ -27,6 +29,10 @@ function Events(props) {
     </div>
   ) : (
     <div className="">
+      <div className="fixed">
+        <Navbar />
+        <SideBar />
+      </div>
       <div
         className="min-h-screen"
         style={{

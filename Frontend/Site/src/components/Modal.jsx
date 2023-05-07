@@ -19,7 +19,7 @@ function Modal({ event_id, setShowEventModal }) {
   };
 
   return (
-    <div className="absolute left-0 top-0 z-[1000] bg-[rgba(0,0,0,0.5)] w-full h-screen flex items-center justify-center">
+    <div className="fixed overflow-hidden left-0 top-0 bottom-0 z-[1000] bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
       {!event ? (
         <div className="text-white">loading ...</div>
       ) : (

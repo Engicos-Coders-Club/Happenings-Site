@@ -2,14 +2,24 @@
 import { RiArrowRightUpLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import eventsCardBg from "../assets/events-card.png";
 import { TiChevronRight } from "react-icons/ti";
+import { createPortal } from "react-dom";
 
 function EventCard(props) {
   const { event } = props;
 
   const [showEventModal, setShowEventModal] = useState(false);
+
+  useEffect(() => {
+    if (showEventModal === true) {
+      document.body.style.overflow = "hidden";
+    }
+    else {
+      document.body.style.overflow = "visible";
+    }
+  }, [showEventModal]);
 
   return (
     <div
@@ -19,9 +29,11 @@ function EventCard(props) {
         backgroundSize: "cover",
       }}
     >
-      {showEventModal && (
-        <Modal event_id={event.id} setShowEventModal={setShowEventModal} />
-      )}
+      {showEventModal &&
+        createPortal(
+          <Modal event_id={event.id} setShowEventModal={setShowEventModal} />,
+          document.getElementById("modal")
+        )}
       <div className="flex justify-between items-center mx-5">
         <p
           className="text-2xl tracking-wider font-semibold text-red-900"
@@ -39,7 +51,7 @@ function EventCard(props) {
         className="self-center w-[85%] h-[45%] border border-red-950 border-2"
       >
         <div className=" mx-auto flex flex-col justify-center p-4">
-          <p  
+          <p
             className="text-left text-red-950 tracking-wide text-[2.6rem] leading-[1] font-bold w-full"
             style={{ fontFamily: "MangoGrotesque" }}
           >
