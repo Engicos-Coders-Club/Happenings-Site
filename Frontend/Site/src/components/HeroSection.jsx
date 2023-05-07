@@ -39,6 +39,29 @@ function HeroSec() {
           },
         })
         .to("#HapL", { rotateY: "360deg" });
+
+        
+        gsap
+        .timeline({
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true,
+    
+        }).to(".HapT", {
+          duration: 2,
+          y: "-=12",
+          z: 10,
+         
+        }).to(".HapT", {
+          duration: 3,
+          y: "+=12",
+          z: 20,
+         
+        }).to(".HapT", {
+          duration: 3,
+          y: "-=10",
+          z: 20,
+        })
     });
 
     return () => ctx.revert();
