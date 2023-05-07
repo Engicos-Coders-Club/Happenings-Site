@@ -188,7 +188,7 @@ function Events(props) {
 
         <div
           id="Eventsectop"
-          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16"
+          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
         >
           <p className="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             EVENTS
@@ -233,7 +233,7 @@ function Events(props) {
         <div className="overflow-y-scroll xs:overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
 
           {/* Slider Area */}
-          <div id="Slider" className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2">
+          <div id="Slider" className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2 xs:will-change-transform">
             {
               categories ? 
                 categories.map((data) => {
