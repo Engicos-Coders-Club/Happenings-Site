@@ -51,7 +51,7 @@ function Venue() {
             href="https://www.google.com/maps/place/Manohar+Parrikar+Indoor+Stadium/@15.261121,73.968611,16z/data=!4m6!3m5!1s0x3bbfb39d51852b17:0xa706b3fadb014ec0!8m2!3d15.2611209!4d73.9686107!16s%2Fg%2F11kw8dk977?hl=en"
             target="_blank"
             rel="noreferrer"
-            className="border-red-500 border w-fit rounded-md p-3 my-7 mx-auto text-white py-1 bg-black hover:scale-105 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase font-MANGO"
+            className="border-red-500 border w-fit rounded-md p-3 my-7 mx-auto text-white py-1 hover:scale-105 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase font-MANGO"
           >
             Navigate
             <FiArrowUpRight size={20} />
@@ -67,7 +67,7 @@ function Venue() {
         {/* put the bg */}
         {/* <div className="text-white pb-20"> */}
         <div className="w-11/12 md:w-[70vw] mx-auto pt-8 pb-8">
-          <div className="mx-auto mt-8">
+          <div className="mx-auto my-8">
             <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg py-10">
               <h3
                 className="text-5xl my-3 md:text-8xl font-bold text-center text-cus-orange uppercase tracking-widest"
@@ -82,7 +82,7 @@ function Venue() {
               <div className="mt-8 flex justify-center">
                 <Link to="/college-registration">
                   <button
-                    className="border-red-500 border w-fit rounded-md px-5 mx-auto text-white py-1 bg-black hover:scale-110 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
+                    className="bg-orange-600 w-fit rounded-md px-5 mx-auto text-white py-1 md:scale-110 hover:bg-orange-700 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
                     style={{ fontFamily: "MangoGrotesque" }}
                   >
                     College Registration

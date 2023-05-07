@@ -100,79 +100,79 @@ function Events(props) {
                 scrub: true,
               },
             })
-            .to("#Slider", { xPercent: -180, duration: 50, ease: "in" });
+            .to("#Slider", { xPercent: -148, duration: 50, ease: "in" })
+        
         },
 
-        "(min-width: 768px) and (max-width: 1024px)": function () {
-          gsap.defaults({ ease: "SteppedEase.config(12)" });
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                start: "top top",
-                end: "bottom+=4797 bottom",
-                pin: true,
-                pinSpacing: false,
-                scrub: 1,
-              },
-            })
-            .to("#Eventsec", { y: 0 })
-            .to("#schedule", { y: 0 });
+      "(min-width: 768px) and (max-width: 1024px)": function() {
+        gsap.defaults({ease: "SteppedEase.config(12)"})
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            start: "top top",
+            end: "bottom+=4797 bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 1
+          }
+        })
+        .to("#Eventsec",{y:0})
+        .to('#schedule',{y:0})
+        
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Eventsec",
+            // markers: true,
+            toggleActions: "restart none none none",
+            start: "top+=18% 18%",
+            end: "bottom+=3930 80%",
+            scrub: true
+          }
+        })
+        .to("#Slider", { xPercent: -91, duration: 50, ease: "in" })
+        
+      },
 
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                toggleActions: "restart none none none",
-                start: "top+=18% 18%",
-                end: "bottom+=3930 80%",
-                scrub: true,
-              },
-            })
-            .to("#Slider", { xPercent: -99, duration: 50, ease: "in" });
-        },
+      
+      "(min-width: 1024px)": function() {
+          gsap.defaults({ease: "SteppedEase.config(12)"})
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              start: "top top",
+              end: "bottom+=3397 bottom",
+              pin: true,
+              pinSpacing: false,
+              scrub: 1
+            }
+          })
+          .to("#Eventsec",{y:0})
+          .to('#schedule',{y:0})
+        
 
-        "(min-width: 1024px)": function () {
-          gsap.defaults({ ease: "SteppedEase.config(12)" });
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                start: "top top",
-                end: "bottom+=3397 bottom",
-                pin: true,
-                pinSpacing: false,
-                scrub: 1,
-              },
-            })
-            .to("#Eventsec", { y: 0 })
-            .to("#schedule", { y: 0 });
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: "#Eventsec",
+              // markers: true,
+              toggleActions: "restart none none none",
+              start: "+=20% 20%",
+              end: "bottom+=2930 80%",
+              scrub: true
+            }
+          })
+          .to("#Slider", { xPercent: -80, duration: 55, ease: "in" });
 
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: "#Eventsec",
-                // markers: true,
-                toggleActions: "restart none none none",
-                start: "+=20% 20%",
-                end: "bottom+=2930 80%",
-                scrub: true,
-              },
-            })
-            .to("#Slider", { xPercent: -56, duration: 55, ease: "in" });
-        },
-      });
+          
+      }
 
-      // return () => {
-      //     ScrollTrigger.killAll();
-      // };
-    });
-    // return () => {
-    //   ctx.revert()
-    // };
+      })
+
+    })
+    return () => {
+    ctx.revert()
+    };
   }, []);
 
   useEffect(() => {

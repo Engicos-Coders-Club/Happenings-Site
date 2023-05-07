@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="bg-black px-4">
+    <div className="bg-[#0C0B09] px-4 relative z-10">
       <div className="container mx-auto py-10">
         <h1
           id="footer-email"
