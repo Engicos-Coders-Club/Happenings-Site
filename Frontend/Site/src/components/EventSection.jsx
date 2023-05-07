@@ -211,7 +211,7 @@ function Events(props) {
             </Link>
 
             <Link to="/all-events/">
-              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
+              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer font-MANGO">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}
                   style={{ fontFamily: "MangoGrotesque" }}

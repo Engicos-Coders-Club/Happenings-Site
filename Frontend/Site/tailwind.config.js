@@ -27,15 +27,16 @@ export default {
       fontFamily: {
         MANGO: ["MANGO", "sans-serif"],
         BEBAS: ["BEBAS", "sans-serif"],
+        Merriweather: ["Merriweather", "Old Standard TT", "serif"],
       },
       "event-sec-bg": "url('./src/assets/h1.png')",
       fontSize: {
-        '9xl': "12rem"
+        "9xl": "12rem",
       },
       colors: {
-        'cus-orange': "#FF6600",
-        'cus-bright-orange': "#ED0D06"
-      }
+        "cus-orange": "#FF6600",
+        "cus-bright-orange": "#ED0D06",
+      },
     },
   },
   plugins: [],

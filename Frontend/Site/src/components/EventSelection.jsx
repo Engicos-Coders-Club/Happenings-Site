@@ -31,7 +31,7 @@ function EventSelection(props) {
             <FiArrowRight
               size={40}
               onClick={logout}
-              className="cursor-pointer border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-125"
+              className="cursor-poMerriweather border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-125"
             />
             <p
               className="px-5 text-2xl md:text-3xl"
