@@ -71,13 +71,13 @@
 
 .swiper {
   width: 80%;
-  height: 100%;
+  height: max-content;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-
+  height: max-content;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
@@ -97,4 +97,15 @@
 
 .swiper-pagination span {
   background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-button-next, .swiper-button-prev {
+    top: 90% !important;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    color: #ff4242;
+    font-size: 30px !important;
+  }
 }

@@ -29,7 +29,7 @@ const EventCarouselSection = () => {
     <>
       <section
         id="Eventsec"
-        className="h-screen bg-event-sec-bg bg-cover"
+        className="h-full py-10"
         style={{
           fontFamily: "MangoGrotesque",
           display: "grid",
@@ -40,17 +40,17 @@ const EventCarouselSection = () => {
       >
         <div
           id="Eventsectop"
-          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
+          className="h-max px-10 w-full md:max-w-[90%] md:w-full mx-auto flex justify-between items-center flex-wrap"
         >
-          <p className="font-bold text-white text-7xl md:text-8xl ml-4 pt-8 uppercase tracking-widest">
+          <p className="font-bold text-white text-7xl md:text-8xl uppercase tracking-widest">
             EVENTS
           </p>
 
-          <div className="flex items-center space-around w-auto pr-14">
+          <div className="flex items-center flex-wrap md:justify-end gap-3">
             <Link to="/auth">
-              <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer">
+              <button className="flex items-center  bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer">
                 <span
-                  className={`text-sm lg:text-xl font-semibold tracking-wide`}
+                  className={`text-lg lg:text-xl font-semibold tracking-wide`}
                   style={{ fontFamily: "MangoGrotesque" }}
                 >
                   Buy Passes Now
@@ -63,9 +63,9 @@ const EventCarouselSection = () => {
             </Link>
 
             <Link to="/all-events/">
-              <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
+              <button className="flex items-center text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
-                  className={`text-sm lg:text-xl font-semibold tracking-wide `}
+                  className={`text-lg lg:text-xl font-semibold tracking-wide `}
                   style={{ fontFamily: "MangoGrotesque" }}
                 >
                   View All
@@ -86,7 +86,7 @@ const EventCarouselSection = () => {
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
-          centeredSlides={true}
+          loop={true}
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -107,7 +107,7 @@ const EventCarouselSection = () => {
           {categories
             ? categories.map((data) => {
                 return (
-                  <SwiperSlide key={data.id} className="h-max">
+                  <SwiperSlide key={data.id}>
                     <EventTab
                       img={data.category_img}
                       eventName={data.category_name}
