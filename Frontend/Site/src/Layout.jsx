@@ -7,6 +7,7 @@ import EventSection from './components/EventSection'
 import Venue from './components/Venue'
 import Footer from './components/Footer'
 import About from './components/About'
+import EventCarouselSection from './components/EventCarouselSection'
 
 function Layout(props) {
   return (
@@ -15,7 +16,8 @@ function Layout(props) {
     <div>
       <Hero />
       <About s={''} animation={'section-2'} />
-      <EventSection />
+      {/* <EventSection /> */}
+      <EventCarouselSection/>
       <Schedule />
       {/* <Sponsor /> */}
       <Venue />

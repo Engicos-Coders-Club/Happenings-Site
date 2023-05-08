@@ -11,13 +11,12 @@ import { getCategories } from "../actions/categories";
 import { useDispatch, useSelector } from "react-redux";
 import eventSecBg from "../assets/h1.png";
 import axios from "axios";
-import { useLayoutEffect,useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 // require("dotenv").config();
 
 function Events(props) {
   const dispatch = useDispatch();
   const { title } = props;
-  
 
   const { categories } = useSelector((state) => state.category);
 
@@ -43,39 +42,40 @@ function Events(props) {
         //     .to("#Eventsec",{y:0})
         //     .to('#schedule',{y:0})
 
-      //   "(max-width: 449px)": function() {
-      //     gsap.defaults({ease: "SteppedEase.config(12)"})
-      //     gsap.timeline({
-      //       scrollTrigger: {
-      //         trigger: "#Eventsec",
-      //         // markers: true,
-      //         start: "top top",
-      //         end: "bottom+=9697 bottom",
-      //         pin: true,
-      //         pinSpacing: false,
-      //         scrub: 1
-      //       }
-      //     })
-      //     .to("#Eventsec",{y:0})
-      //     .to('#schedule',{y:0})
-          
-      //     gsap.timeline({
-      //       scrollTrigger: {
-      //         trigger: "#Eventsec",
-      //         // markers: true,
-      //         toggleActions: "restart none none none",
-      //         start: "top+=18% 18%",
-      //         end: "bottom+=8630 80%",
-      //         scrub: true
-      //       }
-      //     })
-      //     .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
-      
-      // },
+        //   "(max-width: 449px)": function() {
+        //     gsap.defaults({ease: "SteppedEase.config(12)"})
+        //     gsap.timeline({
+        //       scrollTrigger: {
+        //         trigger: "#Eventsec",
+        //         // markers: true,
+        //         start: "top top",
+        //         end: "bottom+=9697 bottom",
+        //         pin: true,
+        //         pinSpacing: false,
+        //         scrub: 1
+        //       }
+        //     })
+        //     .to("#Eventsec",{y:0})
+        //     .to('#schedule',{y:0})
 
-        "(min-width: 450px) and (max-width: 767px)": function() {
-            gsap.defaults({ease: "SteppedEase.config(12)"})
-            gsap.timeline({
+        //     gsap.timeline({
+        //       scrollTrigger: {
+        //         trigger: "#Eventsec",
+        //         // markers: true,
+        //         toggleActions: "restart none none none",
+        //         start: "top+=18% 18%",
+        //         end: "bottom+=8630 80%",
+        //         scrub: true
+        //       }
+        //     })
+        //     .to("#Slider", { xPercent: -300, duration: 50, ease: "in" })
+
+        // },
+
+        "(min-width: 450px) and (max-width: 767px)": function () {
+          gsap.defaults({ ease: "SteppedEase.config(12)" });
+          gsap
+            .timeline({
               scrollTrigger: {
                 trigger: "#Eventsec",
                 // markers: true,
@@ -162,10 +162,9 @@ function Events(props) {
                 scrub: true,
               },
             })
-            .to("#Slider", { xPercent: -56, duration: 55, ease: "in" })
-            
+            .to("#Slider", { xPercent: -56, duration: 55, ease: "in" });
 
-            gsap
+          gsap
             .timeline({
               scrollTrigger: {
                 trigger: "#Eventsec",
@@ -174,7 +173,12 @@ function Events(props) {
                 scrub: 1,
               },
             })
-            .to("#EventSide", {textDecoration:"underline", onComplete: () => {gsap.to("#EventSide",{textDecoration:"none"})}})
+            .to("#EventSide", {
+              textDecoration: "underline",
+              onComplete: () => {
+                gsap.to("#EventSide", { textDecoration: "none" });
+              },
+            });
         },
       });
 
@@ -195,7 +199,6 @@ function Events(props) {
     dispatch(getCategories());
   }, []);
 
-
   return (
     <>
       <section
@@ -210,9 +213,9 @@ function Events(props) {
         }}
         ref={props.ref}
       >
-
         <div
-          id="Eventsectop"
+          id="
+          op"
           className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
         >
           <p className="font-bold text-white text-7xl md:text-8xl ml-4 pt-8 uppercase tracking-widest">
@@ -255,12 +258,13 @@ function Events(props) {
         {/* Slider Section */}
         {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
         <div className="overflow-y-scroll xs:overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
-
           {/* Slider Area */}
-          <div id="Slider" className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2 xs:will-change-transform">
-            {
-              categories ? 
-                categories.map((data) => {
+          <div
+            id="Slider"
+            className="box-content xs:flex xs:h-1/2 w-full xs:w-[300%] md:h-1/2 xs:will-change-transform"
+          >
+            {categories
+              ? categories.map((data) => {
                   return (
                     <EventTab
                       img={data.category_img}

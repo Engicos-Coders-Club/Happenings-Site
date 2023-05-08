@@ -14,8 +14,6 @@ import Teams from "./components/Teams";
 import { SpinnerRoundOutlined } from "spinners-react";
 import GeneralRulePage from "./components/GeneralRulePage";
 import Participants from "./components/Participants";
-
-import { useLocation } from "react-router-dom";
 import Modal from "./components/Modal";
 import Layout from "./Layout";
 import { loadUser } from "./actions/auth";
@@ -23,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ScrollTop from "./helpers/ScrollTop";
 import SideBar from "./components/SideBar";
 import NotFound from "./components/NotFound";
+import { register } from "swiper/element/bundle";
 
 function App() {
   // const location = useLocation();
@@ -32,6 +31,8 @@ function App() {
   const { isAuthenticated, loading: serverLoading } = useSelector(
     (state) => state.auth
   );
+
+  register();
 
   useEffect(() => {
     dispatch(loadUser());
@@ -143,6 +144,7 @@ function App() {
             />
             <Route element={<Modal title="Modal" />} path="/Modal" />
             {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollTop>
         {/* </BrowserRouter> */}
