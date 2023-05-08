@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -24,7 +24,7 @@
 /* Css For Schedule Section */
 #Shine {
   overflow: hidden;
-  background: linear-gradient(90deg, #171717ff, #ED0D06, #171717ff);
+  background: linear-gradient(90deg, #171717ff, #ed0d06, #171717ff);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 3s linear infinite;
@@ -65,4 +65,36 @@
     @apply text-white;
     -webkit-text-stroke: none;
   }
+}
+
+/* carousel styles */
+
+.swiper {
+  width: 80%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  color: #ff4242;
+}
+
+.swiper-pagination span {
+  background-color: red;
 }

@@ -65,7 +65,7 @@ function Footer() {
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
               <div className="flex flex-col justify-center">
                 <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
-                  Ruthvik Desai (Chairman)
+                  Ruthveek Dessai (Chairman)
                 </h2>
                 <div className="flex items-center">
                   <FaWhatsapp className="text-white mr-2" />

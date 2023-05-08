@@ -11,80 +11,79 @@ import Day2 from "../assets/day 2.svg";
 import { useRef } from "react";
 
 function Schedule(props) {
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      ScrollTrigger.matchMedia({
-        "(min-width: 450px) and (max-width: 767px)": function () {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".schedule",
-                // markers: true,
-                start: "top top+=200",
-                end: "bottom",
-                scrub: 1,
-              },
-            })
-            .to(".schedule", { opacity: "1400%" });
-        },
+  // useEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     ScrollTrigger.matchMedia({
+  //       "(min-width: 450px) and (max-width: 767px)": function () {
+  //         gsap
+  //           .timeline({
+  //             scrollTrigger: {
+  //               trigger: ".schedule",
+  //               // markers: true,
+  //               start: "top top+=200",
+  //               end: "bottom",
+  //               scrub: 1,
+  //             },
+  //           })
+  //           .to(".schedule", { opacity: "1400%" });
+  //       },
 
-        "(min-width: 768px) and (max-width: 1024px)": function () {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".schedule",
-                // markers: true,
-                start: "top top+=100",
-                end: "bottom",
-                scrub: 1,
-              },
-            })
-            .to(".schedule", { opacity: "1400%" });
-        },
+  //       "(min-width: 768px) and (max-width: 1024px)": function () {
+  //         gsap
+  //           .timeline({
+  //             scrollTrigger: {
+  //               trigger: ".schedule",
+  //               // markers: true,
+  //               start: "top top+=100",
+  //               end: "bottom",
+  //               scrub: 1,
+  //             },
+  //           })
+  //           .to(".schedule", { opacity: "1400%" });
+  //       },
 
-        "(min-width: 1024px)": function () {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".schedule",
-                // markers: true,
-                start: "top top+=100",
-                end: "bottom",
-                scrub: 1,
-              },
-            })
-            .to(".schedule", { opacity: "1400%" });
+  //       "(min-width: 1024px)": function () {
+  //         gsap
+  //           .timeline({
+  //             scrollTrigger: {
+  //               trigger: ".schedule",
+  //               // markers: true,
+  //               start: "top top+=100",
+  //               end: "bottom",
+  //               scrub: 1,
+  //             },
+  //           })
+  //           .to(".schedule", { opacity: "1400%" });
 
-            gsap
-            .timeline({
-              defaults: { ease: "none" },
-              scrollTrigger: {
-                trigger: ".schedule",
-                start: "top top",
-                end: "bottom bottom",
-                scrub:1,
-              
-              },
-            })
-            .to("#ScheduleSide", {textDecoration:"underline", onComplete: () => {gsap.to("#ScheduleSide",{textDecoration:"none"})}})
-        },
-      });
-    });
+  //           gsap
+  //           .timeline({
+  //             defaults: { ease: "none" },
+  //             scrollTrigger: {
+  //               trigger: ".schedule",
+  //               start: "top top",
+  //               end: "bottom bottom",
+  //               scrub:1,
 
-    return () => ctx.revert();
-  }, []);
+  //             },
+  //           })
+  //           .to("#ScheduleSide", {textDecoration:"underline", onComplete: () => {gsap.to("#ScheduleSide",{textDecoration:"none"})}})
+  //       },
+  //     });
+  //   });
+
+  //   return () => ctx.revert();
+  // }, []);
 
   const [showDay1, setShowDay1] = useState(false);
   const [showDay2, setShowDay2] = useState(false);
   const [isTrue, setIt] = useState(0);
 
-
   return (
     <section
       id="schedule"
-      className="bg-[#171717ff] schedule xs:opacity-0 h-auto relative md:pl-16  mt-0 xs:mt-[5400px] sm:mt-[4200px] md:mt-[3100px] lg:mt-[2550px]"
+      className="bg-[#171717ff] schedule h-auto relative md:pl-16  mt-0"
       style={{ fontFamily: "MangoGrotesque" }}
     >
       {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
@@ -139,7 +138,9 @@ function Schedule(props) {
               height="400"
             />
           </div>
-          <p className="text-gray-500 font-BEBAS sm:hidden text-sm mt-2">(click to expand)</p>
+          <p className="text-gray-500 font-BEBAS sm:hidden text-sm mt-2">
+            (click to expand)
+          </p>
         </div>
       </div>
 
@@ -174,7 +175,9 @@ function Schedule(props) {
               height="400"
             />
           </div>
-          <p className="text-gray-500 font-BEBAS sm:hidden text-sm mt-2">(click to expand)</p>
+          <p className="text-gray-500 font-BEBAS sm:hidden text-sm mt-2">
+            (click to expand)
+          </p>
         </div>
       </div>
 
