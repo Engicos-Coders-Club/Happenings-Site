@@ -187,7 +187,13 @@ function GeneralRuleModal(props) {
               the POINT SYSTEM
             </p>
             <div className="w-3/4 md:w-[60%] mx-auto">
-              <img src={pointTable} width="75%" alt="" className="w-full h-full object-contain" />
+              <img
+                src={pointTable}
+                width="75%"
+                alt=""
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -202,6 +208,7 @@ function GeneralRuleModal(props) {
           </p>
           <div className="mx-auto md:w-4/5">
             <img
+              loading="lazy"
               src={pointCategorizationImg}
               className="w-full h-full object-contain"
               alt="category of events according to points"
