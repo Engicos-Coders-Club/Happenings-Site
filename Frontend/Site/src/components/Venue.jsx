@@ -1,9 +1,12 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useEffect,useRef,useState } from 'react'
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+
 import footerImg from "../assets/footer.png";
 // import GeneralRuleModal from "./GeneralRuleModal";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 function Venue() {
   // const [rulesModal, showRulesModal] = useState(false);
@@ -11,6 +14,24 @@ function Venue() {
   // const toggleRule = () => {
   //     showRulesModal(!rulesModal);
   // };
+
+  useEffect(() => {
+    // gsap.registerPlugin(ScrollTrigger);
+    let ctx = gsap.context(() => {
+      gsap
+      .timeline({
+        defaults: { ease: "none" },
+        scrollTrigger: {
+          trigger: "#venue",
+          start: "top top",
+          end: "bottom bottom",
+          scrub:1,
+        },
+      })
+      .to("#VenueSide", {textDecoration:"underline", onComplete: () => {gsap.to("#VenueSide",{textDecoration:"none"})}})
+    });
+    // return () => ctx.revert();
+  }, []);
 
   return (
     <div

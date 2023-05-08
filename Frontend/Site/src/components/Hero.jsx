@@ -25,7 +25,7 @@ export class Hero extends Component {
             </div>
 
             <p className="font-MANGO font-extrawide bg-gradient-to-b from-white to-[#4F0C0C] text-transparent bg-clip-text MainText 
-            text-7xl sm:text-[8rem] lg:text-9xl tracking-wide will-change-transform text-center sm:leading-[1]">
+            text-7xl sm:text-[8rem] lg:text-9xl tracking-wide will-change-transform text-center sm:leading-[1] HapT">
               HAPPENINGS 2023
             </p>
 

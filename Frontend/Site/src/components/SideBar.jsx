@@ -22,24 +22,24 @@ function SideBar(props) {
         </div>
 
         <div className="w-full flex justify-center items-end h-3/4">
-          <ul className="h-full font-MANGO sm:text-1.5xl lg:text-2xl text-sm text-white list-none flex flex-col p-2 cursor-pointer tracking-wide justify-evenly">
-            <li className="rotate-[-90deg] p-3 hover:underline tracking-wide min">
+          <ul className="h-full font-MANGO md:text-2xl lg:text-2xl text-sm text-white list-none flex flex-col p-2 cursor-pointer tracking-wide justify-evenly">
+            <li className="rotate-[-90deg] p-3 hover:underline tracking-wide min" id="AboutSide">
               <HashLink smooth to="/#about">
                 ABOUT
               </HashLink>
             </li>
-            <li className="rotate-[-90deg] p-5 hover:underline tracking-wide">
+            <li className="rotate-[-90deg] p-5 hover:underline tracking-wide" id="EventSide">
               <HashLink smooth to="/#Eventsec">
                 EVENTS
               </HashLink>
             </li>
-            <li className="rotate-[-90deg] p-2 hover:underline tracking-wide">
+            <li className="rotate-[-90deg] p-2 hover:underline tracking-wide" id="ScheduleSide">
               <HashLink smooth to="/#schedule">
                 SCHEDULE
               </HashLink>
             </li>
             {/* <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#sponsor">SPONSORS</HashLink></li> */}
-            <li className="rotate-[-90deg] p-3 hover:underline tracking-wide">
+            <li className="rotate-[-90deg] p-3 hover:underline tracking-wide" id="VenueSide">
               <HashLink smooth to="/#venue">
                 VENUE
               </HashLink>

@@ -39,6 +39,41 @@ function HeroSec() {
           },
         })
         .to("#HapL", { rotateY: "360deg" });
+
+        
+        gsap
+        .timeline({
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true,
+    
+        }).to(".HapT", {
+          duration: 2,
+          y: "-=12",
+          z: 16,
+          rotateX:'20deg',
+          x:1
+         
+        }).to(".HapT", {
+          duration: 3,
+          y: "+=15",
+          z: 10,
+          rotate:'0.1deg',
+          x:-1
+         
+        }).to(".HapT", {
+          duration: 3,
+          y: "-=10",
+          z: 15,
+          rotate:'-0.5deg',
+          x:0
+        })
+        .to(".HapT", {
+          duration: 3,
+          y: "+=15",
+          z: 15,
+          rotate:'-1deg'
+        })
     });
 
     return () => ctx.revert();
