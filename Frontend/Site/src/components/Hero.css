@@ -1,8 +1,8 @@
 #home {
-    background: url(../assets/heroBGN.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
+  background: url("https://i.imgur.com/7lbcFUA.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 #stars {

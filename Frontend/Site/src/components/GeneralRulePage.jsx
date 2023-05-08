@@ -1,5 +1,5 @@
 import Line from "../assets/Line.png";
-import pointTable from "../assets/schedule.svg";
+import pointTable from "../assets/points_system.svg";
 // import { AiOutlineClose } from 'react-icons/ai';
 // import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
@@ -7,25 +7,32 @@ import SideBar from "../components/SideBar";
 import pointBg from "../assets/export_bg.png";
 import { Link } from "react-router-dom";
 import { BsArrowReturnLeft, BsArrowRightShort } from "react-icons/bs";
-import { RiArrowRightFill } from "react-icons/ri";
+import { RiArrowRightFill, RiArrowDownFill } from "react-icons/ri";
+import pointCategorizationImg from "../assets/point_categorization.svg";
+
 function GeneralRuleModal(props) {
   return (
     <>
       <section className="bg-[#171717ff] relative py-12 md:pl-16">
         <div className="wrapper w-3/4 mx-auto mt-5">
           <ul className="text-white  font-MANGO uppercase tracking-wide text-2xl">
-            <p className="text-cus-bright-orange">go to</p>
-            <li className="flex gap-3 hover:text-gray-400">
+            <p className="text-cus-bright-orange text-3xl">go to</p>
+            <li className="flex gap-3 hover:text-gray-400 hover:underline underline-offset-4">
               {" "}
               <RiArrowRightFill /> <a href="#general-rules">general rules</a>
             </li>
-            <li className="flex gap-3 hover:text-gray-400">
+            <li className="flex gap-3 hover:text-gray-400 hover:underline underline-offset-4">
               {" "}
               <RiArrowRightFill /> <a href="#joker-rules">joker rules</a>
             </li>
-            <li className="flex gap-3 hover:text-gray-400">
+            <li className="flex gap-3 hover:text-gray-400 hover:underline underline-offset-4">
               {" "}
               <RiArrowRightFill /> <a href="#point-system">point system</a>
+            </li>
+            <li className="flex gap-3 hover:text-gray-400 hover:underline underline-offset-4">
+              {" "}
+              <RiArrowRightFill />{" "}
+              <a href="#point-category">point category of events</a>
             </li>
           </ul>
 
@@ -163,21 +170,49 @@ function GeneralRuleModal(props) {
         <div className="my-8">
           <img src={Line} width="85%" alt="" className="mx-auto" />
         </div>
-        <div id="point-system" className="flex justify-center w-[80%] mx-auto">
+
+        <div id="point-system" className="flex justify-center w-[90%] mx-auto">
           <div
             className="w-full py-4 xs:py-8 sm:py-10 md:py-12"
             style={{
               background: `url('${pointBg}') no-repeat`,
               backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <p
-              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide text-center pb-3 xs:pb-6 sm:pb-7 md:pb-9 uppercase"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide text-center pb-3 xs:pb-6 sm:pb-7 md:pb-9 uppercase text-orange-800"
               style={{ fontFamily: "MangoGrotesque" }}
             >
               the POINT SYSTEM
             </p>
-            <img src={pointTable} width="75%" alt="" className="mx-[17%]" />
+            <div className="w-3/4 md:w-[60%] mx-auto">
+              <img
+                src={pointTable}
+                width="75%"
+                alt=""
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div id="point-category" className="w-3/4 md:w-2/4 mx-auto">
+          <p
+            className="text-3xl xs:text-4xl sm:text-5xl font-extrabold tracking-wide text-center uppercase text-white mt-12 my-8 flex items-center justify-center"
+            style={{ fontFamily: "MangoGrotesque" }}
+          >
+            points according to category of events{" "}
+            <RiArrowDownFill className="text-gray-400" />
+          </p>
+          <div className="mx-auto md:w-4/5">
+            <img
+              loading="lazy"
+              src={pointCategorizationImg}
+              className="w-full h-full object-contain"
+              alt="category of events according to points"
+            />
           </div>
         </div>
 

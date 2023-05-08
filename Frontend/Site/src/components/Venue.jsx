@@ -88,27 +88,27 @@ function Venue() {
                 <div className="text-white pb-20">
                     <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
                         <div className='mx-auto mt-8'>
-                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
-                                <h3 className='text-3xl md:text-5xl text-center text-orange-600 uppercase' style={{ 'fontFamily': 'MangoGrotesque' }}>Registration</h3>
-                                <div className="text-center">
+                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
+                                <h3 className='text-3xl md:text-7xl text-center text-orange-600 uppercase font-MANGO'>Registration</h3>
+                                <div className="text-center font-Merriweather text-sm font-light">
                                     Join in and register your college for the biggest college fests in Goa!
                                 </div>
                                 <div className="mt-4 flex justify-center">
                                     <Link to="/college-registration">
-                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Register Now <FiArrowUpRight size={20} /></button>
+                                    <button className="bg-orange-600 w-fit rounded-md px-5 mx-auto text-white py-1 md:scale-110 hover:bg-orange-700 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase" style={{fontFamily: "'MangoGrotesque', 'Oswald'"}}>college registration <FiArrowUpRight size={20} /></button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className='mx-auto mt-8'>
-                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
-                                <h3 className='text-3xl md:text-5xl text-center text-orange-600 uppercase' style={{ 'fontFamily': 'MangoGrotesque' }}>Event Selection</h3>
-                                <div className="text-center">
+                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
+                                <h3 className='text-3xl md:text-7xl text-center text-orange-600 uppercase font-MANGO'>Event Selection</h3>
+                                <div className="text-center font-Merriweather text-sm font-light">
                                     Are you a college coordinator ? Manage your participants here!
                                 </div>
                                 <div className="mt-4 flex justify-center">
                                     <Link to="/event-selection">
-                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Event Registeration <FiArrowUpRight size={20} /></button>
+                                    <button className="bg-orange-600 w-fit rounded-md px-5 mx-auto text-white py-1 md:scale-110 hover:bg-orange-700 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase" style={{fontFamily: "'MangoGrotesque', 'Oswald'"}}>Event Registeration <FiArrowUpRight size={20} /></button>
                                     </Link>
                                 </div>
                             </div>
