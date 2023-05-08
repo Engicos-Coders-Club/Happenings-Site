@@ -120,14 +120,14 @@ function Modal({ event_id, closeModal }) {
           </div>
 
           <div className="px-10 my-5">
-            <hr className="border-black my-1" />{" "}
+            {/* <hr className="border-black my-1" />{" "}
             <hr className="border-black my-1" />
             <p className="my-5 text-xs md:text-lg capitalize flex items-center md:items-end gap-1">
               No of participants:{" "}
               <strong className="font-extrabold text-[1rem] md:text-3xl">
                 {event?.no_of_participants}
               </strong>
-            </p>
+            </p> */}
             <hr className="border-black my-1" />{" "}
             <hr className="border-black my-1" />{" "}
           </div>
@@ -189,10 +189,9 @@ function Modal({ event_id, closeModal }) {
             </p>
             {event &&
               event.coordinators.map((ele) => (
-                <div key={ele.name} className="my-2">
-                  {" "}
-                  {/* style={{'display':'grid','gridTemplateColumns':'8% 92%', 'gap':'3%'}} */}
-                  {/* <img src={ele.photo}  alt="image" /> */}
+                <div key={ele.name} className="my-2" style={{'display':'grid','gridTemplateColumns':'8% 92%', 'gap':'3%'}}>
+                  {/*  */}
+                  <img src={ele.photo}  alt="image" />
                   <div className="w-full text-sm md:text-base">
                     <p className="font-bold">{ele.name}</p>
                     <p>{ele.phone}</p>
