@@ -3,12 +3,13 @@
 import { useEffect } from "react";
 import eventsData from "../data/eventsData";
 import EventSelectionCard from "./EventSelectionCard";
-import { FiArrowRight } from "react-icons/fi";
-import { useLocation, useNavigate } from "react-router-dom";
+import { FiArrowRight,FiArrowUpRight } from "react-icons/fi";
+import { useLocation, useNavigate,Link } from "react-router-dom";
 import { logout} from "../actions/auth";
 import { checkCoordinator,viewParticipants } from "../actions/college";
 import { useDispatch, useSelector } from "react-redux";
 import { SpinnerRoundOutlined } from "spinners-react";
+import { ToastContainer, toast } from 'react-toastify';
 
 // TODO: Change logout logo
 
@@ -30,10 +31,24 @@ function EventSelection(props) {
   useEffect(()=>{
     if(is_Coordinator)
       dispatch(viewParticipants())
+    else{
+      toast('You have to be a college coordinator', {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      console.log("your not a college coordinator")
+    }
   },[is_Coordinator])
 
   const handleLogout = () => {
     dispatch(logout())
+    navigate('/')
   };
 
   return loading? (
@@ -101,7 +116,36 @@ function EventSelection(props) {
         </div>
         </div>
       </div>
-  ):navigate('/');
+  ):(
+    <div className="mx-auto bg-black text-white min-h-screen">
+      <div className="py-8">
+        <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-5/6 md:w-[350px] mt-6">
+          <h1
+            className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3"
+            style={{ fontFamily: "MangoGrotesque" }}
+          >
+            FORBIDDEN
+          </h1>
+        </div>
+        <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
+          <h1
+            className="uppercase text-[#F8E0B7] text-4xl text-center font-bold"
+            style={{ fontFamily: "MangoGrotesque" }}
+          >
+            YOU HAVE TO BE A COLLEGE COORDINATOR TO HANDLE EVENT REGISTERATION
+          </h1>
+        </div>
+        <div className="mt-10 flex justify-center">
+            <button onClick={handleLogout} className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>LOGOUT <FiArrowUpRight size={20} /></button>
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Link to="/">
+            <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>GO TO HOME <FiArrowUpRight size={20} /></button>
+          </Link>
+        </div>
+        </div>
+      </div>
+  );
 }
 
 export default EventSelection;

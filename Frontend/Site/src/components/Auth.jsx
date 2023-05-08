@@ -12,6 +12,8 @@ import { googleLogin } from "../actions/auth";
 import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
 import loginBg from '../assets/login-bg.png'
+import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Auth(props) {
   const { title } = props;
@@ -22,11 +24,28 @@ function Auth(props) {
   const clientId =
     "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
 
-  const { message, loading } = useSelector((state) => state.auth);
+    const {message,loading,error} = useSelector((state)=>state.auth)
 
-  useEffect(() => {
-    if (message) navigate("/");
-  }, [message]);
+    useEffect(()=>{
+        if(message){
+            dispatch({type:"clearMessage"})
+            navigate('/')
+        }
+        if(error){
+            toast(`${error.message}`, {
+                position: "bottom-center",
+                autoClose: 2500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            dispatch({type:"clearError"})
+        }
+            
+    },[message,error])
 
   useEffect(() => {
     function start() {
@@ -237,43 +256,44 @@ function Auth(props) {
                     </span>
                   </button>
 
-                  <div className="flex justify-center relative h-8 my-8 px-5">
-                    <img
-                      src={ImageAuth}
-                      fill
-                      alt="Event Image"
-                      className="object-contain"
+                                    <div className="flex justify-center relative h-8 my-8 px-5">
+                                    <img
+                                        src={ImageAuth}
+                                        fill
+                                        alt="Event Image"
+                                        className="object-contain"
+                                    />
+                                    </div>      
+                                    <GoogleLogin
+                                        clientId={clientId}
+                                        render={(renderProps) => (
+                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled}type="submit" className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Google</span></button>                              
+                                        )}
+                                        buttonText="Login"
+                                        onSuccess={onSuccessLogin}
+                                        onFailure={onFailureLogin}
+                                        cookiePolicy={"single_host_origin"}
+                                    />
+                                    
+                                </Form>
+                        )}
+                        </Formik>
+                    </div>
+                    <ToastContainer
+                        position="bottom-center"
+                        autoClose={2500}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
                     />
-                  </div>
-                  <GoogleLogin
-                    clientId={clientId}
-                    render={(renderProps) => (
-                      <button
-                        onClick={renderProps.onClick}
-                        disabled={renderProps.disabled}
-                        type="submit"
-                        className="flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4"
-                      >
-                        <span
-                          className={`text-2xl font-semibold tracking-wide flex justify-center items-center`}
-                          style={{ fontFamily: "MangoGrotesque" }}
-                        >
-                          <AiOutlineGoogle className="mx-2" /> sign in with Google
-                        </span>
-                      </button>
-                    )}
-                    buttonText="Login"
-                    onSuccess={onSuccessLogin}
-                    onFailure={onFailureLogin}
-                    cookiePolicy={"single_host_origin"}
-                  />
-                </Form>
-              )}
-            </Formik>
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
   );
 }
 

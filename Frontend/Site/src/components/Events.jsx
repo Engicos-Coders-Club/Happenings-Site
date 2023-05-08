@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import eventsBg from "../assets/events-bg.jpg";
 import SideBar from "./SideBar";
 import Navbar from "./navbar";
+import { SpinnerRoundOutlined } from "spinners-react";
 
 function Events(props) {
   const { onStageEvents } = eventsData;
@@ -24,8 +25,21 @@ function Events(props) {
   const { all_events, loading } = useSelector((state) => state.event);
 
   return loading || !all_events ? (
-    <div className="min-h-screen bg-black text-white flex justify-center items-center">
-      Loading
+    <div
+      style={{
+        height: "100vh",
+        width: "100wh",
+        backgroundColor: "black",
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <SpinnerRoundOutlined
+        size={80}
+        thickness={50}
+        speed={100}
+        color="rgba(172, 57, 59, 1)"
+      />
     </div>
   ) : (
     <div className="">

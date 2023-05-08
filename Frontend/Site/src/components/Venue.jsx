@@ -1,6 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import footerImg from "../assets/footer.png";
@@ -63,39 +62,40 @@ function Venue() {
 
       {/* {rulesModal && <GeneralRuleModal toggleRule={toggleRule} />} */}
 
-      <div className=" text-white ">
-        {/* put the bg */}
-        {/* <div className="text-white pb-20"> */}
-        <div className="w-11/12 md:w-[70vw] mx-auto pt-8 pb-8">
-          <div className="mx-auto my-8">
-            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg py-10">
-              <h3
-                className="text-5xl my-3 md:text-8xl font-bold text-center text-cus-orange uppercase tracking-widest"
-                style={{ fontFamily: "MangoGrotesque" }}
-              >
-                Registration
-              </h3>
-              <div className="text-center font-Merriweather w-4/5 mx-auto text-xs md:text-sm">
-                Join in and register your college for the biggest college fests
-                in Goa!
-              </div>
-              <div className="mt-8 flex justify-center">
-                <Link to="/college-registration">
-                  <button
-                    className="bg-orange-600 w-fit rounded-md px-5 mx-auto text-white py-1 md:scale-110 hover:bg-orange-700 text-2xl tracking-wider flex items-center justify-between gap-2 uppercase"
-                    style={{ fontFamily: "MangoGrotesque" }}
-                  >
-                    College Registration
-                    <FiArrowUpRight size={20} />
-                  </button>
-                </Link>
-              </div>
-              {/* </div> */}
+            <div className=" text-white ">
+                {/* put the bg */}
+                <div className="text-white pb-20">
+                    <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
+                        <div className='mx-auto mt-8'>
+                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
+                                <h3 className='text-3xl md:text-5xl text-center text-orange-600 uppercase' style={{ 'fontFamily': 'MangoGrotesque' }}>Registration</h3>
+                                <div className="text-center">
+                                    Join in and register your college for the biggest college fests in Goa!
+                                </div>
+                                <div className="mt-4 flex justify-center">
+                                    <Link to="/college-registration">
+                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Register Now <FiArrowUpRight size={20} /></button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='mx-auto mt-8'>
+                            <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-3 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
+                                <h3 className='text-3xl md:text-5xl text-center text-orange-600 uppercase' style={{ 'fontFamily': 'MangoGrotesque' }}>Event Selection</h3>
+                                <div className="text-center">
+                                    Are you a college coordinator ? Manage your participants here!
+                                </div>
+                                <div className="mt-4 flex justify-center">
+                                    <Link to="/event-selection">
+                                    <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase" style={{ 'fontFamily': 'MangoGrotesque' }}>Event Registeration <FiArrowUpRight size={20} /></button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 }
 

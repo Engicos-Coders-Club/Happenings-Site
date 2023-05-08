@@ -163,4 +163,7 @@ export const logout = ()=>async(dispatch)=>{
         type:"LogoutSuccess",
         payload:"Logout Successfull"
     }) 
+    dispatch({
+        type:"clearCoordinator"
+    })
 }
