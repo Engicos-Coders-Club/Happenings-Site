@@ -184,6 +184,7 @@ function Schedule(props) {
       <div className="flex items-start justify-center py-10">
         {/* <Link to="/register"><button className='flex mr-10 text-white bg-orange-600 px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0'><span className={`text-2xl font-semibold tracking-wide `}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link> */}
 
+
         {/* <Link to="/auth"> */}
           <button disabled className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
             <span

@@ -47,6 +47,7 @@ const EventCarouselSection = () => {
           </p>
 
           <div className="flex items-center flex-wrap md:justify-end gap-3">
+
             {/* <Link to="/auth"> */}
               <button disabled className="flex items-center  bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer"   >
                 <span

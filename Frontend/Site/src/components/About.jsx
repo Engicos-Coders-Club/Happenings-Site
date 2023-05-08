@@ -49,12 +49,28 @@ function About(props) {
         <div className="pt-8 flex justify-end">
           {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}
         </div>
-        <h1
-          className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`}
-          style={{ fontFamily: "MangoGrotesque" }}
-        >
-          About
-        </h1>
+        <div className="flex justify-between">
+          <h1
+            className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`}
+            style={{ fontFamily: "MangoGrotesque" }}
+          >
+            About
+          </h1>
+          <a className="pt-10" href="src/Brochure/Happenings2023.pdf" download>
+            <button className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
+              <span
+                className={`text-base lg:text-xl font-semibold tracking-wide `}
+                style={{ fontFamily: "MangoGrotesque" }}
+              >
+                Download Brochure
+              </span>
+              <FiArrowUpRight
+                className="flex mx-2 items-center justify-center"
+                size={25}
+              />
+            </button>
+          </a>
+        </div>
         <div className="flex gap-x-4 pt-5">
           {socials.map((social) => {
             return (
