@@ -30,7 +30,7 @@ function Venue() {
       })
       .to("#VenueSide", {textDecoration:"underline", onComplete: () => {gsap.to("#VenueSide",{textDecoration:"none"})}})
     });
-    // return () => ctx.revert();
+    return () => ctx.revert();
   }, []);
 
   return (

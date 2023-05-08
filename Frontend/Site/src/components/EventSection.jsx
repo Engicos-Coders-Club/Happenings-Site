@@ -182,9 +182,9 @@ function Events(props) {
       //     ScrollTrigger.killAll();
       // };
     });
-    // return () => {
-    //   ctx.revert()
-    // };
+    return () => {
+      ctx.revert()
+    };
   }, []);
 
   useEffect(() => {

@@ -74,6 +74,7 @@ function HeroSec() {
           z: 15,
           rotate:'-1deg'
         })
+        
     });
 
     return () => ctx.revert();

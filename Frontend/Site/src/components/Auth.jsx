@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
 import loginBg from '../assets/login-bg.png'
 import { ToastContainer, toast } from 'react-toastify';
-import { ToastContainer, toast } from 'react-toastify';
+
 
 function Auth(props) {
   const { title } = props;
