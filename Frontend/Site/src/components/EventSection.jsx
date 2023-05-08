@@ -203,7 +203,7 @@ function Events(props) {
     <>
       <section
         id="Eventsec"
-        className="h-screen bg-event-sec-bg bg-cover"
+        className="h-screen bg-event-sec-bg bg-cover gap-y-[10%] xs:gap-y-0"
         style={{
           fontFamily: "MangoGrotesque",
           display: "grid",
@@ -214,9 +214,8 @@ function Events(props) {
         ref={props.ref}
       >
         <div
-          id="
-          op"
-          className="block md:flex md:justify-between md:items-center py-[50px] px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
+          id="Eventsectop"
+          className="block md:flex md:justify-between md:items-center py-8 px-6 xs:py-4 pl-16 md:pl-20 md:mt-16 xs:will-change-transform"
         >
           <p className="font-bold text-white text-7xl md:text-8xl ml-4 pt-8 uppercase tracking-widest">
             EVENTS
@@ -257,7 +256,8 @@ function Events(props) {
 
         {/* Slider Section */}
         {/* <div className="overflow-x-hidden mt-12 md:pl-16"> */}
-        <div className="overflow-y-scroll xs:overflow-hidden h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
+        <div className="overflow-y-scroll xs:overflow-hidden h-[87%] xs:h-full mt-12 md:pl-16 sm:py-7 lg:py-0">
+
           {/* Slider Area */}
           <div
             id="Slider"
