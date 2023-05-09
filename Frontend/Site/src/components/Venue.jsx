@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect,useRef,useState } from 'react'
 import { AiOutlineClose } from "react-icons/ai";
 
-import footerImg from "../assets/footer.png";
+import footerImg from "../assets/footer.webp";
 // import GeneralRuleModal from "./GeneralRuleModal";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

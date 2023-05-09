@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "../components/navbar";
-import SideBar from "../components/SideBar";
 import ScheduleModal from "./ScheduleModal";
-import Day1 from "../assets/day 1.svg";
-import Day2 from "../assets/day 2.svg";
+import Day1 from "../assets/day-1.webp";
+import Day2 from "../assets/day-2.webp";
 import { useRef } from "react";
 
 function Schedule(props) {

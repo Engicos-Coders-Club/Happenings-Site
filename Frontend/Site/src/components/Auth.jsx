@@ -11,7 +11,7 @@ import { gapi } from "gapi-script";
 import { googleLogin } from "../actions/auth";
 import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
-import loginBg from '../assets/login-bg.png'
+import loginBg from '../assets/login-bg.webp'
 import { ToastContainer, toast } from 'react-toastify';
 
 function Auth(props) {

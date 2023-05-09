@@ -1,12 +1,8 @@
 import HappeningLogo from "../assets/happening_logo.svg";
 import GecLogo from "../assets/GEC_logo_white.svg";
-import PersonPic from "../assets/person_placeholder.svg";
 import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 import {
   FaWhatsapp,
-  FaMailBulk,
-  FaLinkedin,
-  FaFacebook,
 } from "react-icons/fa";
 import {  BsInstagram } from 'react-icons/bs'
 import {HiOutlineMail} from 'react-icons/hi'

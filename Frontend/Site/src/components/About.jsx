@@ -1,12 +1,11 @@
 // ! About Section Page => /about
 import { useEffect, useRef, useState } from "react";
-import { socials } from "../data/socials";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { gecLogo } from "../assets";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import {HiOutlineMail} from 'react-icons/hi'
+import {BsInstagram} from 'react-icons/bs'
 // TODO: Change GEC LOGO
 
 function About(props) {
@@ -46,9 +45,6 @@ function About(props) {
       {/* {<SideBar select={isTrue? "about":""}/>} */}
 
       <div className="w-4/5 mx-auto pb-16">
-        <div className="pt-8 flex justify-end">
-          {/* <img src={gecLogo} alt="GEC Logo" width={50} /> */}
-        </div>
         <h1
           className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`}
           style={{ fontFamily: "MangoGrotesque" }}
@@ -56,19 +52,24 @@ function About(props) {
           About
         </h1>
         <div className="flex gap-x-4 pt-5">
-          {socials.map((social) => {
-            return (
+        <div className="mt-5 mb-4 flex justify-center items-center md:justify-start">
               <a
-                href={social.link}
+                href="mailto:gecstudentscouncil2022@gmail.com"
                 target="_blank"
-                key={social.link}
-                className="hover:scale-125"
-                rel="noopener noreferrer"
+                rel="noreferrer"
+                className="text-3xl text-cus-orange hover:text-cus-bright-orange mr-4"
               >
-                <img src={social.img} alt="social" width={40} height={40} />
+                <HiOutlineMail className="text-4xl" />
               </a>
-            );
-          })}
+              <a
+                href="https://instagram.com/happenings2023?igshid=YmMyMTA2M2Y="
+                target="_blank"
+                rel="noreferrer"
+                className="text-2xl text-cus-orange hover:text-cus-bright-orange mr-4"
+              >
+                <BsInstagram className="text-3xl" />
+              </a>
+            </div>
         </div>
         <div className="mt-4 flex flex-col md:flex md:flex-row">
           <div className="flex flex-col md:w-2/3">

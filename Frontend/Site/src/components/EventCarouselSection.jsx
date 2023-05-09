@@ -4,8 +4,7 @@ import { useEffect, useState, useRef } from "react";
 // import { eventsData } from "../data/EventTabData";
 import { getCategories } from "../actions/categories";
 import { useDispatch, useSelector } from "react-redux";
-import eventSecBg from "../assets/h1.png";
-import axios from "axios";
+import eventSecBg from "../assets/h1.webp";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";

@@ -3,7 +3,7 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import { useEffect, useState } from "react";
-import eventsCardBg from "../assets/events-card.png";
+import eventsCardBg from "../assets/events-card.webp";
 import { TiChevronRight } from "react-icons/ti";
 import { createPortal } from "react-dom";
 import { useDispatch } from "react-redux";
