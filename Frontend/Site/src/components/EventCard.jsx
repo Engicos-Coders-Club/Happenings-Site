@@ -44,7 +44,7 @@ function EventCard(props) {
       <div className="flex justify-between items-center mx-5">
         <p
           className="text-2xl tracking-wider font-semibold text-red-900"
-          style={{ fontFamily: "MangoGrotesque" }}
+          style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
         >
           Event
         </p>
@@ -60,14 +60,14 @@ function EventCard(props) {
         <div className=" mx-auto flex flex-col justify-center p-4">
           <p
             className="text-left text-red-950 tracking-wide text-[2.6rem] leading-[1] font-bold w-full"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             {event?.event_name.split("(")[0]}
           </p>
 
           <p
             className="text-left text-red-800 text-3xl font-bold w-full"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             {event?.event_name.split("(")[1]?.replace(")", " ")}
           </p>

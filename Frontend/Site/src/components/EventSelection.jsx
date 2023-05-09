@@ -81,7 +81,7 @@ function EventSelection(props) {
             />
             <p
               className="px-5 text-2xl md:text-3xl"
-              style={{ fontFamily: "Mangogrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               Logout
             </p>
@@ -90,7 +90,7 @@ function EventSelection(props) {
         <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-5/6 md:w-[350px] mt-6">
           <h1
             className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             Select Event
           </h1>
@@ -98,7 +98,7 @@ function EventSelection(props) {
         <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
           <h1
             className="uppercase text-[#F8E0B7] text-4xl font-bold text-center"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             Events
           </h1>
@@ -125,7 +125,7 @@ function EventSelection(props) {
         <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-5/6 md:w-[350px] mt-6">
           <h1
             className="uppercase text-red-600 text-center font-extrabold text-6xl pt-3"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             FORBIDDEN
           </h1>
@@ -133,7 +133,7 @@ function EventSelection(props) {
         <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
           <h1
             className="uppercase text-[#F8E0B7] text-4xl text-center font-bold"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             YOU HAVE TO BE A COLLEGE COORDINATOR TO HANDLE EVENT REGISTERATION
           </h1>
@@ -142,7 +142,7 @@ function EventSelection(props) {
           <button
             onClick={handleLogout}
             className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             LOGOUT <FiArrowUpRight size={20} />
           </button>
@@ -151,7 +151,7 @@ function EventSelection(props) {
           <Link to="/">
             <button
               className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center uppercase"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               GO TO HOME <FiArrowUpRight size={20} />
             </button>

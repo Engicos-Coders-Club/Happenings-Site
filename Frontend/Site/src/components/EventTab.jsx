@@ -38,7 +38,7 @@ function EventTab(props) {
           <div className="flex justify-between mt-10">
             <p
               className="text-white text-3xl md:text-4xl lg:text-5xl"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               {props.eventName}
             </p>

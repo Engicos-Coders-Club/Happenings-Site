@@ -50,7 +50,7 @@ function About(props) {
         <div className="flex justify-between">
           <h1
             className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`}
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             About
           </h1>
@@ -58,7 +58,7 @@ function About(props) {
             <button className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
               <span
                 className={`text-base lg:text-2xl font-semibold tracking-wide `}
-                style={{ fontFamily: "MangoGrotesque" }}
+                style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
               >
                 Download Brochure
               </span>
@@ -107,19 +107,19 @@ function About(props) {
           <div className="my-3 md:my-0 md:mx-auto">
             <p
               className={`uppercase font-bold text-4xl md:text-6xl italic decoration-8 0-underline-offset-8 decoration-cus-bright-orange underline pb-2 tracking-wider text-center`}
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               8K+ Attendees
             </p>
             <p
               className={`uppercase font-bold text-4xl md:text-6xl italic decoration-8 0-underline-offset-8 decoration-cus-bright-orange underline py-2 tracking-wider text-center`}
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               30+ Events
             </p>
             <p
               className={`uppercase font-bold text-4xl md:text-6xl italic decoration-8 0-underline-offset-8 decoration-cus-bright-orange underline py-2 tracking-wider  text-center`}
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               DJ Night
             </p>
@@ -128,7 +128,7 @@ function About(props) {
         <div className="mx-auto border-orange-500 border-2 border-dotted py-10 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
           <h3
             className="uppercase text-4xl md:text-6xl text-center tracking-wide font-bold"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             Get your <span className="text-cus-bright-orange">Tickets</span> Now
           </h3>
@@ -138,7 +138,7 @@ function About(props) {
           >
             <span
               className={`text-2xl font-semibold tracking-wide flex justify-center items-center`}
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               Coming soon
             </span>
@@ -147,7 +147,7 @@ function About(props) {
         <div className="mx-auto border-orange-500 border-2 border-dotted py-10 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
           <h3
            className="uppercase text-4xl md:text-6xl text-center tracking-wide font-bold text-cus-bright-orange"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             Rules <span className="text-white">&</span> Points{" "}
             <span className="text-white">System</span>{" "}
@@ -157,7 +157,7 @@ function About(props) {
             <Link to="/GeneralRule">
               <span
                 className={`text-2xl font-semibold tracking-wide flex justify-between gap-2  items-center`}
-                style={{ fontFamily: "MangoGrotesque" }}
+                style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
               >
                 View <FiArrowUpRight size={25} className="py-0.5" />
               </span>

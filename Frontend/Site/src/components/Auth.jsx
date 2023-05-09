@@ -115,7 +115,7 @@ function Auth(props) {
                 <Form className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
                   <h3
                     className="uppercase text-3xl md:text-6xl text-center text-cus-bright-orange font-bold"
-                    style={{ fontFamily: "MangoGrotesque" }}
+                    style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                   >
                     {isSignup ? "SIGN UP" : "SIGN IN"}
                   </h3>
@@ -134,7 +134,7 @@ function Auth(props) {
                     <div className="leading-8 flex flex-col w-11/12 md:w-3/5 mx-auto">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "MangoGrotesque" }}
+                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                       >
                         First Name
                       </label>
@@ -154,7 +154,7 @@ function Auth(props) {
                   <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                     <label
                       className="py-2 text-2xl tracking-wider"
-                      style={{ fontFamily: "MangoGrotesque" }}
+                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                     >
                       Email
                     </label>
@@ -174,7 +174,7 @@ function Auth(props) {
                     <div className="flex flex-col leading-8 mx-auto w-11/12 md:w-3/5 mt-2">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "MangoGrotesque" }}
+                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                       >
                         Phone Number
                       </label>
@@ -194,7 +194,7 @@ function Auth(props) {
                   <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                     <label
                       className="py-2 text-2xl tracking-wider"
-                      style={{ fontFamily: "MangoGrotesque" }}
+                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                     >
                       Password
                     </label>
@@ -214,7 +214,7 @@ function Auth(props) {
                     <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "MangoGrotesque" }}
+                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                       >
                         Confirm Password
                       </label>
@@ -249,7 +249,7 @@ function Auth(props) {
                   >
                     <span
                       className={`text-2xl font-semibold tracking-wide flex justify-center items-center`}
-                      style={{ fontFamily: "MangoGrotesque" }}
+                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                     >
                       {isSignup ? "SIGN UP" : "SIGN IN"}
                     </span>

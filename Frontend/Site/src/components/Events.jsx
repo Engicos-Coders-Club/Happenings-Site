@@ -53,12 +53,14 @@ function Events(props) {
         }}
       >
         <div className="w-[80vw] mx-auto py-16">
-          <h1
-            className="uppercase text-[#F8E0B7] text-center text-5xl font-bold"
-            style={{ fontFamily: "MangoGrotesque" }}
-          >
-            All Events
-          </h1>
+          <div className="border-2 border-red-400 mx-auto w-[300px]">
+            <h1
+              className="uppercase text-red-600 text-center font-extrabold text-7xl pt-3"
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+            >
+              All Events
+            </h1>
+          </div>
           <div className="flex flex-wrap justify-center gap-5 md:gap-x-10 mt-14">
             {all_events.map((event) => {
               return (
@@ -68,7 +70,7 @@ function Events(props) {
                 >
                   <h1
                     className="uppercase text-[#F8E0B7] text-center text-6xl tracking-wide font-bold"
-                    style={{ fontFamily: "MangoGrotesque" }}
+                    style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                   >
                     {event.category_name}
                   </h1>

@@ -158,7 +158,7 @@ function Footer() {
         <div className="mt-4 flex justify-center">
           <button
             className="border-red-500 border w-fit rounded-full p-3 mx-auto text-white bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             title="scroll to top"
           >
             <HashLink smooth to="/#home">

@@ -59,7 +59,7 @@ function Events(props) {
         <div className="w-[80vw] mx-auto py-16">
           <h1
             className="uppercase text-[#F8E0B7] text-center text-5xl font-bold"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             {location.state.event}
           </h1>

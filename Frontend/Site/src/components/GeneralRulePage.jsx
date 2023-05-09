@@ -40,7 +40,7 @@ function GeneralRuleModal(props) {
           <div id="general-rules" className="text-white pt-5 xs:pt-0">
             <p
               className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 tracking-wider"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               GENERAL <span className="text-cus-bright-orange">RULES</span>
             </p>
@@ -103,7 +103,7 @@ function GeneralRuleModal(props) {
             {/* joker */}
             <p
               className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 tracking-wider"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               THE <span className="text-cus-bright-orange">JOKER</span>
             </p>
@@ -134,7 +134,7 @@ function GeneralRuleModal(props) {
             {/* anti joker */}
             <p
               className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mt-4 mb-2 tracking-wider"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               THE <span className="text-cus-bright-orange">ANTI JOKER</span>
             </p>
@@ -178,7 +178,7 @@ function GeneralRuleModal(props) {
           >
             <p
               className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide text-center pb-3 xs:pb-6 sm:pb-7 md:pb-9 uppercase text-orange-800"
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               the POINT SYSTEM
             </p>
@@ -197,7 +197,7 @@ function GeneralRuleModal(props) {
         <div id="point-category" className="w-3/4 md:w-2/4 mx-auto">
           <p
             className="text-3xl xs:text-4xl sm:text-5xl font-extrabold tracking-wide text-center uppercase text-white mt-12 my-8 flex items-center justify-center"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             points according to category of events{" "}
             <RiArrowDownFill className="text-gray-400" />
