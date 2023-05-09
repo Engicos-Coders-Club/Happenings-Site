@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { gecLogo } from "../assets";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import brochure from '../Brochure/Happenings2023.pdf'
 
 // TODO: Change GEC LOGO
 
@@ -56,7 +57,7 @@ function About(props) {
           >
             About
           </h1>
-          <a className="pt-10" href="src/Brochure/Happenings2023.pdf" download>
+          <a className="pt-10" href={brochure} download>
             <button className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
               <span
                 className={`text-base lg:text-xl font-semibold tracking-wide `}
