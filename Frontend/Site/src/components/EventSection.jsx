@@ -183,9 +183,9 @@ function Events(props) {
       //     ScrollTrigger.killAll();
       // };
     });
-    // return () => {
-    //   ctx.revert()
-    // };
+    return () => {
+      ctx.revert()
+    };
   }, []);
 
   useEffect(() => {
@@ -219,8 +219,9 @@ function Events(props) {
           </p>
 
           <div className="flex items-center space-around w-auto pr-14">
-            <Link to="/auth">
-              <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer">
+            {/* <Link to="/auth"> */}
+            <Link to="">
+              <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer" >
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide`}
                   style={{ fontFamily: "MangoGrotesque" }}
