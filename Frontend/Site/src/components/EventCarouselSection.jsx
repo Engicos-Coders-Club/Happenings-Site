@@ -51,7 +51,7 @@ const EventCarouselSection = () => {
               <button disabled className="flex items-center  bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer"   >
                 <span
                   className={`text-lg lg:text-xl font-semibold tracking-wide`}
-                  style={{ fontFamily: "MangoGrotesque" }}
+                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                
                 >
                   Buy Passes Now
@@ -67,7 +67,7 @@ const EventCarouselSection = () => {
               <button className="flex items-center text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-lg lg:text-xl font-semibold tracking-wide `}
-                  style={{ fontFamily: "MangoGrotesque" }}
+                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                 >
                   View All
                 </span>

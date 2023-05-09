@@ -82,7 +82,7 @@ function Schedule(props) {
     <section
       id="schedule"
       className="bg-[#171717ff] schedule h-auto relative md:pl-16  mt-0"
-      style={{ fontFamily: "MangoGrotesque" }}
+      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
     >
       {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       {/* <Navbar />
@@ -187,7 +187,7 @@ function Schedule(props) {
           <button disabled className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
             <span
               className={`text-base lg:text-xl font-semibold tracking-wide `}
-              style={{ fontFamily: "MangoGrotesque" }}
+              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
             >
               Buy Passes Now
             </span>

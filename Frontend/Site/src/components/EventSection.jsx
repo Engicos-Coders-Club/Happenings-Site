@@ -224,7 +224,7 @@ function Events(props) {
               <button className="flex mr-5 bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer" >
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide`}
-                  style={{ fontFamily: "MangoGrotesque" }}
+                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                 >
                   Buy Passes Now
                 </span>
@@ -239,7 +239,7 @@ function Events(props) {
               <button className="flex md:mr-5 text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-sm lg:text-xl font-semibold tracking-wide `}
-                  style={{ fontFamily: "MangoGrotesque" }}
+                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
                 >
                   View All
                 </span>

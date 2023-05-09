@@ -18,7 +18,7 @@ function TicketsSection(props) {
         <div className="w-[80vw] md:w-[60vw] mx-auto">
           <h1
             className="uppercase text-5xl md:text-7xl font-bold"
-            style={{ fontFamily: "MangoGrotesque" }}
+            style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
             Get your <span className="text-cus-bright-orange">Tickets</span> Now
           </h1>

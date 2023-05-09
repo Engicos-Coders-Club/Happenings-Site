@@ -2,6 +2,7 @@ import { FiX } from "react-icons/fi";
 import modalBg from "../assets/modalBg.webp";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 // format Date
 const dateFormatter = (value) => {
@@ -24,7 +25,10 @@ function Modal({ event_id, closeModal }) {
   };
 
   return (
-    <div className="fixed overflow-hidden left-0 top-0 bottom-0 z-[1000] bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center">
+    <div
+      className="fixed overflow-hidden left-0 top-0 bottom-0 z-[1000] bg-[rgba(0,0,0,0.5)] w-full h-full flex items-center justify-center"
+      onClick={closeModalHandler}
+    >
       {eventLoading ? (
         <SpinnerRoundOutlined
           size={80}
@@ -184,9 +188,15 @@ function Modal({ event_id, closeModal }) {
             </p>
             {event &&
               event.coordinators.map((ele) => (
-                <div key={ele.name} className="my-2" style={{'display':'grid','gridTemplateColumns':'8% 92%', 'gap':'3%'}}>
-                  {/*  */}
-                  <img src={ele.photo}  alt="image" />
+                <div key={ele.name} className="my-2 flex gap-4 items-start">
+                  {/* coordinator image */}
+                  <div className="h-14 w-16 rounded-full overflow-hidden">
+                    <img
+                      src={ele.photo}
+                      className="w-full h-full object-cover"
+                      alt="image"
+                    />
+                  </div>
                   <div className="w-full text-sm md:text-base">
                     <p className="font-bold">{ele.name}</p>
                     <p>{ele.phone}</p>
