@@ -6,7 +6,7 @@ import eventsData from "../data/eventsData";
 import EventCard from "./EventCard";
 import { getAllEvents } from "../actions/events";
 import { useDispatch, useSelector } from "react-redux";
-import eventsBg from "../assets/events-bg.jpg";
+import eventsBg from "../assets/events-bg.webp";
 import SideBar from "./SideBar";
 import Navbar from "./navbar";
 import { SpinnerRoundOutlined } from "spinners-react";

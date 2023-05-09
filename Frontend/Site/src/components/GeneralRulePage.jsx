@@ -1,10 +1,6 @@
 import Line from "../assets/Line.png";
 import pointTable from "../assets/points_system.svg";
-// import { AiOutlineClose } from 'react-icons/ai';
-// import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
-import SideBar from "../components/SideBar";
-import pointBg from "../assets/export_bg.png";
+import pointBg from "../assets/export_bg.webp";
 import { Link } from "react-router-dom";
 import { BsArrowReturnLeft, BsArrowRightShort } from "react-icons/bs";
 import { RiArrowRightFill, RiArrowDownFill } from "react-icons/ri";

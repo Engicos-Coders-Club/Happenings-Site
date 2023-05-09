@@ -1,10 +1,5 @@
-import Frame from "../assets/Frame.png";
-import Avatar from "../assets/Avatar.png";
 import { FiX } from "react-icons/fi";
-import { getSingleEvent } from "../actions/events";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import modalBg from "../assets/modalBg.png";
+import modalBg from "../assets/modalBg.webp";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { BsArrowRightShort } from "react-icons/bs";
 

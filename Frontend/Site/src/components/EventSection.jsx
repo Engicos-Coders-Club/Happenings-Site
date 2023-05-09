@@ -5,12 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 import EventTab from "./EventTab";
 // import { eventsData } from "../data/EventTabData";
-import Navbar from "../components/navbar";
-import SideBar from "../components/SideBar";
 import { getCategories } from "../actions/categories";
 import { useDispatch, useSelector } from "react-redux";
-import eventSecBg from "../assets/h1.png";
-import axios from "axios";
+import eventSecBg from "../assets/h1.webp";
 import { useLayoutEffect, useRef } from "react";
 // require("dotenv").config();
 

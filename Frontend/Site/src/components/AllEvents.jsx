@@ -7,7 +7,7 @@ import { getEvents } from "../actions/events";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { SpinnerRoundOutlined } from "spinners-react";
-import eventsBg from "../assets/events-bg.jpg";
+import eventsBg from "../assets/events-bg.webp";
 
 function Events(props) {
   const { onStageEvents, offStageEvents } = eventsData;

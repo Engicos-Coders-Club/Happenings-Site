@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect,useRef,useState } from 'react'
 import { AiOutlineClose } from "react-icons/ai";
 
-import footerImg from "../assets/footer.png";
+import footerImg from "../assets/footer.webp";
 // import GeneralRuleModal from "./GeneralRuleModal";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -86,7 +86,7 @@ function Venue() {
             <div className=" text-white ">
                 {/* put the bg */}
                 <div className="text-white pb-20">
-                    <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
+                    <div className="w-11/12 md:w-[70vw] mx-auto pt-8">
                         <div className='mx-auto mt-8'>
                             <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
                                 <h3 className='text-3xl md:text-7xl text-center text-orange-600 uppercase font-MANGO'>Registration</h3>
