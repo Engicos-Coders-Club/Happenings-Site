@@ -22,6 +22,7 @@ import ScrollTop from "./helpers/ScrollTop";
 import SideBar from "./components/SideBar";
 import NotFound from "./components/NotFound";
 import { register } from "swiper/element/bundle";
+import Verifying from "./components/Verifying";
 
 function App() {
   // const location = useLocation();
@@ -118,12 +119,30 @@ function App() {
               path="/tickets"
             />
             <Route
-              element={<Participants title="Participants" />}
+              element={
+                isAuthenticated ? (
+                  <Participants title="Participants" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
               path="/participants/:id"
             />
             <Route
               element={<AllEvents title="All Events" />}
               path="/all-events/:id"
+            />
+            
+            {/* verify page */}
+            <Route
+              element={
+                isAuthenticated ? (
+                  <Verifying />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
+              path="/verify"
             />
             <Route element={<Events title="Events" />} path="/all-events/" />
             <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />

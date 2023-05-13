@@ -28,9 +28,9 @@ function Auth(props) {
     useEffect(()=>{
         if(message){
             dispatch({type:"clearMessage"})
-            navigate('/')
+            navigate('/verify')
         }
-        if(error){
+        if(error?.message){
             toast(`${error.message}`, {
                 position: "bottom-center",
                 autoClose: 2500,
