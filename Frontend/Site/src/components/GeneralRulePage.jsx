@@ -45,7 +45,7 @@ function GeneralRuleModal(props) {
               GENERAL <span className="text-cus-bright-orange">RULES</span>
             </p>
             <ul
-              className="pb-3 text-xs sm:text-sm lg:text-base list-disc tracking-wide"
+              className="pb-3 text-xs sm:text-sm list-disc tracking-wide"
               style={{ fontFamily: "Merriweather" }}
             >
               <li className="pt-1 my-2">
@@ -107,8 +107,7 @@ function GeneralRuleModal(props) {
             >
               THE <span className="text-cus-bright-orange">JOKER</span>
             </p>
-            <p className="pt-1 my-2">Joker rules:</p>
-            <ul className="pb-3 text-xs sm:text-sm lg:text-base list-disc tracking-wide">
+            <ul className="pb-3 text-xs sm:text-sm list-disc tracking-wide">
               <li className="pt-1 my-2">
                 A Joker is placed by a college on any one event they are
                 participating in.
@@ -138,8 +137,7 @@ function GeneralRuleModal(props) {
             >
               THE <span className="text-cus-bright-orange">ANTI JOKER</span>
             </p>
-            <p className="pt-1 my-2">Anti Joker rules: </p>
-            <ul className="pb-3 text-xs sm:text-sm lg:text-base list-disc tracking-wide">
+            <ul className="pb-3 text-xs sm:text-sm list-disc tracking-wide">
               <li className="pt-1 my-2">
                 Is placed on opponent teams and a particular position/place
                 (like 1st place, 2nd place or 3rd place).

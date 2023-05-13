@@ -11,7 +11,7 @@ import { gapi } from "gapi-script";
 import { googleLogin } from "../actions/auth";
 import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
-import loginBg from "../assets/login-bg.webp";
+import loginBg from "../assets/events-bg.webp";
 import { ToastContainer, toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 
@@ -22,7 +22,7 @@ function Auth(props) {
   const [isSignup, setIsSignup] = useState(false);
   const [GoogleAuth, setGoogleAuth] = useState(null);
   const clientId =
-    "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
+    "555074479228-r507lrg1hlmsdejpm4tp1q8ahoq39quf.apps.googleusercontent.com";
 
   const { message, loading, error } = useSelector((state) => state.auth);
 
@@ -135,6 +135,7 @@ function Auth(props) {
       style={{
         background: `url('${loginBg}') no-repeat`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="text-white pb-20">

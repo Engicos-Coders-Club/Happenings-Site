@@ -10,7 +10,7 @@ import { checkCoordinator, viewParticipants } from "../actions/college";
 import { useDispatch, useSelector } from "react-redux";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { ToastContainer, toast } from "react-toastify";
-
+import eventsBg from "../assets/events-bg.webp";
 
 // TODO: Change logout logo
 
@@ -71,7 +71,15 @@ function EventSelection(props) {
       />
     </div>
   ) : is_Coordinator.coordinator ? (
-    <div className="mx-auto bg-black text-white min-h-screen">
+    <div
+      className="mx-auto bg-black text-white min-h-screen"
+      style={{
+        background: `url('${eventsBg}') no-repeat`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="py-8">
         <div className="flex justify-end w-full md:w-4/5 mx-auto">
           <div className="flex items-center justify-end">
@@ -102,12 +110,14 @@ function EventSelection(props) {
           </h1>
         </div>
         <div className="flex items-center gap-2 justify-center mb-5 mt-10 font-basic uppercase">
-            <div className="flex gap-2 items-center font-bold">
-              <span className="w-6 h-6 rounded-full bg-yellow-600"></span> <p>in progress</p>
-            </div>
-            <div className="flex gap-2 items-center font-bold">
-              <span className="w-6 h-6 rounded-full bg-lime-800"></span> <p>filled</p>
-            </div>
+          <div className="flex gap-2 items-center font-bold">
+            <span className="w-6 h-6 rounded-full bg-yellow-600"></span>{" "}
+            <p>in progress</p>
+          </div>
+          <div className="flex gap-2 items-center font-bold">
+            <span className="w-6 h-6 rounded-full bg-lime-800"></span>{" "}
+            <p>filled</p>
+          </div>
         </div>
         <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
           <h1
