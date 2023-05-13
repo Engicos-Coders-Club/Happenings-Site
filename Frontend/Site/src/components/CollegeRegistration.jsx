@@ -7,7 +7,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import { checkCoordinator, registerCollege } from "../actions/college";
 import "react-toastify/dist/ReactToastify.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
 
 function CollegeRegistration(props) {
