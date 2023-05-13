@@ -17,7 +17,7 @@ function SideBar(props) {
 
         <div className="h-[20%] w-full">
           <HashLink smooth to="/#home">
-            <img src="/assets/logo2.svg" className="p-2 h-full w-full" />
+            <img src="/assets/Rectangle.png" className="p-2 mt-2 w-full" />
           </HashLink>
         </div>
 
