@@ -197,10 +197,10 @@ function CollegeRegistration(props) {
                                     /> */}
                 </div>
                 <div className="mx-auto flex flex-col items-center justify-center">
-                  <div className="w-[200px] h-[200px]">
+                  <div className="my-4 w-[200px] h-[200px]">
                     <img
                       src={qrCode}
-                      className="my-4 w-full h-full object-fit"
+                      className="w-full h-full object-fit"
                     />
                   </div>
                   <p
