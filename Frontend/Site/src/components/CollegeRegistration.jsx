@@ -9,6 +9,7 @@ import { checkCoordinator, registerCollege } from "../actions/college";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
+import {AiOutlineInfoCircle} from 'react-icons/ai'
 
 function CollegeRegistration(props) {
   const { title } = props;
@@ -17,9 +18,7 @@ function CollegeRegistration(props) {
   const [photo, setPhoto] = useState(null);
 
   // Check if user is coordinator and if he has registered then navigate to /event-selection
-  const { loading, is_Coordinator } = useSelector(
-    (state) => state.college
-  );
+  const { loading, is_Coordinator } = useSelector((state) => state.college);
 
   useEffect(() => {
     document.title = title;
@@ -88,6 +87,28 @@ function CollegeRegistration(props) {
           >
             {({ touched, errors, isSubmitting, values }) => (
               <Form className="flex flex-col gap-y-5 w-3/4 mx-auto py-10">
+                {/* note */}
+                <div
+                  className="bg-orange-400 bg-opacity-20 border-t-4 border-cus-orange rounded-b text-white px-4 py-3 shadow-md font-basic"
+                  role="alert"
+                >
+                  <div className="flex">
+                    <div className="pr-5">
+                      <AiOutlineInfoCircle className="w-6 h-6 text-cus-orange"/>
+                    </div>
+                    <div>
+                      <p className="text-sm">Incase of any queries, please contact the following:</p>
+                      <p className="text-md font-extrabold tracking-wide mt-1">
+                      Atharva Parkhe
+                      </p>
+                      <p className="text-md font-normal tracking-wide">
+                      (+91 8007609672)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* form */}
                 <div className="leading-8 flex flex-col">
                   <label
                     className="py-2 text-2xl tracking-wider"
@@ -197,6 +218,7 @@ function CollegeRegistration(props) {
                     accept="image/*"
                     required
                     onChange={(e) => setPhoto(e.target.files[0])}
+                    className="rounded-md font-basic border-red-500 border border-dashed"
                   />
                   {/* <ErrorMessage
                                         name="payment"
@@ -217,7 +239,7 @@ function CollegeRegistration(props) {
                   </p>
                 </div>
                 <button
-                  className={`border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center`}
+                  className={`border-red-500 border w-fit rounded-md p-3 mx-auto text-white py-1 bg-black hover:scale-105 hover:bg-red-600 text-2xl tracking-wider flex items-center justify-center`}
                   style={{ fontFamily: "MangoGrotesque" }}
                   type="submit"
                 >
