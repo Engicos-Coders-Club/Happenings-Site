@@ -43,8 +43,8 @@ function CollegeRegistration(props) {
         navigate("/");
       }, 5000);
     }
-    if (error?.message) {
-      toast.error(`${error.message}`, {
+    if (error?.message || error?.college_name) {
+      toast.error(`${error.message || error?.college_name[0]}`, {
         position: "bottom-center",
         autoClose: 2500,
         hideProgressBar: false,
@@ -136,29 +136,6 @@ function CollegeRegistration(props) {
           >
             {({ touched, errors, isSubmitting, values }) => (
               <Form className="flex flex-col gap-y-5 w-3/4 mx-auto py-10">
-                {/* note */}
-                <div
-                  className="bg-orange-400 bg-opacity-20 border-t-4 border-cus-orange rounded-b text-white px-4 py-3 shadow-md font-basic"
-                  role="alert"
-                >
-                  <div className="flex">
-                    <div className="pr-5">
-                      <AiOutlineInfoCircle className="w-6 h-6 text-cus-orange" />
-                    </div>
-                    <div>
-                      <p className="text-sm">
-                        Incase of any queries, please contact the following:
-                      </p>
-                      <p className="text-md font-extrabold tracking-wide mt-1">
-                        Atharva Parkhe
-                      </p>
-                      <p className="text-md font-normal tracking-wide">
-                        (+91 8007609672)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* form */}
                 <div className="leading-8 flex flex-col">
                   <label
@@ -296,6 +273,28 @@ function CollegeRegistration(props) {
                 >
                   Register College <FiArrowUpRight size={20} />
                 </button>
+                {/* note */}
+                <div
+                  className="bg-orange-100 bg-opacity-10 border-t-4 border-cus-orange rounded-b text-white px-4 py-3 shadow-md font-basic mt-10"
+                  role="alert"
+                >
+                  <div className="flex">
+                    <div className="pr-5">
+                      <AiOutlineInfoCircle className="w-6 h-6 text-cus-orange" />
+                    </div>
+                    <div>
+                      <p className="text-md">
+                        Incase of any queries, please contact the following:
+                      </p>
+                      <p className="text-md md:text-lg font-extrabold tracking-wide mt-1">
+                        Atharva Parkhe
+                      </p>
+                      <p className="text-md font-normal tracking-wide">
+                        (+91 8007609672)
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Form>
             )}
           </Formik>

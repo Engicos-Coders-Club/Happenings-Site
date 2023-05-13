@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { ToastContainer, toast } from "react-toastify";
 
+
 // TODO: Change logout logo
 
 function EventSelection(props) {
@@ -99,6 +100,14 @@ function EventSelection(props) {
           >
             Select Event
           </h1>
+        </div>
+        <div className="flex items-center gap-2 justify-center mb-5 mt-10 font-basic uppercase">
+            <div className="flex gap-2 items-center font-bold">
+              <span className="w-6 h-6 rounded-full bg-yellow-600"></span> <p>in progress</p>
+            </div>
+            <div className="flex gap-2 items-center font-bold">
+              <span className="w-6 h-6 rounded-full bg-lime-800"></span> <p>filled</p>
+            </div>
         </div>
         <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">
           <h1

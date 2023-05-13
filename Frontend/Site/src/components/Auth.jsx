@@ -11,9 +11,9 @@ import { gapi } from "gapi-script";
 import { googleLogin } from "../actions/auth";
 import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
-import loginBg from '../assets/login-bg.webp'
-import { ToastContainer, toast } from 'react-toastify';
-import { checkCoordinator } from "../actions/college";
+import loginBg from "../assets/login-bg.webp";
+import { ToastContainer, toast } from "react-toastify";
+import {FcGoogle} from 'react-icons/fc'
 
 function Auth(props) {
   const { title } = props;
@@ -24,31 +24,30 @@ function Auth(props) {
   const clientId =
     "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
 
-    const {message,loading,error} = useSelector((state)=>state.auth)
+  const { message, loading, error } = useSelector((state) => state.auth);
 
-    useEffect(()=>{
-        if(message){
-            dispatch({type:"clearMessage"})
+  useEffect(() => {
+    if (message) {
+      dispatch({ type: "clearMessage" });
 
-            // after login, check if user = coordinator
-            // dispatch(checkCoordinator())
-            navigate('/')
-        }
-        if(error?.message){
-            toast(`${error.message}`, {
-                position: "bottom-center",
-                autoClose: 2500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
-            dispatch({type:"clearError"})
-        }
-            
-    },[message,error])
+      // after login, check if user = coordinator
+      // dispatch(checkCoordinator())
+      navigate("/");
+    }
+    if (error?.message) {
+      toast(`${error.message}`, {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      dispatch({ type: "clearError" });
+    }
+  }, [message, error]);
 
   useEffect(() => {
     function start() {
@@ -94,10 +93,13 @@ function Auth(props) {
   };
 
   return (
-    <div className="text-white min-h-screen" style={{
+    <div
+      className="text-white min-h-screen"
+      style={{
         background: `url('${loginBg}') no-repeat`,
         backgroundSize: "cover",
-      }}>
+      }}
+    >
       <div className="text-white pb-20">
         <div className="w-11/12 md:w-[60vw] mx-auto pt-8">
           <div className="mx-auto mt-8 font-Merriweather">
@@ -116,7 +118,10 @@ function Auth(props) {
                 <Form className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
                   <h3
                     className="uppercase text-3xl md:text-6xl text-center text-cus-bright-orange font-bold"
-                    style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                    style={{
+                      fontFamily:
+                        "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                    }}
                   >
                     {isSignup ? "SIGN UP" : "SIGN IN"}
                   </h3>
@@ -135,7 +140,10 @@ function Auth(props) {
                     <div className="leading-8 flex flex-col w-11/12 md:w-3/5 mx-auto">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                        style={{
+                          fontFamily:
+                            "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                        }}
                       >
                         First Name
                       </label>
@@ -155,7 +163,10 @@ function Auth(props) {
                   <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                     <label
                       className="py-2 text-2xl tracking-wider"
-                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                      style={{
+                        fontFamily:
+                          "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                      }}
                     >
                       Email
                     </label>
@@ -175,7 +186,10 @@ function Auth(props) {
                     <div className="flex flex-col leading-8 mx-auto w-11/12 md:w-3/5 mt-2">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                        style={{
+                          fontFamily:
+                            "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                        }}
                       >
                         Phone Number
                       </label>
@@ -195,7 +209,10 @@ function Auth(props) {
                   <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                     <label
                       className="py-2 text-2xl tracking-wider"
-                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                      style={{
+                        fontFamily:
+                          "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                      }}
                     >
                       Password
                     </label>
@@ -215,7 +232,10 @@ function Auth(props) {
                     <div className="flex flex-col leading-8 w-11/12 md:w-3/5 mx-auto mt-2">
                       <label
                         className="py-2 text-2xl tracking-wider"
-                        style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                        style={{
+                          fontFamily:
+                            "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                        }}
                       >
                         Confirm Password
                       </label>
@@ -250,50 +270,62 @@ function Auth(props) {
                   >
                     <span
                       className={`text-2xl font-semibold tracking-wide flex justify-center items-center`}
-                      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                      style={{
+                        fontFamily:
+                          "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                      }}
                     >
                       {isSignup ? "SIGN UP" : "SIGN IN"}
                     </span>
                   </button>
 
-                                    <div className="flex justify-center relative h-8 my-8 px-5">
-                                    <img
-                                        src={ImageAuth}
-                                        fill
-                                        alt="Event Image"
-                                        className="object-contain"
-                                    />
-                                    </div>      
-                                    <GoogleLogin
-                                        clientId={clientId}
-                                        render={(renderProps) => (
-                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled}type="submit" className='flex border-white border px-5 py-2 rounded-md hover:bg-orange-700 hover:border-0 hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4'><span className={`text-2xl font-semibold tracking-wide flex justify-center items-center`} style={{ 'fontFamily': 'MangoGrotesque' }}>Google</span></button>                              
-                                        )}
-                                        buttonText="Login"
-                                        onSuccess={onSuccessLogin}
-                                        onFailure={onFailureLogin}
-                                        cookiePolicy={"single_host_origin"}
-                                    />
-                                    
-                                </Form>
-                        )}
-                        </Formik>
-                    </div>
-                    <ToastContainer
-                        position="bottom-center"
-                        autoClose={2500}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover
-                        theme="dark"
+                  <div className="flex justify-center relative h-8 my-8 px-5">
+                    <img
+                      src={ImageAuth}
+                      fill
+                      alt="Event Image"
+                      className="object-contain"
                     />
-                </div>
-            </div>
+                  </div>
+                  <GoogleLogin
+                    clientId={clientId}
+                    render={(renderProps) => (
+                      <button
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        type="submit"
+                        className="flex px-5 py-2 rounded-md bg-white hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4"
+                      >
+                        <span
+                          className={`text-lg font-semibold capitalize flex gap-2 justify-center items-center font-basic text-black`}                        >
+                          <FcGoogle/> Sign in with Google
+                        </span>
+                      </button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={onSuccessLogin}
+                    onFailure={onFailureLogin}
+                    cookiePolicy={"single_host_origin"}
+                  />
+                </Form>
+              )}
+            </Formik>
+          </div>
+          <ToastContainer
+            position="bottom-center"
+            autoClose={2500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
+      </div>
+    </div>
   );
 }
 
