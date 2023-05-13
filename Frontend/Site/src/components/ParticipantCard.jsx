@@ -12,8 +12,11 @@ function participantCard({ member, event_id }) {
     });
   };
   const handleDelete = async () => {
-    await dispatch(removeParticipant(member.id));
-    dispatch(viewEventParticipants(event_id));
+    const checkDel = confirm("Do you want to delete?");
+    if (checkDel === true) {
+      await dispatch(removeParticipant(member.id));
+      dispatch(viewEventParticipants(event_id));
+    }
   };
 
   return (
