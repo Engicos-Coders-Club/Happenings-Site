@@ -31,7 +31,7 @@ function Auth(props) {
             dispatch({type:"clearMessage"})
 
             // after login, check if user = coordinator
-            dispatch(checkCoordinator())
+            // dispatch(checkCoordinator())
             navigate('/')
         }
         if(error?.message){

@@ -9,7 +9,7 @@ import { checkCoordinator, registerCollege } from "../actions/college";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
-import {AiOutlineInfoCircle} from 'react-icons/ai'
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 function CollegeRegistration(props) {
   const { title } = props;
@@ -18,10 +18,53 @@ function CollegeRegistration(props) {
   const [photo, setPhoto] = useState(null);
 
   // Check if user is coordinator and if he has registered then navigate to /event-selection
-  const { loading, is_Coordinator } = useSelector((state) => state.college);
+  const { loading, is_Coordinator, message, error } = useSelector(
+    (state) => state.college
+  );
+
+  useEffect(() => {
+    if (message) {
+      toast.success(`${message}`, {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      dispatch({ type: "clearMessage" });
+
+      // after login, check if user = coordinator
+      // dispatch(checkCoordinator())
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    }
+    if (error?.message) {
+      toast.error(`${error.message}`, {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      dispatch({ type: "clearError" });
+
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    }
+  }, [message, error]);
 
   useEffect(() => {
     document.title = title;
+    dispatch(checkCoordinator());
   }, []);
 
   const handleSubmit = (values) => {
@@ -40,24 +83,30 @@ function CollegeRegistration(props) {
       )
     );
 
-    toast("Form succesfully submitted! Your application is under review", {
-      position: "bottom-center",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-
-    dispatch(checkCoordinator());
+    // toast("Form succesfully submitted! Your application is under review", {
+    //   position: "bottom-center",
+    //   autoClose: 2500,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "dark",
+    // });
   };
 
   useEffect(() => {
     // if user != coordinator, then show 'verifying...' status
-    if (is_Coordinator?.coordinator === false) {
+    if (
+      is_Coordinator?.coordinator === true &&
+      is_Coordinator.is_paid === false
+    ) {
       navigate("/verify");
+    } else if (
+      is_Coordinator?.coordinator === true &&
+      is_Coordinator.is_paid === true
+    ) {
+      navigate("/event-selection");
     }
   }, [is_Coordinator]);
 
@@ -94,15 +143,17 @@ function CollegeRegistration(props) {
                 >
                   <div className="flex">
                     <div className="pr-5">
-                      <AiOutlineInfoCircle className="w-6 h-6 text-cus-orange"/>
+                      <AiOutlineInfoCircle className="w-6 h-6 text-cus-orange" />
                     </div>
                     <div>
-                      <p className="text-sm">Incase of any queries, please contact the following:</p>
+                      <p className="text-sm">
+                        Incase of any queries, please contact the following:
+                      </p>
                       <p className="text-md font-extrabold tracking-wide mt-1">
-                      Atharva Parkhe
+                        Atharva Parkhe
                       </p>
                       <p className="text-md font-normal tracking-wide">
-                      (+91 8007609672)
+                        (+91 8007609672)
                       </p>
                     </div>
                   </div>

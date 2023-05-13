@@ -13,9 +13,9 @@ function SideBar(props) {
     <div className="fixed z-[100] md:h-screen">
       <Navbar />
       <div className={sideBarClass}>
-        <div className="h-[3rem] w-full relative flex justify-center items-center cursor-pointer"></div>
+        <div className="h-[5rem] w-full relative flex justify-center items-center cursor-pointer"></div>
 
-        <div className="h-[20%] w-full">
+        <div className="h-[18%] w-full">
           <HashLink smooth to="/#home">
             <img src="/assets/Rectangle.png" className="p-2 mt-2 w-full" />
           </HashLink>
