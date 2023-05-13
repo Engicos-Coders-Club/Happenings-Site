@@ -1,4 +1,20 @@
+.env
+
+env
+
+__pycache__
+
+.DS_Store
+
+.vscode
+
+*.log
+
+client_secret.json
+
 *.pem
+
+google-analytics.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
