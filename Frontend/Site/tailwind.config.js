@@ -22,7 +22,7 @@ export default {
         "login-bg": "url('./src/assets/login-bg.png')",
         "event-sec-bg": "url('./src/assets/h1.png')",
         "point-bg": "url('./src/assets/export_bg.png')",
-        "hero-bg": "url('./src/assets/heroBGN.png')",
+        // "hero-bg": "url('./src/assets/heroBGN.png')",
       },
       fontFamily: {
         MANGO: ["MANGO", "Bebas Neue", 'Oswald', "Inter", "sans-serif"],
