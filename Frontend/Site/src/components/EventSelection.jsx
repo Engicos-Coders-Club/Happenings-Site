@@ -31,7 +31,7 @@ function EventSelection(props) {
   }, []);
 
   useEffect(() => {
-    if (is_Coordinator) dispatch(viewParticipants());
+    if (is_Coordinator?.is_paid === true) dispatch(viewParticipants());
     else {
       toast("You have to be a college coordinator", {
         position: "bottom-center",
@@ -43,7 +43,6 @@ function EventSelection(props) {
         progress: undefined,
         theme: "dark",
       });
-      console.log("your not a college coordinator");
     }
   }, [is_Coordinator]);
 
@@ -69,7 +68,7 @@ function EventSelection(props) {
         color="rgba(172, 57, 59, 1)"
       />
     </div>
-  ) : is_Coordinator ? (
+  ) : is_Coordinator.coordinator ? (
     <div className="mx-auto bg-black text-white min-h-screen">
       <div className="py-8">
         <div className="flex justify-end w-full md:w-4/5 mx-auto">

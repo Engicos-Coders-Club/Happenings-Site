@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CollegeRegistrationSchema } from "../schema/CollegeRegistrationSchema";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
-import { registerCollege } from "../actions/college";
+import { checkCoordinator, registerCollege } from "../actions/college";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
@@ -49,10 +49,15 @@ function CollegeRegistration(props) {
       theme: "dark",
     });
 
-    setTimeout(() => {
-      navigate("/");
-    }, 5000);
+    dispatch(checkCoordinator());
   };
+
+  useEffect(() => {
+    // if user != coordinator, then show 'verifying...' status
+    if (is_Coordinator?.coordinator === false) {
+      navigate("/verify");
+    }
+  }, [is_Coordinator]);
 
   return (
     <div className="mx-auto bg-black min-h-screen text-white bg-events-bg">
@@ -198,10 +203,7 @@ function CollegeRegistration(props) {
                 </div>
                 <div className="mx-auto flex flex-col items-center justify-center">
                   <div className="my-4 w-[200px] h-[200px]">
-                    <img
-                      src={qrCode}
-                      className="w-full h-full object-fit"
-                    />
+                    <img src={qrCode} className="w-full h-full object-fit" />
                   </div>
                   <p
                     className="text-2xl text-center tracking-wider"

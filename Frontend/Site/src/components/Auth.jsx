@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
 import loginBg from '../assets/login-bg.webp'
 import { ToastContainer, toast } from 'react-toastify';
+import { checkCoordinator } from "../actions/college";
 
 function Auth(props) {
   const { title } = props;
@@ -28,7 +29,10 @@ function Auth(props) {
     useEffect(()=>{
         if(message){
             dispatch({type:"clearMessage"})
-            navigate('/verify')
+
+            // after login, check if user = coordinator
+            dispatch(checkCoordinator())
+            navigate('/')
         }
         if(error?.message){
             toast(`${error.message}`, {
@@ -68,7 +72,6 @@ function Auth(props) {
     const access_token = gapi.auth.getToken().access_token;
     setGoogleAuth(gapi.auth2.getAuthInstance());
     const tokenId = GoogleAuth.currentUser.le.tokenId;
-    console.log(tokenId);
     dispatch(googleLogin(tokenId, profile));
     //navigate("/buy");
   };
@@ -85,9 +88,7 @@ function Auth(props) {
   };
 
   const handleSubmit = (values) => {
-    console.log(values);
     const { email, name, password, phoneNumber } = values;
-    //console.log(email,name,password,phoneNumber)
     if (isSignup) dispatch(register(name, email, password, phoneNumber));
     else dispatch(login(email, password));
   };
