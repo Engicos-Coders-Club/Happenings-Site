@@ -10,6 +10,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../actions/auth";
+import logo from '../assets/happenings-logo.png'
 
 // login modal -----------------------
 const LoginModal = ({ closeModal }) => {
@@ -31,15 +32,17 @@ const LoginModal = ({ closeModal }) => {
     >
       <div
         id="modal"
-        className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-1/3 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg flex flex-col px-3"
+        className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl pt-5 pb-10 mx-auto w-2/3 md:w-1/3 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg flex flex-col px-3 items-center"
       >
         <button
           onClick={closeModalHandler}
-          className="flex items-center border-2 border-cus-orange self-end"
+          className="flex items-center self-end"
         >
           <FiX className="m-[0.4rem] text-cus-orange" />
         </button>
-
+        
+        <p className="font-MANGO text-3xl text-white">Welcome!</p>
+        <p className="font-MANGO text-xl tracking-wide text-gray-400">Enter the post-apocalypse world herein.</p>
         {!isAuthenticated && (
           <div className="mt-4 flex justify-center">
             <Link to="/auth">
@@ -97,11 +100,11 @@ function SideBar(props) {
 
         <div className="h-[10%] w-full">
           <HashLink smooth to="/#home">
-            <img src="/assets/Rectangle.png" className="p-2 mt-2 w-full" />
+            <img src={logo} className="p-2 mt-2 w-full" />
           </HashLink>
         </div>
 
-        <div className="w-full flex justify-center items-end h-3/4">
+        <div className="w-full flex justify-center items-end h-[70%]">
           <ul className="h-full font-MANGO md:text-2xl lg:text-2xl text-sm text-white list-none flex flex-col p-2 cursor-pointer tracking-wide justify-evenly">
             <li
               className="rotate-[-90deg] p-3 hover:underline tracking-wide min"
@@ -153,7 +156,6 @@ function SideBar(props) {
           </button>
         </div>
 
-        <div className="relative h-[4px] bg-orange-500 rounded-sm"></div>
       </div>
       {showUserModal &&
         createPortal(

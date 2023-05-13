@@ -11,9 +11,9 @@ import { gapi } from "gapi-script";
 import { googleLogin } from "../actions/auth";
 import { useSelector } from "react-redux";
 import { AiOutlineGoogle } from "react-icons/ai";
-import loginBg from "../assets/login-bg.webp";
+import loginBg from "../assets/events-bg.webp";
 import { ToastContainer, toast } from "react-toastify";
-import {FcGoogle} from 'react-icons/fc'
+import { FcGoogle } from "react-icons/fc";
 
 function Auth(props) {
   const { title } = props;
@@ -22,7 +22,7 @@ function Auth(props) {
   const [isSignup, setIsSignup] = useState(false);
   const [GoogleAuth, setGoogleAuth] = useState(null);
   const clientId =
-    "830762272261-4rf6dr10u19limjbdrt8uf2bk5kojbej.apps.googleusercontent.com";
+    "555074479228-r507lrg1hlmsdejpm4tp1q8ahoq39quf.apps.googleusercontent.com";
 
   const { message, loading, error } = useSelector((state) => state.auth);
 
@@ -30,9 +30,19 @@ function Auth(props) {
     if (message) {
       dispatch({ type: "clearMessage" });
 
-      // after login, check if user = coordinator
-      // dispatch(checkCoordinator())
-      navigate("/");
+      toast.success(`${message}`, {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
     }
     if (error?.message) {
       toast(`${error.message}`, {
@@ -72,10 +82,37 @@ function Auth(props) {
     setGoogleAuth(gapi.auth2.getAuthInstance());
     const tokenId = GoogleAuth.currentUser.le.tokenId;
     dispatch(googleLogin(tokenId, profile));
-    //navigate("/buy");
+
+    toast.success(`Logged in successfully 🚀`),
+      {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      };
+
+    setTimeout(() => {
+      navigate("/");
+    }, 5000);
   };
+  
   const onFailureLogin = (res) => {
     console.log(res);
+    toast.error(`${res}`),
+      {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      };
   };
 
   useEffect(() => {
@@ -98,6 +135,7 @@ function Auth(props) {
       style={{
         background: `url('${loginBg}') no-repeat`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="text-white pb-20">
@@ -297,8 +335,9 @@ function Auth(props) {
                         className="flex px-5 py-2 rounded-md bg-white hover:scale-105 uppercase mb-6 md:mb-0 mx-auto my-4"
                       >
                         <span
-                          className={`text-lg font-semibold capitalize flex gap-2 justify-center items-center font-basic text-black`}                        >
-                          <FcGoogle/> Sign in with Google
+                          className={`text-lg font-semibold capitalize flex gap-2 justify-center items-center font-basic text-black`}
+                        >
+                          <FcGoogle /> Sign in with Google
                         </span>
                       </button>
                     )}

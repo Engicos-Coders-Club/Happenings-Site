@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import eventsBg from "../assets/events-bg.webp";
 
 function CollegeRegistration(props) {
   const { title } = props;
@@ -111,7 +112,15 @@ function CollegeRegistration(props) {
   }, [is_Coordinator]);
 
   return (
-    <div className="mx-auto bg-black min-h-screen text-white bg-events-bg">
+    <div
+      className="mx-auto bg-black min-h-screen text-white"
+      style={{
+        background: `url('${eventsBg}') no-repeat`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="py-16">
         <div className="border-l-2 border-r-2 border-t-2 border-red-300 mx-auto w-[300px]">
           <h1
