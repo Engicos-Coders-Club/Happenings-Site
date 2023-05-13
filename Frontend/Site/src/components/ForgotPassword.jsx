@@ -30,7 +30,6 @@ function Auth(props) {
       };
       
     const handleSubmit = (values) => {        
-        console.log(values)     
         const {otp,password} = values
         dispatch(reset(otp,password))   
     }    
