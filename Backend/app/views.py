@@ -3,25 +3,10 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.conf import settings
 from authentication.models import *
 from .serializers import *
 from .threads import *
 from .models import *
-import razorpay
-
-
-client = razorpay.Client(auth=(settings.PUBLIC_KEY, settings.PRIVATE_KEY))
-
-
-# class AllCollegesView(ListAPIView):
-#     queryset = CollegeModel.objects.all()
-#     serializer_class = CollegeSerializer
-
-
-# class CollegePointsSerializer(ListAPIView):
-#     queryset = CollegeModel.objects.all()
-#     serializer_class = CollegePointsSerializer
 
 
 @api_view(["POST"])
@@ -33,46 +18,24 @@ def college_registration(request):
             return Response({"message": "You can register only 1 college"}, status=status.HTTP_401_UNAUTHORIZED)
         ser = CollegeRegistrationSerializer(data=request.data)
         if ser.is_valid():
-            cart_obj = ser.save(coordinator=user)
+            ser.save(coordinator=user)
             thread_obj = send_notif()
+            thread_obj.start()
             return Response({"message": "Registration Done", "data":ser.data}, status=status.HTTP_200_OK)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@permission_classes([IsAuthenticated])
-@api_view(["POST"])
-def resultPage(request):
-    try:
-        user = UserModel.objects.get(email=request.user.email)
-        ser = PaymentCredentials(data=request.data)
-        if ser.is_valid():
-            if not CollegeModel.objects.filter(coordinator=user).exists():
-                return Response({"message": "College Does Not Exists"}, status=status.HTTP_404_NOT_FOUND)
-            cart_obj =  CollegeModel.objects.get(coordinator=user)
-            payment_credentials = {
-                "razorpay_order_id" : cart_obj.order_id,
-                "razorpay_payment_id" : ser.validated_data["razorpay_payment_id"],
-                "razorpay_signature" : ser.validated_data["razorpay_signature"]
-            }
-            check = client.utility.verify_payment_signature(payment_credentials)
-            if check:
-                return Response({"message":"Payment Failed"}, status=status.HTTP_403_FORBIDDEN)
-            cart_obj.payment_id = payment_credentials["razorpay_payment_id"]
-            cart_obj.payment_signature = payment_credentials["razorpay_signature"]
-            cart_obj.is_paid = True
-            cart_obj.save()
-            return Response({"message":"Payment Successfull"}, status=status.HTTP_200_OK)
-        return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
-    except Exception as e:
-        print(e)
-        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
 class AllCategories(ListAPIView):
     queryset = CategoryModel.objects.all()
     serializer_class = CategorySerializer
+
+
+class EventsByCategoryView(ListAPIView):
+    queryset = CategoryModel.objects.all()
+    serializer_class = EventsByCategorySerializer
+
 
 class AllEvents(ListAPIView):
     # queryset = EventModel.objects.all()
@@ -94,6 +57,25 @@ class SingleEvents(RetrieveAPIView):
     queryset = EventModel.objects.all()
     serializer_class = SingleEventSerializer
     lookup_field = "id"
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def check_if_coordinator(request):
+    try:
+        user = UserModel.objects.get(email=request.user.email)
+        if not CollegeModel.objects.filter(coordinator=user).exists():
+            return Response({
+                "coordinator": False, "is_paid": False}, status=status.HTTP_200_OK)
+        college = CollegeModel.objects.get(coordinator=user)
+        if not college.is_paid:
+            return Response({
+                "coordinator": False, "is_paid": False}, status=status.HTTP_200_OK)
+        else:
+            return Response({
+                "coordinator": True, "is_paid": True}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(["POST"])
@@ -152,14 +134,15 @@ def view_individual_event_participants(request, event_id):
         user = UserModel.objects.get(email=request.user.email)
         if not CollegeModel.objects.filter(coordinator=user).exists():
             return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
+        college_obj = CollegeModel.objects.get(coordinator=user)
         if not EventModel.objects.filter(id=event_id).exists():
             return Response({"message": "Invalid Event ID"}, status=status.HTTP_406_NOT_ACCEPTABLE)
         event_obj = EventModel.objects.get(id=event_id)
-        ser = ParticipantSerializer(event_obj.event_participation.all(), many=True)
+        # partipants_objs = EventParticipantsModel.objects.filter(event=event_obj, college=college_obj)
+        ser = ParticipantSerializer(event_obj.event_participation.filter(event=event_obj, college=college_obj), many=True)
         return Response(ser.data, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 
 @api_view(["PATCH"])
@@ -177,6 +160,23 @@ def update_individual_event_participants(request, participant_id):
             ser.save()
             return Response({"message": "Participant detials updated", "data":ser.data}, status=status.HTTP_200_OK)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
+        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def delete_participant_details(request, participant_id):
+    try:
+        user = UserModel.objects.get(email=request.user.email)
+        if not CollegeModel.objects.filter(coordinator=user).exists():
+            return Response({"message": "You are not authoreised to perform this action"}, status=status.HTTP_401_UNAUTHORIZED)
+        if not EventParticipantsModel.objects.filter(id=participant_id).exists():
+            return Response({"message": "Invalid Participant ID"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+        participant_obj = EventParticipantsModel.objects.get(id=participant_id)
+        participant_obj.delete()
+        return Response({"message": "Participant detials deleted"}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

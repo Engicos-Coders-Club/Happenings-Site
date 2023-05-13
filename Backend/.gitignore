@@ -13,3 +13,5 @@ __pycache__
 client_secret.json
 
 *.pem
+
+google-analytics.png

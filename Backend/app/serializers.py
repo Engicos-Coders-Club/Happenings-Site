@@ -15,7 +15,7 @@ class CollegePointsSerializer(serializers.ModelSerializer):
 class CollegeRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CollegeModel
-        exclude = ["coordinator", "is_paid", "points", "order_id", "payment_id", "payment_signature", "created_at", "updated_at"]
+        exclude = ["coordinator", "is_paid", "points", "created_at", "updated_at"]
 
 class CoordinatorModelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -59,6 +59,22 @@ class SingleEventSerializer(serializers.ModelSerializer):
             print(e)
         return coo
 
+class EventsByCategorySerializer(serializers.ModelSerializer):
+    events = serializers.SerializerMethodField()
+    class Meta:
+        model = CategoryModel
+        fields = ["category_name", "events"]
+    def get_events(self, obj):
+        eve = []
+        try:
+            cat_obj = CategoryModel.objects.get(id = obj.id)
+            ser = AllEventSerializer(cat_obj.event_category.all(), many=True)
+            eve = ser.data
+        except Exception as e:
+            print(e)
+        return eve
+
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryModel
@@ -69,6 +85,22 @@ class ParticipantSerializer(serializers.ModelSerializer):
         model = EventParticipantsModel
         exclude = ["created_at", "updated_at", "event", "college"]
 
-class PaymentCredentials(serializers.Serializer):
-    razorpay_payment_id  = serializers.CharField(required = False)
-    razorpay_signature  = serializers.CharField(required = False)
+class ParticipantSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = EventParticipantsModel
+        fields = ["id", "name"]
+
+class EventParticipantsSerializer(serializers.ModelSerializer):
+    participants = serializers.SerializerMethodField()
+    class Meta:
+        model = EventModel
+        fields = ["id", "event_name", "participants"]
+    def get_participants(self, obj):
+        coo = []
+        try:
+            event_obj = EventModel.objects.get(id = obj.id)
+            ser = ParticipantSerializer2(event_obj.event_participation.all(), many=True)
+            coo = ser.data
+        except Exception as e:
+            print(e)
+        return coo

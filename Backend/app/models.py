@@ -1,9 +1,11 @@
 from django.db import models
-from base.models import *
+from base.models import BaseModel
+from authentication.models import UserModel
 
 
 class CollegeModel(BaseModel):
     college_name = models.CharField(max_length=50, unique=True)
+    coordinator = models.ForeignKey(UserModel, related_name="college_coordinator", on_delete=models.CASCADE)
     icon = models.ImageField(upload_to="college", height_field=None, width_field=None, max_length=None, null=True, blank=True)
     points = models.IntegerField(default=0)
     gs_name = models.CharField(max_length=50)

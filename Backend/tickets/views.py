@@ -13,7 +13,7 @@ client = razorpay.Client(auth=(settings.PUBLIC_KEY, settings.PRIVATE_KEY))
 
 
 class GetTickets(ListAPIView):
-    queryset = TicketModel.objects.all()
+    queryset = TicketModel.objects.filter(is_active=True)
     serializer_class = TicketModelSerializer
 
 
@@ -29,18 +29,21 @@ def buy_tickets(request):
             ticket = TicketModel.objects.get(id=ser.data["ticket"])
             quantity = ser.data["quantity"]
             amt = int(ticket.price * quantity * 100)
-            payment = client.order.create({
-                'amount' :  amt,
-                'currency' : 'INR',
-                'payment_capture' : 1 
-            })
-            cart_obj, _ = PassesModel.objects.get_or_create(
-                user = user,
-                ticket = ticket,
-                is_paid = False,
-                order_id = payment['id']
-            )
-            cart_obj.save()
+            print(ticket)
+            print(user)
+            print(amt)
+            # payment = client.order.create({
+            #     'amount' :  amt,
+            #     'currency' : 'INR',
+            #     'payment_capture' : 1 
+            # })
+            # cart_obj, _ = PassesModel.objects.get_or_create(
+            #     user = user,
+            #     ticket = ticket,
+            #     is_paid = False,
+            #     order_id = payment['id']
+            # )
+            # cart_obj.save()
             return Response({"message":"hello"}, status=status.HTTP_200_OK)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:

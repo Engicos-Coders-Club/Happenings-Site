@@ -1,19 +1,20 @@
 from datetime import timedelta
 from decouple import config
 from pathlib import Path
-
-import pymysql, os
-pymysql.install_as_MySQLdb()
+import os
+# import pymysql, os
+# pymysql.install_as_MySQLdb()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["35.171.19.185", "localhost"]
-# ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["backend.happenings2023.com", "34.226.180.160"]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,7 +88,6 @@ DATABASES = {
     }
 }
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -110,26 +110,28 @@ USE_I18N = False
 USE_L10N = False
 USE_TZ = False
 
-CORS_ORIGIN_WHITELIST = ["https://happenings2023.com"]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join("static")
+MEDIA_URL = '/data/'
+MEDIA_ROOT = os.path.join("data")
 
 # AWS Config
-AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-AWS_DEFAULT_ACL = None
+# AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+# AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+# AWS_DEFAULT_ACL = None
 
 # AWS Static Files Config
-STATIC_LOCATION = 'static'
-STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
-STATICFILES_STORAGE = 'core.storages.StaticStore'
+# STATIC_LOCATION = 'static'
+# STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
+# STATICFILES_STORAGE = 'core.storages.StaticStore'
 
 # AWS Media Files Config
-PUBLIC_MEDIA_LOCATION = 'media'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-DEFAULT_FILE_STORAGE = 'core.storages.MediaStore'
-
+# PUBLIC_MEDIA_LOCATION = 'media'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+# DEFAULT_FILE_STORAGE = 'core.storages.MediaStore'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -140,6 +142,7 @@ REST_FRAMEWORK = {
     )
 }
 
+# JWT
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -170,6 +173,7 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+# Cache
 CACHE_TTL = 60
 DEFAULT_TIMEOUT = 60
 CACHES = {
@@ -181,6 +185,28 @@ CACHES = {
         }
     }
 }
+
+# CORS
+CORS_ALLOWED_ORIGINS = [
+    "https://happenings2023.com",
+    "http://localhost:5173",
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'DELETE'
+]
+
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Email Service Setup
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

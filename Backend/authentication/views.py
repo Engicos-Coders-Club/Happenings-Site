@@ -1,9 +1,9 @@
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import authenticate
 from rest_framework.response import Response
 from rest_framework import status
-from django.contrib.auth import authenticate
 from .serializers import *
 from .threads import *
 from .models import *
@@ -17,7 +17,6 @@ def google_authentication(request):
             user_info = id_token.verify_oauth2_token(ser.data["token_id"], requests.Request(), settings.GOOGLE_CLIENT_ID)
             if not UserModel.objects.filter(email=user_info["email"]).exists():
                 customer_obj = UserModel.objects.create(
-                    profile_pic_url=user_info["picture"],
                     email=user_info["email"],
                     name=user_info["name"],
                     auth_provider="google"
@@ -32,32 +31,7 @@ def google_authentication(request):
             return Response({"message":"Login successfull", "token":str(jwt_token.access_token)}, status=status.HTTP_202_ACCEPTED)
         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
-        return Response({"message": "Invalid or Expired toiken"}, status=status.HTTP_406_NOT_ACCEPTABLE)
-
-# @api_view(["POST"])
-# def google_authentication(request):
-#     try:
-#         ser = GoogleSocialAuthSerializer(data=request.data)
-#         if ser.is_valid():
-#             user_info = id_token.verify_oauth2_token(ser.data["token_id"], requests.Request(), settings.GOOGLE_CLIENT_ID)
-#             if not UserModel.objects.filter(email=user_info["email"]).exists():
-#                 customer_obj = UserModel.objects.create(
-#                     profile_pic_url=user_info["picture"],
-#                     email=user_info["email"],
-#                     name=user_info["name"],
-#                     auth_provider="google"
-#                 )
-#                 customer_obj.set_password(settings.SOCIAL_SECRET)
-#                 customer_obj.save()
-#             customer_obj = UserModel.objects.get(email=user_info["email"])
-#             user = authenticate(email=customer_obj.email, password=settings.SOCIAL_SECRET)
-#             if not user:
-#                 return Response({"message":"Incorrect password"}, status=status.HTTP_406_NOT_ACCEPTABLE)
-#             jwt_token = RefreshToken.for_user(user)
-#             return Response({"message":"Login successfull", "token":str(jwt_token.access_token)}, status=status.HTTP_202_ACCEPTED)
-#         return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
-#     except Exception as e:
-#         return Response({"message": "Invalid or Expired toiken"}, status=status.HTTP_406_NOT_ACCEPTABLE)
+        return Response({"message": "Invalid or Expired toiken", "error":e}, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
 @api_view(["GET"])
@@ -69,7 +43,7 @@ def verify_jwt(request):
         return Response({"valid": False}, status=status.HTTP_401_UNAUTHORIZED)
     except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
 
 @api_view(["POST"])
 def signUp(request):
@@ -158,17 +132,3 @@ def reset(request):
     except Exception as e:
         return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-
-@api_view(["POST"])
-@permission_classes([IsAdminUser])
-def specialEmail(request):
-    try:
-        email_recieptants = list(UserModel.objects.all().values_list("email", flat=True))
-        ser = SpecialEmailSerializer(data=request.data)
-        if ser.is_valid():
-            thread_obj = send_special_email(ser.data["sub"], ser.data["body"], email_recieptants)
-            thread_obj.start()
-            return Response({"message":"Email Sent"})
-        return Response({"error":ser.errors}, status=status.HTTP_400_BAD_REQUEST)
-    except Exception as e:
-        return Response({"error":str(e), "message":"Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

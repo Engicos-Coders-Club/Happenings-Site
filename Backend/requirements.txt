@@ -20,14 +20,12 @@ gunicorn
 httplib2
 idna
 jmespath
-mysqlclient
 Pillow
 protobuf
 psycopg2-binary
 pyasn1
 pyasn1-modules
 PyJWT
-PyMySQL
 pyparsing
 python-dateutil
 python-decouple

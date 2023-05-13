@@ -26,30 +26,6 @@ class otpSerializer(serializers.Serializer):
 class emailSerializer(serializers.Serializer):
     email = serializers.EmailField(required = True)
 
-# class CustomerNameSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = CustomerModel
-#         fields = ["name", "profile_pic"]
-
-# class CustomerDetailsSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = CustomerModel
-#         fields = ["name", "email", "phone"]
-
-class RemoveAdminSerializer(serializers.Serializer):
-    text = serializers.CharField(required = True)
-    otp = serializers.IntegerField(required = True)
-
-# class SellerDisplaySerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = SellerModel
-#         fields = ["name", "email", "phone", "is_verified"]
-
-class SpecialEmailSerializer(serializers.Serializer):
-    sub = serializers.CharField(required = True)
-    body = serializers.CharField(required = True)
-
-
 class GoogleSocialAuthSerializer(serializers.Serializer):
     token_id = serializers.CharField(required=True)
     def validate_token_id(self, token_id):
