@@ -17,6 +17,9 @@ function CollegeRegistration(props) {
   const [photo, setPhoto] = useState(null);
 
   // Check if user is coordinator and if he has registered then navigate to /event-selection
+  const { loading, is_Coordinator } = useSelector(
+    (state) => state.college
+  );
 
   useEffect(() => {
     document.title = title;
