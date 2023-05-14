@@ -10,10 +10,10 @@ function TeamCardsDev(props) {
       <div className="h-[290px] w-[250px] grayscale">
         <img src={props.data.pic} className="h-full w-full object-cover"></img>
       </div>
-      <h2 className="absolute x-0 bottom-[-25px] text-white group-hover:text-cus-bright-orange capitalize font-MANGO text-5xl drop-shadow-sm">
+      <h2 className="team-name absolute x-0 bottom-[-25px] text-white group-hover:text-cus-bright-orange capitalize font-MANGO text-5xl drop-shadow-sm">
         {props.data.Name}
       </h2>
-      <h3 className="absolute x-0 bottom-[-45px] text-white font-basic text-xl">
+      <h3 className="absolute x-0 bottom-[-48px] text-white font-basic text-lg">
         {props.data.Designation}
       </h3>
 

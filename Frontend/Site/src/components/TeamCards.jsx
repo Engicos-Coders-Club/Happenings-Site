@@ -10,7 +10,7 @@ function TeamCards(props) {
       <h2 className="team-name relative x-0 bottom-[25px] text-white group-hover:text-cus-bright-orange capitalize font-MANGO text-5xl drop-shadow-sm">
         {props.data.Name}
       </h2>
-      <h3 className="relative x-0 bottom-[30px] text-white font-basic text-xl">
+      <h3 className="relative x-0 bottom-[27px] text-white font-basic text-lg">
         {props.data.Designation}
       </h3>
       <div className="relative bottom-[30px] flex justify-start text-gray-400 group-hover:text-white gap-x-1 font-basic items-center">
