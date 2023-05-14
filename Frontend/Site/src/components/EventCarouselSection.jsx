@@ -46,13 +46,16 @@ const EventCarouselSection = () => {
           </p>
 
           <div className="flex items-center flex-wrap md:justify-end gap-3">
-
-            {/* <Link to="/auth"> */}
-              <button disabled className="flex items-center  bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer"   >
+            <Link to="/tickets">
+              <button
+                className="flex items-center  bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase text-white cursor-pointer"
+              >
                 <span
                   className={`text-lg lg:text-xl font-semibold tracking-wide`}
-                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
-               
+                  style={{
+                    fontFamily:
+                      "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                  }}
                 >
                   Buy Passes Now
                 </span>
@@ -61,13 +64,16 @@ const EventCarouselSection = () => {
                   size={25}
                 />
               </button>
-            {/* </Link> */}
+            </Link>
 
             <Link to="/all-events/">
               <button className="flex items-center text-orange-600 border-2 border-orange-600 px-2 md:px-5 py-2 rounded-md hover:text-white hover:bg-orange-600 hover:scale-105 uppercase cursor-pointer">
                 <span
                   className={`text-lg lg:text-xl font-semibold tracking-wide `}
-                  style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+                  style={{
+                    fontFamily:
+                      "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                  }}
                 >
                   View All
                 </span>

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowUpRight } from "react-icons/fi";
 import { useNavigate, Link } from "react-router-dom";
-import TicketsSchema from "../schema/TicketsSchema";
+import TicketsSchema from "../../schema/TicketsSchema";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 function BookTickets(props) {
