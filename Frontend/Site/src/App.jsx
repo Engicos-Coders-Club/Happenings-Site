@@ -7,7 +7,6 @@ import EventRegistration from "./components/EventRegistration";
 import "./index.css";
 import EventSelection from "./components/EventSelection";
 import TicketsSection from "./components/TicketsSection";
-import BookTickets from "./components/BookTickets";
 import Auth from "./components/Auth";
 import FogotPassword from "./components/ForgotPassword";
 import Teams from "./components/Teams";
@@ -132,7 +131,7 @@ function App() {
               element={<AllEvents title="All Events" />}
               path="/all-events/:id"
             />
-            
+
             {/* verify page */}
             <Route
               element={
@@ -145,7 +144,7 @@ function App() {
               path="/verify"
             />
             <Route element={<Events title="Events" />} path="/all-events/" />
-            <Route element={<BookTickets title="Buy Tickets" />} path="/buy" />
+            {/* <Route element={<BookTickets title="Buy Tickets" />} path="/buy" /> */}
             <Route element={<Auth title="Authentication" />} path="/auth" />
             <Route
               element={<FogotPassword title="Fogot Password" />}
