@@ -4,7 +4,7 @@ import pointBg from "../assets/export_bg.webp";
 import { Link } from "react-router-dom";
 import { BsArrowReturnLeft, BsArrowRightShort } from "react-icons/bs";
 import { RiArrowRightFill, RiArrowDownFill } from "react-icons/ri";
-import pointCategorizationImg from "../assets/point_categorization.svg";
+import pointCategorizationImg from "../assets/point_categorization.webp";
 
 function GeneralRuleModal(props) {
   return (
