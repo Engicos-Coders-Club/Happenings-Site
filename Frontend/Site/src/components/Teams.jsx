@@ -25,7 +25,7 @@ function Teams() {
       </div>
 
       <div className='relative w-full flex justify-center items-center border-y-2 border-[#FF6600] h-[50px]'>
-        <ul className='font-MANGO sm:text-1.5xl lg:text-2xl text-1.5xl text-white list-none flex flex-right gap-9 p-2 cursor-pointer'>
+        <ul className='font-MANGO sm:text-1.5xl lg:text-3xl text-1.5xl text-white list-none flex flex-right gap-9 p-2 cursor-pointer'>
           <li onClick={() => toggleTab(1)} className={toggleState == 1 ? 'active-tab' : 'non-active-tab'}>COUNCIL</li>
           <li onClick={() => toggleTab(2)} className={toggleState == 2 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li>
           <li onClick={() => toggleTab(3)} className={toggleState == 3 ? 'active-tab' : 'non-active-tab'}>ADVISORS</li>
@@ -33,25 +33,25 @@ function Teams() {
         </ul>
       </div>
 
-      <div className={toggleState == 1 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
+      <div className={toggleState == 1 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-10' : 'non-active-content'}>
         {council.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
       </div>
 
-      <div className={toggleState == 2 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
+      <div className={toggleState == 2 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-10' : 'non-active-content'}>
         {Coordinators.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
       </div>
 
-      <div className={toggleState == 3 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
+      <div className={toggleState == 3 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-10' : 'non-active-content'}>
         {Advisors.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
       </div>
 
-      <div className={toggleState == 4 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-20' : 'non-active-content'}>
+      <div className={toggleState == 4 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-28' : 'non-active-content'}>
         {WebTeam.map((item,index) => (
           <TeamCardsDev data={item} key={index}/>
         ))}

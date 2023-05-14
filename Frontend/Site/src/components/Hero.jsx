@@ -29,8 +29,8 @@ export class Hero extends Component {
               HAPPENINGS 2023
             </p>
 
-            <h1 className="lg:text-5xl text-gray-200 font-BEBAS text-[2rem] text-center leading-3 mt-8 sm:mt-2">
-              19 & 20 May
+            <h1 className="Hap-date lg:text-5xl text-gray-200 font-MANGO tracking-wide text-[2rem] text-center leading-3 mt-8 sm:mt-2">
+              19th & 20th May
             </h1>
           </div>
         </div>

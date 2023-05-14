@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import loginBg from "../assets/login-bg.webp";
+import loginBg from "../assets/events-bg.webp";
 
 const Verifying = () => {
   return (

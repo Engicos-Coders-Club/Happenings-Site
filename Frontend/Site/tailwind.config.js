@@ -19,7 +19,6 @@ export default {
         ticket1: "url('./src/assets/ticket-1.svg')",
         ticket2: "url('./src/assets/ticket-2.svg')",
         ticket3: "url('./src/assets/ticket-3.svg')",
-        "login-bg": "url('./src/assets/login-bg.png')",
         "event-sec-bg": "url('./src/assets/h1.png')",
         "point-bg": "url('./src/assets/export_bg.png')",
         // "hero-bg": "url('./src/assets/heroBGN.png')",
@@ -32,7 +31,7 @@ export default {
       },
       "event-sec-bg": "url('./src/assets/h1.png')",
       fontSize: {
-        "9xl": "12rem",
+        "9xl": "13rem",
       },
       colors: {
         "cus-orange": "#FF6600",

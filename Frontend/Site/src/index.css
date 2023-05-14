@@ -61,7 +61,7 @@
     color: transparent;
   }
 
-  #footer-email span {
+  #footer-email a {
     @apply text-white;
     -webkit-text-stroke: none;
   }
@@ -108,4 +108,12 @@
     color: #ff4242;
     font-size: 30px !important;
   }
+}
+
+/* team styles */
+.team-name {
+  text-shadow: 1px 1px gray, -1px -1px red;
+}
+.team-card:hover .team-name {
+  text-shadow: 0px 0px 14px black;
 }
