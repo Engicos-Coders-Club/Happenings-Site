@@ -17,7 +17,8 @@ export const checkCoordinator = ()=>async(dispatch)=>{
         const {data} = await axios.get("/api/check-if-coordinator/",{headers:{'Authorization':tokens}})
         dispatch({
             type:"CheckCoordinatorSuccess",
-            payload:data
+            payload1:Boolean(data.coordinator),
+            payload2:Boolean(data.is_paid)
         })
     } catch (error) {
         console.log(error.response.data,error.response.status)
