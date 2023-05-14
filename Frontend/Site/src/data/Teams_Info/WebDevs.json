@@ -7,7 +7,7 @@
     "Github":" https://github.com/lloyd04costa06",
     "linkedin":"https://www.linkedin.com/in/lloyd-alrich-costa-482509176",
     "instagram" : "",
-    "pic":""
+    "pic":"../../src/assets/teams/dev/lloyd.jpg"
   },
 {
     "Name": "Jayden Viegas ",
@@ -16,7 +16,8 @@
     "Email":"jaydenviegas57@gmail.com",
     "Github":" https://github.com/Jayden0228",
     "linkedin":"https://www.linkedin.com/in/jayden-viegas-313141267/",
-    "instagram" : ""
+    "instagram" : "",
+    "pic":"../../src/assets/teams/dev/jayden.jpg"
   },
 {
     "Name": "Atharva Parkhe",

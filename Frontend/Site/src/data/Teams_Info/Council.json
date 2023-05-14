@@ -14,12 +14,14 @@
   {
     "Name": "Sarthak Bandodkar",
     "Designation": "CULTURAL SECRETARY",
-    "Contact": "7057496089"
+    "Contact": "7057496089",
+    "pic": "../../src/assets/teams/council/sarthak.jpg"
   },
   {
     "Name": "Shazeab Sayed",
     "Designation": "PUBLIC RELATION SECRETARY",
-    "Contact": "7028889127"
+    "Contact": "7028889127",
+    "pic": "../../src/assets/teams/council/shazz.jpg"
   },
   {
     "Name": "Nehal Sinari",
@@ -30,7 +32,8 @@
   {
     "Name": "Akash Gauns",
     "Designation": "GYMKHANA SECRETARY",
-    "Contact": "7768804271"
+    "Contact": "7768804271",
+    "pic": "../../src/assets/teams/council/akash.jpg"
   },
   {
     "Name": "Atharva Parkhe",
@@ -59,7 +62,8 @@
   {
     "Name": "Saiel Kane",
     "Designation": "AUDITOR 2",
-    "Contact": "7038788388"
+    "Contact": "7038788388",
+    "pic": "../../src/assets/teams/council/saiel.jpg"
   },
  {
     "Name": "Saara Sehgal",
