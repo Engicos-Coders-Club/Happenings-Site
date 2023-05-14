@@ -4,7 +4,7 @@ import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import {   } from 'react-icons/fa';
 
 function TeamCardsDev(props) {
-  console.log(props.data.pic)
+  // console.log(props.data.pic)
   
   return (
     <div className="relative w-[231px] h-[283px] ">
