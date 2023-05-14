@@ -10,9 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
-    "@mui/material": "^5.12.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "dotenv": "^16.0.3",
@@ -27,9 +24,7 @@
     "react-router-dom": "^6.10.0",
     "react-router-hash-link": "^2.4.3",
     "react-scroll": "^1.8.9",
-    "react-tilt": "^1.0.2",
     "react-toastify": "^9.1.2",
-    "react-vanilla-tilt": "^1.0.0",
     "spinners-react": "^1.0.7",
     "swiper": "^9.3.0",
     "yup": "^1.1.1"
