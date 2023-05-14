@@ -38,10 +38,8 @@ function CollegeRegistration(props) {
 
       dispatch({ type: "clearMessage" });
 
-      // after login, check if user = coordinator
-      // dispatch(checkCoordinator())
       setTimeout(() => {
-        navigate("/");
+        navigate("/verify");
       }, 5000);
     }
     if (error?.message || error?.college_name) {
@@ -83,7 +81,7 @@ function CollegeRegistration(props) {
         photo
       )
     );
-
+    
     // toast("Form succesfully submitted! Your application is under review", {
     //   position: "bottom-center",
     //   autoClose: 2500,

@@ -35,7 +35,7 @@ function Auth(props) {
     }    
 
     return (
-        <div className="bg-login-bg text-white min-h-screen">
+        <div className="text-white min-h-screen">
             <div className="text-white pb-20">
                 <div className="w-11/12 md:w-[60vw] mx-auto pt-8">                    
                     <div className='mx-auto mt-8'>                        

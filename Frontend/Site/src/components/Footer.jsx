@@ -16,24 +16,24 @@ function Footer() {
       <div className="container mx-auto py-10">
         <h1
           id="footer-email"
-          className="text-center font-MANGO text-[1.6rem] md:text-6xl tracking-widest mb-6 uppercase"
+          className="text-center font-MANGO text-[1.6rem] md:text-6xl tracking-widest mb-12"
         >
-          REACH OUT TO US AT <span>gecstudentscouncil2022@gmail.com</span>
+          REACH OUT TO US AT <br/> <a href="mailto:gecstudentscouncil2022@gmail.com">gecstudentscouncil2022@gmail.com</a>
         </h1>
         <div className="flex flex-col md:flex-row md:justify-between md:w-3/5 md:mx-auto">
           <div className="mb-6 md:mb-0 px-3 md:px-0">
-            <div className="flex justify-start items-center">
+            <div className="flex justify-center md:justify-start items-center">
               <img src={GecLogo} alt="Logo 1" className="h-16 w-16 mr-4" />
               <img src={HappeningLogo} alt="Logo 2" className="h-16 w-16" />
             </div>
 
-            <div className="flex items-center mt-6">
+            <div className="flex items-center w-full justify-center text-center mt-6 md:justify-start">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
-              <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
-                  Sumit komarpant (General Secretary)
+              <div className="flex flex-col justify-center md:justify-start">
+                <h2 className="font-MANGO flex items-center justify-center md:justify-start gap-x-2 text-2xl flex-wrap tracking-widest text-white font-bold uppercase">
+                  Sumit komarpant <span className="text-lg basis-full md:basis-auto text-gray-400">(General Secretary)</span>
                 </h2>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start">
                   <FaWhatsapp className="text-white mr-2" />
                   <p className="text-xs text-white font-Merriweather">
                     <a href="https://wa.me/+918767320956">+91 8767320956</a>
@@ -42,13 +42,13 @@ function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center mt-4">
+            <div className="flex items-center w-full justify-center text-center mt-6 md:justify-start">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
-              <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
-                  Sarthak Bandodkar (Cultural Secretary)
+              <div className="flex flex-col justify-center md:justify-start">
+                <h2 className="font-MANGO flex items-center justify-center md:justify-star gap-x-2 text-2xl flex-wrap tracking-widest text-white font-bold uppercase">
+                  Sarthak Bandodkar <span className="text-lg basis-full md:basis-auto text-gray-400">(Cultural Secretary)</span>
                 </h2>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start">
                   <FaWhatsapp className="text-white mr-2" />
                   <p className="text-xs text-white font-Merriweather">
                     <a href="https://wa.me/+917057496089">+91 7057496089</a>
@@ -57,13 +57,13 @@ function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center mt-4">
+            <div className="flex items-center w-full justify-center text-center mt-6 md:justify-start">
               {/* <img src={PersonPic} className="h-24/3 mr-4" /> */}
-              <div className="flex flex-col justify-center">
-                <h2 className="font-MANGO text-2xl tracking-widest text-white font-bold uppercase">
-                  Ruthveek Dessai (Chairman)
+              <div className="flex flex-col justify-center md:justify-start">
+                <h2 className="font-MANGO flex items-center justify-center md:justify-start gap-x-2 text-2xl flex-wrap tracking-widest text-white font-bold uppercase">
+                  Ruthveek Dessai <span className="text-lg basis-full md:basis-auto text-gray-400">(Chairman)</span>
                 </h2>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start">
                   <FaWhatsapp className="text-white mr-2" />
                   <p className="text-xs text-white font-Merriweather">
                     <a href="https://wa.me/9193099 81749">+91 93099 81749</a>
