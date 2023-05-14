@@ -45,7 +45,7 @@ function hamBurg(props) {
     <div className="h-screen w-full fixed z-[1000] bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0">
       <div className=" relative flex flex-wrap text-white text-5xl font-MANGO grow">
         <HashLink smooth to="/#home" className={hamClass}>
-          <div className="pl-9 " onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             home
           </div>
           <div className="pr-9 " onClick={ReverseAnimation}>
@@ -54,7 +54,7 @@ function hamBurg(props) {
         </HashLink>
 
         <HashLink smooth to="/#about" className={hamClass}>
-          <div className="pl-9 " onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             ABOUT
           </div>
           <div className="pr-9 " onClick={ReverseAnimation}>
@@ -63,7 +63,7 @@ function hamBurg(props) {
         </HashLink>
 
         <Link to="/tickets" className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             BUY PASSES
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -72,7 +72,7 @@ function hamBurg(props) {
         </Link>
 
         <Link to="/GeneralRule" className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             rules & points system
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -81,7 +81,7 @@ function hamBurg(props) {
         </Link>
 
         <HashLink smooth to="/#schedule" className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             SCHEDULE
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -90,7 +90,7 @@ function hamBurg(props) {
         </HashLink>
 
         <HashLink smooth to="/all-events" className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             all EVENTS
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -99,7 +99,7 @@ function hamBurg(props) {
         </HashLink>
 
         <Link to="/college-registration" className={`${hamClass} text-cus-orange`}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             college registration
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -108,7 +108,7 @@ function hamBurg(props) {
         </Link>
 
         {/* <HashLink smooth to="/#sponsor" className={hamClass}>
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             sponsors
           </div>
           <div className="pr-9" onClick={ReverseAnimation}>
@@ -118,7 +118,7 @@ function hamBurg(props) {
 
         <div className={hamClassLast}>
           {/* <div className='pl-9' onClick={ReverseAnimation}>TIME</div> */}
-          <div className="pl-9" onClick={ReverseAnimation}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
             {" "}
           </div>
         </div>
