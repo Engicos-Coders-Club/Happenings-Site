@@ -100,7 +100,7 @@ function Venue() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className='mx-auto mt-8'>
+                        <div className='mx-auto mt-8'>
                             <div className="border-orange-500 border-2 border-dotted rounded-tl-3xl rounded-br-3xl py-10 mx-auto w-5/6 bg-gradient-to-b from-gray-900 to-transparent backdrop-blur-lg">
                                 <h3 className='text-3xl md:text-7xl text-center text-orange-600 uppercase font-MANGO'>Event Selection</h3>
                                 <div className="text-center font-Merriweather text-sm font-light">
@@ -112,7 +112,7 @@ function Venue() {
                                     </Link>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

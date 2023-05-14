@@ -1,7 +1,8 @@
 import {createReducer} from "@reduxjs/toolkit"
 
 const initialState = {
-    is_Coordinator:false
+    is_Coordinator:false,
+    is_Paid:false
 }
 
 export const collegeReducer = createReducer(initialState,{
@@ -21,7 +22,8 @@ export const collegeReducer = createReducer(initialState,{
         state.loading = true;
     },
     CheckCoordinatorSuccess: (state,action)=>{
-        state.is_Coordinator = action.payload
+        state.is_Coordinator = action.payload1
+        state.is_Paid = action.payload2
         state.loading = false
     },
     CheckCoordinatorFailure: (state,action)=>{     
