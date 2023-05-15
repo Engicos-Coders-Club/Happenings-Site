@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, IconButton, Table, TableHead, TableBody, TextField, TableRow, TableCell } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon, Search as SearchIcon } from '@material-ui/icons';
 import EventsTableRow from './EventsTableRow';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const EventsTable = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
   const [expandedRows, setExpandedRows] = useState([]);
   const [data, setData] = useState([
@@ -71,11 +73,15 @@ const EventsTable = () => {
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
   };
+  
+  const handleBackClick = () => {
+    navigate('/participants');
+  };
 
   return (
     <div className={classes.body}>
       <div className={classes.root}>
-        <IconButton className={classes.arrowIcon}>
+        <IconButton className={classes.arrowIcon} onClick={handleBackClick}>
           <ArrowBackIcon />
         </IconButton>
         <Typography variant="subtitle1" component="a" href="#" className={classes.textLink}>
