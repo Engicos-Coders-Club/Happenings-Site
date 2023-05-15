@@ -15,7 +15,7 @@ export class Hero extends Component {
       >
         <div className="wrapper w-full h-full">
           <Navbar />
-          <div className="w-full h-full flex justify-center items-center z-10">
+          <div className="w-full h-full flex justify-center items-center relative z-20">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -48,7 +48,7 @@ export class Hero extends Component {
         <LazyLoadImage
           src={heroBg}
           alt=" "
-          className="w-full h-full object-cover absolute top-0 left-0 right-0 -z-10"
+          className="w-full h-full object-cover absolute top-0 left-0 right-0 z-0"
           placeholderSrc={heroSmallBg}
           visibleByDefault
           effect="blur"

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import qrCode from "../assets/gpay-happenings.png";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import eventsBg from "../assets/events-bg.webp";
+import { SpinnerRoundOutlined } from "spinners-react";
 
 function CollegeRegistration(props) {
   const { title } = props;
@@ -19,7 +20,7 @@ function CollegeRegistration(props) {
   const [photo, setPhoto] = useState(null);
 
   // Check if user is coordinator and if he has registered then navigate to /event-selection
-  const { loading, is_Coordinator,is_Paid, message, error } = useSelector(
+  const { loading, is_Coordinator, is_Paid, message, error } = useSelector(
     (state) => state.college
   );
 
@@ -54,10 +55,6 @@ function CollegeRegistration(props) {
         theme: "colored",
       });
       dispatch({ type: "clearError" });
-
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
     }
   }, [message, error]);
 
@@ -81,35 +78,25 @@ function CollegeRegistration(props) {
         photo
       )
     );
-    
-    // toast("Form succesfully submitted! Your application is under review", {
-    //   position: "bottom-center",
-    //   autoClose: 2500,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "dark",
-    // });
   };
 
   useEffect(() => {
     // if user != coordinator, then show 'verifying...' status
-    if (
-      is_Coordinator == true &&
-      is_Paid == false
-    ) {
+    if (is_Coordinator == true && is_Paid == false) {
       navigate("/verify");
-    } else if (
-      is_Coordinator == true &&
-      is_Paid == true
-    ) {
+    } else if (is_Coordinator == true && is_Paid == true) {
       navigate("/event-selection");
     }
   }, [is_Coordinator]);
 
-  return (
+  return loading ? (
+    <SpinnerRoundOutlined
+      size={80}
+      thickness={50}
+      speed={100}
+      color="rgba(172, 57, 59, 1)"
+    />
+  ) : (
     <div
       className="mx-auto bg-black min-h-screen text-white"
       style={{
