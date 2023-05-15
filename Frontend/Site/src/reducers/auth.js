@@ -32,7 +32,6 @@ export const authReducer = createReducer(initialState,{
     },
     SignUpSuccess: (state,action)=>{
         state.message = action.payload;
-        state.isAuthenticated = true
         state.loading = false
     },
     SignUpFailure: (state,action)=>{     
@@ -67,27 +66,29 @@ export const authReducer = createReducer(initialState,{
     },
 
     ForgotPassRequest: (state,action)=>{
-        state.loading = true;
+        state.mail_loading = true;
     },
     ForgotPassSuccess: (state,action)=>{
         state.message = action.payload
-        state.loading = false
+        state.error = null
+        state.mail_loading = false
     },
     ForgotPassFailure: (state,action)=>{
         state.error = action.payload
-        state.loading = false; 
+        state.mail_loading = false; 
     },
 
     ChangePassRequest: (state,action)=>{
-        state.loading = true;
+        state.mail_loading = true;
     },
     ChangePassSuccess: (state,action)=>{
         state.message = action.payload
-        state.loading = false
+        state.error = null
+        state.mail_loading = false
     },
     ChangePassFailure: (state,action)=>{
         state.error = action.payload
-        state.loading = false;     
+        state.mail_loading = false;     
     },
     
     clearError:(state,action)=>{

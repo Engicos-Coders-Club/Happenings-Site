@@ -57,3 +57,39 @@ export const getAllEvents = ()=>async(dispatch)=>{
         })
     }    
 }
+export const getDay1Events = ()=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"GetDay1EventsRequest"
+        })
+        const {data} = await axios.get(`/api/all-events/?day=1`)
+        dispatch({
+            type:"GetDay1EventsSuccess",
+            payload:data
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"GetDay1EventsFailure",
+            payload:error.response.data
+        })
+    }    
+}
+export const getDay2Events = ()=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:"GetDay2EventsRequest"
+        })
+        const {data} = await axios.get(`/api/all-events/?day=2`)
+        dispatch({
+            type:"GetDay2EventsSuccess",
+            payload:data
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"GetDay2EventsFailure",
+            payload:error.response.data
+        })
+    }    
+}
