@@ -12,6 +12,7 @@ import Forgot from "./components/ForgotPassword/Forgot";
 import "./index.css";
 import Participants from "./components/Participants/Participants";
 import Tickets from "./components/Tickets/Tickets";
+import ViewParticipants from "./components/ViewParticipants/ViewParticipants";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/participants" element={<Participants />} />
             <Route path="/tickets" element={<Tickets />} />
+            <Route path="viewparticipants" element={<ViewParticipants />} />
             {/* ------------------------------> */}
             <Route
               path="*"
