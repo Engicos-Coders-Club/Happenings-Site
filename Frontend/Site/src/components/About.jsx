@@ -14,22 +14,28 @@ function About(props) {
   useEffect(() => {
     //   gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
-      gsap
-        .timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: "#about",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .to("#AboutSide", {
-          textDecoration: "underline",
-          onComplete: () => {
-            gsap.to("#AboutSide", { textDecoration: "none" });
-          },
-        });
+      ScrollTrigger.matchMedia({
+        "(min-width: 450px)": function () {
+          gsap
+          .timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: {
+              trigger: "#about",
+              start: "top top+=300",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          })
+          .to("#about", {opacity:"170%"})
+          .to("#AboutSide", {
+            textDecoration: "underline",
+            onComplete: () => {
+              gsap.to("#AboutSide", { textDecoration: "none" });
+            },
+          });
+        }
+      });
+      
     });
     return () => ctx.revert();
   }, []);
@@ -38,7 +44,7 @@ function About(props) {
     <section
       id="about"
       className={
-        "bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 " +
+        "bg-[#171717ff] text-white min-h-screen will-change-transform opacity-0 mt-10 xs:mt-0" +
         props.animation
       }
       style={{ willChange: "opacity" }}
@@ -47,7 +53,7 @@ function About(props) {
       {/* {<SideBar select={isTrue? "about":""}/>} */}
 
       <div className="w-4/5 mx-auto pb-16">
-        <div className="flex justify-between">
+        <div className="xs:flex xs:justify-between">
           <h1
             className={`font-bold text-7xl md:text-8xl pt-8 uppercase tracking-widest`}
             style={{

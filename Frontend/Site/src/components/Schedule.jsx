@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScheduleModal from "./ScheduleModal";
-import Day1 from "../assets/day-1.webp";
-import Day2 from "../assets/day-2.webp";
+import Day1 from "../assets/day-1.svg";
+import Day2 from "../assets/day-2.svg";
 import { useRef } from "react";
 
 function Schedule(props) {
