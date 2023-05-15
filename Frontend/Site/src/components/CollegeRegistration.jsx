@@ -19,7 +19,7 @@ function CollegeRegistration(props) {
   const [photo, setPhoto] = useState(null);
 
   // Check if user is coordinator and if he has registered then navigate to /event-selection
-  const { loading, is_Coordinator, message, error } = useSelector(
+  const { loading, is_Coordinator,is_Paid, message, error } = useSelector(
     (state) => state.college
   );
 
@@ -97,13 +97,13 @@ function CollegeRegistration(props) {
   useEffect(() => {
     // if user != coordinator, then show 'verifying...' status
     if (
-      is_Coordinator?.coordinator === true &&
-      is_Coordinator.is_paid === false
+      is_Coordinator == true &&
+      is_Paid == false
     ) {
       navigate("/verify");
     } else if (
-      is_Coordinator?.coordinator === true &&
-      is_Coordinator.is_paid === true
+      is_Coordinator == true &&
+      is_Paid == true
     ) {
       navigate("/event-selection");
     }
