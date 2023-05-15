@@ -294,7 +294,7 @@ function Auth(props) {
                   {!isSignup && (
                     <div className="text-center my-5">
                       <span
-                        // onClick={}
+                        onClick={()=>navigate('/resetpass')}
                         className="text-primary cursor-pointer text-sm"
                       >
                         Forgot password?

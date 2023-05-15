@@ -62,14 +62,14 @@ function EventCard(props) {
             className="text-left text-red-950 tracking-wide text-[2.6rem] leading-[1] font-bold w-full"
             style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
-            {event?.event_name.split("(")[0]}
+            { event?.event_name.split("(")[0]}
           </p>
 
           <p
             className="text-left text-red-800 text-3xl font-bold w-full"
             style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
           >
-            {event?.event_name.split("(")[1]?.replace(")", " ")}
+            { event?.event_name.split("(")[1]?.replace(")", " ")}
           </p>
         </div>
       </button>

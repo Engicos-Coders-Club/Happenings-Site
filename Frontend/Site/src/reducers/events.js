@@ -39,6 +39,30 @@ export const eventsReducer = createReducer(initialState,{
           state.loading = false
     },
 
+    GetDay1EventsRequest: (state,action)=>{
+        state.loading = true;
+    },
+    GetDay1EventsSuccess: (state,action)=>{
+        state.day1_events = action.payload;
+        state.loading = false
+    },
+    GetDay1EventsFailure: (state,action)=>{     
+          state.error = action.payload
+          state.loading = false
+    },
+
+    GetDay2EventsRequest: (state,action)=>{
+        state.loading = true;
+    },
+    GetDay2EventsSuccess: (state,action)=>{
+        state.day2_events = action.payload;
+        state.loading = false
+    },
+    GetDay2EventsFailure: (state,action)=>{     
+          state.error = action.payload
+          state.loading = false
+    },
+
     clearError:(state,action)=>{
         state.error = null
     },
