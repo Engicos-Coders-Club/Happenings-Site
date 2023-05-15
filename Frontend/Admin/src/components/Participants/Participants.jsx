@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, TextField, Select, MenuItem, FormControl, InputLabel, Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
+import { Container } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -16,18 +17,17 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   inputContainer: {
-    display: 'flex',
-    alignItems: 'center',
     borderColor: 'orange',
+    margin: "2rem 0"
   },
   selectContainer: {
     // display: 'block',
-    padding: '0.5rem',
+    margin: '1rem 0',
   },
   eventHeader: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     fontStyle: 'italic',
     fontWeight: 'bold',
     // padding: '0.5rem',
@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 250,
     marginBottom: '1rem',
     // margin: '0 auto',
+    cursor: 'pointer',
+    "&:hover" : {
+      backgroundColor: '#f1f1f8',
+    }
   },
   eventName: {
     fontWeight: 'bold',
@@ -73,7 +77,7 @@ const Participants = () => {
   };
 
   return (
-    <div className={classes.container}>
+    <Container maxWidth="xl">
       <div className={classes.header}>
         <Typography variant="h4" className={classes.headTitle}>
           PARTICIPANTS
@@ -91,10 +95,10 @@ const Participants = () => {
         </svg>
         </Typography>
         
-        <FormControl variant="outlined" size="small" className={classes.selectContainer}>
+        <FormControl variant="outlined" fullWidth className={classes.selectContainer}>
           <InputLabel id="college-label">Select College</InputLabel>
           <Select labelId="college-label" label="Select College">
-            <MenuItem value="">Select College</MenuItem>
+            <MenuItem value="" disabled>Select College</MenuItem>
             <MenuItem value="college1">College 1</MenuItem>
             <MenuItem value="college2">College 2</MenuItem>
             <MenuItem value="college3">College 3</MenuItem>
@@ -158,7 +162,7 @@ const Participants = () => {
         </CardContent>
         </Card>      
       </div>
-    </div>
+      </Container>
   );
 };
 
