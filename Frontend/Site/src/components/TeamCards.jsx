@@ -10,13 +10,13 @@ function getImageUrl(name) {
 function TeamCards(props) {
   return (
     <div className="team-card relative h-max group transition-all duration-150 delay-100">
-      <div className="h-[290px] w-[250px] grayscale">
-        <img
+      <div className="h-[290px] w-[250px] grayscale bg-gray-700">
+        <LazyLoadImage
           src={props.data.pic}
           className="w-full h-full object-cover"
-          // width="100%"
-          // height="100%"
-          // effect="blur"
+          width="100%"
+          height="100%"
+          effect="blur"
           alt={props.data.Name + "'s image"}
         />
       </div>
