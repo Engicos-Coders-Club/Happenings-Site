@@ -6,8 +6,6 @@ import '../Stylesheets/Teams.css'
 import { councilData } from '../data/Teams_Info/Council'
 // import WebTeam from '../data/Teams_Info/WebDevs'
 import { webData } from '../data/Teams_Info/WebDevs'
-import Coordinators from '../data/Teams_Info/Coordinators.json'
-import Advisors from '../data/Teams_Info/Advisors.json'
 
 function Teams() {
   const [toggleState,setToggleState]=useState(1);
