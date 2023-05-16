@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { ToastContainer, toast } from "react-toastify";
 import eventsBg from "../assets/events-bg.webp";
+import getImageUrl from "./utility/dynamic-img";
 
 // TODO: Change logout logo
 
@@ -85,7 +86,7 @@ function EventSelection(props) {
     <div
       className="mx-auto bg-black text-white min-h-screen"
       style={{
-        background: `url('${eventsBg}') no-repeat`,
+        background: `url('${getImageUrl(eventsBg)}') no-repeat`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",

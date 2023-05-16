@@ -3,6 +3,7 @@ import modalBg from "../assets/modalBg.webp";
 import { SpinnerRoundOutlined } from "spinners-react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { useSelector } from "react-redux";
+import getImageUrl from "./utility/dynamic-img";
 
 // format Date
 const dateFormatter = (value) => {
@@ -42,7 +43,7 @@ function Modal({ event_id, closeModal }) {
           className="bg-cover h-[96%] rounded-lg my-8 w-[80%] sm:w-[68%] md:w-[62%] lg:w-[50%] overflow-y-scroll"
           style={{
             fontFamily: "Merriweather",
-            background: `url("${modalBg}") white no-repeat`,
+            background: `url("${getImageUrl(modalBg)}") white no-repeat`,
             backgroundSize: "cover",
           }}
         >
