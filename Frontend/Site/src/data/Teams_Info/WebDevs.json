@@ -7,7 +7,7 @@
     "Github": " https://github.com/atharvparkhe",
     "linkedin": "https://www.linkedin.com/in/atharvparkhe",
     "instagram": "",
-    "pic": "../../src/assets/teams/council/atharva.jpg"
+    "pic": "../assets/teams/council/atharva.jpg"
   },
   {
     "Name": "Edgar Camelo",
@@ -17,7 +17,7 @@
     "Github": "https://github.com/edgarAndrew",
     "Linkedin": "https://www.linkedin.com/in/edgar-c-460653128",
     "instagram": "https://instagram.com/edgarandrewcamelo?igshid=ZGUzMzM3NWJiOQ==",
-    "pic": "../../src/assets/teams/dev/edgar.jpg"
+    "pic": "../assets/teams/dev/edgar.jpg"
   },
   {
     "Name": "Harsh Kumar",
@@ -27,7 +27,7 @@
     "Github": "https://github.com/hk2257853",
     "linkedin": "https://www.linkedin.com/in/harsh-k-64638a1b4/",
     "instagram": "https://www.instagram.com/hk2257853/",
-    "pic": "../../src/assets/teams/dev/harsh.jpg"
+    "pic": "../assets/teams/dev/harsh.jpg"
   },
   {
     "Name": "Jayden Viegas ",
@@ -37,7 +37,7 @@
     "Github": " https://github.com/Jayden0228",
     "linkedin": "https://www.linkedin.com/in/jayden-viegas-313141267/",
     "instagram": "",
-    "pic": "../../src/assets/teams/dev/jayden.jpg"
+    "pic": "../assets/teams/dev/jayden.jpg"
   },
   {
     "Name": "Lloyd Alrich Costa",
@@ -47,7 +47,7 @@
     "Github": " https://github.com/lloyd04costa06",
     "linkedin": "https://www.linkedin.com/in/lloyd-alrich-costa-482509176",
     "instagram": "",
-    "pic": "../../src/assets/teams/dev/lloyd.jpg"
+    "pic": "../assets/teams/dev/lloyd.jpg"
   },
   {
     "Name": "Medam Greeshma",
@@ -56,7 +56,7 @@
     "Email": "greeshma290303@gmail.com",
     "Github": "https://github.com/greeshma2903",
     "Linkedin": "https://www.linkedin.com/in/m-greeshma/",
-    "pic": "../../src/assets/teams/dev/greeshma.jpg"
+    "pic": "../assets/teams/dev/greeshma.jpg"
   },
   {
     "Name": "Puneet Patil",
@@ -66,7 +66,7 @@
     "Github": " https://github.com/puneetmpatil",
     "linkedin": "https://www.linkedin.com/in/puneetpatil",
     "instagram": "",
-    "pic": "../../src/assets/teams/dev/puneet.jpg"
+    "pic": "../assets/teams/dev/puneet.jpg"
   },
   {
     "Name": "Sachin Padwalkar",
@@ -76,6 +76,6 @@
     "Github": " https://github.com/Sachin9822",
     "Linkedin": "https://in.linkedin.com/in/sachin-padwalkar-a265291ba",
     "instagram": "https://www.instagram.com/hk2257853/",
-    "pic": "../../src/assets/teams/dev/sachin.png"
+    "pic": "../assets/teams/dev/sachin.png"
   }
 ]
