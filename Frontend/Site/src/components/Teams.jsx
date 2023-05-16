@@ -3,8 +3,9 @@ import {useState} from 'react'
 import TeamCards from '../components/TeamCards'
 import TeamCardsDev from './TeamCardDev'
 import '../Stylesheets/Teams.css'
-import council from '../data/Teams_Info/Council.json'
-import WebTeam from '../data/Teams_Info/WebDevs.json'
+import { councilData } from '../data/Teams_Info/Council'
+// import WebTeam from '../data/Teams_Info/WebDevs'
+import { webData } from '../data/Teams_Info/WebDevs'
 import Coordinators from '../data/Teams_Info/Coordinators.json'
 import Advisors from '../data/Teams_Info/Advisors.json'
 
@@ -34,7 +35,7 @@ function Teams() {
       </div>
 
       <div className={toggleState == 1 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-10' : 'non-active-content'}>
-        {council.map((item,index) => (
+        {councilData.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
       </div>
@@ -52,7 +53,7 @@ function Teams() {
       </div> */}
 
       <div className={toggleState == 4 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-28' : 'non-active-content'}>
-        {WebTeam.map((item,index) => (
+        {webData.map((item,index) => (
           <TeamCardsDev data={item} key={index}/>
         ))}
       </div>
