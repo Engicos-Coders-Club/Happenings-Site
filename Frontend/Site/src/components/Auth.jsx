@@ -40,9 +40,6 @@ function Auth(props) {
         progress: undefined,
         theme: "dark",
       });
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
     }
     if (error?.message) {
       toast(`${error.message}`, {
@@ -94,10 +91,6 @@ function Auth(props) {
         progress: undefined,
         theme: "dark",
       };
-
-    setTimeout(() => {
-      navigate("/");
-    }, 5000);
   };
   
   const onFailureLogin = (res) => {
