@@ -1,12 +1,3 @@
-import atharva from '../../assets/teams/council/atharva.jpg'
-import edgar from '../../assets/teams/dev/edgar.jpg'
-import greeshma from '../../assets/teams/dev/greeshma.jpg'
-import harsh from '../../assets/teams/dev/harsh.jpg'
-import jayden from '../../assets/teams/dev/jayden.jpg'
-import lloyd from '../../assets/teams/dev/lloyd.jpg'
-import puneet from '../../assets/teams/dev/puneet.jpg'
-import sachin from '../../assets/teams/dev/sachin.png'
-
 export const webData = [
   {
     Name: "Atharva Parkhe",
@@ -16,7 +7,7 @@ export const webData = [
     Github: " https://github.com/atharvparkhe",
     linkedin: "https://www.linkedin.com/in/atharvparkhe",
     instagram: "",
-    pic: atharva
+    pic: '/assets/teams/council/atharva.jpg'
   },
   {
     Name: "Edgar Camelo",
@@ -26,7 +17,7 @@ export const webData = [
     Github: "https://github.com/edgarAndrew",
     linkedin: "https://www.linkedin.com/in/edgar-c-460653128",
     instagram: "https://instagram.com/edgarandrewcamelo?igshid=ZGUzMzM3NWJiOQ==",
-    pic: edgar
+    pic: '/assets/teams/dev/edgar.jpg'
   },
   {
     Name: "Harsh Kumar",
@@ -36,7 +27,7 @@ export const webData = [
     Github: "https://github.com/hk2257853",
     linkedin: "https://www.linkedin.com/in/harsh-k-64638a1b4/",
     instagram: "https://www.instagram.com/hk2257853/",
-    pic: harsh
+    pic: '/assets/teams/dev/harsh.jpg'
   },
   {
     Name: "Jayden Viegas ",
@@ -46,7 +37,7 @@ export const webData = [
     Github: " https://github.com/Jayden0228",
     linkedin: "https://www.linkedin.com/in/jayden-viegas-313141267/",
     instagram: "",
-    pic: jayden
+    pic: '/assets/teams/dev/jayden.jpg'
   },
   {
     Name: "Lloyd Alrich Costa",
@@ -56,7 +47,7 @@ export const webData = [
     Github: " https://github.com/lloyd04costa06",
     linkedin: "https://www.linkedin.com/in/lloyd-alrich-costa-482509176",
     instagram: "",
-    pic: lloyd
+    pic: '/assets/teams/dev/lloyd.jpg'
   },
   {
     Name: "Medam Greeshma",
@@ -65,7 +56,7 @@ export const webData = [
     Email: "greeshma290303@gmail.com",
     Github: "https://github.com/greeshma2903",
     linkedin: "https://www.linkedin.com/in/m-greeshma/",
-    pic: greeshma
+    pic: '/assets/teams/dev/greeshma.jpg'
   },
   {
     Name: "Puneet Patil",
@@ -75,7 +66,7 @@ export const webData = [
     Github: " https://github.com/puneetmpatil",
     linkedin: "https://www.linkedin.com/in/puneetpatil",
     instagram: "",
-    pic: puneet
+    pic: '/assets/teams/dev/puneet.jpg'
   },
   {
     Name: "Sachin Padwalkar",
@@ -85,6 +76,6 @@ export const webData = [
     Github: " https://github.com/Sachin9822",
     linkedin: "https://in.linkedin.com/in/sachin-padwalkar-a265291ba",
     instagram: "https://www.instagram.com/hk2257853/",
-    pic: sachin
+    pic: '/assets/teams/dev/sachin.png'
   }
 ]
