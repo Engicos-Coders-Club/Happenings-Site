@@ -1,22 +1,22 @@
 import React from "react";
 import { HiPhone } from "react-icons/hi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function getImageUrl(name) {
-  return new URL(`${name}`, import.meta.url).href
+  return new URL(`${name}`, import.meta.url).href;
 }
 
 function TeamCards(props) {
   return (
     <div className="team-card relative h-max group transition-all duration-150 delay-100">
       <div className="h-[290px] w-[250px] grayscale">
-      <LazyLoadImage
+        <img
           src={getImageUrl(props.data.pic)}
           className="w-full h-full object-cover"
-          width="100%"
-          height="100%"
-          effect="blur"
+          // width="100%"
+          // height="100%"
+          // effect="blur"
           alt={props.data.Name + "'s image"}
         />
       </div>
