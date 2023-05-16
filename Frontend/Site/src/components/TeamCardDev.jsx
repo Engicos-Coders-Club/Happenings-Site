@@ -14,7 +14,7 @@ function TeamCardsDev(props) {
     <div className="team-card relative h-max group transition-all duration-150 delay-100">
       <div className="h-[290px] w-[250px] grayscale">
         <img
-          src={getImageUrl(props.data.pic)}
+          src={props.data.pic}
           className="w-full h-full object-cover"
           // width="100%"
           // height="100%"
