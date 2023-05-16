@@ -38,7 +38,7 @@ function EventSelectionCard(props) {
         )}
       <div
         className={`border-2 p-3 rounded-md border-gray-600 ${
-          event.status ? "bg-lime-800" : isSelected ? "bg-yellow-600" : null
+          event.status ? "bg-lime-800" : isSelected ? "bg-yellow-600" : "bg-black bg-opacity-30"
         } w-[250px] h-max font-basic`}
       >
         <div className="flex justify-center items-start flex-col mb-4">

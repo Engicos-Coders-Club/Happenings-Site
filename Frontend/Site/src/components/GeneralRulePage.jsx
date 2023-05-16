@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { BsArrowReturnLeft, BsArrowRightShort } from "react-icons/bs";
 import { RiArrowRightFill, RiArrowDownFill } from "react-icons/ri";
 import pointCategorizationImg from "../assets/point_categorization.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function GeneralRuleModal(props) {
   return (
@@ -181,12 +183,13 @@ function GeneralRuleModal(props) {
               the POINT SYSTEM
             </p>
             <div className="w-3/4 md:w-[60%] mx-auto">
-              <img
+              <LazyLoadImage
                 src={pointTable}
-                width="75%"
-                alt=""
+                width="100%"
+                height="100%"
+                alt="Points Table for Happenings"
                 className="w-full h-full object-contain"
-                loading="lazy"
+                effect="blur"
               />
             </div>
           </div>
@@ -201,10 +204,12 @@ function GeneralRuleModal(props) {
             <RiArrowDownFill className="text-gray-400" />
           </p>
           <div className="mx-auto md:w-4/5">
-            <img
-              loading="lazy"
+            <LazyLoadImage
+              width="100%"
+              height="100%"
               src={pointCategorizationImg}
               className="w-full h-full object-contain"
+              effect="blue"
               alt="category of events according to points"
             />
           </div>

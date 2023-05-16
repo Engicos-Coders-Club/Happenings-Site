@@ -1,12 +1,12 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScheduleModal from "./ScheduleModal";
 import Day1 from "../assets/day-1.svg";
 import Day2 from "../assets/day-2.svg";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import getImageUrl from './utility/dynamic-img'
 
 function Schedule(props) {
   // gsap.registerPlugin(ScrollTrigger);
@@ -76,7 +76,6 @@ function Schedule(props) {
 
   const [showDay1, setShowDay1] = useState(false);
   const [showDay2, setShowDay2] = useState(false);
-  const [isTrue, setIt] = useState(0);
 
   return (
     <section
@@ -120,18 +119,18 @@ function Schedule(props) {
               className="block xs:hidden"
               onClick={() => setShowDay1(true)}
             >
-              <img
+              <LazyLoadImage
                 className="relative z-[1] bg-white"
-                src={Day1}
-                alt="menu"
+                src={getImageUrl(Day1)}
+                alt="Day 1 schedule"
                 width="1240"
                 height="400"
               />
             </button>
-            <img
+            <LazyLoadImage
               className="relative z-[1] hidden xs:block bg-white"
-              src={Day1}
-              alt="menu"
+              src={getImageUrl(Day1)}
+              alt="Day1 schedule"
               width="1240"
               height="400"
             />
@@ -157,18 +156,18 @@ function Schedule(props) {
               className="block xs:hidden"
               onClick={() => setShowDay2(true)}
             >
-              <img
+              <LazyLoadImage
                 className="relative z-[1] bg-white"
-                src={Day2}
-                alt="menu"
+                src={getImageUrl(Day2)}
+                alt="Day 2 menu"
                 width="1240"
                 height="400"
               />
             </button>
-            <img
+            <LazyLoadImage
               className="relative z-[1] hidden xs:block bg-white"
-              src={Day2}
-              alt="menu"
+              src={getImageUrl(Day2)}
+              alt="Day 2 menu"
               width="1240"
               height="400"
             />

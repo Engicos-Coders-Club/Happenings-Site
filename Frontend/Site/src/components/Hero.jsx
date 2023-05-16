@@ -11,7 +11,7 @@ export class Hero extends Component {
     return (
       <section
         id="home"
-        className="w-full h-screen overflow-x-hidden  section-1 m-0 p-0 relative"
+        className="w-full h-screen overflow-x-hidden section-1 m-0 p-0 relative"
       >
         <div className="wrapper w-full h-full">
           <Navbar />
@@ -48,6 +48,8 @@ export class Hero extends Component {
         <LazyLoadImage
           src={heroBg}
           alt=" "
+          width="100%"
+          height="100%"
           className="w-full h-full object-cover absolute top-0 left-0 right-0 z-0"
           placeholderSrc={heroSmallBg}
           visibleByDefault

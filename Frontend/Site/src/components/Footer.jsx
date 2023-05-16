@@ -7,6 +7,11 @@ import { HiOutlineMail } from "react-icons/hi";
 import { footerleft, footerright } from "../assets";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
+function getImageUrl(name) {
+  return new URL(`${name}`, import.meta.url).href;
+}
 
 function Footer() {
   return (
@@ -82,17 +87,20 @@ function Footer() {
               </div>
             </div>
             {/* <Link to="/teams" className="w-max"> */}
-              <Link to="/teams" className="w-max flex text-white px-2 md:px-5 py-2 rounded-md border-2 border-cus-orange hover:bg-cus-orange uppercase mt-5">
-                <span
-                  className={`text-base lg:text-xl font-semibold tracking-wide font-MANGO`}
-                >
-                  the team
-                </span>
-                <FiArrowUpRight
-                  className="flex mx-2 items-center justify-center"
-                  size={25}
-                />
-              </Link>
+            <Link
+              to="/teams"
+              className="w-max flex text-white px-2 md:px-5 py-2 rounded-md border-2 border-cus-orange hover:bg-cus-orange uppercase mt-5"
+            >
+              <span
+                className={`text-base lg:text-xl font-semibold tracking-wide font-MANGO`}
+              >
+                the team
+              </span>
+              <FiArrowUpRight
+                className="flex mx-2 items-center justify-center"
+                size={25}
+              />
+            </Link>
             {/* </Link> */}
             {/* <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Buy Passes Now <FiArrowUpRight size={20} /></button> */}
             {/* <div className="mt-4 flex justify-center">
@@ -207,11 +215,21 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between py-3 px-2">
-        <img src={footerleft} className="bottom-0 left-2" width={150} />
-        <img src={footerright} className="bottom-0 right-2" width={150} />
-        {/* <img src = {footerright} className="relative bottom-0 right-0" width={30}/> */}
-      </div>
+      <LazyLoadComponent>
+        <div className="flex justify-between py-3 px-2">
+          <img
+            src={getImageUrl(footerleft)}
+            className="bottom-0 left-2"
+            width={150}
+          />
+          <img
+            src={getImageUrl(footerright)}
+            className="bottom-0 right-2"
+            width={150}
+          />
+          {/* <img src = {footerright} className="relative bottom-0 right-0" width={30}/> */}
+        </div>
+      </LazyLoadComponent>
     </div>
   );
 }
