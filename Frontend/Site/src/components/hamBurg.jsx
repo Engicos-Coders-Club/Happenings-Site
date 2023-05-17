@@ -43,7 +43,7 @@ function hamBurg(props) {
 
   return (
     <div className="h-screen w-full fixed z-[1000] bg-[#171717ff] flex flex-start top-0 gap-0 Ham overflow-hidden left-0">
-      <div className=" relative flex flex-wrap text-white text-5xl font-MANGO grow">
+      <div className=" relative flex flex-wrap text-white text-3xl md:text-5xl font-MANGO grow">
         <HashLink smooth to="/#home" className={hamClass}>
           <div className="pl-9 w-full" onClick={ReverseAnimation}>
             home
@@ -89,6 +89,15 @@ function hamBurg(props) {
           </div>
         </HashLink>
 
+        <HashLink smooth to="/#sponsor" className={hamClass}>
+          <div className="pl-9 w-full" onClick={ReverseAnimation}>
+            sponsors
+          </div>
+          <div className="pr-9" onClick={ReverseAnimation}>
+            <BsBoxArrowUpRight size={30} color="#171717ff" />
+          </div>
+        </HashLink>
+
         <HashLink smooth to="/all-events" className={hamClass}>
           <div className="pl-9 w-full" onClick={ReverseAnimation}>
             all EVENTS
@@ -115,15 +124,6 @@ function hamBurg(props) {
             <BsBoxArrowUpRight size={30} color="#171717ff" />
           </div>
         </Link>
-
-        {/* <HashLink smooth to="/#sponsor" className={hamClass}>
-          <div className="pl-9 w-full" onClick={ReverseAnimation}>
-            sponsors
-          </div>
-          <div className="pr-9" onClick={ReverseAnimation}>
-            <BsBoxArrowUpRight size={30} color="#171717ff" />
-          </div>
-        </HashLink> */}
 
         <div className={hamClassLast}>
           {/* <div className='pl-9' onClick={ReverseAnimation}>TIME</div> */}

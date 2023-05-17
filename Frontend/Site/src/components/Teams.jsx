@@ -52,8 +52,8 @@ function Teams() {
         </div>
       </div>
 
-      <div className='relative w-full flex tracking-widest justify-center items-center border-y-2 border-[#FF6600] h-[50px]'>
-        <ul className='font-MANGO sm:text-xl lg:text-3xl text-xl text-white list-none flex flex-right gap-9 p-2 cursor-pointer'>
+      <div className='relative w-full h-max flex tracking-widest justify-center items-center border-y-2 border-[#FF6600] h-[50px]'>
+        <ul className='font-MANGO sm:text-xl lg:text-3xl text-xl text-white list-none flex flex-right  items-center md:overflow-hidden gap-9 p-2 cursor-pointer overflow-y-scroll'>
           <li onClick={() => toggleTab(1)} className={toggleState == 1 ? 'active-tab' : 'non-active-tab'}>COUNCIL</li>
           {/* <li onClick={() => toggleTab(2)} className={toggleState == 2 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li> */}
           {/* <li onClick={() => toggleTab(3)} className={toggleState == 3 ? 'active-tab' : 'non-active-tab'}>ADVISORS</li> */}
