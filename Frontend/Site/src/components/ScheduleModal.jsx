@@ -1,7 +1,7 @@
 import { BsFillNutFill } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
-import Day1 from "../assets/day-1.svg";
-import Day2 from "../assets/day-2.svg";
+// import Day1 from "../assets/day-1.png";
+// import Day2 from "../assets/day-2.png";
 import { Link } from "react-router-dom";
 
 
