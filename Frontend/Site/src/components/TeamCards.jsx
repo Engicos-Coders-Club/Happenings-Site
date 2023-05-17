@@ -2,6 +2,7 @@ import React from "react";
 import { HiPhone } from "react-icons/hi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { SpinnerDiamond } from "spinners-react";
 
 function getImageUrl(name) {
   return new URL(`${name}`, import.meta.url).href;
@@ -10,14 +11,21 @@ function getImageUrl(name) {
 function TeamCards(props) {
   return (
     <div className="team-card relative h-max group transition-all duration-150 delay-100">
-      <div className="h-[290px] w-[250px] grayscale">
-        <img
+      <div className="h-[290px] w-[250px] grayscale bg-gray-700">
+        <LazyLoadImage
           src={props.data.pic}
           className="w-full h-full object-cover"
-          // width="100%"
-          // height="100%"
-          // effect="blur"
+          width="100%"
+          height="100%"
+          effect="blur"
           alt={props.data.Name + "'s image"}
+          placeholder={
+            <SpinnerDiamond
+              thickness={50}
+              speed={100}
+              color="rgba(172, 57, 59, 1)"
+            />
+          }
         />
       </div>
       <h2 className="team-name relative x-0 bottom-[25px] text-white group-hover:text-cus-bright-orange capitalize font-MANGO text-5xl drop-shadow-sm">

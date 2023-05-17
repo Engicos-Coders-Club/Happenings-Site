@@ -1,7 +1,7 @@
 import React from "react";
-import { FaGit, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGit, FaInstagram, FaBehance } from "react-icons/fa";
 import {} from "react-icons/fa";
-import { FiLinkedin, FiGithub, FiMail, FiPhone } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiMail, FiLink } from "react-icons/fi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -12,13 +12,13 @@ function getImageUrl(name) {
 function TeamCardsDev(props) {
   return (
     <div className="team-card relative h-max group transition-all duration-150 delay-100">
-      <div className="h-[290px] w-[250px] grayscale">
-        <img
+      <div className="h-[290px] w-[250px] grayscale bg-gray-700">
+        <LazyLoadImage
           src={props.data.pic}
           className="w-full h-full object-cover"
-          // width="100%"
-          // height="100%"
-          // effect="blur"
+          width="100%"
+          height="100%"
+          effect="blur"
           alt={props.data.Name + "'s image"}
         />
       </div>
@@ -54,12 +54,26 @@ function TeamCardsDev(props) {
             <FaInstagram size={20} />
           </a>
         )}
-        <a
+        {props.data?.Github && <a
           className="hover:text-cus-bright-orange cursor-pointer"
           href={props.data?.Github}
         >
           <FiGithub size={20} />
+        </a>}
+        {props.data?.Behance && <a
+          className="hover:text-cus-bright-orange cursor-pointer"
+          href={props.data?.Behance}
+        >
+          <FaBehance size={20} />
         </a>
+        }
+        {props.data?.website && <a
+          className="hover:text-cus-bright-orange cursor-pointer"
+          href={props.data?.website}
+        >
+          <FiLink size={20} />
+        </a>
+        }
       </div>
     </div>
   );
