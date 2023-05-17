@@ -1,3 +1,4 @@
+
 import etherentExpress from '../../public/assets/sponsors/internet/ethernetExpress.png' 
 import AnandBose from '../../public/assets/sponsors/eventsponsors/anandbose.webp'
 import saurabhlotlikargroup from '../../public/assets/sponsors/eventsponsors/saurabhlotlikargroup.webp'
@@ -27,6 +28,7 @@ const sponsors=[
         title:"SPORTS SPONSORS",
         collection:[
             {
+
                 img: fcgoa,
                 link: 'https://fcgoa.in/'
             },
@@ -45,6 +47,7 @@ const sponsors=[
         title:"EVENT SPONSORS",
         collection:[
             {
+
                 img: AnandBose,
                 link: ''
             },
@@ -61,7 +64,9 @@ const sponsors=[
     {
         title:"SUPPORTERS",
         collection:[
+           
             {
+
                 img: sanaointernational,
                 link: 'https://www.sanaointl.com/'
             },

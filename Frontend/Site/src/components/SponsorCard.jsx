@@ -27,9 +27,10 @@ function SponsorCard(props) {
     return (
 
 
+
         <div className='my-5 md:my-16'>
             <div className="hidden md:flex items-center justify-around px-10">
-                <img src={Line} width={screenSize.width - 400 - props.title.length} alt="" />
+                <img src={Line} width={screenSize.width - 420 - props.title.length} alt="" />
                 <span className="md:text-5xl lg:text-6xl">{props.title}</span>
             </div>
             <div className="block md:hidden px-10 my-3">

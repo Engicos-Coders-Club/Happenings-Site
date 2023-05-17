@@ -6,8 +6,6 @@ import { gsap } from 'gsap'
 import React, { useEffect } from 'react'
 import SponsorCard from './SponsorCard'
 import {sponsors} from '../data/sponsorsData'
-import Navbar from '../components/navbar'
-import SideBar from '../components/SideBar'
 
 function Sponsor() {
     
@@ -15,16 +13,16 @@ function Sponsor() {
         if(window.innerWidth>=1000){
             gsap.to('.moveR',{
                 x: "random(-100, 500)",
-                y: "random(-300, 400);",
-                duration: 5,
+                y: "random(0, 1000);",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
             });
             gsap.to('.moveO',{
-                x: "random(-100, 1100)", 
-                y: "random(-50, 700)",
-                duration: 5,
+                x: "random(-50, 1100)", 
+                y: "random(-50, 1200)",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
@@ -33,16 +31,16 @@ function Sponsor() {
         else if(window.innerWidth>=700){
             gsap.to('.moveR',{
                 x: "random(-100, 300)",
-                y: "random(-300, 900);",
-                duration: 5,
+                y: "random(0, 1300);",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
             });
             gsap.to('.moveO',{
-                x: "random(-100, 900)", 
-                y: "random(-50, 1000)",
-                duration: 5,
+                x: "random(-50, 900)", 
+                y: "random(-50, 1400)",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
@@ -50,17 +48,17 @@ function Sponsor() {
         }   
         else{
             gsap.to('.moveR',{
-                x: "random(-100, 75)",
-                y: "random(-300, 2700);",
-                duration: 5,
+                x: "random(-50, 75)",
+                y: "random(0, 3100);",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
             });
             gsap.to('.moveO',{
-                x: "random(-100, 125)", 
-                y: "random(-50, 3025)",
-                duration: 5,
+                x: "random(-50, 125)", 
+                y: "random(-50, 3425)",
+                duration: 15,
                 ease:"none",
                 repeat:-1,
                 repeatRefresh:true
@@ -69,11 +67,8 @@ function Sponsor() {
 
     }, []);
   return (
-    // <div className='relative'>
         
         <section id='sponsor' className="w-full min-h-screen md:pl-16 relative bg-[#171717ff]  text-white overflow-hidden" style={{'fontFamily':'MangoGrotesque'}}>
-        {/* <Navbar />
-        <SideBar /> */}
             <div className="moveR absolute">
                 <img src={Red} width={600} alt="" />
             </div>
@@ -83,8 +78,8 @@ function Sponsor() {
             <div className="h-auto relative z-1">
 
                 <div className="pl-16 xs:pl-4 xs:flex justify-around md:justify-between items-center px-5 py-10">
-                    <p className="text-5xl sm:text-6xl md:text-7xl pt-5 md:pt-0 font-extrabold">OUR SPONSORS</p>
-                    <div className='pr-0 md:pr-20'><Link to="/register"><button className='flex bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-base lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
+                    <p className="text-5xl sm:text-6xl md:text-7xl pt-5 md:pt-0 pl-0 sm:pl-16 font-bold uppercase tracking-widest">OUR SPONSORS</p>
+                    <div className='pr-0 md:pr-20'><Link to="/tickets"><button className='flex bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-base lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
                 </div>
 
                 {
@@ -99,7 +94,6 @@ function Sponsor() {
             </div>
 
         </section>
-    // </div>
   );
 }
 
