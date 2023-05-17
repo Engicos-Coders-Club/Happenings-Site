@@ -1,6 +1,6 @@
-import Red from '../assets/Red.png'
-import Orange from '../assets/Orange.png'
-import { FiArrowUpRight } from 'react-icons/fi'
+import Red from "../assets/Red.png";
+import Orange from "../assets/Orange.png";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { gsap } from 'gsap'
 import React, { useEffect } from 'react'
@@ -82,18 +82,20 @@ function Sponsor() {
                     <div className='pr-0 md:pr-20'><Link to="/tickets"><button className='flex bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase'><span className={`text-base lg:text-xl font-semibold tracking-wide `} style={{'fontFamily':'MangoGrotesque'}}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link></div>
                 </div>
 
-                {
-                    sponsors.map((sponsor,id)=>{
-                        return(
-                            <SponsorCard title={sponsor.title} data={sponsor.collection} key={id}/>
-                        )
-                    })
-                }
-                            
-
-            </div>
-
-        </section>
+        {sponsors.map((sponsor, id) => {
+          return (
+            <SponsorCard
+              title={sponsor.title}
+              height={sponsor.height}
+              width={sponsor.width}
+              data={sponsor.collection}
+              key={id}
+            />
+          );
+        })}
+      </div>
+    </section>
+    // </div>
   );
 }
 

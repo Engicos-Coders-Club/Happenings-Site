@@ -100,4 +100,14 @@ export const webData = [
     instagram: "https://instagram.com/krutarth22__?igshid=OTk0YzhjMDVlZA==",
     pic: "/assets/teams/dev/krutarth.webp",
   },
+  {
+    Name: "Nilesh Aggarwal",
+    Designation: "Dev Ops",
+    Contact: "73506 76000",
+    Email: "iamkrutarth1234@gmail.com",
+    Github: "https://github.com/nileshaggarwal",
+    linkedin: "https://www.linkedin.com/in/nilesh-aggarwal-507552191",
+    instagram: "",
+    pic: "/assets/teams/dev/nilesh.webp",
+  },
 ];
