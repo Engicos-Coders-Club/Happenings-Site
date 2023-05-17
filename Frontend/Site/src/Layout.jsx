@@ -1,6 +1,6 @@
 import Hero from "./components/HeroSection";
 import Schedule from "./components/Schedule";
-// import Sponsor from './components/Sponsor'
+import Sponsor from './components/Sponsor'
 import About from "./components/About";
 import { Suspense, lazy } from "react";
 import EventCarouselSection from "./components/EventCarouselSection";
@@ -36,7 +36,7 @@ function Layout(props) {
         <About s={""} animation={"section-2"} />
         <EventCarouselSection />
         <Schedule />
-        {/* <Sponsor /> */}
+        <Sponsor />
         <Venue />
         <Footer />
       </div>
