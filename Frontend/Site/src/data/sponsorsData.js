@@ -32,6 +32,7 @@ const sponsors=[
         width: 16,
         collection:[
             {
+
                 img: fcgoa,
                 link: 'https://fcgoa.in/',
                 color: 'rgba(255,255,255,0)'
@@ -56,6 +57,7 @@ const sponsors=[
         width: null,
         collection:[
             {
+
                 img: AnandBose,
                 link: '',
                 color: '#fff'
@@ -77,7 +79,9 @@ const sponsors=[
         height: 6,
         width: 13,
         collection:[
+           
             {
+
                 img: sanaointernational,
                 link: 'https://www.sanaointl.com/',
                 color: '#fff'
