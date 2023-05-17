@@ -29,7 +29,7 @@ function SponsorCard(props) {
     
     <div className='my-5 md:my-16'>
         <div className="hidden md:flex items-center justify-around px-10">
-            <img src={Line} width={screenSize.width - 400 - props.title.length} alt="" />
+            <img src={Line} width={screenSize.width - 420 - props.title.length} alt="" />
             <span className="md:text-5xl lg:text-6xl">{props.title}</span>
         </div>
         <div className="block md:hidden px-10 my-3">
@@ -42,7 +42,7 @@ function SponsorCard(props) {
                 {
                     props.data.map((item,id)=>{
                         return(
-                            <a href={item.link} key={id}><img className='hover:scale-105 w-1/2 m-auto my-5 sm:w-3/4 md:w-full md:m-0' src={item.img} /></a>
+                            <a href={item.link} key={id}><img width={item.width} className='hover:scale-105 m-auto my-5 md:m-0' src={item.img} /></a>
                         )
                     })
                 }
