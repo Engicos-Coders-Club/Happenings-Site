@@ -13,6 +13,7 @@ import Teams from "./components/Teams";
 import { SpinnerRoundOutlined } from "spinners-react";
 import GeneralRulePage from "./components/GeneralRulePage";
 import Participants from "./components/Participants";
+import AllParticipants from "./components/AllParticipants";
 import Modal from "./components/Modal";
 import Layout from "./Layout";
 import { loadUser } from "./actions/auth";
@@ -126,6 +127,16 @@ function App() {
                 )
               }
               path="/participants/:id"
+            />
+            <Route
+              element={
+                isAuthenticated ? (
+                  <AllParticipants title="All Participants" />
+                ) : (
+                  <Auth title="Authentication" />
+                )
+              }
+              path="/participants"
             />
             <Route
               element={<AllEvents title="All Events" />}

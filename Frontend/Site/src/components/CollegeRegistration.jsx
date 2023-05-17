@@ -90,12 +90,22 @@ function CollegeRegistration(props) {
   }, [is_Coordinator]);
 
   return loading ? (
-    <SpinnerRoundOutlined
-      size={80}
-      thickness={50}
-      speed={100}
-      color="rgba(172, 57, 59, 1)"
-    />
+    <div
+      style={{
+        height: "100vh",
+        width: "100wh",
+        backgroundColor: "black",
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <SpinnerRoundOutlined
+        size={80}
+        thickness={50}
+        speed={100}
+        color="rgba(172, 57, 59, 1)"
+      />
+    </div>
   ) : (
     <div
       className="mx-auto bg-black min-h-screen text-white"
