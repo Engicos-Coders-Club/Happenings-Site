@@ -1,13 +1,18 @@
-import casant from '../assets/Sponsor/casant.png'
-import fcg from '../assets/Sponsor/FCG.png'
-import expl from '../assets/Sponsor/expl.png'
-import sanao from '../assets/Sponsor/sanao.png'
-import visas from '../assets/Sponsor/visas.png'
-import decan from '../assets/Sponsor/decan.png'
-import Ambika from '../assets/Sponsor/Ambika.png'
-import himalaya from '../assets/Sponsor/himalaya.png'
-import anand from '../assets/Sponsor/anand.jpeg'
-import lotlikar from '../assets/Sponsor/lotlikar.jpeg'
+
+import etherentExpress from '../../public/assets/sponsors/internet/ethernetExpress.png' 
+import AnandBose from '../../public/assets/sponsors/eventsponsors/anandbose.webp'
+import saurabhlotlikargroup from '../../public/assets/sponsors/eventsponsors/saurabhlotlikargroup.webp'
+import ambika from '../../public/assets/sponsors/supporters/Ambika.webp'
+import deccan from '../../public/assets/sponsors/supporters/deccan.webp'
+import himalaya from '../../public/assets/sponsors/supporters/himalaya.webp'
+import mycanadavisas from '../../public/assets/sponsors/supporters/mycanadavisas.webp'
+import sanaointernational from '../../public/assets/sponsors/supporters/sanaointernational.webp'
+import fcgoa from '../../public/assets/sponsors/sports/FCGOa.png'
+import sbi from '../../public/assets/sponsors/eventsponsors/SBI.webp'
+import casant from '../../public/assets/sponsors/title/Casant.webp'
+import jvshetty from '../../public/assets/sponsors/supporters/JVShetty.webp'
+import unionBank from '../../public/assets/sponsors/supporters/unionBank.webp'
+import blueskript from '../../public/assets/sponsors/supporters/blueskript.webp'
 
 const sponsors=[
     {
@@ -15,7 +20,6 @@ const sponsors=[
         collection:[
             {
                 img: casant,
-                width: 290,
                 link: 'https://casant.in/'
             },
         ]
@@ -24,39 +28,36 @@ const sponsors=[
         title:"SPORTS SPONSORS",
         collection:[
             {
-                img: fcg,
-                width: 270,
+
+                img: fcgoa,
                 link: 'https://fcgoa.in/'
-            }
+            },
         ]
     },
     {
         title:"INTERNET SPONSORS",
         collection:[
             {
-                img: expl,
-                width: 225,
+                img: etherentExpress,
                 link: 'https://www.expl.in/'
-            }
+            },
         ]
     },
     {
         title:"EVENT SPONSORS",
         collection:[
             {
-                img: anand,
-                width: 200,
+
+                img: AnandBose,
                 link: ''
             },
             {
-                img: lotlikar,
-                width: 200,
+                img: saurabhlotlikargroup,
                 link: ''
             },
             {
-                img: sanao,
-                width: 200,
-                link: 'https://www.sanaointl.com/'
+                img: sbi,
+                link: 'https://www.onlinesbi.sbi/'
             },
         ]
     },
@@ -65,25 +66,38 @@ const sponsors=[
         collection:[
            
             {
-                img: visas,
-                width: 170,
-                link: ''
+
+                img: sanaointernational,
+                link: 'https://www.sanaointl.com/'
             },
             {
-                img: decan,
-                width: 170,
+                img: mycanadavisas,
+                link: 'https://mycanadavisas.com/'
+            },
+            {
+                img: deccan,
                 link: 'https://www.deccanchemicals.com/'
             },
             {
-                img: Ambika,
-                width: 170,
-                link: 'https://website--3406883623530806704170-jewelrystore.business.site/?utm_source=gmb&utm_medium=referral'
+                img: ambika,
+                link: ''
             },
             {
                 img: himalaya,
-                width: 170,
                 link: 'https://himalayawellness.in/'
             },
+            {
+                img: jvshetty,
+                link: ''
+            },
+            {
+                img: unionBank,
+                link: 'https://www.unionbankofindia.co.in/english/home.aspx'
+            },
+            {
+                img: blueskript,
+                link: 'https://blueskript.com/'
+            }
         ]
     },
 ]

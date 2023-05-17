@@ -65,6 +65,10 @@ function EventSelection(props) {
     navigate("/");
   };
 
+  const handleViewPartipants = () =>{
+
+  }
+
   return loading ? (
     <div
       style={{
@@ -129,6 +133,20 @@ function EventSelection(props) {
           <div className="flex gap-2 items-center font-bold">
             <span className="w-6 h-6 rounded-full bg-lime-800"></span>{" "}
             <p>filled</p>
+          </div>
+        </div>
+        <div className="flex justify-end w-full md:w-4/5 mx-auto">
+          <div className="flex items-center justify-end">
+            <button
+              className="px-5 text-2xl md:text-3xl cursor-pointer border-red-600 border p-2 hover:bg-red-600 hover:border-none hover:scale-105"
+              style={{
+                fontFamily:
+                  "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+              }}
+              onClick={()=>navigate('/participants')}
+            >
+              View All participants
+            </button>
           </div>
         </div>
         <div className="w-[80vw] md:w-[60vw] mx-auto pt-8">

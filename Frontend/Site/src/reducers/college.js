@@ -44,6 +44,19 @@ export const collegeReducer = createReducer(initialState,{
           state.loading = false
     },
 
+    AllParticipantsRequest: (state,action)=>{
+        state.participants = null
+        state.loading = true;
+    },
+    AllParticipantsSuccess: (state,action)=>{
+        state.participants = action.payload;
+        state.loading = false
+    },
+    AllParticipantsFailure: (state,action)=>{     
+          state.error = action.payload
+          state.loading = false
+    },
+
     ViewEventParticipantsRequest: (state,action)=>{
         state.loading = true;
     },
