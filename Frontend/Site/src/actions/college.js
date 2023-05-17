@@ -245,3 +245,29 @@ export const viewEventCoordinators = ()=>async(dispatch)=>{
       })
   }    
 }
+export const viewAllParticipants = ()=>async(dispatch)=>{
+  try {
+      dispatch({
+          type:"AllParticipantsRequest"
+      })
+
+      const user = localStorage.getItem('user');
+      let tokens = ''
+      if (user) {
+          const { token } = JSON.parse(localStorage.getItem('user'));
+          tokens = `Bearer ${token}`;
+      }
+
+      const {data} = await axios.get(`/api/college-participants/`,{headers:{'Authorization':tokens}})
+      dispatch({
+          type:"AllParticipantsSuccess",
+          payload:data
+      })
+  } catch (error) {
+      console.log(error.response.data,error.response.status)
+      dispatch({
+          type:"AllParticipantsFailure",
+          payload:error.response.data.detail
+      })
+  }    
+}
