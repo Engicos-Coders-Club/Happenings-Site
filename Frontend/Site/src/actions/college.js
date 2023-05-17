@@ -227,3 +227,21 @@ export const removeParticipant = (id)=>async(dispatch)=>{
         })
     }    
 }
+export const viewEventCoordinators = ()=>async(dispatch)=>{
+  try {
+      dispatch({
+          type:"ViewEventCoordinatorsRequest"
+      })
+      const {data} = await axios.get(`/api/get-coordinators/`)
+      dispatch({
+          type:"ViewEventCoordinatorsSuccess",
+          payload:data
+      })
+  } catch (error) {
+      console.log(error.response.data,error.response.status)
+      dispatch({
+          type:"ViewEventCoordinatorsFailure",
+          payload:error.response.data.detail
+      })
+  }    
+}

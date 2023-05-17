@@ -6,14 +6,43 @@ import '../Stylesheets/Teams.css'
 import { councilData } from '../data/Teams_Info/Council'
 // import WebTeam from '../data/Teams_Info/WebDevs'
 import { webData } from '../data/Teams_Info/WebDevs'
+import { useDispatch, useSelector } from 'react-redux'
+import { viewEventCoordinators } from '../actions/college'
+import { SpinnerRoundOutlined } from 'spinners-react'
 
 function Teams() {
+  const dispatch = useDispatch()
   const [toggleState,setToggleState]=useState(1);
   const toggleTab=(index)=>{
     setToggleState(index)
   }
 
-  return (
+  const {loading,coordinators} = useSelector((state)=>state.college)
+
+  useEffect(()=>{
+    if(toggleState == 5 && !coordinators)
+      dispatch(viewEventCoordinators())
+  },[toggleState])
+
+  return loading ? (
+    <div
+      style={{
+        height: "100vh",
+        width: "100wh",
+        backgroundColor: "black",
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <SpinnerRoundOutlined
+        size={80}
+        thickness={50}
+        speed={100}
+        color="rgba(172, 57, 59, 1)"
+      />
+    </div>
+  ) :
+   (
     <>
     <section className='w-screen relative  bg-[#171717ff] flex flex-wrap overflow-hidden'>
 
@@ -29,6 +58,7 @@ function Teams() {
           {/* <li onClick={() => toggleTab(2)} className={toggleState == 2 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li> */}
           {/* <li onClick={() => toggleTab(3)} className={toggleState == 3 ? 'active-tab' : 'non-active-tab'}>ADVISORS</li> */}
           <li onClick={() => toggleTab(4)} className={toggleState == 4 ? 'active-tab' : 'non-active-tab'}>WEB TEAM</li>
+          <li onClick={() => toggleTab(5)} className={toggleState == 5 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li>
         </ul>
       </div>
 
@@ -54,6 +84,18 @@ function Teams() {
         {webData.map((item,index) => (
           <TeamCardsDev data={item} key={index}/>
         ))}
+      </div>
+
+      <div className={toggleState == 5 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-28' : 'non-active-content'}>
+        {coordinators && coordinators.map((item,index) => {
+          const temp = {
+            Name: `${item.name}`,
+            Designation: `${item.event.event_name}`,
+            Contact: `${item.phone}`,
+            pic: `${item.photo}`
+          }
+          return <TeamCards data={temp} key={index}/>
+        })}
       </div>
 
     </section></>

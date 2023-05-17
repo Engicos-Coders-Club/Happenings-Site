@@ -6,7 +6,8 @@ import { EventRegistrationSchema } from '../schema/EventRegistrationSchema'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { logout } from '../actions/auth'
 import { registerEvent,editParticipant } from '../actions/college'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { SpinnerRoundOutlined } from 'spinners-react'
 
 /*
 TODO: 
@@ -22,6 +23,8 @@ function EventRegistration(props) {
     const [photo,setPhoto] = useState(null)
     const {event_id,applied,participant} = location.state
 
+    const {loading} = useSelector((state)=>state.college)
+
     useEffect(() => {
         document.title = title
     }, [])
@@ -35,18 +38,36 @@ function EventRegistration(props) {
     navigate("/");
   };
 
-    const handleSubmit = (values) => {
+    const handleSubmit = async(values) => {
         //console.log(values)
         const {name,phoneNumber} = values
         if(!participant){
-            dispatch(registerEvent(event_id,name,phoneNumber,photo))
+            await dispatch(registerEvent(event_id,name,phoneNumber,photo))
         }
             
         else
-            dispatch(editParticipant(participant.id,name,phoneNumber,photo));
+            await dispatch(editParticipant(participant.id,name,phoneNumber,photo));
         navigate('/event-selection')
     }
-    return (
+    return loading? (
+        <div
+          style={{
+            height: "100vh",
+            width: "100wh",
+            backgroundColor: "black",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <SpinnerRoundOutlined
+            size={80}
+            thickness={50}
+            speed={100}
+            color="rgba(172, 57, 59, 1)"
+          />
+        </div>
+      ) :
+    (
         <div className="mx-auto bg-black text-white bg-events-bg">
             <div className="py-8">
                 <div className="flex justify-between w-4/5 mx-auto">
