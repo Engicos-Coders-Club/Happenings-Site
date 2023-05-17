@@ -1,7 +1,7 @@
 import React from "react";
-import { FaGit, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGit, FaInstagram, FaBehance } from "react-icons/fa";
 import {} from "react-icons/fa";
-import { FiLinkedin, FiGithub, FiMail, FiPhone } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiMail, FiLink } from "react-icons/fi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -54,12 +54,26 @@ function TeamCardsDev(props) {
             <FaInstagram size={20} />
           </a>
         )}
-        <a
+        {props.data?.Github && <a
           className="hover:text-cus-bright-orange cursor-pointer"
           href={props.data?.Github}
         >
           <FiGithub size={20} />
+        </a>}
+        {props.data?.Behance && <a
+          className="hover:text-cus-bright-orange cursor-pointer"
+          href={props.data?.Behance}
+        >
+          <FaBehance size={20} />
         </a>
+        }
+        {props.data?.website && <a
+          className="hover:text-cus-bright-orange cursor-pointer"
+          href={props.data?.website}
+        >
+          <FiLink size={20} />
+        </a>
+        }
       </div>
     </div>
   );

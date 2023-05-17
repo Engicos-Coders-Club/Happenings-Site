@@ -77,6 +77,7 @@ export const webData = [
     Email: "greeshma290303@gmail.com",
     Github: "https://github.com/greeshma2903",
     linkedin: "https://www.linkedin.com/in/m-greeshma/",
+    website: "https://www.greeshmamedam.me/",
     pic: "/assets/teams/dev/greeshma.webp",
   },
   {
