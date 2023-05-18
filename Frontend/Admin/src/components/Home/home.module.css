@@ -32,3 +32,27 @@
   gap: 1rem;
   align-items: center;
 }
+
+/* card */
+.cardAction {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed rgb(255, 77, 0);
+}
+
+.cardText {
+  text-transform: capitalize;
+}
+.card:hover .cardText {
+  color: rgb(255, 55, 0);
+}

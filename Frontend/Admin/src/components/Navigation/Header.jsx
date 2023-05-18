@@ -32,7 +32,7 @@ function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            TwistHunt
+            Happenings 2023
           </Typography>
         </Toolbar>
       </AppBar>

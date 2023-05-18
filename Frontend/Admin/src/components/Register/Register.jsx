@@ -47,8 +47,13 @@ const Register = () => {
   return (
     <div className="register">
       <form className="registerForm" onSubmit={submitHandler}>
-        <Typography variant="h3" style={{ padding: "2vmax" }}>
-          Twist Hunt
+      <Typography
+          variant="h2"
+          fontWeight={700}
+          textTransform="uppercase"
+          sx={{ padding: "2vmax", textAlign: "center" }}
+        >
+          Happenings 2023
         </Typography>
 
         <Avatar
@@ -95,11 +100,11 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Link to="/login">
-          <Typography>Have an account? Login Now</Typography>
-        </Link>
+        <Typography className="register-old">
+          New User? Register <Link to="/login">here</Link>.
+        </Typography>
 
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" variant="contained">Sign Up</Button>
       </form>
     </div>
   );
