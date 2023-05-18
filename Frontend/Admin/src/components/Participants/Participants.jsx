@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, TextField, Select, MenuItem, FormControl, InputLabel, Card, CardContent } from '@material-ui/core';
+import { Typography,  Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '@mui/material';
@@ -15,10 +15,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '1rem',
     color: 'orange',
     fontWeight: 'bold',
-  },
-  inputContainer: {
-    borderColor: 'orange',
-    margin: "2rem 0"
+    textTransform: "uppercase",
   },
   selectContainer: {
     // display: 'block',
@@ -30,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-start',
     fontStyle: 'italic',
     fontWeight: 'bold',
+    marginTop: "1.5rem"
     // padding: '0.5rem',
   },
   eventTitle: {
@@ -80,32 +78,10 @@ const Participants = () => {
     <Container maxWidth="xl">
       <div className={classes.header}>
         <Typography variant="h4" className={classes.headTitle}>
-          PARTICIPANTS
+          event PARTICIPANTS
         </Typography>
       </div>
-    
-      <div className={classes.inputContainer}>
-      <Typography variant="h5" className={classes.eventHeader}>
-        SELECT COLLEGE&nbsp;
-          <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M16.4993 0.833338L32.166 16.5L16.4993 32.1667L13.7087 29.425L24.6754 18.4583L0.832682 18.4583L0.832682 14.5417L24.6754 14.5417L13.7087 3.575L16.4993 0.833338Z"
-            fill="black"
-            />
-        </svg>
-        </Typography>
-        
-        <FormControl variant="outlined" fullWidth className={classes.selectContainer}>
-          <InputLabel id="college-label">Select College</InputLabel>
-          <Select labelId="college-label" label="Select College">
-            <MenuItem value="" disabled>Select College</MenuItem>
-            <MenuItem value="college1">College 1</MenuItem>
-            <MenuItem value="college2">College 2</MenuItem>
-            <MenuItem value="college3">College 3</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
-
+  
       <div className={classes.eventHeader}>
         <Typography variant="h5" className={classes.eventHeader}>
         VIEW EVENT PARTICIPANTS&nbsp;

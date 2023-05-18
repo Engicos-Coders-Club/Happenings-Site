@@ -50,19 +50,19 @@ const Sidebar = () => {
           <Typography variant="subtitle1">Home</Typography>
         </NavLink>
         <NavLink
-          to="/tickets"
+          to="/newparticipants"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
           onClick={(e) => {
-            setTab("/tickets");
+            setTab("/newparticipants");
             toggleMenu();
           }}
         >
-          {tab === "/tickets" ? (
+          {tab === "/newparticipants" ? (
             <LocalActivity style={{ color: "#FF6600" }} />
           ) : (
             <LocalActivityOutlined />
           )}
-          <Typography variant="subtitle1">Tickets</Typography>
+          <Typography variant="subtitle1">College Participants</Typography>
         </NavLink>
 
         {/* settings */}
@@ -79,7 +79,7 @@ const Sidebar = () => {
           ) : (
             <PersonSearchOutlined />
           )}
-          <Typography variant="subtitle1">Participantss</Typography>
+          <Typography variant="subtitle1">Participants</Typography>
         </NavLink>
 
         {/* <----------- logout button -----------> */}

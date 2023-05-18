@@ -13,7 +13,7 @@ import "./index.css";
 import Participants from "./components/Participants/Participants";
 import Tickets from "./components/Tickets/Tickets";
 import ViewParticipants from "./components/ViewParticipants/ViewParticipants";
-import NewParticipants from "./components/NewParticipants/NewParticipants";
+import NewParticipants from "./components/CollegeParticipants/NewParticipants";
 
 function App() {
   return (
