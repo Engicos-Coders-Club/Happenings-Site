@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   eventContent: {
     display: "flex",
     gap: "1rem",
-    justifyContent: "flex-start",
+    justifyContent: "space-evenly",
     margin: "1rem 0",
     flexWrap: "wrap",
   },
@@ -79,6 +79,13 @@ const useStyles = makeStyles((theme) => ({
   },
   btnGrp: {
     margin: "1rem 0 1.5rem",
+  },
+  download: {
+    background: "#FFB26B",
+    margin: "1rem 0",
+    "&:hover":{
+      background: "#FF7B54",
+    }
   },
 }));
 
@@ -115,7 +122,7 @@ const Participants = () => {
 
   useEffect(() => {
     initialize();
-    dispatch({type: "clearParticipants"})
+    dispatch({ type: "clearParticipants" });
   }, []);
 
   const initialize = async () => {
@@ -133,7 +140,6 @@ const Participants = () => {
       dispatch({ type: "clearMessage" });
     }
   }, [message]);
-
 
   const handleChange = (event, newValue) => {
     //console.log('Selected tab value:', newValue);
@@ -223,7 +229,12 @@ const Participants = () => {
 
         {/* ------------------------ excel button ----------------- */}
         {participants && (
-          <Button variant="contained" onClick={() => downloadFile(participants)}>
+          <Button
+            size="large"
+            className={classes.download}
+            variant="contained"
+            onClick={() => downloadFile(participants)}
+          >
             Download as excel
           </Button>
         )}
@@ -282,10 +293,7 @@ const Participants = () => {
                     member.name
                       .toLowerCase()
                       .includes(searchValue.toLowerCase()) && (
-                      <ParticipantCard
-                        key={member.id}
-                        member={member}
-                      />
+                      <ParticipantCard key={member.id} member={member} />
                     )
                 )}
             </>

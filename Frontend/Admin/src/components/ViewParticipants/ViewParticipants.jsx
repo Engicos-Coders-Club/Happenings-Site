@@ -71,14 +71,22 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontWeight: "bold",
     margin: "1.5rem 0",
+    textTransform: "uppercase",
     // padding: '0.5rem',
   },
   eventContent: {
     display: "flex",
     gap: "1rem",
-    justifyContent: "flex-start",
+    justifyContent: "space-evenly",
     margin: "1rem 0",
     flexWrap: "wrap",
+  },
+  download: {
+    background: "#FFB26B",
+    marginBottom: "1rem",
+    "&:hover":{
+      background: "#FF7B54",
+    }
   },
 }));
 
@@ -272,7 +280,7 @@ const EventsTable = () => {
           </FormControl>
         </div>
 
-        <Typography variant="subtitle1" className={classes.eventHeader}>
+        <Typography variant="h5" className={classes.eventHeader}>
           Participant Data&nbsp;
           <svg
             width="20"
@@ -292,6 +300,7 @@ const EventsTable = () => {
           <Button
             variant="contained"
             onClick={() => downloadFile(participants)}
+            className={classes.download}
           >
             Download as excel
           </Button>
@@ -312,7 +321,7 @@ const EventsTable = () => {
             </Box>
           ) : (
             <>
-              <Typography sx={{ width: "100%" }}>
+              <Typography sx={{ width: "100%" }} variant="h6">
                 Number of participants: {participants && participants?.length}
               </Typography>
               <div className={classes.eventContent}>

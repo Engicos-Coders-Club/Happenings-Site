@@ -79,7 +79,7 @@ const Sidebar = () => {
           ) : (
             <PersonSearchOutlined />
           )}
-          <Typography variant="subtitle1">Participants</Typography>
+          <Typography variant="subtitle1">Event Participants</Typography>
         </NavLink>
 
         {/* <----------- logout button -----------> */}
