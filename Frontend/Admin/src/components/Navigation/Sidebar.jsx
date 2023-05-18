@@ -1,23 +1,27 @@
 import React, { useState, useContext } from "react";
-import { logout } from "../../actions/user";
 import classes from "./sidebar.module.css";
 import { NavLink } from "react-router-dom";
 import {
   Home,
   HomeOutlined,
-  Settings,
-  SettingsOutlined,
   Close,
+  PersonSearch,
+  PersonSearchOutlined,
+  Logout,
+  LocalActivity,
+  LocalActivityOutlined,
 } from "@mui/icons-material";
 import { Typography, IconButton, Button } from "@mui/material";
 import { MenuContext } from "react-flexible-sliding-menu";
 import { useDispatch, useSelector } from "react-redux";
+import logo from "../../assets/happenings-logo.png";
+import { googleLogout } from "@react-oauth/google";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
   const [tab, setTab] = useState(window.location.pathname);
   const { toggleMenu } = useContext(MenuContext);
-  
+
   return (
     <div className={classes.sidebar}>
       <IconButton
@@ -39,39 +43,66 @@ const Sidebar = () => {
           }}
         >
           {tab === "/" ? (
-            <Home style={{ color: "#0008C1" }} />
+            <Home style={{ color: "#FF6600" }} />
           ) : (
             <HomeOutlined />
           )}
           <Typography variant="subtitle1">Home</Typography>
         </NavLink>
-
-        {/* settings */}
         <NavLink
-          to="/profile"
+          to="/tickets"
           className={({ isActive }) => (isActive ? classes.active : undefined)}
           onClick={(e) => {
-            setTab("/profile");
+            setTab("/tickets");
             toggleMenu();
           }}
         >
-          {tab === "/profile" ? (
-            <Settings style={{ color: "#0008C1" }} />
+          {tab === "/tickets" ? (
+            <LocalActivity style={{ color: "#FF6600" }} />
           ) : (
-            <SettingsOutlined />
+            <LocalActivityOutlined />
           )}
-          <Typography variant="subtitle1">Profile</Typography>
+          <Typography variant="subtitle1">Tickets</Typography>
         </NavLink>
+
+        {/* settings */}
+        <NavLink
+          to="/participants"
+          className={({ isActive }) => (isActive ? classes.active : undefined)}
+          onClick={(e) => {
+            setTab("/participants");
+            toggleMenu();
+          }}
+        >
+          {tab === "/participants" ? (
+            <PersonSearch style={{ color: "#FF6600" }} />
+          ) : (
+            <PersonSearchOutlined />
+          )}
+          <Typography variant="subtitle1">Participantss</Typography>
+        </NavLink>
+
+        {/* <----------- logout button -----------> */}
+        <Button
+          // className={}
+          onClick={(e) => {
+            googleLogout();
+            toggleMenu();
+          }}
+          startIcon={<Logout />}
+          variant="outlined"
+        >
+          <Typography variant="subtitle1">Logout</Typography>
+        </Button>
       </div>
 
       {/* logo */}
       <div className={classes.sidebar_logo}>
-        {/* <img
+        <img
           className={classes.sidebar_logo_img}
           src={logo}
-          alt="Fotokada Logo"
-        /> */}
-        logo
+          alt="Happenings Logo"
+        />
       </div>
     </div>
   );

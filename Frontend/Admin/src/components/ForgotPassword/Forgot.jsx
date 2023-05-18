@@ -12,27 +12,31 @@ const Forgot = () => {
   const alert = useAlert();
   //const { user,message,loading,error} = useSelector((state) => state.user);
 
-  const submitHandler = async(e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     //await dispatch(updateUserPass(user._id, oldPassword, newPassword));
   };
 
-//   useEffect(() => {
-//     if (error) {
-//       alert.error(error);
-//       dispatch({ type: "clearErrors" });
-//     }
-//     if (message) {
-//       alert.success(message);
-//       dispatch({ type: "clearMessage" });
-//     }
-//   }, [alert, error, dispatch,message]);
+  //   useEffect(() => {
+  //     if (error) {
+  //       alert.error(error);
+  //       dispatch({ type: "clearErrors" });
+  //     }
+  //     if (message) {
+  //       alert.success(message);
+  //       dispatch({ type: "clearMessage" });
+  //     }
+  //   }, [alert, error, dispatch,message]);
 
   return (
     <div className="resetPassword">
       <form className="resetPasswordForm" onSubmit={submitHandler}>
-        <Typography variant="h3" style={{ padding: "2vmax" }}>
-          Twist Hunt
+        <Typography
+          variant="h3"
+          fontWeight={800}
+          style={{ padding: "2vmax", textAlign: "center" }}
+        >
+          Happenings 2023
         </Typography>
 
         <input
@@ -53,9 +57,7 @@ const Forgot = () => {
           onChange={(e) => setNewPassword(e.target.value)}
         />
 
-        <Button type="submit">
-          Reset Password
-        </Button>
+        <Button type="submit" variant="contained">Reset Password</Button>
       </form>
     </div>
   );
