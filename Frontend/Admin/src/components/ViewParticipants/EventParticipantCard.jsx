@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Typography,
   Card,
@@ -7,6 +7,8 @@ import {
   Avatar,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import {markAttendance} from '../../store/actions/college'
+import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -33,8 +35,23 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const EventParticipantCard = ({ member, handleCheckboxToggle }) => {
+const EventParticipantCard = ({ member }) => {
   const classes = useStyles();
+  const dispatch = useDispatch()
+
+  const {message} = useSelector((state)=>state.college)
+
+  useEffect(()=>{
+    if(message){
+      // put toast
+      console.log(message)
+    }
+  },[message])
+  
+  const handleCheckboxToggle = (value) => {
+    //console.log("attended " + value);
+    dispatch(markAttendance(value))  
+  }
 
   return (
     <Card className={classes.card}>
