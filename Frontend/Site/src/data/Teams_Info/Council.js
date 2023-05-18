@@ -2,7 +2,7 @@ export const councilData = [
   {
     Name: "Sumit Komarpant",
     Designation: "GENERAL SECRETARY",
-    Contact: "8999579536",
+    Contact: "8767320956",
     pic: '/assets/teams/council/sumit.webp'
   },
   {

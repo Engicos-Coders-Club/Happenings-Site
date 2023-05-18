@@ -94,15 +94,11 @@ const sponsors = [
         color: "#000",
       },
       {
-        img: himalaya,
-        link: "https://himalayawellness.in/",
-        color: "#fff",
-      },
-      {
         img: jvshetty,
         link: "#",
         color: "#fff",
       },
+      { img: zsquare, link: "#", color: "#000" },
       {
         img: unionBank,
         link: "https://www.unionbankofindia.co.in/english/home.aspx",
@@ -113,7 +109,11 @@ const sponsors = [
         link: "https://blueskript.com/",
         color: "#fff",
       },
-      { img: zsquare, link: "#", color: "#000" },
+      {
+        img: himalaya,
+        link: "https://himalayawellness.in/",
+        color: "#fff",
+      },
     ],
   },
 ];
