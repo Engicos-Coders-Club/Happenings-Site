@@ -82,6 +82,10 @@ const EventParticipantCard = ({ member }) => {
           <span className={classes.eventName}> {member.name} </span>
         </Typography>
         <Typography variant="body2" style={{color: "#9BA4B5"}}>
+          Phone:
+          <span className={classes.eventName}> {member.phone} </span>
+        </Typography>
+        <Typography variant="body2" style={{color: "#9BA4B5"}}>
           College Name:
           <span className={classes.eventName}>
             {" "}

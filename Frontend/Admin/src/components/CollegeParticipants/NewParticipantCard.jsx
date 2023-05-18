@@ -71,6 +71,10 @@ const MyComponent = ({ member }) => {
             <span className={classes.eventName}> {member.name} </span>
           </Typography>
           <Typography variant="body2">
+            Phone:
+            <span className={classes.eventName}> {member.phone} </span>
+          </Typography>
+          <Typography variant="body2">
             Event:
             <span className={classes.eventName}>
               {" "}
