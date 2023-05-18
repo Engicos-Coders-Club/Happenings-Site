@@ -1,6 +1,7 @@
 .register {
     min-height: 100vh;
-    background-image: linear-gradient(to right, #9e0000, #ffd035);  
+    background-image: linear-gradient(to right,#d3ccfc,#fc90e7);
+  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +12,7 @@
   .registerForm {
     background-color: white;
     width: 50%;
+    box-shadow: 12px 10px 13px rgb(135,130,150);
     border-radius: 5px;
     box-sizing: border-box;
     padding: 2vmax;
@@ -39,18 +41,20 @@
   }
   
   .registerForm > input[type="file"]::file-selector-button {
-    background-color: #FF6600;
+    background-color: rgb(38, 63, 173);
     color: white;
     width: 100%;
     padding: 1vmax;
     border-radius: 30px;
     border: none;
-    font: 100 1.2rem "Roboto Condensed", sans-serif;
+    font: 100 1.2rem "Roboto", sans-serif;
   }
   
-  .registerForm a, .register-old {
+  .registerForm > a {
+    align-self: flex-end;
+    text-decoration: none;
     color: rgba(0, 0, 0, 0.342);
-    margin: 2vmax 0;
+    margin: 2vmax;
   }
   
 @media screen and (max-width: 960px) {
@@ -59,7 +63,7 @@
     }
     .registerForm > input{
         padding: 2.5vw 6vw;
-        font: 100 1.2rem "Roboto Condensed",sans-serif;
+        font: 100 1.2rem "Roboto",sans-serif;
     }
     .registerForm > input[type="file"] {
         width: 80%;

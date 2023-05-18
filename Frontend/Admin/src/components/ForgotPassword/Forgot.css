@@ -1,6 +1,6 @@
 .resetPassword {
     min-height: 100vh;
-    background-image: linear-gradient(to right, #9e0000, #ffd035);  
+    background-image: linear-gradient(to right,#d3ccfc,#fc90e7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +11,7 @@
   .resetPasswordForm {
     background-color: white;
     width: 50%;
+    box-shadow: 12px 10px 13px rgb(135,130,150);
     border-radius: 5px;
     box-sizing: border-box;
     padding: 2vmax;
@@ -25,7 +26,7 @@
     border-radius: 40px;
     border: 1px solid #ccc;
     margin: 2vmax;
-    font:100 1.2rem "Roboto Condensed",sans-serif;
+    font:100 1.2rem "Roboto",sans-serif;
     outline: none;
   }
   .resetPasswordForm > a {

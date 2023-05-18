@@ -1,39 +1,16 @@
 :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  --dark: #171717;
-  --cus-orange:#FF6600;
-  --cus-red: #dc2626;
-  --white: #fff;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto Condensed", "Arial", "sans-serif";
-}
-
-.google-login {
-  padding: 10px;
-  background: #fff;
-  font-family: "Roboto Condensed", "Arial", "sans-serif";
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 5px;
-  border: 1px solid gray;
-  margin: 1rem 0;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-
-.google-login:hover {
-  background: rgb(237, 244, 255);
-}
