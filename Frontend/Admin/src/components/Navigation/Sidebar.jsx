@@ -15,7 +15,7 @@ import { Typography, IconButton, Button } from "@mui/material";
 import { MenuContext } from "react-flexible-sliding-menu";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/happenings-logo.png";
-import { googleLogout } from "@react-oauth/google";
+import { logout } from "../../store/actions/auth";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -86,7 +86,7 @@ const Sidebar = () => {
         <Button
           // className={}
           onClick={(e) => {
-            googleLogout();
+            dispatch(logout())
             toggleMenu();
           }}
           startIcon={<Logout />}

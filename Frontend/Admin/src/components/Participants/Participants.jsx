@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     border: '2px dotted rgba(207, 207, 207, 1)',
-    maxWidth: 250,
+    width: 250,
     marginBottom: '1rem',
     // margin: '0 auto',
     cursor: 'pointer',
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   eventName: {
-    fontWeight: 'bold',
+    color: '#E57C23',
   },
   orangeLine: {
     backgroundColor: 'orange',
@@ -132,10 +132,10 @@ const Participants = () => {
               <>
                 <Card className={classes.card} onClick={()=>handleCardClick(el.id)}>
                   <CardContent>
-                  <Typography variant="h6" className={classes.eventName}>
+                  <Typography variant="subtitle1" className={classes.eventName}>
                     Event Name
                   </Typography>
-                  <Typography className={classes.eventName}>
+                  <Typography variant='h5' className={classes.eventActualName}>
                   {el.event_name}
                   </Typography>
                   <div className={classes.orangeLine} />

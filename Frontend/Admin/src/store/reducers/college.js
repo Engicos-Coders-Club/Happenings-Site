@@ -16,28 +16,28 @@ export const collegeReducer = createReducer(initialState,{
     },
 
     GetCollegeParicipantsRequest: (state,action)=>{
-        state.loading = true;
+        state.loadingCollege = true;
     },
     GetCollegeParicipantsSuccess: (state,action)=>{
         state.participants = action.payload;
-        state.loading = false
+        state.loadingCollege = false
     },
     GetCollegeParicipantsFailure: (state,action)=>{     
           state.error = action.payload
-          state.loading = false
+          state.loadingCollege = false
     },
 
     GetEventParicipantsRequest: (state,action)=>{
         state.participants = null
-        state.loading = true;
+        state.loadingEvent = true;
     },
     GetEventParicipantsSuccess: (state,action)=>{
         state.participants = action.payload;
-        state.loading = false
+        state.loadingEvent = false
     },
     GetEventParicipantsFailure: (state,action)=>{     
           state.error = action.payload
-          state.loading = false
+          state.loadingEvent = false
     },
 
     GetAllEventsRequest: (state,action)=>{

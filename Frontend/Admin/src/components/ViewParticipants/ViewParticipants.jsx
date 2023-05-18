@@ -14,7 +14,8 @@ import {
   FormControl,
   InputLabel,
   Backdrop,
-  CircularProgress
+  CircularProgress,
+  Box,
 } from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
@@ -23,7 +24,12 @@ import {
 import EventsTableRow from "./EventsTableRow";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {getEventParticipants,getEventParticipantsByCollege,getAllColleges} from '../../store/actions/college'
+import {
+  getEventParticipants,
+  getEventParticipantsByCollege,
+  getAllColleges,
+} from "../../store/actions/college";
+import EventParticipantCard from "./EventParticipantCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,28 +71,37 @@ const useStyles = makeStyles((theme) => ({
     margin: "1.5rem 0",
     // padding: '0.5rem',
   },
+  eventContent: {
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "flex-start",
+    margin: "1rem 0",
+    flexWrap: "wrap",
+  },
 }));
 
 const EventsTable = () => {
-  const {id} = useParams()
+  const { id } = useParams();
 
-  const dispatch = useDispatch()
-  const {loading,participants,colleges} = useSelector((state)=>state.college)
+  const dispatch = useDispatch();
+  const { loading, participants, colleges, loadingEvent } = useSelector(
+    (state) => state.college
+  );
 
-  const initialize = async() =>{
-    await dispatch(getEventParticipants(id))
-    await dispatch(getAllColleges())
-  } 
+  const initialize = async () => {
+    await dispatch(getEventParticipants(id));
+    await dispatch(getAllColleges());
+  };
 
-  useEffect(()=>{
-    initialize()
-  },[])
+  useEffect(() => {
+    initialize();
+  }, []);
 
   const classes = useStyles();
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
   const [expandedRows, setExpandedRows] = useState([]);
-  const [cid,setCid] = useState('')
+  const [cid, setCid] = useState("");
   const [data, setData] = useState([
     {
       name: "John Doe",
@@ -140,33 +155,33 @@ const EventsTable = () => {
     navigate("/participants");
   };
 
-  const handleCollege = (e) =>{
-    setCid(e.target.value)
-    dispatch(getEventParticipantsByCollege(id,e.target.value))
-  }
+  const handleCollege = (e) => {
+    setCid(e.target.value);
+    dispatch(getEventParticipantsByCollege(id, e.target.value));
+  };
 
-  if(loading || !colleges || !participants)
-    return ( 
-    <Backdrop open={true}>
-      <CircularProgress/>
-    </Backdrop>
-  )
+  if (loading)
+    return (
+      <Backdrop open={true}>
+        <CircularProgress />
+      </Backdrop>
+    );
   else
     return (
-    <div className={classes.body}>
-      <div className={classes.root}>
-        <IconButton className={classes.arrowIcon} onClick={handleBackClick}>
-          <ArrowBackIcon />
-        </IconButton>
-        <Typography
-          variant="subtitle1"
-          component="a"
-          href="#"
-          className={classes.textLink}
-        >
-          Back to Events
-        </Typography>
-        {/* <TextField
+      <div className={classes.body}>
+        <div className={classes.root}>
+          <IconButton className={classes.arrowIcon} onClick={handleBackClick}>
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography
+            variant="subtitle1"
+            component="a"
+            href="#"
+            className={classes.textLink}
+          >
+            Back to Events
+          </Typography>
+          {/* <TextField
           className={classes.searchBar}
           variant="outlined"
           placeholder="Search"
@@ -176,43 +191,51 @@ const EventsTable = () => {
           value={searchValue}
           onChange={handleSearchChange}
         /> */}
-      </div>
+        </div>
 
-      <div className={classes.inputContainer}>
-        <Typography variant="h5" className={classes.eventHeader}>
-          SELECT COLLEGE&nbsp;
-          <svg
-            width="33"
-            height="33"
-            viewBox="0 0 33 33"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className={classes.inputContainer}>
+          <Typography variant="h5" className={classes.eventHeader}>
+            SELECT COLLEGE&nbsp;
+            <svg
+              width="33"
+              height="33"
+              viewBox="0 0 33 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.4993 0.833338L32.166 16.5L16.4993 32.1667L13.7087 29.425L24.6754 18.4583L0.832682 18.4583L0.832682 14.5417L24.6754 14.5417L13.7087 3.575L16.4993 0.833338Z"
+                fill="black"
+              />
+            </svg>
+          </Typography>
+
+          <FormControl
+            variant="outlined"
+            fullWidth
+            className={classes.selectContainer}
           >
-            <path
-              d="M16.4993 0.833338L32.166 16.5L16.4993 32.1667L13.7087 29.425L24.6754 18.4583L0.832682 18.4583L0.832682 14.5417L24.6754 14.5417L13.7087 3.575L16.4993 0.833338Z"
-              fill="black"
-            />
-          </svg>
-        </Typography>
+            <InputLabel id="college-label">Select College</InputLabel>
+            <Select
+              value={cid}
+              labelId="college-label"
+              label="Select College"
+              onChange={handleCollege}
+            >
+              <MenuItem value="" disabled>
+                Select College
+              </MenuItem>
+              {colleges &&
+                colleges.map((ele) => (
+                  <MenuItem key={ele.id} value={ele.id}>
+                    {ele.college_name}
+                  </MenuItem>
+                ))}
+            </Select>
+          </FormControl>
+        </div>
 
-        <FormControl
-          variant="outlined"
-          fullWidth
-          className={classes.selectContainer}
-        >
-          <InputLabel id="college-label">Select College</InputLabel>
-          <Select value={cid} labelId="college-label" label="Select College" onChange={handleCollege}>
-            <MenuItem value="" disabled>Select College</MenuItem>
-            {
-              colleges.map((ele)=>
-                <MenuItem key={ele.id} value={ele.id}>{ele.college_name}</MenuItem>
-              )
-            }
-          </Select>
-        </FormControl>
-      </div>
-
-      <Typography variant="subtitle1" className={classes.eventHeader}>
+        <Typography variant="subtitle1" className={classes.eventHeader}>
           Participant Data&nbsp;
           <svg
             width="20"
@@ -228,35 +251,45 @@ const EventsTable = () => {
           </svg>
         </Typography>
 
-      <Table className={classes.table}>
-        <TableHead className={classes.tableHead}>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Phone</TableCell>
-            <TableCell>ID Proof</TableCell>
-            <TableCell>Attendance</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-
-        <TableBody>
-          {data.map(
-            (item) =>
-              item.name.toLowerCase().includes(searchValue.toLowerCase()) && (
-                <EventsTableRow
-                  key={item.id}
-                  item={item}
-                  isRowExpanded={isRowExpanded}
-                  handleCheckboxToggle={handleCheckboxToggle}
-                  handleRowExpand={handleRowExpand}
-                />
-              )
+        <div>
+          {loadingEvent ? (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "200px",
+                bgcolor: "#F8F6F4",
+              }}
+            >
+              <CircularProgress />
+            </Box>
+          ) : (
+            <>
+              <Typography sx={{ width: "100%" }}>
+                Number of participants: {participants && participants?.length}
+              </Typography>
+              <div className={classes.eventContent}>
+                {participants &&
+                  participants.map(
+                    (member) =>
+                      member.name
+                        .toLowerCase()
+                        .includes(searchValue.toLowerCase()) && (
+                        <EventParticipantCard
+                          key={member.id}
+                          member={member}
+                          handleCheckboxToggle={handleCheckboxToggle}
+                        />
+                      )
+                  )}
+              </div>
+            </>
           )}
-        </TableBody>
-      </Table>
-    </div>
-  );
+        </div>
+      </div>
+    );
 };
 
 export default EventsTable;

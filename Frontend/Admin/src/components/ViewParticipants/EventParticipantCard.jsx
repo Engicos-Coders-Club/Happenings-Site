@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MyComponent = ({ member, handleCheckboxToggle }) => {
+const EventParticipantCard = ({ member, handleCheckboxToggle }) => {
   const classes = useStyles();
 
   return (
@@ -51,12 +51,8 @@ const MyComponent = ({ member, handleCheckboxToggle }) => {
           <span className={classes.eventName}> {member.name} </span>
         </Typography>
         <Typography>
-          Event:
+          College Name:
           <span className={classes.eventName}> {member.college?member.college.college_name:member.event.event_name} </span>
-        </Typography>
-        <Typography>
-          Phone:
-          <span className={classes.eventName}> {member?.phone} </span>
         </Typography>
         <Typography className={classes.eventName}>
           Present:
@@ -71,4 +67,4 @@ const MyComponent = ({ member, handleCheckboxToggle }) => {
   );
 };
 
-export default MyComponent;
+export default EventParticipantCard;
