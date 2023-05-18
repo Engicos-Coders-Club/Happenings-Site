@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -13,13 +13,17 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Backdrop,
+  CircularProgress
 } from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   Search as SearchIcon,
 } from "@material-ui/icons";
 import EventsTableRow from "./EventsTableRow";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {getEventParticipants,getEventParticipantsByCollege,getAllColleges} from '../../store/actions/college'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,10 +68,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const EventsTable = () => {
+  const {id} = useParams()
+
+  const dispatch = useDispatch()
+  const {loading,participants,colleges} = useSelector((state)=>state.college)
+
+  const initialize = async() =>{
+    await dispatch(getEventParticipants(id))
+    await dispatch(getAllColleges())
+  } 
+
+  useEffect(()=>{
+    initialize()
+  },[])
+
   const classes = useStyles();
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
   const [expandedRows, setExpandedRows] = useState([]);
+  const [cid,setCid] = useState('')
   const [data, setData] = useState([
     {
       name: "John Doe",
@@ -121,7 +140,19 @@ const EventsTable = () => {
     navigate("/participants");
   };
 
-  return (
+  const handleCollege = (e) =>{
+    setCid(e.target.value)
+    dispatch(getEventParticipantsByCollege(id,e.target.value))
+  }
+
+  if(loading || !colleges || !participants)
+    return ( 
+    <Backdrop open={true}>
+      <CircularProgress/>
+    </Backdrop>
+  )
+  else
+    return (
     <div className={classes.body}>
       <div className={classes.root}>
         <IconButton className={classes.arrowIcon} onClick={handleBackClick}>
@@ -148,11 +179,11 @@ const EventsTable = () => {
       </div>
 
       <div className={classes.inputContainer}>
-        <Typography variant="subtitle1" className={classes.eventHeader}>
-          Sort by College&nbsp;
+        <Typography variant="h5" className={classes.eventHeader}>
+          SELECT COLLEGE&nbsp;
           <svg
-            width="20"
-            height="20"
+            width="33"
+            height="33"
             viewBox="0 0 33 33"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -170,13 +201,13 @@ const EventsTable = () => {
           className={classes.selectContainer}
         >
           <InputLabel id="college-label">Select College</InputLabel>
-          <Select labelId="college-label" label="Select College">
-            <MenuItem value="" disabled>
-              Select College
-            </MenuItem>
-            <MenuItem value="college1">College 1</MenuItem>
-            <MenuItem value="college2">College 2</MenuItem>
-            <MenuItem value="college3">College 3</MenuItem>
+          <Select value={cid} labelId="college-label" label="Select College" onChange={handleCollege}>
+            <MenuItem value="" disabled>Select College</MenuItem>
+            {
+              colleges.map((ele)=>
+                <MenuItem key={ele.id} value={ele.id}>{ele.college_name}</MenuItem>
+              )
+            }
           </Select>
         </FormControl>
       </div>

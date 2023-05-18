@@ -1,26 +1,14 @@
-import React from "react";
-import {
-  Typography,
-  TextField,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Button,
-  ButtonGroup,
-  Tabs,
-  Tab,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { useNavigate } from "react-router-dom";
-import { Container } from "@mui/material";
-import {
-  ArrowBack as ArrowBackIcon,
-  Search as SearchIcon,
-} from "@material-ui/icons";
-import ParticipantCard from "./NewParticipantCard";
-import img from "../../assets/happenings-logo.png";
-import { useState } from "react";
+import React, { useEffect } from 'react';
+import { Typography, TextField, Select, MenuItem, FormControl, InputLabel,Backdrop,CircularProgress,Tabs,Tab } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom';
+import { Container } from '@mui/material';
+import { ArrowBack as ArrowBackIcon, Search as SearchIcon } from '@material-ui/icons';
+import ParticipantCard from './NewParticipantCard';
+import img from '../../assets/happenings-logo.png'
+import { useState } from 'react';
+import {getAllColleges,getAllCollegeParticipants,getDay1CollegeParticipants,getDay2CollegeParticipants} from '../../store/actions/college'
+import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -73,15 +61,34 @@ const useStyles = makeStyles((theme) => ({
 
 const Participants = () => {
   const classes = useStyles();
-  const [searchValue, setSearchValue] = useState("");
-  const [value, setValue] = React.useState(2);
+  const dispatch = useDispatch()
+  const [searchValue, setSearchValue] = useState('');
+  const [value,setValue] = useState('all')
+  const [cid,setCid] = useState(null)
+
+  useEffect(()=>{
+    initialize()
+  },[])
+
+  const initialize = async() =>{
+    await dispatch(getAllColleges())
+  }
+
+  const {colleges,loading,participants} = useSelector((state)=>state.college)
+
+  // const handleSearchChange = (e) => {
+  //   setSearchValue(e.target.value);
+  // };
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
+    //console.log('Selected tab value:', newValue);
+    setValue(newValue)
+    if(newValue == 'day1')
+      dispatch(getDay1CollegeParticipants(cid))
+    else if (newValue == 'day2')
+      dispatch(getDay2CollegeParticipants(cid))
+    else
+      dispatch(getAllCollegeParticipants(cid))
   };
 
   const [member, setMember] = useState([
@@ -117,25 +124,37 @@ const Participants = () => {
     });
   };
 
-  return (
-    <Container maxWidth="xl">
+  const handleCollege = (e) =>{
+    dispatch(getAllCollegeParticipants(e.target.value))
+    setCid(e.target.value)
+  }
+
+  if(loading || !colleges)
+    return ( 
+    <Backdrop open={true}>
+      <CircularProgress/>
+    </Backdrop>
+  )
+  else
+    return (
+    <Container maxWidth="xl">      
       <div className={classes.header}>
         <Typography variant="h4" className={classes.headTitle}>
           College PARTICIPANTS
         </Typography>
       </div>
-
+    
       {/* <TextField
-        className={classes.searchBar}
-        variant="outlined"
-        placeholder="Search"
-        InputProps={{
-          endAdornment: <SearchIcon />,
-        }}
-        value={searchValue}
-        onChange={handleSearchChange}
-      /> */}
-
+          className={classes.searchBar}
+          variant="outlined"
+          placeholder="Search"
+          InputProps={{
+            endAdornment: <SearchIcon />,
+          }}
+          value={searchValue}
+          onChange={handleSearchChange}
+        /> */}
+        
       <div className={classes.inputContainer}>
         <Typography variant="h5" className={classes.eventHeader}>
           SELECT COLLEGE&nbsp;
@@ -159,13 +178,13 @@ const Participants = () => {
           className={classes.selectContainer}
         >
           <InputLabel id="college-label">Select College</InputLabel>
-          <Select labelId="college-label" label="Select College">
-            <MenuItem value="" disabled>
-              Select College
-            </MenuItem>
-            <MenuItem value="college1">College 1</MenuItem>
-            <MenuItem value="college2">College 2</MenuItem>
-            <MenuItem value="college3">College 3</MenuItem>
+          <Select labelId="college-label" label="Select College" onChange={handleCollege}>
+            <MenuItem value="" disabled>Select College</MenuItem>
+            {
+              colleges.map((ele)=>
+                <MenuItem key={ele.id} value={ele.id}>{ele.college_name}</MenuItem>
+              )
+            }
           </Select>
         </FormControl>
       </div>
@@ -198,14 +217,15 @@ const Participants = () => {
         <Tab
           variant="contained"
           className={classes.btnTab}
-          label="all days"
+          label="All days"
+          value='all'
         ></Tab>
-        <Tab variant="contained" className={classes.btnTab} label="day 1"></Tab>
-        <Tab variant="contained" className={classes.btnTab} label="day 2"></Tab>
+        <Tab variant="contained" value='day1' className={classes.btnTab} label="Day 1"></Tab>
+        <Tab variant="contained" value='day2' className={classes.btnTab} label="Day 2"></Tab>
       </Tabs>
 
       <div className={classes.eventContent}>
-        {member.map(
+        {participants && participants.map(
           (member) =>
             member.name.toLowerCase().includes(searchValue.toLowerCase()) && (
               <ParticipantCard

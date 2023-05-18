@@ -1,8 +1,10 @@
-import React from 'react';
-import { Typography,  Card, CardContent } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { Typography,  Card, CardContent,Backdrop,CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '@mui/material';
+import {getAllEvents} from '../../store/actions/college'
+import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -35,6 +37,15 @@ const useStyles = makeStyles((theme) => ({
     // light bold
     fontWeight: 'bold',
 
+  },
+  eventContent:{
+    display:'flex',
+    flexDirection:'column'
+  },
+  eventCard:{
+    display:'flex',
+    flexWrap:'wrap',
+    columnGap:'2rem'
   },
   searchIcon: {
     position: 'absolute',
@@ -69,12 +80,26 @@ const useStyles = makeStyles((theme) => ({
 const Participants = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
-  const handleCardClick = () => {
-    navigate('/viewparticipants');
+  useEffect(()=>{
+    dispatch(getAllEvents())
+  },[])
+
+  const {loading,events} = useSelector((state)=>state.college)
+
+  const handleCardClick = (id) => {
+    navigate(`/viewparticipants/${id}`);
   };
 
-  return (
+  if(loading || !events)
+    return ( 
+    <Backdrop open={true}>
+      <CircularProgress/>
+    </Backdrop>
+  )
+  else
+    return (
     <Container maxWidth="xl">
       <div className={classes.header}>
         <Typography variant="h4" className={classes.headTitle}>
@@ -95,48 +120,40 @@ const Participants = () => {
       </div>
 
       <div className={classes.eventContent}>
-        <Typography variant="h6" className={classes.eventTitle}>
-        ON-STAGE EVENTS
-        </Typography>
-        <Card className={classes.card} onClick={handleCardClick}>
-        <CardContent>
-            <Typography variant="h6" className={classes.eventName}>
-            Event Name
+        {
+          events.map((ele)=>
+          <>
+            <Typography variant="h6" className={classes.eventTitle}>
+              {ele.category_name}
             </Typography>
-            <Typography className={classes.eventName}>
-            Event Name
-            </Typography>
-            <div className={classes.orangeLine} />
-            <Typography>
-            Max Participants = 00
-            </Typography>
-            <Typography>
-            Registered = 00
-            </Typography>
-        </CardContent>
-        </Card>     
-
-        <Typography variant="h6" className={classes.eventTitle}>
-        OFF-STAGE EVENTS
-        </Typography>
-        
-        <Card className={classes.card} onClick={handleCardClick}>
-        <CardContent>
-            <Typography variant="h6" className={classes.eventName}>
-            Event Name
-            </Typography>
-            <Typography className={classes.eventName}>
-            Event Name
-            </Typography>
-            <div className={classes.orangeLine} />
-            <Typography>
-            Max Participants = 00
-            </Typography>
-            <Typography>
-            Registered = 00
-            </Typography>
-        </CardContent>
-        </Card>      
+            <div className={classes.eventCard}>
+            {
+              ele.events.map((el)=>
+              <>
+                <Card className={classes.card} onClick={()=>handleCardClick(el.id)}>
+                  <CardContent>
+                  <Typography variant="h6" className={classes.eventName}>
+                    Event Name
+                  </Typography>
+                  <Typography className={classes.eventName}>
+                  {el.event_name}
+                  </Typography>
+                  <div className={classes.orangeLine} />
+                  {/* <Typography>
+                  Max Participants = 00
+                  </Typography>
+                  <Typography>
+                  Registered = 00
+                  </Typography> */}
+                  </CardContent>
+                </Card> 
+              </>
+              )
+            }
+          </div>
+          </>
+          )
+        } 
       </div>
       </Container>
   );
