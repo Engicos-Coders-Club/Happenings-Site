@@ -16,6 +16,7 @@ import {
   Backdrop,
   CircularProgress,
   Box,
+  Button,
 } from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
@@ -30,6 +31,7 @@ import {
   getAllColleges,
 } from "../../store/actions/college";
 import EventParticipantCard from "./EventParticipantCard";
+import xlsx from "json-as-xlsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,6 +82,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const downloadFile = (data) => {
+  const customData = [
+    {
+      sheet: "College",
+      columns: [
+        { label: "Name", value: "name" }, // Top level data
+        {
+          label: "Event",
+          value: (row) => (row.college ? row.college.college_name || "" : ""),
+        },
+        { label: "ID Card", value: "id_card" },
+      ],
+      content: data,
+    },
+  ];
+
+  let settings = {
+    fileName: "CollegeParticipants", // Name of the resulting spreadsheet
+    extraLength: 3, // A bigger number means that columns will be wider
+  };
+
+  xlsx(customData, settings);
+};
+
 const EventsTable = () => {
   const { id } = useParams();
 
@@ -95,6 +121,7 @@ const EventsTable = () => {
 
   useEffect(() => {
     initialize();
+    dispatch({type: "clearParticipants"})
   }, []);
 
   const classes = useStyles();
@@ -120,6 +147,16 @@ const EventsTable = () => {
       id: "2",
     },
   ]);
+
+  const { message, loadingAttendance } = useSelector((state) => state.college);
+
+  useEffect(() => {
+    if (message) {
+      alert(message);
+      // put toast
+      dispatch({ type: "clearMessage" });
+    }
+  }, [message]);
 
   const handleRowExpand = (row) => {
     setExpandedRows((prevExpandedRows) => {
@@ -250,7 +287,15 @@ const EventsTable = () => {
             />
           </svg>
         </Typography>
-
+        {/* ------------------------ excel button ----------------- */}
+        {participants && (
+          <Button
+            variant="contained"
+            onClick={() => downloadFile(participants)}
+          >
+            Download as excel
+          </Button>
+        )}
         <div>
           {loadingEvent ? (
             <Box

@@ -15,4 +15,8 @@ export const advisorData = [
       Name: "Harshad Zangli",
       pic: "/assets/teams/advisors/harshad.webp"
     },
+    {
+      Name: "Sahil Kerkar",
+      pic: "/assets/teams/advisors/sahil.webp"
+    },
 ]
