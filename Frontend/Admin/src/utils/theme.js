@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 let theme = createTheme({
   palette: {
     primary: {
-      main: "#FF6600",
+      main: "#0008C1",
       contrastText: "#ffffff",
     },
     contrastThreshold: 4.5,
@@ -12,7 +12,7 @@ let theme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Roboto Condensed",
+      "Poppins",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
