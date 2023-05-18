@@ -121,6 +121,16 @@ const EventsTable = () => {
     },
   ]);
 
+  const { message, loadingAttendance } = useSelector((state) => state.college);
+
+  useEffect(() => {
+    if (message) {
+      alert(message);
+      // put toast
+      dispatch({ type: "clearMessage" });
+    }
+  }, [message]);
+
   const handleRowExpand = (row) => {
     setExpandedRows((prevExpandedRows) => {
       if (prevExpandedRows.includes(row)) {

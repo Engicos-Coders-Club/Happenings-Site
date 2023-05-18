@@ -14,7 +14,7 @@ import {
 import { Typography, IconButton, Button } from "@mui/material";
 import { MenuContext } from "react-flexible-sliding-menu";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../assets/happenings-logo.png";
+import logo from "/public/happenings-logo.png";
 import { logout } from "../../store/actions/auth";
 
 const Sidebar = () => {

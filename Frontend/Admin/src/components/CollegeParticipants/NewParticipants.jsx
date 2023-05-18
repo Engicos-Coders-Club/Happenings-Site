@@ -20,7 +20,6 @@ import {
   Search as SearchIcon,
 } from "@material-ui/icons";
 import ParticipantCard from "./NewParticipantCard";
-import img from "../../assets/happenings-logo.png";
 import { useState } from "react";
 import {
   getAllColleges,
@@ -29,6 +28,7 @@ import {
   getDay2CollegeParticipants,
 } from "../../store/actions/college";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -95,9 +95,17 @@ const Participants = () => {
     await dispatch(getAllColleges());
   };
 
-  const { colleges, loading, loadingCollege, participants } = useSelector(
-    (state) => state.college
-  );
+  const { colleges, loading, loadingCollege, participants, clearMessage } =
+    useSelector((state) => state.college);
+  const { message, loadingAttendance } = useSelector((state) => state.college);
+
+  useEffect(() => {
+    if (message) {
+      alert(message);
+      // put toast
+      dispatch({ type: "clearMessage" });
+    }
+  }, [message]);
 
   // const handleSearchChange = (e) => {
   //   setSearchValue(e.target.value);
@@ -110,25 +118,6 @@ const Participants = () => {
     else if (newValue == "day2") dispatch(getDay2CollegeParticipants(cid));
     else dispatch(getAllCollegeParticipants(cid));
   };
-
-  const [member, setMember] = useState([
-    {
-      name: "John Doe",
-      id_card: img,
-      phone: "123-456-7890",
-      attendance: false,
-      id: "1",
-      eventName: "A",
-    },
-    {
-      name: "Jane Smith",
-      id_card: img,
-      phone: "987-654-3210",
-      attendance: false,
-      id: "2",
-      eventName: "B",
-    },
-  ]);
 
   const handleCheckboxToggle = (itemId) => {
     setMember((prevData) => {
@@ -250,6 +239,11 @@ const Participants = () => {
         </Tabs>
 
         <div className={classes.eventContent}>
+          {!participants && (
+            <Typography variant="subtitle1" sx={{ color: "#ACB1D6" }}>
+              select a college
+            </Typography>
+          )}
           {loadingCollege ? (
             <Box
               sx={{
