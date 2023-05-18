@@ -1,0 +1,79 @@
+.title,
+.supporters,
+.event,
+.internet,
+.sports {
+  @apply hover:scale-105 border-2 overflow-hidden rounded-xl py-3 px-5 border-red-600 md:w-60;
+}
+
+.title span,
+.supporters span,
+.event span,
+.internet span,
+.sports span {
+  height: 100%;
+  width: 100%;
+}
+
+/* ------ title sponsors ------- */
+.title {
+  height: 16rem;
+  width: 19rem;
+}
+
+/* --------- sports sponsors ---------- */
+.sports {
+  height: 15rem;
+  width: 16rem;
+}
+
+/* --------- internet sponsors ---------- */
+.internet {
+  height: 9rem;
+  width: 18rem;
+}
+
+/* --------- event sponsors ---------- */
+.event {
+  height: 8rem;
+  width: 18rem;
+}
+
+/* --------- supporters sponsors ---------- */
+.supporters {
+  height: 6rem;
+  width: auto;
+}
+
+/* ============================================================= */
+
+@media screen and (max-width: 768px) {
+  /* ------ title sponsors ------- */
+  .title {
+    height: 8rem;
+    width: 10rem;
+  }
+  /* --------- sports sponsors ---------- */
+  .sports {
+    height: 7rem;
+    width: 8rem;
+  }
+
+  /* --------- internet sponsors ---------- */
+  .internet {
+    height: 5rem;
+    width: 10rem;
+  }
+
+  /* --------- event sponsors ---------- */
+  .event {
+    height: 5rem;
+    width: 8rem;
+  }
+
+  /* --------- supporters sponsors ---------- */
+  .supporters {
+    height: 4rem;
+    width: auto;
+  }
+}
