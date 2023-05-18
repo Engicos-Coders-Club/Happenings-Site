@@ -51,11 +51,11 @@ const MyComponent = ({ member, handleCheckboxToggle }) => {
         </Typography>
         <Typography>
           Event:
-          <span className={classes.eventName}> {member.eventName} </span>
+          <span className={classes.eventName}> {member.college?member.college.college_name:member.event.event_name} </span>
         </Typography>
         <Typography>
-          Event:
-          <span className={classes.eventName}> {member.phone} </span>
+          Phone:
+          <span className={classes.eventName}> {member?.phone} </span>
         </Typography>
         <Typography className={classes.eventName}>
           Present:
