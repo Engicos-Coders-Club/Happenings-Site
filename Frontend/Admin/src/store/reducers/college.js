@@ -51,6 +51,18 @@ export const collegeReducer = createReducer(initialState,{
           state.error = action.payload
           state.loading = false
     },
+
+    MarkAttendanceRequest: (state,action)=>{
+        state.loadingAttendance = true;
+    },
+    MarkAttendanceSuccess: (state,action)=>{
+        state.message = action.payload;
+        state.loadingAttendance = false
+    },
+    MarkAttendanceFailure: (state,action)=>{     
+          state.error = action.payload
+          state.loadingAttendance = false
+    },
     
     clearError:(state,action)=>{
         state.error = null

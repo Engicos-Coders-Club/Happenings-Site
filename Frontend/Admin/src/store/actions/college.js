@@ -177,3 +177,31 @@ export const getAllEvents = ()=>async(dispatch)=>{
         })
     }    
 }
+export const markAttendance = (id) => async(dispatch)=>{
+    try {
+        dispatch({
+            type:"MarkAttendanceRequest"
+        })
+        const user = localStorage.getItem('user');
+        let tokens = ''
+        if (user) {
+            const { token } = JSON.parse(localStorage.getItem('user'));
+            tokens = `Bearer ${token}`;
+        }
+        const {data} = await axios.post(`/api/participant-attendence/${id}/`,{},{
+            headers:{
+                'Authorization':tokens
+            }
+        })
+        dispatch({
+            type:"MarkAttendanceSuccess",
+            payload:data.message
+        })
+    } catch (error) {
+        console.log(error.response.data,error.response.status)
+        dispatch({
+            type:"MarkAttendanceFailure",
+            payload:error.response.data
+        })
+    }    
+}
