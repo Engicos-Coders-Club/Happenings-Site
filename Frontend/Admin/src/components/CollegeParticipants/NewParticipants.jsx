@@ -11,6 +11,7 @@ import {
   Tabs,
   Tab,
   Box,
+  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +30,7 @@ import {
 } from "../../store/actions/college";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import xlsx from "json-as-xlsx";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -80,6 +82,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const downloadFile = (data) => {
+  const customData = [
+    {
+      sheet: "College",
+      columns: [
+        { label: "Name", value: "name" }, // Top level data
+        {
+          label: "Event",
+          value: (row) => (row.event ? row.event.event_name || "" : ""),
+        },
+        { label: "ID Card", value: "id_card" },
+      ],
+      content: data,
+    },
+  ];
+
+  let settings = {
+    fileName: "CollegeParticipants", // Name of the resulting spreadsheet
+    extraLength: 3, // A bigger number means that columns will be wider
+  };
+
+  xlsx(customData, settings);
+};
+
 const Participants = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -89,6 +115,7 @@ const Participants = () => {
 
   useEffect(() => {
     initialize();
+    dispatch({type: "clearParticipants"})
   }, []);
 
   const initialize = async () => {
@@ -107,9 +134,6 @@ const Participants = () => {
     }
   }, [message]);
 
-  // const handleSearchChange = (e) => {
-  //   setSearchValue(e.target.value);
-  // };
 
   const handleChange = (event, newValue) => {
     //console.log('Selected tab value:', newValue);
@@ -117,20 +141,6 @@ const Participants = () => {
     if (newValue == "day1") dispatch(getDay1CollegeParticipants(cid));
     else if (newValue == "day2") dispatch(getDay2CollegeParticipants(cid));
     else dispatch(getAllCollegeParticipants(cid));
-  };
-
-  const handleCheckboxToggle = (itemId) => {
-    setMember((prevData) => {
-      return prevData.map((item) => {
-        if (item.id === itemId) {
-          return {
-            ...item,
-            attendance: !item.attendance,
-          };
-        }
-        return item;
-      });
-    });
   };
 
   const handleCollege = (e) => {
@@ -211,6 +221,13 @@ const Participants = () => {
           </Typography>
         </div>
 
+        {/* ------------------------ excel button ----------------- */}
+        {participants && (
+          <Button variant="contained" onClick={() => downloadFile(participants)}>
+            Download as excel
+          </Button>
+        )}
+
         <Tabs
           className={classes.btnGrp}
           value={value}
@@ -268,7 +285,6 @@ const Participants = () => {
                       <ParticipantCard
                         key={member.id}
                         member={member}
-                        handleCheckboxToggle={handleCheckboxToggle}
                       />
                     )
                 )}
