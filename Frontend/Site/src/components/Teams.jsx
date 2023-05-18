@@ -5,6 +5,7 @@ import TeamCardsDev from './TeamCardDev'
 import '../Stylesheets/Teams.css'
 import { councilData } from '../data/Teams_Info/Council'
 // import WebTeam from '../data/Teams_Info/WebDevs'
+import { advisorData } from '../data/Teams_Info/Advisors'
 import { webData } from '../data/Teams_Info/WebDevs'
 import { useDispatch, useSelector } from 'react-redux'
 import { viewEventCoordinators } from '../actions/college'
@@ -56,7 +57,7 @@ function Teams() {
         <ul className='font-MANGO sm:text-xl lg:text-3xl text-xl text-white list-none flex flex-right  items-center md:overflow-hidden gap-9 p-2 cursor-pointer overflow-y-scroll'>
           <li onClick={() => toggleTab(1)} className={toggleState == 1 ? 'active-tab' : 'non-active-tab'}>COUNCIL</li>
           {/* <li onClick={() => toggleTab(2)} className={toggleState == 2 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li> */}
-          {/* <li onClick={() => toggleTab(3)} className={toggleState == 3 ? 'active-tab' : 'non-active-tab'}>ADVISORS</li> */}
+          <li onClick={() => toggleTab(3)} className={toggleState == 3 ? 'active-tab' : 'non-active-tab'}>ADVISORS</li>
           <li onClick={() => toggleTab(4)} className={toggleState == 4 ? 'active-tab' : 'non-active-tab'}>WEB TEAM</li>
           <li onClick={() => toggleTab(5)} className={toggleState == 5 ? 'active-tab' : 'non-active-tab'}>COORDINATORS</li>
         </ul>
@@ -72,13 +73,13 @@ function Teams() {
         {Coordinators.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
-      </div>
+      </div> */}
 
       <div className={toggleState == 3 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-10' : 'non-active-content'}>
-        {Advisors.map((item,index) => (
+        {advisorData.map((item,index) => (
           <TeamCards data={item} key={index}/>
         ))}
-      </div> */}
+      </div>
 
       <div className={toggleState == 4 ? 'active content relative w-full flex flex-wrap justify-evenly min-h-screen p-20 gap-x-20 gap-y-28' : 'non-active-content'}>
         {webData.map((item,index) => (
