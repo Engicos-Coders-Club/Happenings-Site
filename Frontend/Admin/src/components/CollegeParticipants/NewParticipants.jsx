@@ -99,6 +99,7 @@ const downloadFile = (data) => {
           label: "Event",
           value: (row) => (row.event ? row.event.event_name || "" : ""),
         },
+        { label: "Phone Number", value: "phone" },
         { label: "ID Card", value: "id_card" },
       ],
       content: data,
