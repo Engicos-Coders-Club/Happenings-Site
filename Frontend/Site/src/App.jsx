@@ -23,6 +23,7 @@ import SideBar from "./components/SideBar";
 import NotFound from "./components/NotFound";
 import { register } from "swiper/element/bundle";
 import Verifying from "./components/Verifying";
+import Results from "./components/Result";
 
 function App() {
   // const location = useLocation();
@@ -166,6 +167,12 @@ function App() {
               exact
               matches
               path="/Teams/"
+            />
+            <Route
+              element={<Results />}
+              exact
+              matches
+              path="/results"
             />
             <Route
               element={<GeneralRulePage title="GeneralRulePage" />}

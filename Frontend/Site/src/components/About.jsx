@@ -147,7 +147,7 @@ function About(props) {
         </div>
 
         {/* buy passes ---------------------------------- */}
-        <div className="mx-auto border-orange-500 border-2 border-dotted py-14 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
+        {/* <div className="mx-auto border-orange-500 border-2 border-dotted py-14 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
           <h3
             className="uppercase text-4xl md:text-7xl text-center tracking-wide font-bold"
             style={{
@@ -173,7 +173,63 @@ function About(props) {
               buy now <FiArrowUpRight size={30} className="py-0.5" />
             </span>
           </Link>
+        </div> */}
+
+        <div className="mx-auto border-orange-500 border-2 border-dotted py-14 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
+          <h3
+            className="uppercase text-4xl md:text-8xl text-center tracking-wide font-bold text-red-600"
+            style={{
+              fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+            }}
+          >
+            results
+          </h3>
+          <p className="text-[0.5rem] w-2/3 xs:text-xs text-center mx-auto mb-8 tracking-wide font-Merriweather">
+          Check out who won the apocalypse episode of Happenings!
+          </p>
+          <Link
+            to="/results"
+            className="flex w-max hover:bg-red-600 px-5 py-2 rounded-md bg-orange-600 border-cus-orange hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4"
+          >
+            <span
+              className={`text-2xl font-semibold tracking-wide flex justify-between gap-3 items-center`}
+              style={{
+                fontFamily:
+                  "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+              }}
+            >
+              results <FiArrowUpRight size={30} className="py-0.5" />
+            </span>
+          </Link>
         </div>
+
+        {/* <div className="mx-auto border-orange-500 border-2 border-dotted py-14 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
+          <h3
+            className="uppercase text-4xl md:text-7xl text-center tracking-wide font-bold"
+            style={{
+              fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+            }}
+          >
+            Get your <span className="text-cus-bright-orange">Tickets</span> Now
+          </h3>
+          <p className="text-[0.5rem] w-2/3 xs:text-xs text-center mx-auto mb-8 tracking-wide font-Merriweather">
+            Early bird tickets are out. Go grab them now!
+          </p>
+          <Link
+            to="/tickets"
+            className="flex w-max hover:bg-red-600 px-5 py-2 rounded-md bg-orange-600 border-cus-orange hover:scale-105 uppercase mb-3 md:mb-0 mx-auto my-4"
+          >
+            <span
+              className={`text-2xl font-semibold tracking-wide flex justify-between gap-3 items-center`}
+              style={{
+                fontFamily:
+                  "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+              }}
+            >
+              buy now <FiArrowUpRight size={30} className="py-0.5" />
+            </span>
+          </Link>
+        </div> */}
 
         {/* general rules ---------------------------------- */}
         <div className="mx-auto border-orange-500 border-2 border-dotted py-14 w-full md:w-3/4 my-14 rounded-tl-3xl rounded-br-3xl">
