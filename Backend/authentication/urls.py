@@ -5,7 +5,6 @@ from .views import *
 
 urlpatterns = [
 
-# Customer Side Actions
 	path('google-auth/', views.google_authentication, name="google-auth"),
 
 	path('signup/', views.signUp, name="signup"),

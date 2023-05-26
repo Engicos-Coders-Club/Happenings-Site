@@ -5,7 +5,7 @@ from .models import *
 class CollegeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CollegeModel
-        fields = ["id", "college_name", "icon"]
+        fields = ["id", "college_name"]
 
 class CollegePointsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,6 +26,19 @@ class CoordinatorModelSerializer2(serializers.ModelSerializer):
     class Meta:
         model = EventCoordinatorModel
         fields = ["name", "phone"]
+
+
+class EventNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EventModel
+        fields = ["id", "event_name"]
+
+
+class CoordinatorTeamsPageSerializer(serializers.ModelSerializer):
+    event = EventNameSerializer()
+    class Meta:
+        model = EventCoordinatorModel
+        fields = ["name", "phone", "photo", "event"]
 
 
 class AllEventSerializer(serializers.ModelSerializer):
@@ -88,7 +101,20 @@ class ParticipantSerializer(serializers.ModelSerializer):
 class ParticipantSerializer2(serializers.ModelSerializer):
     class Meta:
         model = EventParticipantsModel
-        fields = ["id", "name"]
+        fields = ["id", "name", "phone"]
+
+class ParticipantSerializer3(serializers.ModelSerializer):
+    event = EventNameSerializer()
+    class Meta:
+        model = EventParticipantsModel
+        fields = ["id", "name", "event", "id_card", "has_attended", "phone"]
+
+
+class ParticipantSerializer4(serializers.ModelSerializer):
+    college = CollegeSerializer()
+    class Meta:
+        model = EventParticipantsModel
+        fields = ["id", "name", "id_card", "college", "has_attended", "phone"]
 
 class EventParticipantsSerializer(serializers.ModelSerializer):
     participants = serializers.SerializerMethodField()

@@ -62,6 +62,7 @@ class EventParticipantsModel(BaseModel):
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=15)
     id_card = models.ImageField(upload_to="id_card", height_field=None, width_field=None, max_length=None)
+    has_attended = models.BooleanField(default=False)
     def __str__(self):
         return self.name
     class Meta:

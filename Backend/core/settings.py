@@ -10,8 +10,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 
-# DEBUG = False
+# __local
 DEBUG = True
+
+# __production
+# DEBUG = False
 
 # ALLOWED_HOSTS = ["backend.happenings2023.com", "34.226.180.160"]
 ALLOWED_HOSTS = ["*"]
@@ -30,7 +33,6 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'authentication.apps.AuthenticationConfig',
     'app.apps.AppConfig',
-    'tickets.apps.TicketsConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +72,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 AUTH_USER_MODEL = 'base.BaseUser'
 
+
+# __local
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# __production
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -81,12 +93,6 @@ AUTH_USER_MODEL = 'base.BaseUser'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,11 +116,14 @@ USE_I18N = False
 USE_L10N = False
 USE_TZ = False
 
+
+# __local
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join("static")
 MEDIA_URL = '/data/'
 MEDIA_ROOT = os.path.join("data")
 
+# __production
 # AWS Config
 # AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 # AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
@@ -132,6 +141,7 @@ MEDIA_ROOT = os.path.join("data")
 # PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 # DEFAULT_FILE_STORAGE = 'core.storages.MediaStore'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -186,11 +196,16 @@ CACHES = {
     }
 }
 
-# CORS
-CORS_ALLOWED_ORIGINS = [
-    "https://happenings2023.com",
-    "http://localhost:5173",
-]
+
+# __local
+CORS_ALLOW_ALL_ORGIN = True
+
+# __production
+# CORS_ALLOWED_ORIGINS = [
+#     "https://happenings2023.com",
+#     "http://localhost:5173",
+#     "https://admin-happenings2023.netlify.app/"
+# ]
 
 CORS_ALLOW_METHODS = [
     'GET',
@@ -200,10 +215,11 @@ CORS_ALLOW_METHODS = [
     'DELETE'
 ]
 
+
+# __production
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
-
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_PRELOAD = True
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -225,6 +241,3 @@ SOCIAL_SECRET = str(config("SOCIAL_SECRET"))
 # Utils
 ADMIN_EMAIL = str(config("ADMIN_EMAIL"))
 
-# Razorpay
-PUBLIC_KEY = str(config("PUBLIC_KEY"))
-PRIVATE_KEY = str(config("PRIVATE_KEY"))

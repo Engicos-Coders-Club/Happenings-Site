@@ -30,7 +30,6 @@ pyparsing
 python-dateutil
 python-decouple
 pytz
-razorpay
 redis
 requests
 rsa

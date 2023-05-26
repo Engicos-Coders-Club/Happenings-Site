@@ -3,7 +3,6 @@ from .models import *
 
 admin.site.register(CategoryModel)
 admin.site.register(CollegeModel)
-admin.site.register(EventParticipantsModel)
 
 
 class EventCoordinatorModelAdmin(admin.StackedInline):
@@ -11,6 +10,11 @@ class EventCoordinatorModelAdmin(admin.StackedInline):
 
 class EventModelAdmin(admin.ModelAdmin):
     inlines = [ EventCoordinatorModelAdmin ]
-    # list_display = ["name", "price", "ratings"]
 
 admin.site.register(EventModel, EventModelAdmin)
+
+
+class ParticipantModelAdmin(admin.ModelAdmin):
+    list_display = ["event", "college", "name"]
+
+admin.site.register(EventParticipantsModel, ParticipantModelAdmin)
