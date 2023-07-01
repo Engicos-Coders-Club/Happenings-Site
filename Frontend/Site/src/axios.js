@@ -1,12 +1,12 @@
 import axios from "axios";
 
 
-export const productionUrl = "https://backend.happenings2023.com/"
+// export const productionUrl = "https://backend.happenings2023.com/"
 
 export const developmentUrl = "http://localhost:8000"
 
 
-axios.defaults.baseURL = productionUrl
+axios.defaults.baseURL = developmentUrl
 
 // axios.interceptors.request.use(function (req) {
 //     const user = localStorage.getItem('user');

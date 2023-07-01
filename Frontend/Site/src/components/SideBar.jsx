@@ -115,14 +115,6 @@ function SideBar(props) {
               </HashLink>
             </li>
             <li
-              className="rotate-[-90deg] p-5 hover:underline tracking-wide"
-              id="EventSide"
-            >
-              <HashLink smooth to="/#Eventsec">
-                EVENTS
-              </HashLink>
-            </li>
-            <li
               className="rotate-[-90deg] p-2 hover:underline tracking-wide"
               id="ScheduleSide"
             >
@@ -138,6 +130,14 @@ function SideBar(props) {
                 SPONSORS
               </HashLink>
             </li>
+            <li
+              className="rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500"
+              id="EventSide"
+            >
+              <HashLink smooth to="/teams">
+                TEAM
+              </HashLink>
+            </li>
             {/* <li className='rotate-[-90deg] p-2 hover:underline tracking-wide'><HashLink smooth to="/#sponsor">SPONSORS</HashLink></li> */}
             {/* <li
               className="rotate-[-90deg] p-3 hover:underline tracking-wide"
@@ -147,22 +147,22 @@ function SideBar(props) {
                 VENUE
               </HashLink>
             </li> */}
-            <li className="rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500">
+            {/* <li className="rotate-[-90deg] p-5 hover:underline tracking-wide text-orange-500">
               <Link smooth to="/tickets">
                 TICKETS
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
-        <div className="w-full flex justify-center">
+        {/* <div className="w-full flex justify-center">
           <button
             className="rounded-full border border-cus-orange w-10 h-10 flex items-center justify-center"
             onClick={showLoginModal}
           >
             <FaUserAlt className="text-cus-orange" />
           </button>
-        </div>
+        </div> */}
 
       </div>
       {showUserModal &&

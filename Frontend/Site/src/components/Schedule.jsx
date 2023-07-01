@@ -6,7 +6,7 @@ import Day1 from "../assets/day-1.svg";
 import Day2 from "../assets/day-2.svg";
 import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import getImageUrl from './utility/dynamic-img'
+import getImageUrl from "./utility/dynamic-img";
 
 function Schedule(props) {
   // gsap.registerPlugin(ScrollTrigger);
@@ -80,8 +80,10 @@ function Schedule(props) {
   return (
     <section
       id="schedule"
-      className="bg-[#171717ff] schedule h-auto relative md:pl-16  mt-0"
-      style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
+      className="bg-[#171717ff] schedule h-[70vh] relative md:pl-16 flex flex-col items-center"
+      style={{
+        fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+      }}
     >
       {/* , 'display':'grid','gridTemplateRows':'22% 55% 25%' */}
       {/* <Navbar />
@@ -103,8 +105,9 @@ function Schedule(props) {
       {/* <div className='flex justify-center items-center'>
             <p id="Shine" className="text-3xl xs:text-4xl sm:text-5xl text-orange-700 font-extrabold tracking-widest">COMING SOON</p>
         </div> */}
-
-      {/* Day 1 */}
+      <h1 className="text-4xl text-cus-orange text-center">~ you are too early for next year ~</h1>
+      <p className="text-3xl text-center text-cus-orange">¯\_(ツ)_/¯</p>
+      {/* Day 1
       <div className="py-8">
         <div className="flex flex-col items-center text-white xs:justify-between xs:py-5 xs:px-16  xs:flex-row">
           <span className="mb-2 text-3xl xs:mb-0 xs:text-4xl sm:text-5xl text-cus-orange">
@@ -141,7 +144,7 @@ function Schedule(props) {
         </div>
       </div>
 
-      {/* Day2  */}
+      Day2 
       <div className="py-8">
         <div className="flex flex-col items-center text-white xs:justify-between xs:py-5 xs:px-16  xs:flex-row">
           <span className="mb-2 text-3xl xs:mb-0 xs:text-4xl sm:text-5xl text-cus-orange">
@@ -176,27 +179,27 @@ function Schedule(props) {
             (click to expand)
           </p>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex items-start justify-center py-10">
-        {/* <Link to="/register"><button className='flex mr-10 text-white bg-orange-600 px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase mb-6 md:mb-0'><span className={`text-2xl font-semibold tracking-wide `}>Buy Passes Now</span><FiArrowUpRight className='flex mx-2 items-center justify-center' size={25} /></button></Link> */}
-
-
-        <Link to="/tickets">
-          <button className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
-            <span
-              className={`text-base lg:text-xl font-semibold tracking-wide `}
-              style={{ fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif" }}
-            >
-              Buy Passes Now
-            </span>
-            <FiArrowUpRight
-              className="flex mx-2 items-center justify-center"
-              size={25}
-            />
-          </button>
-        </Link>
-      </div>
+      {/* <div className="flex items-start justify-center py-10">
+        <button
+          disabled
+          className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase"
+        >
+          <span
+            className={`text-base lg:text-xl font-semibold tracking-wide `}
+            style={{
+              fontFamily: "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+            }}
+          >
+            Buy Passes Now
+          </span>
+          <FiArrowUpRight
+            className="flex mx-2 items-center justify-center"
+            size={25}
+          />
+        </button>
+      </div> */}
     </section>
   );
 }

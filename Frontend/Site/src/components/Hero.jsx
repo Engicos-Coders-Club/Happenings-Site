@@ -37,9 +37,9 @@ export class Hero extends Component {
                 HAPPENINGS 2023
               </p>
 
-              <h1 className="lg:text-5xl text-gray-200 font-MANGO tracking-wide text-[2rem] text-center leading-3 mt-8 sm:mt-2">
-                19th & 20th May
-              </h1>
+              {/* <h1 className="lg:text-4xl text-gray-200 font-MANGO tracking-wide text-[2rem] text-center leading-3 mt-8 sm:mt-2">
+                see you next year ;)
+              </h1> */}
             </div>
           </div>
           {/* <img src="/assets/smoke.png" className='top-0 absolute z-0 opacity-20 smokeCloud1 left-[-27%]' ></img>

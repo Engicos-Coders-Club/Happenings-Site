@@ -34,7 +34,7 @@ function Layout(props) {
       <div>
         <Hero />
         <About s={""} animation={"section-2"} />
-        <EventCarouselSection />
+        {/* <EventCarouselSection /> */}
         <Schedule />
         <Sponsor />
         <Venue />

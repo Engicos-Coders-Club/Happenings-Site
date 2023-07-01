@@ -81,20 +81,24 @@ function Sponsor() {
             OUR SPONSORS
           </p>
           <div className="pr-0 md:pr-20">
-            <Link to="/tickets">
-              <button className="flex bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase">
-                <span
-                  className={`text-base lg:text-xl font-semibold tracking-wide `}
-                  style={{ fontFamily: "MangoGrotesque" }}
-                >
-                  Buy Passes Now
-                </span>
-                <FiArrowUpRight
-                  className="flex mx-2 items-center justify-center"
-                  size={25}
-                />
-              </button>
-            </Link>
+            <button
+              disabled
+              className="flex text-white bg-orange-600 px-2 md:px-5 py-2 rounded-md hover:bg-orange-700 hover:scale-105 uppercase"
+            >
+              <span
+                className={`text-base lg:text-xl font-semibold tracking-wide `}
+                style={{
+                  fontFamily:
+                    "'MangoGrotesque', 'Oswald', 'Bebas Neue', san-serif",
+                }}
+              >
+                Buy Passes Now
+              </span>
+              <FiArrowUpRight
+                className="flex mx-2 items-center justify-center"
+                size={25}
+              />
+            </button>
           </div>
         </div>
         <img src={Line} className="w-3/4 mx-auto" alt="" />

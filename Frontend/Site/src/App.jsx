@@ -30,37 +30,19 @@ function App() {
   // console.log(location);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  const { isAuthenticated, loading: serverLoading } = useSelector(
-    (state) => state.auth
-  );
+  // const { isAuthenticated, loading: serverLoading } = useSelector(
+  //   (state) => state.auth
+  // );
 
-  register();
+  // register();
 
-  useEffect(() => {
-    dispatch(loadUser());
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   dispatch(loadUser());
+  //   setLoading(false);
+  // }, []);
 
-  return loading || serverLoading ? (
-    <div
-      style={{
-        height: "100vh",
-        width: "100wh",
-        backgroundColor: "black",
-        display: "grid",
-        placeItems: "center",
-      }}
-    >
-      <SpinnerRoundOutlined
-        size={80}
-        thickness={50}
-        speed={100}
-        color="rgba(172, 57, 59, 1)"
-      />
-    </div>
-  ) : (
+  return (
     <React.Fragment>
-      {/* <BrowserRouter> */}
       <Suspense
         fallback={
           <div
@@ -85,7 +67,7 @@ function App() {
           <SideBar />
           <Routes>
             <Route element={<Layout title="Happenings" />} path="/" />
-            <Route
+            {/* <Route
               element={
                 isAuthenticated ? (
                   <CollegeRegistration title="College Registration" />
@@ -145,7 +127,7 @@ function App() {
             />
 
             {/* verify page */}
-            <Route
+            {/* <Route
               element={
                 isAuthenticated ? (
                   <Verifying />
@@ -154,36 +136,30 @@ function App() {
                 )
               }
               path="/verify"
-            />
-            <Route element={<Events title="Events" />} path="/all-events/" />
+            /> */}
+            {/* <Route element={<Events title="Events" />} path="/all-events/" /> */}
             {/* <Route element={<BookTickets title="Buy Tickets" />} path="/buy" /> */}
-            <Route element={<Auth title="Authentication" />} path="/auth" />
+            {/* <Route element={<Auth title="Authentication" />} path="/auth" />
             <Route
               element={<FogotPassword title="Fogot Password" />}
               path="/resetpass"
-            />
+            /> */}
+            {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
             <Route
               element={<Teams title="Teams" />}
               exact
               matches
               path="/Teams/"
             />
-            <Route
-              element={<Results />}
-              exact
-              matches
-              path="/results"
-            />
+            <Route element={<Results />} exact matches path="/results" />
             <Route
               element={<GeneralRulePage title="GeneralRulePage" />}
               path="/GeneralRule"
             />
-            <Route element={<Modal title="Modal" />} path="/Modal" />
-            {/* <Route element={<AllEvents title="AllEvents" />} path="/allevents" /> */}
+            {/* <Route element={<Modal title="Modal" />} path="/Modal" /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ScrollTop>
-        {/* </BrowserRouter> */}
       </Suspense>
     </React.Fragment>
   );

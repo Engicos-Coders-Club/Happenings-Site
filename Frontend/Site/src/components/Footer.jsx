@@ -87,27 +87,14 @@ function Footer() {
               </div>
             </div>
             {/* <Link to="/teams" className="w-max"> */}
-            <Link
-              to="/teams"
-              className="w-max flex text-white px-2 md:px-5 py-2 rounded-md border-2 border-cus-orange hover:bg-cus-orange uppercase mt-5"
-            >
-              <span
-                className={`text-base lg:text-xl font-semibold tracking-wide font-MANGO`}
-              >
-                the team
-              </span>
-              <FiArrowUpRight
-                className="flex mx-2 items-center justify-center"
-                size={25}
-              />
-            </Link>
+           
             {/* </Link> */}
             {/* <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Buy Passes Now <FiArrowUpRight size={20} /></button> */}
             {/* <div className="mt-4 flex justify-center">
                                 <button className="border-red-500 border w-fit rounded-xl p-3 mx-auto text-white py-1 bg-black hover:scale-125 hover:bg-orange-600 text-2xl tracking-wider flex items-center justify-center" style={{ 'fontFamily': 'MangoGrotesque' }} type="submit">Coming soon ...</button>
                             </div> */}
           </div>
-          <div className="md:w-1/6">
+          <div className="flex flex-col justify-center items-center md:items-start md:w-1/6">
             <div className="hidden md:block">
               <h2 className="text-4xl uppercase mt-4 font-bold mb-4 text-gray-400 font-MANGO">
                 Website links
@@ -122,7 +109,7 @@ function Footer() {
                     Home
                   </HashLink>
                 </li>
-                <li className="mb-2">
+                {/* <li className="mb-2">
                   <HashLink
                     smooth
                     to="#events"
@@ -130,7 +117,7 @@ function Footer() {
                   >
                     Events
                   </HashLink>
-                </li>
+                </li> */}
                 {/* <li className="mb-2"><a href="#" className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange">Sponsors</a></li> */}
                 <li className="mb-2">
                   <HashLink
@@ -142,31 +129,40 @@ function Footer() {
                   </HashLink>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    to="/Teams/"
+                  <a
+                    href="#sponsor"
                     className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
-                    Team
-                  </Link>
+                    Sponsors
+                  </a>
                 </li>
                 <li className="mb-2">
+                  <Link
+                    to="/GeneralRule"
+                    className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
+                  >
+                    Rules
+                  </Link>
+                </li>
+                {/* <li className="mb-2">
                   <Link
                     to="/college-registration"
                     className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     College Registration
                   </Link>
-                </li>
-                <li className="mb-2">
+                </li> */}
+                {/* <li className="mb-2">
                   <Link
                     to="/tickets"
                     className="text-gray-400 font-Merriweather text-sm hover:text-cus-orange"
                   >
                     Tickets
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
+            
             <div className="mt-5 mb-4 flex justify-center items-center md:justify-start">
               <a
                 href="mailto:gecstudentscouncil2022@gmail.com"
@@ -185,6 +181,20 @@ function Footer() {
                 <BsInstagram />
               </a>
             </div>
+            <Link
+              to="/teams"
+              className="w-max flex text-white px-2 md:px-5 py-2 rounded-md border-2 border-cus-orange hover:bg-cus-orange uppercase mt-5"
+            >
+              <span
+                className={`text-base lg:text-xl font-semibold tracking-wide font-MANGO`}
+              >
+                the team
+              </span>
+              <FiArrowUpRight
+                className="flex mx-2 items-center justify-center"
+                size={25}
+              />
+            </Link>
           </div>
         </div>
         <div className="mt-4 flex justify-center">
