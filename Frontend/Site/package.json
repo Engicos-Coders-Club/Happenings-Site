@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "caniuse-lite": "^1.0.30001598",
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
     "gapi-script": "^1.2.0",
